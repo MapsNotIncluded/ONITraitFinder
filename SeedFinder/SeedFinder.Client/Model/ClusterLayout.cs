@@ -7,22 +7,85 @@ namespace SeedFinder.Client.Model
         public string Id;
         public string Name;
         public string Prefix;
-        public string Image => WorldPlacements.First().Asteroid.Image;
+
+        public string DisplayName => Name.Replace("Moonlet Cluster - ", string.Empty);
+
+        public int menuOrder;
+
+        public string Image => WorldPlacements[startWorldIndex].Asteroid.Image;
         public List<Dlc> RequiredDlcs;
         public List<Dlc> ForbiddenDlcs;
+        public List<string> RequiredDlcsIDs;
+        public List<string> ForbiddenDlcIDs;
+
+        public List<string> WorldPlacementIDs;//transferBinding
+
         public List<WorldPlacement> WorldPlacements;
-        public ClusterCategory clusterCategory;
-        public int startWorldIndex { get; set; }
+        public int clusterCategory;
+        public ClusterCategory ClusterCategory;
 
-        public bool DlcRequirementsFulfilled(List<Dlc> requirements) => !requirements.Except(RequiredDlcs).Any() && requirements.Intersect(ForbiddenDlcs).Any();
+        public int fixedCoordinate;
 
-        public bool AllowedWithCurrentQuery(SearchQuery query) => query.ActiveMode == clusterCategory && DlcRequirementsFulfilled(query.ActiveDlcs);
+        public int startWorldIndex = 0;
 
-        public static List<ClusterLayout> GetValues()
+        public bool DlcRequirementsFulfilled(List<Dlc> requirements) => !RequiredDlcs .Except(requirements).Any() && !ForbiddenDlcs.Intersect(requirements).Any();
+
+        public bool AllowedWithCurrentQuery(SearchQuery query) => query.ActiveMode == ClusterCategory && DlcRequirementsFulfilled(query.ActiveDlcs);
+        public void InitBindings()
         {
-            var values = new List<ClusterLayout>();
+            WorldPlacements = new(12);
+            foreach (var placementId in WorldPlacementIDs)
+            {
+                WorldPlacements.Add(new WorldPlacement(Asteroid.KeyValues[placementId]));
+            }
 
-            return values;
+            RequiredDlcs = new();
+            if (RequiredDlcs != null)
+                foreach (var dlc in RequiredDlcsIDs)
+                {
+                    RequiredDlcs.Add(Dlc.KeyValues[dlc]);
+                }
+            ForbiddenDlcs = new();
+            if (ForbiddenDlcIDs != null)
+                foreach (var dlc in ForbiddenDlcIDs)
+                {
+                    ForbiddenDlcs.Add(Dlc.KeyValues[dlc]);
+                }
+            switch (clusterCategory)
+            {
+                case 0:
+                    ClusterCategory = ClusterCategory.BASEGAME_STANDARD;
+                    break;
+                case 1:
+                    ClusterCategory = ClusterCategory.SPACEDOUT_CLASSIC;
+                    break;
+                case 2:
+                    ClusterCategory = ClusterCategory.SPACEDOUT_SPACEDOUT;
+                    break;
+                case 3:
+                    ClusterCategory = RequiredDlcsIDs.Contains(Dlc.SPACEDOUT_ID) ? ClusterCategory.SPACEDOUT_THELAB : ClusterCategory.BASEGAME_THELAB;
+                    break;
+
+            }
+
         }
+        public static List<ClusterLayout> Values => KeyValues.Values.OrderBy(i=>i.menuOrder).ToList();
+        public static Dictionary<string, ClusterLayout> KeyValues
+        {
+            get
+            {
+                if (_values == null)
+                {
+                    DataImport.ImportGameData(true);
+                }
+
+                return _values;
+            }
+            set
+            {
+                _values = value;
+            }
+        }
+        private static Dictionary<string, ClusterLayout> _values = null;
     }
 }

@@ -41,5 +41,11 @@
                 yield return FROSTYPLANET;
             }
         }
+        public static Dictionary<string, Dlc> KeyValues = new()
+        {
+            {BASEGAME_ID,BASEGAME },
+            {SPACEDOUT_ID,SPACEDOUT},
+            {FROSTYPLANET_ID,FROSTYPLANET},
+        };
     }
 }

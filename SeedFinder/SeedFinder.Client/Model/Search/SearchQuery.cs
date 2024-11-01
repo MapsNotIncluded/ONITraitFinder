@@ -15,10 +15,13 @@
 
         public void SetDlcEnabled(Dlc dlc, bool enable)
         {
+
             if (enable && !IsDlcSelected(dlc))
             {
                 if (dlc.IsMainVersion)
                 {
+                    DataImport.ImportGameData(dlc == Dlc.SPACEDOUT);
+
                     if (!ActiveDlcs.Contains(dlc))
                     {
                         ActiveDlcs.RemoveAll(d => d.IsMainVersion);
