@@ -1,5 +1,4 @@
 ﻿@page "/"
-@inject HttpClient Http
 @using SeedFinder.Client.Model
 @using SeedFinder.Client.Model.Search
 
@@ -61,18 +60,18 @@ else
             {
                 <!--Cluster-->
                 <MudText Typo="Typo.h5">Select your Asteroid Cluster:</MudText>
-                <MudStack Row="true" Justify="Justify.Center" >
+                <MudStack Row="true" Justify="Justify.Center">
 
-                    <MudGrid Spacing="3" Justify="Justify.Center" >
+                    <MudGrid Spacing="3" Justify="Justify.Center">
                         @foreach (var cluster in ClusterLayout.Values)
                         {
                             @if (cluster.AllowedWithCurrentQuery(Query))
                             {
                                 <MudItem>
-                                    <MudButton Variant="Variant.Filled">
+                                    <MudButton Variant="Variant.Filled" Disabled=@Query.IsClusterSelected(cluster) OnClick="()=> Query.SelectCluster(cluster)">
                                         <MudStack Spacing="1" AlignItems="AlignItems.Center">
-                                                <MudImage ObjectFit="ObjectFit.Contain" Width="110" Height="110" Src="@cluster.Image" Alt="@cluster.Name" />
-                                            <MudText Align="Align.Center" Style="width: 106px; overflow-wrap:break-word;max-width:108px;height:40px" Typo="Typo.body2">@cluster.DisplayName</MudText>
+                                            <MudImage ObjectFit="ObjectFit.Contain" Width="110" Height="110" Src="@cluster.Image" Alt="@cluster.Name" />
+                                            <MudText Align="Align.Center" Style="width: 106px; overflow-wrap:break-word;max-width:108px;height:40px; text-align: center;" Typo="Typo.body2">@cluster.DisplayName</MudText>
                                         </MudStack>
                                     </MudButton>
                                 </MudItem>
@@ -80,6 +79,28 @@ else
                         }
                     </MudGrid>
                 </MudStack>
+            }
+            @if (Query.SelectedCluster != null)
+            {
+                <MudContainer>
+                    <MudPaper>
+                        <MudText Typo="Typo.h5">Configure your @Query.SelectedCluster.Name:</MudText>
+                        @foreach (var asteroidPlacement in Query.SelectedCluster.WorldPlacements)
+                        {
+                            var world = asteroidPlacement.Asteroid;
+
+                            <MudItem>
+                                <MudButton Variant="Variant.Filled">
+                                    <MudStack Spacing="1" AlignItems="AlignItems.Center">
+                                        <MudImage ObjectFit="ObjectFit.Contain" Width="110" Height="110" Src="@world.Image" Alt="@world.Name" />
+                                        <MudText Align="Align.Center" Style="width: 106px; overflow-wrap:break-word;max-width:108px;height:40px; text-align: center;" Typo="Typo.body2">@world.Name</MudText>
+                                    </MudStack>
+                                </MudButton>
+                            </MudItem>
+
+                        }
+                    </MudPaper>
+                </MudContainer>
             }
         </MudStack>
     </MudContainer>
