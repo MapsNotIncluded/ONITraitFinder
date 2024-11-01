@@ -1,0 +1,97 @@
+﻿@page "/"
+@using SeedFinder.Client.Model
+@using SeedFinder.Client.Model.Search
+
+<MudStack Spacing="3" AlignItems="AlignItems.Center">
+    <MudText Typo="Typo.h3">Seed Finder</MudText>
+    <!--Main game version-->
+    <MudText Typo="Typo.h5">Select your game version and dlcs.</MudText>
+    <MudStack Row="true" Justify="Justify.Center">
+        @foreach (var dlc in Dlc.Values)
+        {
+            @if (dlc.IsMainVersion)
+            {
+                <MudButton Variant="Variant.Filled" Disabled=@Query.IsDlcSelected(dlc) OnClick="()=> Query.ToggleDlc(dlc)">
+                    <MudImage Height="150" Src=@dlc.Image Alt="@dlc.Name" />
+                </MudButton>
+            }
+        }
+    </MudStack>
+    <!--content dlcs (FP)-->
+    @foreach (var dlc in Dlc.Values)
+    {
+        <MudStack Row="true">
+            @if (!dlc.IsMainVersion)
+            {
+                <MudImage Height="50" Src=@dlc.Image Alt="@dlc.Name" />
+                <MudSwitch Value="@Query.IsDlcSelected(dlc)" ValueChanged="@((bool value)=> Query.SetDlcEnabled(dlc,value))" Color="Color.Info" Size="Size.Large" />
+            }
+        </MudStack>
+    }
+    @if (Query.MainVersionSelected())
+    {
+        <!--Mode-->
+        <MudText Typo="Typo.h5">Select your game mode:</MudText>
+        <MudStack Row="true" Justify="Justify.Center" >
+            @foreach (var mode in ClusterCategory.Values)
+            {
+                @if (mode.AllowedWithCurrentQuery(Query))
+                {
+                    <MudButton Variant="Variant.Filled" Disabled=@Query.IsModeSelected(mode) OnClick="()=> Query.SelectMode(mode)">
+                        <MudStack Spacing="1">
+                            <MudImage Height="100" Width="100" Src=@mode.Image Alt="@mode.Name" />
+                            <MudText Typo="Typo.body2">@mode.Name</MudText>
+                        </MudStack>
+                    </MudButton>
+                }
+            }
+        </MudStack>
+    }
+    @if (Query.AnyModeSelected())
+    {
+        <!--Cluster-->
+        <MudText Typo="Typo.h5">Select your Asteroid Cluster:</MudText>
+        <MudStack Row="true" Justify="Justify.Center">
+
+            @foreach (var cluster in ClusterLayout.GetValues())
+            {
+                @if (cluster.AllowedWithCurrentQuery(Query))
+                {
+                    <MudButton Variant="Variant.Filled">
+                        <MudStack Spacing="1">
+                            <MudImage Width="100" Src="@cluster.Image" Alt="@cluster.Name" />
+                            <MudText Typo="Typo.body2">@cluster.Name</MudText>
+                        </MudStack>
+                    </MudButton>
+                }
+            }
+        </MudStack>
+    }
+</MudStack>
+
+
+
+@code {
+    private SearchQuery Query = new();
+
+    private ClusterCategory? SelectedClusterCategory;
+    private ClusterLayout? clusterLayout;
+
+
+
+    private WeatherForecast[]? queryResults;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Query = new();
+    }
+
+    private class WeatherForecast //filler class for seed query results
+    {
+        public DateOnly Date { get; set; }
+        public int TemperatureC { get; set; }
+        public string? Summary { get; set; }
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+}

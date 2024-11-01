@@ -1,0 +1,20 @@
+﻿@using SeedFinder.Client.Model
+@using SeedFinder.Client.Model.Search
+
+<MudText Typo="Typo.h5">Select your game version and dlcs.</MudText>
+<MudStack Row="true" Justify="Justify.Center">
+    @foreach (var dlc in Dlc.Values)
+    {
+        @if (dlc.IsMainVersion)
+        {
+            <MudButton Variant="Variant.Filled" Disabled=@Query.IsDlcSelected(dlc) OnClick="()=> Query.ToggleDlc(dlc)">
+                <MudImage Height="150" Src=@dlc.Image Alt="@dlc.Name" />
+            </MudButton>
+        }
+    }
+</MudStack>
+
+@code {
+    [Parameter]
+    public SearchQuery Query { get; set; }
+}
