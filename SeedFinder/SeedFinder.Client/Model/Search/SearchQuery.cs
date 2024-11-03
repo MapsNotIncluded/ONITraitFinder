@@ -66,10 +66,42 @@ namespace SeedFinder.Client.Model.Search
         private void InitializeAsteroidQueryParams()
         {
             AsteroidParams = new(SelectedCluster.WorldPlacements.Count);
+            bool hasFixedCoordinate = SelectedCluster.HasFixedCoordinate();
+            int fixedCoordinate = SelectedCluster.fixedCoordinate;
+
             for (int i = 0; i < SelectedCluster.WorldPlacements.Count; i++)
             {
                 var asteroid = SelectedCluster.WorldPlacements[i].Asteroid;
-                AsteroidParams.Add(asteroid,new(asteroid, i));
+                
+                AsteroidParams.Add(asteroid, new(asteroid,i));
+
+            }
+            if (hasFixedCoordinate)
+            {
+                PrefillFixedTraits(fixedCoordinate);
+            }
+        }
+
+        public void StartSearching()
+        {
+
+
+        }
+
+        public void ResetFilters()
+        {
+            foreach (var item in AsteroidParams)
+            {
+                item.Value.ResetAll();
+            }
+        }
+
+        public void PrefillFixedTraits(int seed)
+        {
+            foreach (var item in AsteroidParams)
+            {
+                //TODO
+                //prefill calculated traits for seed;
             }
         }
 

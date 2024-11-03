@@ -7,10 +7,19 @@ namespace SeedFinder.Client.Model
 {
     public class WorldTrait
     {
+        public override bool Equals(object? obj)
+        {
+            return obj is WorldTrait t && t.GetHashCode() == this.GetHashCode();
+        }
         public override string ToString()
         {
+            //return $"<img src=\"{Image}\" alt=\"{Name}\">";
             return Name;
         }
+
+        public string ImageString()=> $"<img src=\"{Image}\" alt=\"{Name}\">";
+
+        public override int GetHashCode() => Id.GetHashCode();
 
         public string Id;
         public string Name;

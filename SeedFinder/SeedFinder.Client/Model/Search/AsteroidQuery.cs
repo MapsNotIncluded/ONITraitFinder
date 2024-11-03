@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components.Forms.Mapping;
 using SeedFinder.Client.Model.KleiClasses;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace SeedFinder.Client.Model.Search
@@ -23,18 +24,19 @@ namespace SeedFinder.Client.Model.Search
             worldIndex = index;
         }
 
-        public bool CanAddGuaranteedTrait(WorldTrait trait)
-        {
-            return !Prohibit.Contains(trait);
-        }
-        public bool CanAddProhibitedTrait(WorldTrait trait)
-        {
-            return !Guarantee.Contains(trait);
-        }
+        public bool CanAddGuaranteedTrait(WorldTrait trait) => !HasProhibitedTrait(trait);
 
+        public bool CanAddProhibitedTrait(WorldTrait trait) => !HasGuaranteedTrait(trait);
+        public bool HasGuaranteedTrait(WorldTrait trait) => Guarantee.Contains(trait);
+        public bool HasProhibitedTrait(WorldTrait trait) => Prohibit.Contains(trait);
         public bool CannotHaveTraits() => targetAsteroid.DisableWorldTraits;
+        public bool HasFixedTraits() => targetAsteroid.TraitRules.Any(rule => rule.specificTraits != null && rule.specificTraits.Count > 0);
 
-
+        public void ResetAll()
+        {
+            Guarantee = new HashSet<WorldTrait>();
+            Prohibit = new HashSet<WorldTrait>();
+        }
 
         public List<WorldTrait> GetAllWorldCompatibleTraits() => DataImport.GetCompatibleTraits(targetAsteroid);
 

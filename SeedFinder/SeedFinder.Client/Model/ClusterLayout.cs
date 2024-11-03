@@ -27,6 +27,7 @@ namespace SeedFinder.Client.Model
         public int fixedCoordinate;
 
         public int startWorldIndex = 0;
+        public bool HasFixedCoordinate() => fixedCoordinate > 0;
 
         public bool DlcRequirementsFulfilled(List<Dlc> requirements) => !RequiredDlcs .Except(requirements).Any() && !ForbiddenDlcs.Intersect(requirements).Any();
 
