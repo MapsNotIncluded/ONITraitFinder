@@ -51,9 +51,8 @@ else
                     }
                 </MudStack>
             }
-            @if (Query.MainVersionSelected())
-            {
-                <!--Mode-->
+            <!--Mode-->
+            <MudStack hidden="@(!Query.MainVersionSelected())" AlignItems="AlignItems.Center">
                 <MudText Typo="Typo.h5">Select your game mode:</MudText>
                 <MudStack Row="true" Justify="Justify.Center">
                     @foreach (var mode in ClusterCategory.Values)
@@ -69,9 +68,9 @@ else
                         }
                     }
                 </MudStack>
-            }
-            @if (Query.AnyModeSelected())
-            {
+            </MudStack>
+
+            <MudContainer hidden="@(!Query.AnyModeSelected())">
                 <!--Cluster-->
                 <MudText Typo="Typo.h5">Select your Asteroid Cluster:</MudText>
                 <MudStack Row="true" Justify="Justify.Center">
@@ -93,18 +92,18 @@ else
                         }
                     </MudGrid>
                 </MudStack>
-            }
-            @if (Query.SelectedCluster != null)
-            {
+            </MudContainer>
+
+            <MudPaper hidden="@(Query?.SelectedCluster == null)">
                 <MudContainer MaxWidth="MaxWidth.ExtraLarge">
 
                     <MudPaper Class="pa-3">
                         <MudStack Row="true" Justify="Justify.Center">
-                            <MudText GutterBottom Typo="Typo.h5">Configure your @Query.SelectedCluster.Name:</MudText>
+                            <MudText GutterBottom Typo="Typo.h5">Configure your @Query?.SelectedCluster?.Name:</MudText>
                         </MudStack>
                         <MudSpacer></MudSpacer>
-                        <MudGrid Spacing="2" Justify="Justify.Center">
-                            @for (int i = 0; i < Query.SelectedCluster.WorldPlacements.Count; ++i)
+                        <MudGrid Spacing="2" Justify="Justify.Center">                            
+                            @for (int i = 0; i < Query?.SelectedCluster?.WorldPlacements.Count; ++i)
                             {
                                 int maxCount = Query.SelectedCluster.WorldPlacements.Count;
                                 var placements = Query.SelectedCluster.WorldPlacements;
@@ -122,7 +121,6 @@ else
                                             <MudStack AlignItems="AlignItems.Stretch" Spacing="1" Justify="Justify.FlexStart">
                                                 @if (isStarter)
                                                 {
-
                                                     <MudTooltip Text="Starter Asteroid" Arrow Placement="Placement.Right" Style="justify-self:center">
                                                         <ChildContent>
                                                             <MudStack Row Style="align-self:center" AlignItems="AlignItems.Center" StretchItems="StretchItems.Start" Spacing="1" Justify="Justify.Center">
@@ -157,10 +155,9 @@ else
                                                         }
                                                     </MudSelect>
                                                     <MudSelect FullWidth="true" Variant="Variant.Outlined" T=WorldTrait MultiSelection Clearable Dense Margin="Margin.Dense"
-                                                               Style="margin-top: 0; margin-bottom: 0; padding-right: 0;"
                                                                Label="Forbidden Traits"
                                                                @bind-SelectedValues="queryAsteroid.Prohibit">
-                                                        @foreach (var trait in WorldTrait.Values)
+                                                        @foreach (var trait in queryAsteroid.GetAllWorldCompatibleTraits())
                                                         {
                                                             <MudSelectItem Disabled="@(!queryAsteroid.CanAddProhibitedTrait(trait))" Value="@trait">
                                                                 <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
@@ -170,7 +167,6 @@ else
                                                             </MudSelectItem>
                                                         }
                                                     </MudSelect>
-
                                                 }
                                             </MudStack>
 
@@ -181,7 +177,7 @@ else
                         </MudGrid>
                     </MudPaper>
                 </MudContainer>
-            }
+            </MudPaper>
         </MudStack>
     </MudContainer>
 }

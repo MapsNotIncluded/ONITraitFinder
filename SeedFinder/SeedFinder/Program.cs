@@ -1,3 +1,4 @@
+using MudBlazor.Extensions;
 using MudBlazor.Services;
 using SeedFinder.Client.Pages;
 using SeedFinder.Components;
@@ -30,7 +31,7 @@ else
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
-app.UseAntiforgery();
+app.UseAntiforgery(); 
 
 app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()

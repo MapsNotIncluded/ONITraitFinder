@@ -34,36 +34,9 @@ namespace SeedFinder.Client.Model.Search
 
         public bool CannotHaveTraits() => targetAsteroid.DisableWorldTraits;
 
-        public List<WorldTrait> GetAllWorldCompatibleTraits()
-        {
-            var allTraits = new List<WorldTrait>(WorldTrait.Values);
 
 
-            if (targetAsteroid.DisableWorldTraits)
-                return new();
-
-            List<string> ExclusiveWithTags = new List<string>();
-
-            
-            if (targetAsteroid.TraitRules != null)
-            {
-                foreach (var rule in targetAsteroid.TraitRules)
-                {
-                    TagSet? requiredTags = (rule.requiredTags != null) ? new TagSet(rule.requiredTags) : null;
-                    TagSet? forbiddenTags = ((rule.forbiddenTags != null) ? new TagSet(rule.forbiddenTags) : null);
-
-                    allTraits.RemoveAll((WorldTrait trait) =>
-                          (requiredTags != null && !trait.traitTagsSet.ContainsAll(requiredTags))
-                        || (forbiddenTags != null && trait.traitTagsSet.ContainsOne(forbiddenTags))
-                        || (rule.forbiddenTraits != null && rule.forbiddenTraits.Contains(trait.Id))
-                        || !trait.IsValid(targetAsteroid, logErrors: true));
-                }
-            }
-            allTraits.RemoveAll((WorldTrait trait) => !trait.IsValid(targetAsteroid, logErrors: true)
-                );
-
-            return allTraits;
-        }
+        public List<WorldTrait> GetAllWorldCompatibleTraits() => DataImport.GetCompatibleTraits(targetAsteroid);
 
         public List<WorldTrait> GetAllCurrentlyAvailableTraits()
         {
