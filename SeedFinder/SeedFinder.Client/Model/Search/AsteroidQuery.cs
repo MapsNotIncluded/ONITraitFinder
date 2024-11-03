@@ -24,9 +24,9 @@ namespace SeedFinder.Client.Model.Search
             worldIndex = index;
         }
 
-        public bool CanAddGuaranteedTrait(WorldTrait trait) => !HasProhibitedTrait(trait);
+        public bool CanAddGuaranteedTrait(WorldTrait trait) => trait != null && !HasProhibitedTrait(trait);
 
-        public bool CanAddProhibitedTrait(WorldTrait trait) => !HasGuaranteedTrait(trait);
+        public bool CanAddProhibitedTrait(WorldTrait trait) => trait != null && !HasGuaranteedTrait(trait);
         public bool HasGuaranteedTrait(WorldTrait trait) => Guarantee.Contains(trait);
         public bool HasProhibitedTrait(WorldTrait trait) => Prohibit.Contains(trait);
         public bool CannotHaveTraits() => targetAsteroid.DisableWorldTraits;
