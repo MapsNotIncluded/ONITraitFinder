@@ -139,54 +139,73 @@ else
                                                 }
                                                 else
                                                 {
-                                                    <MudSelectExtended
-                                                               Disabled="@(queryAsteroid.HasFixedTraits()||Query.SelectedCluster.HasFixedCoordinate())"
-                                                               FullWidth="true"
-                                                               Variant="Variant.Outlined"
-                                                               T=WorldTrait
-                                                               MultiSelection
-                                                               Clearable
-                                                               Dense
-                                                               Margin="Margin.Dense"
-                                                               AnchorOrigin="Origin.BottomCenter"
-                                                               TransformOrigin="Origin.TopCenter"
-                                                               Label="Guaranteed Traits"
-                                                               Delimiter=" "
-                                                               @bind-SelectedValues="queryAsteroid.Guarantee">
 
-                                                        <MudVirtualize Items="@queryAsteroid.GetAllWorldCompatibleTraits()" Context="trait">
-                                                            <MudSelectItemExtended Disabled="@(!queryAsteroid.CanAddGuaranteedTrait(trait))" Value="@(trait)">
-                                                                <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
-                                                                    <MudImage ObjectPosition="ObjectPosition.Left" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
-                                                                    <MudText Style="@($"color:#{trait.ColorHex};")">@trait.Name</MudText>
-                                                                </MudStack>
-                                                            </MudSelectItemExtended>
+                                                    <!--Hack for visualizing traits by icon only-->
+                                                    <MudStack Row Style="height:0px; margin-top:-4px; overflow:visible" Class="pl-4 pr-4">
+                                                        <MudVirtualize Items="@queryAsteroid.Guarantee.ToList()" Context="trait">
+                                                            <MudImage Elevation="50" Style="position: relative; top: 12px" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
                                                         </MudVirtualize>
+                                                    </MudStack>
 
-                                                    </MudSelectExtended>
-                                                    <MudSelectExtended FullWidth="true"
-                                                               Disabled="@(queryAsteroid.HasFixedTraits()||Query.SelectedCluster.HasFixedCoordinate())"
-                                                               Variant="Variant.Outlined"
-                                                               T=WorldTrait
-                                                               MultiSelection
-                                                               Clearable
-                                                               Dense
-                                                               Margin="Margin.Dense"
-                                                               AnchorOrigin="Origin.BottomCenter"
-                                                               TransformOrigin="Origin.TopCenter"
-                                                               Delimiter=" "
+                                                    <MudSelect Disabled="@(queryAsteroid.HasFixedTraits()||Query.SelectedCluster.HasFixedCoordinate())"
+                                                                       FullWidth="true"
+                                                                       Variant="Variant.Outlined"
+                                                                       T=WorldTrait
+                                                                       MultiSelection
+                                                                       Clearable
+                                                                       Dense
+                                                                       Margin="Margin.Dense"
+                                                                       AnchorOrigin="Origin.BottomCenter"
+                                                                       TransformOrigin="Origin.TopCenter"
+                                                               Label="Guaranteed Traits"
+                                                               ToStringFunc="@((_)=> (queryAsteroid.Guarantee.Count()>0) ? "‎ ":string.Empty)"
+                                                               MultiSelectionTextFunc="@((_)=> (queryAsteroid.Guarantee.Count()>0) ? "‎ ":string.Empty)"
+                                                               ValuePresenter="ValuePresenter.ItemContent"
+                                                                       @bind-SelectedValues="queryAsteroid.Guarantee">
+
+                                                            <MudVirtualize Items="@queryAsteroid.GetAllWorldCompatibleTraits()" Context="trait">
+                                                                <MudSelectItem Disabled="@(!queryAsteroid.CanAddGuaranteedTrait(trait))" Value="@(trait)">
+                                                                    <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
+                                                                        <MudImage ObjectPosition="ObjectPosition.Left" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
+                                                                        <MudText Style="@($"color:#{trait.ColorHex};")">@trait.Name</MudText>
+                                                                    </MudStack>
+                                                                </MudSelectItem>
+                                                            </MudVirtualize>
+
+                                                    </MudSelect>
+
+                                                    <MudStack Row Style="height:0px; margin-top:-4px; overflow:visible" Class="pl-4 pr-4">
+                                                        <MudVirtualize Items="@queryAsteroid.Prohibit.ToList()" Context="trait">
+                                                            <MudImage Elevation="50" Style="position: relative; top: 12px" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
+                                                        </MudVirtualize>
+                                                    </MudStack>
+
+
+                                                    <MudSelect FullWidth="true"
+                                                                       Disabled="@(queryAsteroid.HasFixedTraits()||Query.SelectedCluster.HasFixedCoordinate())"
+                                                                       Variant="Variant.Outlined"
+                                                                       T=WorldTrait
+                                                                       MultiSelection
+                                                                       
+                                                                       Dense
+                                                                       Margin="Margin.Dense"
+                                                                       AnchorOrigin="Origin.BottomCenter"
+                                                                       TransformOrigin="Origin.TopCenter"
                                                                Label="Forbidden Traits"
+                                                               Clearable
+                                                               ToStringFunc="@((_)=> (queryAsteroid.Prohibit.Count()>0) ? "‎ ":string.Empty)"
+                                                               MultiSelectionTextFunc="@((_)=> (queryAsteroid.Prohibit.Count()>0) ? "‎ ":string.Empty)"
                                                                @bind-SelectedValues="queryAsteroid.Prohibit">
 
                                                         <MudVirtualize Items="@queryAsteroid.GetAllWorldCompatibleTraits()" Context="trait">
-                                                            <MudSelectItemExtended Disabled="@(!queryAsteroid.CanAddProhibitedTrait(trait))" Value="@(trait)">
+                                                            <MudSelectItem Disabled="@(!queryAsteroid.CanAddProhibitedTrait(trait))" Value="@(trait)">
                                                                 <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
                                                                     <MudImage ObjectPosition="ObjectPosition.Left" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
                                                                     <MudText Style="@($"color:#{trait.ColorHex};")">@trait.Name</MudText>
                                                                 </MudStack>
-                                                            </MudSelectItemExtended>
+                                                            </MudSelectItem>
                                                         </MudVirtualize>
-                                                    </MudSelectExtended>
+                                                    </MudSelect>
                                                 }
                                             </MudStack>
 
@@ -229,8 +248,8 @@ else
     }
     public void SelectCluster(ClusterLayout cluster)
     {
-        if(cluster.HasFixedCoordinate())
-        Snackbar.Add("This cluster always generates the same!", Severity.Warning);
+        if (cluster.HasFixedCoordinate())
+            Snackbar.Add("This cluster always generates the same!", Severity.Warning);
 
         Query.SelectCluster(cluster);
     }

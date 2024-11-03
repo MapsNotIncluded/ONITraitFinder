@@ -13,6 +13,7 @@ namespace SeedFinder.Client.Model
         }
         public override string ToString()
         {
+            return string.Empty;
             //return $"<img src=\"{Image}\" alt=\"{Name}\">";
             return Name;
         }
