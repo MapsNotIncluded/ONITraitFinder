@@ -7,6 +7,8 @@
         public string Image;
         public bool DisableWorldTraits = false;
         public List<WorldTraitRule>? TraitRules;
+        public float worldTraitScale = 1.0f;
+
         public Asteroid(string _id, string _name, string _image, List<WorldTraitRule> _rules)
         {
             Id = _id;

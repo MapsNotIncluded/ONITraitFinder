@@ -2,6 +2,20 @@
 @using SeedFinder.Client.Model
 @using SeedFinder.Client.Model.Search
 
+<style>
+    .mud-tooltip-root {
+        align-self: center !important;
+        justify-self: center !important;
+    }
+
+    .mud-input-control {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 0 !important;
+    }
+</style>
+
+
 @if (!DataInitialized)
 {
     <MudStack Spacing="3" AlignItems="AlignItems.Center">
@@ -71,7 +85,7 @@ else
                                     <MudButton Variant="Variant.Filled" Disabled=@Query.IsClusterSelected(cluster) OnClick="()=> Query.SelectCluster(cluster)">
                                         <MudStack Spacing="1" AlignItems="AlignItems.Center">
                                             <MudImage ObjectFit="ObjectFit.Contain" Width="110" Height="110" Src="@cluster.Image" Alt="@cluster.Name" />
-                                            <MudText Align="Align.Center" Style="width: 106px; overflow-wrap:break-word;max-width:108px;height:40px; text-align: center;" Typo="Typo.body2">@cluster.DisplayName</MudText>
+                                            <MudText Align="Align.Center" Style="width: 106px; overflow-wrap:break-word;max-width:108px;height:40px; text-align: center; vertical-align:central" Typo="Typo.body2">@cluster.DisplayName</MudText>
                                         </MudStack>
                                     </MudButton>
                                 </MudItem>
@@ -82,23 +96,89 @@ else
             }
             @if (Query.SelectedCluster != null)
             {
-                <MudContainer>
-                    <MudPaper>
-                        <MudText Typo="Typo.h5">Configure your @Query.SelectedCluster.Name:</MudText>
-                        @foreach (var asteroidPlacement in Query.SelectedCluster.WorldPlacements)
-                        {
-                            var world = asteroidPlacement.Asteroid;
+                <MudContainer MaxWidth="MaxWidth.ExtraLarge">
 
-                            <MudItem>
-                                <MudButton Variant="Variant.Filled">
-                                    <MudStack Spacing="1" AlignItems="AlignItems.Center">
-                                        <MudImage ObjectFit="ObjectFit.Contain" Width="110" Height="110" Src="@world.Image" Alt="@world.Name" />
-                                        <MudText Align="Align.Center" Style="width: 106px; overflow-wrap:break-word;max-width:108px;height:40px; text-align: center;" Typo="Typo.body2">@world.Name</MudText>
-                                    </MudStack>
-                                </MudButton>
-                            </MudItem>
+                    <MudPaper Class="pa-3">
+                        <MudStack Row="true" Justify="Justify.Center">
+                            <MudText GutterBottom Typo="Typo.h5">Configure your @Query.SelectedCluster.Name:</MudText>
+                        </MudStack>
+                        <MudSpacer></MudSpacer>
+                        <MudGrid Spacing="2" Justify="Justify.Center">
+                            @for (int i = 0; i < Query.SelectedCluster.WorldPlacements.Count; ++i)
+                            {
+                                int maxCount = Query.SelectedCluster.WorldPlacements.Count;
+                                var placements = Query.SelectedCluster.WorldPlacements;
+                                bool isStarter = i == Query.SelectedCluster.startWorldIndex && maxCount > 1; //no extra starter marking in base game
+                                var world = placements[i].Asteroid;
+                                string starterColor = isStarter ? "#904600" : "#0f0f0f";
+                                var queryAsteroid = Query.AsteroidParams[world];
 
-                        }
+
+                                <MudItem>
+                                    <MudPaper MinHeight="110px" MinWidth="300px" Elevation="90" Outlined Class="pa-2">
+                                        <MudStack Spacing="1" AlignItems="AlignItems.Start" Row Style="width:410px;" StretchItems="StretchItems.End">
+                                            <MudImage ObjectFit="ObjectFit.Contain" Width="120" Height="120" Src="@world.Image" Alt="@world.Name" />
+
+                                            <MudStack AlignItems="AlignItems.Stretch" Spacing="1" Justify="Justify.FlexStart">
+                                                @if (isStarter)
+                                                {
+
+                                                    <MudTooltip Text="Starter Asteroid" Arrow Placement="Placement.Right" Style="justify-self:center">
+                                                        <ChildContent>
+                                                            <MudStack Row Style="align-self:center" AlignItems="AlignItems.Center" StretchItems="StretchItems.Start" Spacing="1" Justify="Justify.Center">
+                                                                <MudText Align="Align.Center" Typo="Typo.h6" Style="text-overflow:ellipsis; white-space: nowrap;">@world.Name</MudText>
+                                                                <MudImage ObjectPosition="ObjectPosition.Center" Src="icons/printingpod.ico" Width="30" Height="30" ObjectFit="ObjectFit.Contain"></MudImage>
+                                                            </MudStack>
+                                                        </ChildContent>
+
+                                                    </MudTooltip>
+                                                }
+                                                else
+                                                {
+                                                    <MudText Align="Align.Center" Typo="Typo.h6" Style="text-overflow:ellipsis; white-space: nowrap;">@world.Name</MudText>
+                                                }
+                                                @if (queryAsteroid.CannotHaveTraits())
+                                                {
+                                                    <MudText Align="Align.Center" Typo="Typo.body1">This asteroid cannot generate any traits.</MudText>
+                                                }
+                                                else
+                                                {
+                                                    <MudSelect FullWidth="true" Variant="Variant.Outlined" T=WorldTrait MultiSelection Clearable Dense Margin="Margin.Dense"
+                                                               Label="Guaranteed Traits"
+                                                               @bind-SelectedValues="queryAsteroid.Guarantee">
+                                                        @foreach (var trait in queryAsteroid.GetAllWorldCompatibleTraits())
+                                                        {
+                                                            <MudSelectItem Disabled="@(!queryAsteroid.CanAddGuaranteedTrait(trait))" Value="@trait">
+                                                                <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
+                                                                    <MudImage ObjectPosition="ObjectPosition.Left" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
+                                                                    <MudText>@trait.Name</MudText>
+                                                                </MudStack>
+                                                            </MudSelectItem>
+                                                        }
+                                                    </MudSelect>
+                                                    <MudSelect FullWidth="true" Variant="Variant.Outlined" T=WorldTrait MultiSelection Clearable Dense Margin="Margin.Dense"
+                                                               Style="margin-top: 0; margin-bottom: 0; padding-right: 0;"
+                                                               Label="Forbidden Traits"
+                                                               @bind-SelectedValues="queryAsteroid.Prohibit">
+                                                        @foreach (var trait in WorldTrait.Values)
+                                                        {
+                                                            <MudSelectItem Disabled="@(!queryAsteroid.CanAddProhibitedTrait(trait))" Value="@trait">
+                                                                <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
+                                                                    <MudImage ObjectPosition="ObjectPosition.Left" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
+                                                                    <MudText>@trait.Name</MudText>
+                                                                </MudStack>
+                                                            </MudSelectItem>
+                                                        }
+                                                    </MudSelect>
+
+                                                }
+                                            </MudStack>
+
+                                        </MudStack>
+                                    </MudPaper>
+                                </MudItem>
+                            }
+                        </MudGrid>
                     </MudPaper>
                 </MudContainer>
             }
@@ -116,9 +196,6 @@ else
     private ClusterLayout? clusterLayout;
 
 
-
-    private WeatherForecast[]? queryResults;
-
     protected override void OnInitialized()
     {
         base.OnInitialized();
@@ -128,13 +205,5 @@ else
     {
         if (DataImport.ImportGameData(true))
             DataInitialized = true;
-    }
-
-    private class WeatherForecast //filler class for seed query results
-    {
-        public DateOnly Date { get; set; }
-        public int TemperatureC { get; set; }
-        public string? Summary { get; set; }
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
     }
 }

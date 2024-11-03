@@ -1,4 +1,5 @@
-﻿namespace SeedFinder.Client.Model.Search
+﻿
+namespace SeedFinder.Client.Model.Search
 {
     public class SearchQuery
     {
@@ -6,8 +7,9 @@
         public ClusterCategory? ActiveMode;
         public ClusterLayout? SelectedCluster;
 
+        public Dictionary<Asteroid,AsteroidQuery> AsteroidParams;
 
-        
+
 
         #region dlc
 
@@ -21,7 +23,7 @@
 
             if (dlc.IsMainVersion)
                 ActiveMode = null;
-            if (dlc.IsMainVersion || (SelectedCluster?.RequiredDlcs.Contains(dlc)?? false) || (SelectedCluster?.ForbiddenDlcs.Contains(dlc)??false))
+            if (dlc.IsMainVersion || (SelectedCluster?.RequiredDlcs.Contains(dlc) ?? false) || (SelectedCluster?.ForbiddenDlcs.Contains(dlc) ?? false))
                 SelectedCluster = null;
 
             if (enable && !IsDlcSelected(dlc))
@@ -55,9 +57,34 @@
         public bool IsModeSelected(ClusterCategory mode) => ActiveMode == mode;
         public bool AnyModeSelected() => ActiveMode != null;
 
-        public void SelectCluster(ClusterLayout cluster) => SelectedCluster = cluster;
+        public void SelectCluster(ClusterLayout cluster)
+        {
+            SelectedCluster = cluster;
+            InitializeAsteroidQueryParams();
+        }
+
+        private void InitializeAsteroidQueryParams()
+        {
+            AsteroidParams = new(SelectedCluster.WorldPlacements.Count);
+            for (int i = 0; i < SelectedCluster.WorldPlacements.Count; i++)
+            {
+                var asteroid = SelectedCluster.WorldPlacements[i].Asteroid;
+                AsteroidParams.Add(asteroid,new(asteroid, i));
+            }
+        }
+
         public bool IsClusterSelected(ClusterLayout cluster) => SelectedCluster == cluster;
         public bool AnyClusterSelected() => SelectedCluster != null;
+
+
+        public bool CanAsteroidHaveTrait(Asteroid asteroid, WorldTrait trait)
+        {
+            return false;
+        }
+        public bool AsteroidHasTraitQueried(Asteroid asteroid, WorldTrait trait)
+        {
+            return true;
+        }
 
     }
 }
