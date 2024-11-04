@@ -7,6 +7,9 @@
         public string Image;
         public bool DisableWorldTraits = false;
         public List<WorldTraitRule>? TraitRules;
+        //all asteroids have only one trait rule (atm)
+        public WorldTraitRule TraitRule => TraitRules.FirstOrDefault();
+
         public float worldTraitScale = 1.0f;
 
         public Asteroid(string _id, string _name, string _image, List<WorldTraitRule> _rules)

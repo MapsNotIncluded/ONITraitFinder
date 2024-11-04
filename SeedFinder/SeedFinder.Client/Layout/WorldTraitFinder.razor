@@ -139,13 +139,14 @@ else
                                                 }
                                                 else
                                                 {
-
                                                     <!--Hack for visualizing traits by icon only-->
                                                     <MudStack Row Style="height:0px; margin-top:-4px; overflow:visible" Class="pl-4 pr-4">
                                                         <MudVirtualize Items="@queryAsteroid.Guarantee.ToList()" Context="trait">
                                                             <MudImage Elevation="50" Style="position: relative; top: 12px" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
                                                         </MudVirtualize>
                                                     </MudStack>
+
+                                                    <!--actual select for guaranteed traits-->
 
                                                     <MudSelect Disabled="@(queryAsteroid.HasFixedTraits()||Query.SelectedCluster.HasFixedCoordinate())"
                                                                        FullWidth="true"
@@ -160,11 +161,10 @@ else
                                                                Label="Guaranteed Traits"
                                                                ToStringFunc="@((_)=> (queryAsteroid.Guarantee.Count()>0) ? "‎ ":string.Empty)"
                                                                MultiSelectionTextFunc="@((_)=> (queryAsteroid.Guarantee.Count()>0) ? "‎ ":string.Empty)"
-                                                               ValuePresenter="ValuePresenter.ItemContent"
                                                                        @bind-SelectedValues="queryAsteroid.Guarantee">
 
                                                             <MudVirtualize Items="@queryAsteroid.GetAllWorldCompatibleTraits()" Context="trait">
-                                                                <MudSelectItem Disabled="@(!queryAsteroid.CanAddGuaranteedTrait(trait))" Value="@(trait)">
+                                                                <MudSelectItem Disabled="@(!queryAsteroid.CanToggleGuaranteedTrait(trait))" Value="@(trait)">
                                                                     <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
                                                                         <MudImage ObjectPosition="ObjectPosition.Left" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
                                                                         <MudText Style="@($"color:#{trait.ColorHex};")">@trait.Name</MudText>
@@ -174,13 +174,21 @@ else
 
                                                     </MudSelect>
 
-                                                    <MudStack Row Style="height:0px; margin-top:-4px; overflow:visible" Class="pl-4 pr-4">
+                                                    <!--Hack for visualizing traits by icon only-->
+                                                    <MudStack Row Style="height:0px; margin-top:-4px; overflow-y:visible; max-width=286px" Justify="Justify.FlexStart" Class="pl-4 pr-4" Spacing="0">
                                                         <MudVirtualize Items="@queryAsteroid.Prohibit.ToList()" Context="trait">
-                                                            <MudImage Elevation="50" Style="position: relative; top: 12px" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
+                                                            @{
+                                                                int marginAdjustment = -(24 - (210 / queryAsteroid.Prohibit.Count()-1));
+                                                                if (marginAdjustment > 1)
+                                                                    marginAdjustment = 4;
+                                                            }
+
+                                                            <MudImage Elevation="50" Style="@($"position:relative; top:12px; margin-right:{marginAdjustment}px")" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
                                                         </MudVirtualize>
                                                     </MudStack>
 
 
+                                                    <!--actual select for prohibited traits-->
                                                     <MudSelect FullWidth="true"
                                                                        Disabled="@(queryAsteroid.HasFixedTraits()||Query.SelectedCluster.HasFixedCoordinate())"
                                                                        Variant="Variant.Outlined"
@@ -198,7 +206,7 @@ else
                                                                @bind-SelectedValues="queryAsteroid.Prohibit">
 
                                                         <MudVirtualize Items="@queryAsteroid.GetAllWorldCompatibleTraits()" Context="trait">
-                                                            <MudSelectItem Disabled="@(!queryAsteroid.CanAddProhibitedTrait(trait))" Value="@(trait)">
+                                                            <MudSelectItem Disabled="@(!queryAsteroid.CanToggleProhibitedTrait(trait))" Value="@(trait)">
                                                                 <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
                                                                     <MudImage ObjectPosition="ObjectPosition.Left" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
                                                                     <MudText Style="@($"color:#{trait.ColorHex};")">@trait.Name</MudText>

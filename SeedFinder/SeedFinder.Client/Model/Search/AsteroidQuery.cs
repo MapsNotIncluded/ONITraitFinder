@@ -12,9 +12,23 @@ namespace SeedFinder.Client.Model.Search
         int worldIndex;
         Asteroid targetAsteroid;
 
-        public IEnumerable<WorldTrait> Guarantee { get; set; }
+        public IEnumerable<WorldTrait> Guarantee { get =>_guarantee; set {
+                _guarantee = value;
+                Console.WriteLine("Guarantee changed");
+                ReevaluateAvailableTraits();
+            } }
 
-        public IEnumerable<WorldTrait> Prohibit { get; set; }
+        private IEnumerable<WorldTrait> _guarantee = new HashSet<WorldTrait>();
+
+        public IEnumerable<WorldTrait> Prohibit { 
+            get => _prohibit; 
+            set {
+                _prohibit = value;
+                Console.WriteLine("Prohibited changed");
+                ReevaluateAvailableTraits();
+            }
+        }
+        private IEnumerable<WorldTrait> _prohibit = new HashSet<WorldTrait>();
 
         public AsteroidQuery(Asteroid target, int index)
         {
@@ -24,13 +38,25 @@ namespace SeedFinder.Client.Model.Search
             worldIndex = index;
         }
 
-        public bool CanAddGuaranteedTrait(WorldTrait trait) => trait != null && !HasProhibitedTrait(trait);
+        public bool CanToggleGuaranteedTrait(WorldTrait trait)
+        {
+            if (HasGuaranteedTrait(trait))
+                return true;
+            else
+            {
+               return !HasProhibitedTrait(trait)
+               && Guarantee.Count() < targetAsteroid.TraitRule.max
+               && AvailableTraits.Contains(trait);
+            }
+        
+        
+        }
 
-        public bool CanAddProhibitedTrait(WorldTrait trait) => trait != null && !HasGuaranteedTrait(trait);
+        public bool CanToggleProhibitedTrait(WorldTrait trait) => trait != null && !HasGuaranteedTrait(trait);
         public bool HasGuaranteedTrait(WorldTrait trait) => Guarantee.Contains(trait);
         public bool HasProhibitedTrait(WorldTrait trait) => Prohibit.Contains(trait);
         public bool CannotHaveTraits() => targetAsteroid.DisableWorldTraits;
-        public bool HasFixedTraits() => targetAsteroid.TraitRules.Any(rule => rule.specificTraits != null && rule.specificTraits.Count > 0);
+        public bool HasFixedTraits() => targetAsteroid.TraitRule.specificTraits != null && targetAsteroid.TraitRule.specificTraits.Count > 0;
 
         public void ResetAll()
         {
@@ -39,10 +65,19 @@ namespace SeedFinder.Client.Model.Search
         }
 
         public List<WorldTrait> GetAllWorldCompatibleTraits() => DataImport.GetCompatibleTraits(targetAsteroid);
+        private HashSet<WorldTrait> _availableTraits = new();
+        public HashSet<WorldTrait> AvailableTraits => _availableTraits;
 
-        public List<WorldTrait> GetAllCurrentlyAvailableTraits()
+
+        public void ReevaluateAvailableTraits()
         {
-            var allTraits = WorldTrait.Values;
+            _availableTraits = GetAllCurrentlyAvailableTraits();
+        }
+
+
+        public HashSet<WorldTrait> GetAllCurrentlyAvailableTraits()
+        {
+            var allTraits = new List<WorldTrait>(GetAllWorldCompatibleTraits());
 
             var allSelected = Guarantee.Concat(Prohibit);
 
@@ -65,8 +100,7 @@ namespace SeedFinder.Client.Model.Search
                     allTraits.RemoveAll((WorldTrait trait) =>
                         (requiredTags != null && !trait.traitTagsSet.ContainsAll(requiredTags))
                         || (forbiddenTags != null && trait.traitTagsSet.ContainsOne(forbiddenTags))
-                        || (rule.forbiddenTraits != null && rule.forbiddenTraits.Contains(trait.Id))
-                        || !trait.IsValid(targetAsteroid, logErrors: true));
+                        || (rule.forbiddenTraits != null && rule.forbiddenTraits.Contains(trait.Id)));
                 }
             }
             allTraits.RemoveAll((WorldTrait trait) =>
@@ -76,7 +110,7 @@ namespace SeedFinder.Client.Model.Search
                 || trait.exclusiveWith.Any(x => allSelected.Any(y => y.Id == x))
                 );
 
-            return allTraits;
+            return allTraits.ToHashSet();
         }
     }
 }
