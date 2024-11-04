@@ -1,6 +1,10 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
+      "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
+      "url": ".nojekyll"
+    },
+    {
       "hash": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=",
       "url": "favicon.png"
     },
@@ -441,16 +445,36 @@
       "url": "images\/asteroids\/WaterMoonlet.png"
     },
     {
+      "hash": "sha256-q95X6VhU46jQ1LnMn8MdZKHReGW+Mdww2EN+ynJPH+o=",
+      "url": "images\/gamemodes\/gamemode_basegame_standard.png"
+    },
+    {
+      "hash": "sha256-YIAXjrKv5S+F9F+J16+Ej+hrwJYx446nI+rIgo28j\/c=",
+      "url": "images\/gamemodes\/gamemode_basegame_thelab.png"
+    },
+    {
+      "hash": "sha256-kcIc5CUyX0hf8iK2b3pb+IzDzHBX+gYCdSXaHe89Ixg=",
+      "url": "images\/gamemodes\/gamemode_spacedout_classic.png"
+    },
+    {
+      "hash": "sha256-rLB\/Bvd2WYRem+o0QG9SGaUGCKkIDi11VFGgwjPe\/8I=",
+      "url": "images\/gamemodes\/gamemode_spacedout_spacedout.png"
+    },
+    {
+      "hash": "sha256-0br9NmuJyxlHmhUAcNdXyWJxmGbdCJ9DXflko1O+cg8=",
+      "url": "images\/gamemodes\/gamemode_spacedout_thelab.png"
+    },
+    {
       "hash": "sha256-06dinl0oCmCvNitckhYtTlfyxmEJkO60w\/5IyoRoa\/o=",
-      "url": "images\/logo_frosty_planet_banner.webp"
+      "url": "images\/logos\/logo_frosty_planet_banner.webp"
     },
     {
       "hash": "sha256-g9avJXfMANAeGOqXSlv\/dESEm9ATq3EUax3lMKXPPOE=",
-      "url": "images\/logo_oni.png"
+      "url": "images\/logos\/logo_oni.png"
     },
     {
       "hash": "sha256-JYz6oJe0vvLRET8t+rHGW0v4\/y9H7wQmcTxu2n7QKTA=",
-      "url": "images\/logo_spaced_out.png"
+      "url": "images\/logos\/logo_spaced_out.png"
     },
     {
       "hash": "sha256-FR\/EPJkVDsLbLSbqD9ZMBrIA\/MxkhXraAiT\/tlBxCmg=",
@@ -581,7 +605,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-Kel\/qhLsQ8O8wC5UKX1vKZTHiFiuu7h9ysCcbJJKTmg=",
+      "hash": "sha256-5\/r0SaMUdz3+mfDv0s3QGgjGIYu2wnhmZAzgF7P03Os=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -589,7 +613,7 @@
       "url": "_framework\/dotnet.native.8.0.10.jz7h903wkl.js"
     },
     {
-      "hash": "sha256-zuMBf5fUv6ftAB4DHANG3XyfrQKrTXwK+JHx8Mpsm7o=",
+      "hash": "sha256-7RfUdii5L4BHubyN+eRJS0wttPeM4X4q6IkpR2jbIBo=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -673,7 +697,7 @@
       "url": "_framework\/Newtonsoft.Json.wasm"
     },
     {
-      "hash": "sha256-OGx\/oMbtPpPBO7C\/48Tt8VCYyT+hU\/LmN1FUI7h6t0c=",
+      "hash": "sha256-R1oyKfdcGY+5mQl2yH5PBvQBqaVlX+Dptu5mpLkWxN4=",
       "url": "_framework\/SeedFinderApp.wasm"
     },
     {
@@ -865,5 +889,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "2uEr8KZh"
+  "version": "vC8Iqh89"
 };

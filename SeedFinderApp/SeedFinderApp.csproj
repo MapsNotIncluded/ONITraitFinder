@@ -38,7 +38,7 @@
     <None Include="wwwroot\images\gamemodes\gamemode_spacedout_thelab.png" />
   </ItemGroup>
 
-  <Target Name="CopyToDocsFolder" AfterTargets="Publish">
+  <Target Name="CopyToDocsFolder" AfterTargets="AfterPublish">
 
     <Message Text="Executing Copy-to-docs task" Importance="High" />
 
@@ -46,7 +46,8 @@
     <ItemGroup>
       <WasmAppFiles Include="$(ProjectDir)$(PublishUrl)wwwroot\**\*.*" />
     </ItemGroup>
-    
+
+    <Message Text="file count: @(WasmFiles->Count())" Importance="High"></Message>
     <Message Text="Copy WasmAppFiles to $(SolutionDir)docs\" Importance="High"></Message>
 
     <Copy SourceFiles="@(WasmAppFiles)" DestinationFolder="$(SolutionDir)docs\%(RecursiveDir)" SkipUnchangedFiles="false" />
