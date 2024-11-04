@@ -14,7 +14,7 @@ namespace SeedFinderApp.Client.Model.Search
 
         public IEnumerable<WorldTrait> Guarantee { get =>_guarantee; set {
                 _guarantee = value;
-                Console.WriteLine("Guarantee changed");
+                //Console.WriteLine("Guarantee changed");
                 ReevaluateAvailableTraits();
             } }
 
@@ -24,7 +24,7 @@ namespace SeedFinderApp.Client.Model.Search
             get => _prohibit; 
             set {
                 _prohibit = value;
-                Console.WriteLine("Prohibited changed");
+                //Console.WriteLine("Prohibited changed");
                 ReevaluateAvailableTraits();
             }
         }

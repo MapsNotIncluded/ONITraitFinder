@@ -31,11 +31,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\images\gamemode_basegame_standard.png" />
-    <None Include="wwwroot\images\gamemode_basegame_thelab.png" />
-    <None Include="wwwroot\images\gamemode_spacedout_classic.png" />
-    <None Include="wwwroot\images\gamemode_spacedout_spacedout.png" />
-    <None Include="wwwroot\images\gamemode_spacedout_thelab.png" />
+    <None Include="wwwroot\images\gamemodes\gamemode_basegame_standard.png" />
+    <None Include="wwwroot\images\gamemodes\gamemode_basegame_thelab.png" />
+    <None Include="wwwroot\images\gamemodes\gamemode_spacedout_classic.png" />
+    <None Include="wwwroot\images\gamemodes\gamemode_spacedout_spacedout.png" />
+    <None Include="wwwroot\images\gamemodes\gamemode_spacedout_thelab.png" />
   </ItemGroup>
 
   <Target Name="CopyToDocsFolder" AfterTargets="Publish">
