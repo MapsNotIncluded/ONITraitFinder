@@ -1,6 +1,6 @@
-﻿using SeedFinderApp.Client.Model.Search;
+﻿using TraitFinderApp.Client.Model.Search;
 
-namespace SeedFinderApp.Client.Model
+namespace TraitFinderApp.Client.Model
 {
     public class ClusterLayout
     {

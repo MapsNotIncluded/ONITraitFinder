@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 
-namespace SeedFinderApp.Client.Model.KleiClasses
+namespace TraitFinderApp.Client.Model.KleiClasses
 {
     /// <summary>
     ///  not an actual class, use the commented out part in any oni mod to generate an updated json data export for the DataImport class

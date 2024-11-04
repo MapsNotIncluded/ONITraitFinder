@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms.Mapping;
-using SeedFinderApp.Client.Model.KleiClasses;
+using TraitFinderApp.Client.Model.KleiClasses;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace SeedFinderApp.Client.Model.Search
+namespace TraitFinderApp.Client.Model.Search
 {
     public class AsteroidQuery
     {

@@ -1,4 +1,4 @@
-﻿namespace SeedFinderApp.Client.Model
+﻿namespace TraitFinderApp.Client.Model
 {
     public class Asteroid
     {

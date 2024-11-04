@@ -1,4 +1,4 @@
-﻿namespace SeedFinderApp.Client.Model.KleiClasses
+﻿namespace TraitFinderApp.Client.Model.KleiClasses
 {
     using System;
     using System.Linq;

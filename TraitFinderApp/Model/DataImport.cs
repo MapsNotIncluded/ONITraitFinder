@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
-using SeedFinderApp.Client.Model.KleiClasses;
+using TraitFinderApp.Client.Model.KleiClasses;
 
-namespace SeedFinderApp.Client.Model
+namespace TraitFinderApp.Client.Model
 {
     public class DataImport
     {

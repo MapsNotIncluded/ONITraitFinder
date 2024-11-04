@@ -1,6 +1,6 @@
 {
-  "name": "SeedFinderApp",
-  "short_name": "SeedFinderApp",
+  "name": "TraitFinderApp",
+  "short_name": "TraitFinderApp",
   "id": "./",
   "start_url": "./",
   "display": "standalone",

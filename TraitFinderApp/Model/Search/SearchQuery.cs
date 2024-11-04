@@ -1,5 +1,5 @@
 ﻿
-namespace SeedFinderApp.Client.Model.Search
+namespace TraitFinderApp.Client.Model.Search
 {
     public class SearchQuery
     {

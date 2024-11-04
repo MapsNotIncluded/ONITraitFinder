@@ -1,7 +1,7 @@
-﻿using SeedFinderApp.Client.Model.Search;
+﻿using TraitFinderApp.Client.Model.Search;
 using static MudBlazor.Icons.Custom;
 
-namespace SeedFinderApp.Client.Model
+namespace TraitFinderApp.Client.Model
 {
     public class ClusterCategory
     {

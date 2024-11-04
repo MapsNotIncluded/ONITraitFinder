@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace SeedFinderApp.Client.Model.KleiClasses
+namespace TraitFinderApp.Client.Model.KleiClasses
 {
     public class TagSet : ICollection<Tag>, IEnumerable<Tag>, IEnumerable, ICollection
     {

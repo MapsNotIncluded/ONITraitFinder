@@ -1,9 +1,9 @@
 ﻿using static MudBlazor.CategoryTypes;
 using System.Xml.Linq;
-using SeedFinderApp.Client.Model.KleiClasses;
+using TraitFinderApp.Client.Model.KleiClasses;
 using System;
 
-namespace SeedFinderApp.Client.Model
+namespace TraitFinderApp.Client.Model
 {
     public class WorldTrait
     {
