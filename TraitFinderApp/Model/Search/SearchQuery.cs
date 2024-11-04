@@ -1,4 +1,6 @@
 ﻿
+using TraitFinderApp.Model.Search;
+
 namespace TraitFinderApp.Client.Model.Search
 {
     public class SearchQuery
@@ -9,6 +11,7 @@ namespace TraitFinderApp.Client.Model.Search
 
         public Dictionary<Asteroid,AsteroidQuery> AsteroidParams;
 
+        public IEnumerable<QueryResult> QueryResults;
 
 
         #region dlc
@@ -94,6 +97,7 @@ namespace TraitFinderApp.Client.Model.Search
             {
                 item.Value.ResetAll();
             }
+
         }
 
         public void PrefillFixedTraits(int seed)

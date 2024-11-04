@@ -18,14 +18,14 @@ namespace TraitFinderApp.Client.Model
             return Name;
         }
 
-        public string ImageString()=> $"<img src=\"{Image}\" alt=\"{Name}\">";
+        public string ImageString()=> $"<img src=\"{Image}\" alt=\"{Name}\" style=\"width:24px; height:24px;\">";
 
         public override int GetHashCode() => Id.GetHashCode();
 
         public string Id;
         public string Name;
         public string ColorHex;
-        public string Image=>"images/traits/"+Path.GetFileName(Id)+".png";
+        public string Image=> "./images/traits/" + Path.GetFileName(Id)+".png";
         public List<string> forbiddenDLCIds, exclusiveWith, exclusiveWithTags, traitTags;
         public Dictionary<string, int> globalFeatureMods { get; set; }
         public TagSet traitTagsSet

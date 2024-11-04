@@ -86,42 +86,81 @@ namespace TraitFinderApp.Client.Model
             var cluster = searchQuery.SelectedCluster;
 
             List<Asteroid> asteroids = new(searchQuery.SelectedCluster.WorldPlacements.Count);
-            List<HashSet<WorldTrait>> asteroidsRequiredTraits = new();
-            List<HashSet<WorldTrait>> asteroidsForbiddenTraits = new();
 
             List<QueryResult> results = new List<QueryResult>(4);
 
             foreach (var worldPlacement in cluster.WorldPlacements)
             {
                 asteroids.Add(worldPlacement.Asteroid);
-                if (searchQuery.AsteroidParams.TryGetValue(worldPlacement.Asteroid, out var asteroidParams))
-                {
-                    asteroidsRequiredTraits.Add(asteroidParams.Guarantee.ToHashSet());
-                    asteroidsForbiddenTraits.Add(asteroidParams.Prohibit.ToHashSet());
-                }
             }
-            int queryableRange = startSeed + 10;
+            int queryableRange = startSeed + 1000;
 
             Console.WriteLine(cluster.Name);
-            while (startSeed < queryableRange || results.Count >= 4)
+            int asteroidCount = asteroids.Count;
+
+            Dictionary<Asteroid, List<WorldTrait>> TraitStorage = new(asteroidCount);
+
+            while (startSeed < queryableRange || results.Count < 4)
             {
-                Console.WriteLine("current seed check: "+startSeed);
-                int localSeed = startSeed;
+                int localSeed = 0;
+                Console.Write("Checking seed: "+startSeed);
                 foreach (var asteroid in asteroids)
                 {
-                    var traits = GetAsteroidTraitsForSeed(asteroid, localSeed);
+                    var traits = GetAsteroidTraitsForSeed(asteroid, startSeed+localSeed);
+                    TraitStorage[asteroid] = traits;
 
-                    Console.Write(asteroid.Name+": ");
-                    foreach (var trait in traits) 
-                    { 
-                        Console.Write(trait.Name);
+
+                    if (searchQuery.AsteroidParams.TryGetValue(asteroid, out var asteroidParams))
+                    {
+                        bool requiredTraitsFulfilled = !asteroidParams.Guarantee.Except(traits).Any();
+                        if (!requiredTraitsFulfilled)
+                        {
+                            //not all guaranteed traits are in asteroid
+                            Console.WriteLine("not all required traits fulfilled!");
+                            break;
+                        }
+                        bool prohibitedTraitsFulfilled = !asteroidParams.Prohibit.Intersect(traits).Any();
+                        if (!prohibitedTraitsFulfilled)
+                        {
+                            //asteroid had prohibited traits
+                            Console.WriteLine("prohibited traits found");
+                            break;
+                        }
                     }
-                    Console.WriteLine();
-
-                    if(startSeed>0)
+                    if(startSeed > 0) //0 seed always generates all asteroids with no traits
                         ++localSeed;
                 }
+
                 ++startSeed;
+                if (localSeed < asteroidCount) //some asteroids were canceled, checking next
+                {
+                    continue;
+                }
+
+
+                Console.WriteLine("seed fulfilled requirements!");
+
+                foreach(var kvp in TraitStorage)
+                {
+                    Console.Write(kvp.Key.Name + ": ");
+                    foreach(var trait in kvp.Value)
+                    {
+                        Console.Write(trait.Name + " ");
+                    }
+                    Console.WriteLine();
+                }
+
+                var asteroidQueryResults = new List<QueryAsteroidResult>(asteroidCount);
+                    
+                foreach (var kvp in TraitStorage)
+                {
+                    asteroidQueryResults.Add(new(kvp.Key, new(kvp.Value)));
+                }
+
+                results.Add(new()
+                {
+                    asteroidsWithTraits = asteroidQueryResults
+                });
             }
         }
 
