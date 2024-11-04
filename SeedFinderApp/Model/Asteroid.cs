@@ -23,14 +23,14 @@
 
         public void InitBindings()
         {
-            Image = $"images/asteroids/{Path.GetFileName(Id)}.png";
+            Image = $"./images/asteroids/{Path.GetFileName(Id)}.png";
         }
 
         public Asteroid(string _id, string _name)
         {
             Id = _id;
             Name = _name;
-            Image = $"images/{Id}.png";
+            Image = $"./images/{Id}.png";
             TraitRules = null;
         }
         public Asteroid NoTraits()

@@ -27,35 +27,35 @@ namespace SeedFinderApp.Client.Model
         {
             RequiredDlc = new() { Dlc.BASEGAME },
             Name = "Standard",
-            Image = "images/gamemode_basegame_standard.png",
+            Image = "./images/gamemode_basegame_standard.png",
             ID = 0
         };
         public static ClusterCategory BASEGAME_THELAB = new ClusterCategory()
         {
             RequiredDlc = new() { Dlc.BASEGAME },
             Name = "The Lab",
-            Image = "images/gamemode_basegame_thelab.png",
+            Image = "./images/gamemode_basegame_thelab.png",
             ID = 3
         };
         public static ClusterCategory SPACEDOUT_CLASSIC = new ClusterCategory()
         {
             RequiredDlc = new() { Dlc.SPACEDOUT },
             Name = "Classic",
-            Image = "images/gamemode_spacedout_classic.png",
+            Image = "./images/gamemode_spacedout_classic.png",
             ID = 1
         };
         public static ClusterCategory SPACEDOUT_SPACEDOUT = new ClusterCategory()
         {
             RequiredDlc = new() { Dlc.SPACEDOUT },
             Name = "Spaced Out!",
-            Image = "images/gamemode_spacedout_spacedout.png",
+            Image = "./images/gamemode_spacedout_spacedout.png",
             ID = 1
         };
         public static ClusterCategory SPACEDOUT_THELAB = new ClusterCategory()
         {
             RequiredDlc = new() { Dlc.SPACEDOUT },
             Name = "The Lab",
-            Image = "images/gamemode_spacedout_thelab.png",
+            Image = "./images/gamemode_spacedout_thelab.png",
             ID = 1
         };
         public static IEnumerable<ClusterCategory> Values
