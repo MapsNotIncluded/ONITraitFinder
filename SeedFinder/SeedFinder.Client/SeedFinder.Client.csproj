@@ -8,6 +8,11 @@
     <StaticWebAssetProjectMode>Default</StaticWebAssetProjectMode>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PublishUrl>docs</PublishUrl>
+  </PropertyGroup>
+
   <ItemGroup>
     <Content Remove="wwwroot\images\gamemode_basegame_standard.png" />
     <Content Remove="wwwroot\images\gamemode_basegame_thelab.png" />
@@ -34,5 +39,9 @@
   <ItemGroup>
     <Folder Include="Components\" />
   </ItemGroup>
+
+  <Target Name="StaticWebAssets" AfterTargets="Publish">
+    <Exec Command="dotnet msbuild /t:GenerateStaticWebAssets /p:Configuration=$(Configuration)" />
+  </Target>
 
 </Project>
