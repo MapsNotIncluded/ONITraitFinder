@@ -93,6 +93,9 @@ namespace TraitFinderApp.Client.Model.Search
 
         public void ResetFilters()
         {
+            if (SelectedCluster.HasFixedCoordinate())
+                return;
+
             foreach (var item in AsteroidParams)
             {
                 item.Value.ResetAll();

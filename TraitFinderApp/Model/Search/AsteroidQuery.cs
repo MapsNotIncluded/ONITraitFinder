@@ -51,6 +51,7 @@ namespace TraitFinderApp.Client.Model.Search
         
         
         }
+        public int GetMaxCount() => targetAsteroid.TraitRule.max;
 
         public bool CanToggleProhibitedTrait(WorldTrait trait) => trait != null && !HasGuaranteedTrait(trait);
         public bool HasGuaranteedTrait(WorldTrait trait) => Guarantee.Contains(trait);
@@ -60,6 +61,8 @@ namespace TraitFinderApp.Client.Model.Search
 
         public void ResetAll()
         {
+            if(targetAsteroid.TraitRule.specificTraits.Count>0)
+
             Guarantee = new HashSet<WorldTrait>();
             Prohibit = new HashSet<WorldTrait>();
         }
