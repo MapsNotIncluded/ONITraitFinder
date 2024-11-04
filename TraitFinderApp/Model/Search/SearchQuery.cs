@@ -84,7 +84,7 @@ namespace TraitFinderApp.Client.Model.Search
 
         public void StartSearching()
         {
-
+            DataImport.FetchSeeds(this, 0);
 
         }
 
@@ -98,10 +98,12 @@ namespace TraitFinderApp.Client.Model.Search
 
         public void PrefillFixedTraits(int seed)
         {
-            foreach (var item in AsteroidParams)
+            for (int i = 0; i < SelectedCluster.WorldPlacements.Count; i++)
             {
-                //TODO
-                //prefill calculated traits for seed;
+                var asteroid = SelectedCluster.WorldPlacements[i].Asteroid;
+            
+               var traits = DataImport.GetAsteroidTraitsForSeed(asteroid, seed+i);
+                AsteroidParams[asteroid].Guarantee = traits;
             }
         }
 
