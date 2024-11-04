@@ -1,6 +1,6 @@
 ﻿using static MudBlazor.CategoryTypes;
 using System.Xml.Linq;
-using SeedFinder.Client.Model.KleiClasses;
+using SeedFinderApp.Client.Model.KleiClasses;
 using System;
 
 namespace SeedFinder.Client.Model

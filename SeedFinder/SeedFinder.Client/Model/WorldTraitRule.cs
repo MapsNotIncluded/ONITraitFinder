@@ -1,4 +1,4 @@
-﻿using SeedFinder.Client.Model.KleiClasses;
+﻿using SeedFinderApp.Client.Model.KleiClasses;
 
 namespace SeedFinder.Client.Model
 {

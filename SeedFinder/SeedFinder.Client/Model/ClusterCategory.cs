@@ -1,4 +1,4 @@
-﻿using SeedFinder.Client.Model.Search;
+﻿using SeedFinderApp.Client.Model.Search;
 using static MudBlazor.Icons.Custom;
 
 namespace SeedFinder.Client.Model

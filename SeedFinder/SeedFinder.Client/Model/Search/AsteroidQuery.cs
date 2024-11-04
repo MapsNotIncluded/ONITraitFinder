@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms.Mapping;
-using SeedFinder.Client.Model.KleiClasses;
+using SeedFinderApp.Client.Model.KleiClasses;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;

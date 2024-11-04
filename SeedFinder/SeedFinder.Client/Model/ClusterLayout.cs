@@ -1,4 +1,4 @@
-﻿using SeedFinder.Client.Model.Search;
+﻿using SeedFinderApp.Client.Model.Search;
 
 namespace SeedFinder.Client.Model
 {
