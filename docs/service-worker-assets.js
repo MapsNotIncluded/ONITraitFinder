@@ -569,11 +569,11 @@
       "url": "images\/traits\/Volcanoes.png"
     },
     {
-      "hash": "sha256-+KmtJLfRuy7KWIO75kudIJfmbADJ0yDHrSicO7NR5Jg=",
+      "hash": "sha256-6m04gbsyUawX8QxDBB8WS87A4tUuTlHYWy5v2Rxm+k4=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-eOl6ROEfSwJmvvjuyRmH8HOTXBVQ8MNFwLC7byKy6+A=",
+      "hash": "sha256-ejfEZj1nhGSWYf8zzDo9q+rD10N\/kYrAl+q3XxqtFEQ=",
       "url": "manifest.webmanifest"
     },
     {
@@ -605,15 +605,15 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-5\/r0SaMUdz3+mfDv0s3QGgjGIYu2wnhmZAzgF7P03Os=",
+      "hash": "sha256-qK6Hj4p5hXCqjJvMagMHkDQbPElH9tf06IiDVV\/yBvw=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-bFbVo6cBXqJtMao9yTXUWubf5ZEqpb+41gBooesSqqg=",
-      "url": "_framework\/dotnet.native.8.0.10.jz7h903wkl.js"
+      "hash": "sha256-j\/kyDxPYcPCfM4ojomOE3mLup\/DfV3qqNJyipWEDf8E=",
+      "url": "_framework\/dotnet.native.8.0.10.5qu5xpewhc.js"
     },
     {
-      "hash": "sha256-7RfUdii5L4BHubyN+eRJS0wttPeM4X4q6IkpR2jbIBo=",
+      "hash": "sha256-id2\/jV0fn2OkT4Qi4d8MYF\/MGFoxa+WFaOuBGoSX8H8=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -695,10 +695,6 @@
     {
       "hash": "sha256-GlXMWKvDs45M2pACoR3Y4Qh8mcrOZGljqmvJY+6JZ5s=",
       "url": "_framework\/Newtonsoft.Json.wasm"
-    },
-    {
-      "hash": "sha256-R1oyKfdcGY+5mQl2yH5PBvQBqaVlX+Dptu5mpLkWxN4=",
-      "url": "_framework\/SeedFinderApp.wasm"
     },
     {
       "hash": "sha256-UIm3A+2FOuk9QkV+5rZ7kjp4euwan8xGW7kIn7zSXRA=",
@@ -877,8 +873,12 @@
       "url": "_framework\/System.Xml.XDocument.wasm"
     },
     {
+      "hash": "sha256-iF57Lc7iEI0DHR9EQKZHZHpjY3V5qzE7FRV\/hiuP3ss=",
+      "url": "_framework\/TraitFinderApp.wasm"
+    },
+    {
       "hash": "sha256-T\/K++tod8y9+7ubv7nRsHCSdfliUwfbR5MGolUxuvUQ=",
-      "url": "SeedFinderApp.styles.css"
+      "url": "TraitFinderApp.styles.css"
     },
     {
       "hash": "sha256-G5bHIWtoQkZXOVHhpw3J8f3Iq0AX6\/EDqo5acVE3aYY=",
@@ -889,5 +889,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "vC8Iqh89"
+  "version": "\/ToY\/q\/8"
 };

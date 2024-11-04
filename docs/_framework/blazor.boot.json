@@ -1,15 +1,15 @@
 {
-  "mainAssemblyName": "SeedFinderApp",
+  "mainAssemblyName": "TraitFinderApp",
   "resources": {
-    "hash": "sha256-q8FLhOL+S10kIrAGy8YcbZoqaGEBnSCbOPKFVKZYcUw=",
+    "hash": "sha256-hC7XZxibtNsLl4P6YGl98SLylel2wkFdnlJ1SRs81Vo=",
     "jsModuleNative": {
-      "dotnet.native.8.0.10.jz7h903wkl.js": "sha256-bFbVo6cBXqJtMao9yTXUWubf5ZEqpb+41gBooesSqqg="
+      "dotnet.native.8.0.10.5qu5xpewhc.js": "sha256-j/kyDxPYcPCfM4ojomOE3mLup/DfV3qqNJyipWEDf8E="
     },
     "jsModuleRuntime": {
       "dotnet.runtime.8.0.10.5pejt2vjyv.js": "sha256-FjrgL9dY6dc2yUoXDWowSfachSgM8O29qUMWDQOJKRI="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-7RfUdii5L4BHubyN+eRJS0wttPeM4X4q6IkpR2jbIBo="
+      "dotnet.native.wasm": "sha256-id2/jV0fn2OkT4Qi4d8MYF/MGFoxa+WFaOuBGoSX8H8="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -37,7 +37,6 @@
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-r/+bWAAxKn2+Wu3MRYDXvKEbHjLNuptflgNuNhQdK6w=",
       "MudBlazor.wasm": "sha256-Yp7GFWF5auH+CnT+gxUJ1EkfJOJrVhAcncY4Cy6cXXk=",
       "Newtonsoft.Json.wasm": "sha256-GlXMWKvDs45M2pACoR3Y4Qh8mcrOZGljqmvJY+6JZ5s=",
-      "SeedFinderApp.wasm": "sha256-R1oyKfdcGY+5mQl2yH5PBvQBqaVlX+Dptu5mpLkWxN4=",
       "System.Collections.Concurrent.wasm": "sha256-UIm3A+2FOuk9QkV+5rZ7kjp4euwan8xGW7kIn7zSXRA=",
       "System.Collections.Immutable.wasm": "sha256-3cQnxmH2A3ryeKqU6z+2oQ/WQ5pUn4KQMTmKVHcybH4=",
       "System.Collections.NonGeneric.wasm": "sha256-XAzBYo5feCF1cXC2RIKytidyE3WPx8p/4McDy1y63t4=",
@@ -81,7 +80,8 @@
       "System.wasm": "sha256-sH9OCj7JF+EjOteWJIPR1TDeb2POsT3uyJpKHPmvz2A=",
       "System.Xml.Linq.wasm": "sha256-VY+WTqYbw4LGWnTMkJjsfqKF/mUynOF3ioTNZ0Hlb7s=",
       "System.Xml.ReaderWriter.wasm": "sha256-dnVqmNUiM0Sd7uxAHFa2MnsHMcF5JNcRvb3JTkk1+PI=",
-      "System.Xml.XDocument.wasm": "sha256-Cy/b283xboGd/FENjDI+rENBqJOBdwLXhAhwbzY3Po4="
+      "System.Xml.XDocument.wasm": "sha256-Cy/b283xboGd/FENjDI+rENBqJOBdwLXhAhwbzY3Po4=",
+      "TraitFinderApp.wasm": "sha256-iF57Lc7iEI0DHR9EQKZHZHpjY3V5qzE7FRV/hiuP3ss="
     }
   },
   "cacheBootResources": true,
