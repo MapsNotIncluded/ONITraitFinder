@@ -581,7 +581,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-L2FeaDiwSGpauJhfB741VMaJfkDzUse8Ak32z1tgCCI=",
+      "hash": "sha256-H7EJifZCn9vlWZrU+nuy+\/UpfSmeLeTXh5NSF9iTWyY=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -589,7 +589,7 @@
       "url": "_framework\/dotnet.native.8.0.10.jz7h903wkl.js"
     },
     {
-      "hash": "sha256-MqCb4ZZ5PpPiLLKkBwc2kbKE4ggSI+bJ+HfsmTV9B9I=",
+      "hash": "sha256-VDrhjRdo48hUenNjFDO64AjGYDnpLnuqGRJo8s4EwwI=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -673,7 +673,7 @@
       "url": "_framework\/Newtonsoft.Json.wasm"
     },
     {
-      "hash": "sha256-1pLjP7+hkaaYr869wDJiqpSXzr78IThWvflNbWFC0jA=",
+      "hash": "sha256-lx+a5xP5H5vMI7ZhyM3AMHCYzn0fu38qkORgVs1sbMk=",
       "url": "_framework\/SeedFinderApp.wasm"
     },
     {
@@ -865,5 +865,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "t5vue0IN"
+  "version": "CBWhUJzj"
 };

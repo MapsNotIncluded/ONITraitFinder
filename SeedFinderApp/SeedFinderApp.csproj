@@ -42,9 +42,9 @@
 
     <Message Text="Executing Copy-to-docs task" Importance="High" />
 
-    <Message Text="source folder: $(PublishUrl)wwwroot" Importance="High"></Message>
+    <Message Text="source folder: $(ProjectDir)$(PublishUrl)wwwroot" Importance="High"></Message>
     <ItemGroup>
-      <WasmAppFiles Include="$(PublishUrl)wwwroot\**\*.*" />
+      <WasmAppFiles Include="$(ProjectDir)$(PublishUrl)wwwroot\**\*.*" />
     </ItemGroup>
     
     <Message Text="Copy WasmAppFiles to $(SolutionDir)docs\" Importance="High"></Message>
