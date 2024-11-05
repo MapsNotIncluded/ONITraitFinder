@@ -29,6 +29,7 @@ namespace TraitFinderApp.Client.Model
         public int startWorldIndex = 0;
         public bool HasFixedCoordinate() => fixedCoordinate > 0;
 
+
         public bool DlcRequirementsFulfilled(List<Dlc> requirements) => !RequiredDlcs.Except(requirements).Any() && !ForbiddenDlcs.Intersect(requirements).Any();
 
         public bool AllowedWithCurrentQuery(SearchQuery query) => query.ActiveMode == ClusterCategory && DlcRequirementsFulfilled(query.ActiveDlcs);

@@ -35,7 +35,7 @@ else
         <MudStack Spacing="3" AlignItems="AlignItems.Center">
             <MudText Typo="Typo.h3">World Trait Finder</MudText>
             <!--Main game version-->
-            <MudText Typo="Typo.h5">Select your game version and dlcs.</MudText>
+            <MudText Typo="Typo.h4">Select your game version and dlcs.</MudText>
             <MudStack Row="true" Justify="Justify.SpaceEvenly" AlignItems="AlignItems.Center">
                 <MudGrid Justify="Justify.Center" Spacing="3">
                     @foreach (var dlc in Dlc.Values)
@@ -64,30 +64,36 @@ else
             }
             <!--Mode-->
             <MudSpacer></MudSpacer>
-            <MudText hidden="@(!Query.MainVersionSelected())" Typo="Typo.h5">Select your game mode:</MudText>
-            <MudStack hidden="@(!Query.MainVersionSelected())" AlignItems="AlignItems.Center">
-                <MudStack Row="true" Justify="Justify.Center">
-                    @foreach (var mode in ClusterCategory.Values)
-                    {
-                        @if (mode.AllowedWithCurrentQuery(Query))
-                        {
-                            bool isSelected = Query.IsModeSelected(mode);
-                            var ModeName = new MarkupString(isSelected ? $"<b>{mode.Name}</b>" : mode.Name);
+            <MudText hidden="@(!Query.MainVersionSelected())" Typo="Typo.h4">Select your game mode:</MudText>
+            <MudGrid hidden="@(!Query.MainVersionSelected())" Spacing="2" Justify="Justify.Center">
 
+                @foreach (var mode in ClusterCategory.Values)
+                {
+                    @if (mode.AllowedWithCurrentQuery(Query))
+                    {
+                        bool isSelected = Query.IsModeSelected(mode);
+                        var ModeName = new MarkupString(isSelected ? $"<b>{mode.Name}</b>" : mode.Name);
+                        <MudItem>
                             <MudButton Variant="Variant.Filled" Disabled=@isSelected OnClick="()=> Query.SelectMode(mode)" Class="highlight-on-disabled">
                                 <MudStack Spacing="1">
                                     <MudImage ObjectFit="ObjectFit.Contain" Width="100" Height="100" Src=@mode.Image Alt="@mode.Name" />
                                     <MudText Typo="Typo.body1">@ModeName</MudText>
                                 </MudStack>
                             </MudButton>
-                        }
+                        </MudItem>
                     }
-                </MudStack>
-            </MudStack>
+                }
+            </MudGrid>
 
             <MudSpacer></MudSpacer>
-            <MudText hidden="@(!Query.AnyModeSelected())" Align="Align.Center" Typo="Typo.h5">Select your Asteroid Cluster:</MudText>
-            <MudContainer hidden="@(!Query.AnyModeSelected())">
+            @{
+                bool isFixedCoordinate = Query?.SelectedCluster?.HasFixedCoordinate() ?? false;
+                bool blockedFromReset = isFixedCoordinate || (!Query?.HasFilters() ?? false);
+                bool anyModeSelected = Query?.AnyModeSelected() ?? false;
+            }
+            <MudText hidden="@(!anyModeSelected)" Align="Align.Center" Typo="Typo.h4">Select your Asteroid Cluster:</MudText>
+
+            <MudContainer hidden="@(!anyModeSelected)">
                 <!--Cluster-->
                 <MudStack Row="true" Justify="Justify.Center">
 
@@ -116,7 +122,10 @@ else
                 <MudPaper Class="pa-3" Elevation="2">
                     <MudStack Spacing="2" AlignItems="AlignItems.Center">
                         <MudStack Row="true" Justify="Justify.Center" Spacing="3">
-                            <MudText Class="trait-selector-header" GutterBottom Typo="Typo.h5">Configure your @Query?.SelectedCluster?.Name:</MudText>
+                            <MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h4">Configure your trait filters for @Query?.SelectedCluster?.Name</MudText>
+                            <MudTooltip Text="Reset all Trait Filters">
+                                <MudIconButton Size="Size.Medium" Icon="@Icons.Material.Filled.DeleteForever" Disabled="@blockedFromReset" Class="start-query-button" OnClick="(_)=> Query?.ResetFilters()" Color="Color.Secondary"> </MudIconButton>
+                            </MudTooltip>
                         </MudStack>
                         <MudSpacer></MudSpacer>
                         <MudGrid Spacing="2" Justify="Justify.Center">
@@ -246,17 +255,33 @@ else
                             }
                         </MudGrid>
                         <MudSpacer></MudSpacer>
-                        <MudStack Row Justify="Justify.Center" AlignItems="AlignItems.Center">
-                            @{
-                                bool fixedCorrdinateFound = Query != null && Query.SelectedCluster != null && Query.SelectedCluster.HasFixedCoordinate();
-                                bool canDeleteQueryResults = Query != null && !Query.HasResults();
-                                string searchString = (Query?.CurrentQuerySeed > 1) || (Query?.SelectedCluster?.HasFixedCoordinate()??false) ? "Search for more seeds" : "Search for seeds";
-                            }
-                            <MudButton Variant="Variant.Filled" Disabled="@fixedCorrdinateFound" Class="start-query-button" OnClick="(_)=> Query?.ResetFilters()" Color="Color.Secondary">Reset Trait Filters</MudButton>
-                            <MudNumericField Variant="Variant.Outlined" Label="Starting Seed" @bind-Value=Query.CurrentQuerySeed Min="1"></MudNumericField>
-                            <MudButton Variant="Variant.Filled" Disabled="@fixedCorrdinateFound" OnClick="(_)=> Query?.StartSearching()" Color="Color.Primary">@searchString</MudButton>
-                            <MudFab Disabled="@canDeleteQueryResults" StartIcon="@Icons.Material.Filled.Delete" OnClick="(_)=> Query?.ClearQueryResults()" Label="Clear Results" Color="Color.Secondary"></MudFab>
-                        </MudStack>
+                        @{
+                            bool fixedCorrdinateFound = Query != null && Query.SelectedCluster != null && Query.SelectedCluster.HasFixedCoordinate();
+                            string prefix = Query != null && Query.SelectedCluster != null ? Query.SelectedCluster.Prefix : string.Empty;
+                            bool canDeleteQueryResults = Query != null && !Query.HasResults();
+                            string searchString = (Query?.CurrentQuerySeed > 1) || (Query?.SelectedCluster?.HasFixedCoordinate() ?? false) ? "Search for more seeds" : "Search for seeds";
+                            string coordTitleString = $"{prefix}-";
+                        }
+                        <MudGrid Justify="Justify.Center" AlignItems="AlignItems.Center" Spacing="2">
+                            <MudItem>
+                                <MudText Typo="Typo.h6" Align="Align.Center">Starting Seed:</MudText>
+                            </MudItem>
+                            <MudFlexBreak />
+                            <MudItem>
+                                <MudStack Row Spacing="0" Justify="Justify.Center" AlignItems="AlignItems.Center">
+                                    <MudText Inline Typo="Typo.h6" Style="text-overflow:ellipsis; white-space: nowrap;" Align="Align.Center">@coordTitleString</MudText>
+                                    <MudNumericField Variant="Variant.Outlined" @bind-Value=Query.CurrentQuerySeed Min="1"></MudNumericField>
+                                    <MudText Inline Typo="Typo.h6" Align="Align.Center">-0-0-0</MudText>
+                                </MudStack>
+                            </MudItem>
+                            <MudFlexBreak />
+                            <MudItem>
+                                <MudFab Disabled="@canDeleteQueryResults" StartIcon="@Icons.Material.Filled.Delete" OnClick="(_)=> Query?.ClearQueryResults()" Label="Clear Results" Color="Color.Secondary"></MudFab>
+                            </MudItem>
+                            <MudItem>
+                                <MudFab Variant="Variant.Filled" Disabled="@fixedCorrdinateFound" OnClick="(_)=> Query?.StartSearching()" Color="Color.Primary" Label="@searchString"></MudFab>
+                            </MudItem>
+                        </MudGrid>
                     </MudStack>
                 </MudPaper>
             </MudContainer>
@@ -265,7 +290,7 @@ else
                     <MudStack Spacing="4" AlignItems="AlignItems.Center">
                         <MudItem>
                             <MudStack Row="true" Justify="Justify.Center" Spacing="3">
-                                <MudText GutterBottom Typo="Typo.h5">Seed Query Results:</MudText>
+                                <MudText GutterBottom Align="Align.Center" Typo="Typo.h4">Seed Query Results:</MudText>
                             </MudStack>
                             <MudSpacer></MudSpacer>
                             <MudGrid Spacing="2">

@@ -15,6 +15,8 @@ namespace TraitFinderApp.Client.Model.Search
         public IEnumerable<QueryResult> QueryResults = new HashSet<QueryResult>(32);
         public bool HasResults() => QueryResults != null && QueryResults.Any();
 
+        public bool HasFilters() => AsteroidParams!=null&& AsteroidParams.Any(param => param.Value.HasFilters());
+
         public int CurrentQuerySeed = 1;
 
         public int QueryTarget = 5;

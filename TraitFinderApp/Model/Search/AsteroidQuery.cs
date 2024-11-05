@@ -80,6 +80,7 @@ namespace TraitFinderApp.Client.Model.Search
             parent.ClearQueryResults();
         }
 
+        public bool HasFilters()=>Guarantee.Any() || Prohibit.Any();
 
         public HashSet<WorldTrait> GetAllCurrentlyAvailableTraits()
         {
