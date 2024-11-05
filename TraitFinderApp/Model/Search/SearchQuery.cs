@@ -95,14 +95,13 @@ namespace TraitFinderApp.Client.Model.Search
         {
             DataImport.FetchSeeds(this, CurrentQuerySeed, QueryTarget, 5000);
         }
+        public void ClearQueryResults()=> QueryResults = new List<QueryResult>(QueryTarget);
 
         public void ResetFilters()
         {
+            ClearQueryResults();
             if (SelectedCluster != null && SelectedCluster.HasFixedCoordinate())
                 return;
-
-            QueryResults = new List<QueryResult>(QueryTarget);
-
             if (AsteroidParams != null)
             {
                 foreach (var item in AsteroidParams)
@@ -129,14 +128,16 @@ namespace TraitFinderApp.Client.Model.Search
         public bool AnyClusterSelected() => SelectedCluster != null;
 
 
-        public bool CanAsteroidHaveTrait(Asteroid asteroid, WorldTrait trait)
+        public bool AsteroidHasTraitGuaranteed(Asteroid asteroid, WorldTrait trait)
         {
+            if(AsteroidParams.TryGetValue(asteroid, out var query))
+            {
+                return query.Guarantee.Contains(trait);
+            }
             return false;
         }
-        public bool AsteroidHasTraitQueried(Asteroid asteroid, WorldTrait trait)
-        {
-            return true;
-        }
+
+        
         public void AddQueryResults(IEnumerable<QueryResult> results, int finalSeed)
         {
             CurrentQuerySeed = finalSeed;

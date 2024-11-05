@@ -3,7 +3,6 @@
 @using TraitFinderApp.Client.Model.Search
 @inject ISnackbar Snackbar
 @inject IScrollManager ScrollManager
-@inject ClipboardService ClipboardService
 
 <style>
     .mud-tooltip-root {
@@ -23,11 +22,7 @@
         font-weight: bold;
     }
 </style>
-
-@{
-    <!--vs doesnt detect blazor pseudo css and crys about it; this makes it stfu:-->
-#pragma warning disable CSS024
-}
+ 
 @if (!DataInitialized)
 {
     <MudStack Spacing="3" AlignItems="AlignItems.Center">
@@ -254,10 +249,12 @@ else
                         <MudStack Row Justify="Justify.Center">
                             @{
                                 bool fixedCorrdinateFound = Query != null && Query.SelectedCluster != null && Query.SelectedCluster.HasFixedCoordinate();
+                                bool canDeleteQueryResults = Query != null && !Query.HasResults();
                             }
-                            <MudButton Disabled="@fixedCorrdinateFound" Class="start-query-button" OnClick="(_)=> Query?.ResetFilters()" Color="Color.Secondary">Reset Filters</MudButton>
+                            <MudButton Disabled="@fixedCorrdinateFound" Class="start-query-button" OnClick="(_)=> Query?.ResetFilters()" Color="Color.Secondary">Reset Trait Filters</MudButton>
                             <MudNumericField Variant="Variant.Outlined" Label="Starting Seed" @bind-Value=Query.CurrentQuerySeed Min="1"></MudNumericField>
-                            <MudButton Disabled="@fixedCorrdinateFound" OnClick="(_)=> Query?.StartSearching()" Color="Color.Primary">Start Searching</MudButton>
+                            <MudButton Disabled="@fixedCorrdinateFound" OnClick="(_)=> Query?.StartSearching()" Color="Color.Primary">Start Searching Seeds</MudButton>
+                            <MudIconButton Disabled="@canDeleteQueryResults" Icon="@Icons.Material.Filled.Delete" OnClick="(_)=> Query?.ClearQueryResults()" Color="Color.Secondary">Clear Results</MudIconButton>
                         </MudStack>
                     </MudStack>
                 </MudPaper>
@@ -265,7 +262,7 @@ else
 
             @if (Query != null && Query.HasResults())
             {
-                <MudContainer MaxWidth="MaxWidth.ExtraLarge" hidden="@(!Query?.HasResults())" Class="query-results">
+                <MudContainer MaxWidth="MaxWidth.ExtraLarge" hidden="@(!Query?.HasResults())" >
                     <MudPaper Class="pa-3">
                         <MudStack Spacing="4" AlignItems="AlignItems.Center">
                             <MudItem>
@@ -275,44 +272,16 @@ else
                                 <MudSpacer></MudSpacer>
                                 <MudGrid Spacing="2">
                                     <MudVirtualize SpacerElement="MudDivider" Items="@Query?.QueryResults?.ToList()" Context="queryResult">
-                                        <MudItem>
-                                            <MudPaper Outlined Elevation="75" Class="pa-1" Width="300px">
-                                                <MudStack Spacing="4">
-                                                    <MudStack Row Spacing="1" AlignItems="AlignItems.Center" Justify="Justify.Center">
-                                                        <MudText Style="padding:4px" Typo="Typo.h6">@queryResult.GetCoordinate()</MudText>
-                                                        <MudIconButton Icon="@Icons.Material.Filled.ContentCopy" Color="Color.Tertiary" OnClick="(_)=> CopyToClipboard(queryResult.GetCoordinate())"></MudIconButton>
-                                                    </MudStack>
-                                                    <MudVirtualize Items="@queryResult.asteroidsWithTraits" Context="asteroidQuery">
-                                                        <MudStack Row Spacing="0">
-
-                                                            <MudTooltip Text="@asteroidQuery.Asteroid.Name" Arrow="true" Placement="Placement.Start">
-                                                                <MudImage ObjectFit="ObjectFit.Contain" Width="55" Height="55" Src="@asteroidQuery.Asteroid.Image" Alt="@asteroidQuery.Asteroid.Name" />
-                                                            </MudTooltip>
-                                                            <MudVirtualize Items="@asteroidQuery.Traits" Context="trait">
-                                                                @{
-                                                                    string traitColorStyle = $"background-color:#{trait.ColorHex}33; outline-color:#{trait.ColorHex}; outline-width:2px;";
-                                                                    string imageStyle = "margin-left:-5px; margin-right:5px";
-                                                                    string evilInvisibleString = " ";
-                                                                }
-                                                                <MudTooltip Text="@trait.Name" Arrow="true" Placement="Placement.Top">
-                                                                    <MudChip T="string" Style="@traitColorStyle">
-                                                                        <MudImage ObjectFit="ObjectFit.Contain" Width="20" Height="20" Src="@trait.Image"/>
-                                                                    </MudChip>
-                                                                </MudTooltip>
-                                                            </MudVirtualize>
-                                                        </MudStack>
-                                                    </MudVirtualize>
-                                                </MudStack>
-                                            </MudPaper>
-                                        </MudItem>
+                                    <QueryResultVisualizer SearchQuery="Query" QueryResult="@queryResult"></QueryResultVisualizer>
                                     </MudVirtualize>
                                 </MudGrid>
-                                <MudButton Class="query-result" OnClick="(_)=> GoToTraitSelection()" Color="Color.Secondary">Go back to search</MudButton>
+                                <MudButton Class="query-results" OnClick="(_)=> GoToTraitSelection()" Color="Color.Secondary">Go back to search</MudButton>
                             </MudItem>
                         </MudStack>
                     </MudPaper>
                 </MudContainer>
             }
+            <div id="end-page-id"></div>
         </MudStack>
     </MudContainer>
 }
@@ -341,42 +310,31 @@ else
         });
     }
 
-    async Task CopyToClipboard(string text)
-    {
-        try
-        {
-            await ClipboardService.WriteTextAsync(text);
-            Snackbar.Add("Seed copied to the clipboard!", Severity.Success);
-        }
-        catch
-        {
-            Console.WriteLine("Cannot write text to clipboard");
-        }
 
-    }
-
-
-    public async Task StartSearching()
+    public void StartSearching()
     {
         Query.StartSearching();
-        await ScrollManager.ScrollIntoViewAsync(".query-results", ScrollBehavior.Smooth);
+
     }
     public async Task GoToTraitSelection()
     {
+        await Task.Delay(5);
         await ScrollManager.ScrollIntoViewAsync(".trait-selector-header", ScrollBehavior.Smooth);
     }
 
     public async Task ScrollToQuery()
     {
+        await Task.Delay(5);
         await ScrollManager.ScrollIntoViewAsync(".start-query-button", ScrollBehavior.Smooth);
     }
 
-    public void SelectCluster(ClusterLayout cluster)
+    public async Task SelectCluster(ClusterLayout cluster)
     {
         if (cluster.HasFixedCoordinate())
-            Snackbar.Add("This cluster always generates the same!", Severity.Warning);
+            Snackbar.Add("This cluster always generates the same seed!", Severity.Warning);
 
         Query.SelectCluster(cluster);
-        ScrollToQuery();
+
+        await ScrollToQuery();
     }
 }

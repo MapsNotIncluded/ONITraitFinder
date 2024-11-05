@@ -1,15 +1,58 @@
-﻿@using TraitFinderApp.Client.Model
-@using TraitFinderApp.Client.Model.Search
+﻿@using TraitFinderApp.Client.Model.Search
 @using TraitFinderApp.Model.Search
+@inject ISnackbar Snackbar;
+@inject ClipboardService ClipboardService
 
-<MudText Typo="Typo.h6">@queryResult.GetCoordinate()</MudText>
-<MudGrid Spacing="1">
-    <MudItem>
+<MudItem>
+    <MudPaper Outlined Elevation="75" Class="pa-1" Width="300px">
+        <MudStack Spacing="4">
+            <MudStack Row Spacing="1" AlignItems="AlignItems.Center" Justify="Justify.Center">
+                <MudText Style="padding:4px" Typo="Typo.h6">@QueryResult.GetCoordinate()</MudText>
+                <MudIconButton Icon="@Icons.Material.Filled.ContentCopy" Color="Color.Tertiary" OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())"></MudIconButton>
+            </MudStack>
+            <MudVirtualize Items="@QueryResult.asteroidsWithTraits" Context="asteroidQueryResult">
+                <MudStack Row Spacing="0">
+                    <MudTooltip Text="@asteroidQueryResult.Asteroid.Name" Arrow="true" Placement="Placement.Start">
+                        <MudImage ObjectFit="ObjectFit.Contain" Width="55" Height="55" Src="@asteroidQueryResult.Asteroid.Image" Alt="@asteroidQueryResult.Asteroid.Name" />
+                    </MudTooltip>
+                    <MudVirtualize Items="@asteroidQueryResult.Traits" Context="trait">
+                        @{
+                            string outlineStyle = SearchQuery.AsteroidHasTraitGuaranteed(asteroidQueryResult.Asteroid,trait) ? $"outline-style:solid; outline-color:#{trait.ColorHex};" : string.Empty;
 
-    </MudItem>
-</MudGrid>
+                                string traitColorStyle = $"background-color:#{trait.ColorHex}33;  outline-width:2px; {outlineStyle}";
+                            string imageStyle = "margin-left:-5px; margin-right:5px";
+                            string evilInvisibleString = " ";
+                        }
+                        <MudTooltip Text="@trait.Name" Arrow="true" Placement="Placement.Top">
+                            <MudChip T="string" Style="@traitColorStyle">
+                                <MudImage ObjectFit="ObjectFit.Contain" Width="20" Height="20" Src="@trait.Image" />
+                            </MudChip>
+                        </MudTooltip>
+                    </MudVirtualize>
+                </MudStack>
+            </MudVirtualize>
+        </MudStack>
+    </MudPaper>
+</MudItem>
 
 @code {
-    [Parameter]
-    public QueryResult queryResult { get; set; } 
+    [Parameter][EditorRequired]
+    public QueryResult QueryResult { get; set; }
+
+    [Parameter][EditorRequired]
+    public SearchQuery SearchQuery { get; set; }
+
+    async Task CopyToClipboard(string text)
+    {
+        try
+        {
+            await ClipboardService.WriteTextAsync(text);
+            Snackbar.Add("Seed copied to the clipboard!", Severity.Success);
+        }
+        catch
+        {
+            Console.WriteLine("Cannot write text to clipboard");
+        }
+
+    }
 }
