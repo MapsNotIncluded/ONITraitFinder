@@ -81,29 +81,29 @@ namespace TraitFinderApp.Client.Model
             }
         }
 
-        internal static void FetchSeeds(SearchQuery searchQuery, int startSeed)
+        internal static void FetchSeeds(SearchQuery searchQuery, int startSeed, int targetCount = 4, int seedRange = 2000)
         {
             var cluster = searchQuery.SelectedCluster;
 
             List<Asteroid> asteroids = new(searchQuery.SelectedCluster.WorldPlacements.Count);
 
-            List<QueryResult> results = new List<QueryResult>(4);
+            List<QueryResult> results = new List<QueryResult>(targetCount);
 
             foreach (var worldPlacement in cluster.WorldPlacements)
             {
                 asteroids.Add(worldPlacement.Asteroid);
             }
-            int queryableRange = startSeed + 1000;
+            int queryableRange = startSeed + seedRange;
 
             Console.WriteLine(cluster.Name);
             int asteroidCount = asteroids.Count;
 
             Dictionary<Asteroid, List<WorldTrait>> TraitStorage = new(asteroidCount);
 
-            while (startSeed < queryableRange || results.Count < 4)
+            while (startSeed < queryableRange && results.Count < targetCount)
             {
                 int localSeed = 0;
-                Console.Write("Checking seed: "+startSeed);
+                //Console.Write("Checking seed: "+startSeed);
                 foreach (var asteroid in asteroids)
                 {
                     var traits = GetAsteroidTraitsForSeed(asteroid, startSeed+localSeed);
@@ -116,14 +116,14 @@ namespace TraitFinderApp.Client.Model
                         if (!requiredTraitsFulfilled)
                         {
                             //not all guaranteed traits are in asteroid
-                            Console.WriteLine("not all required traits fulfilled!");
+                            //Console.WriteLine("not all required traits fulfilled!");
                             break;
                         }
                         bool prohibitedTraitsFulfilled = !asteroidParams.Prohibit.Intersect(traits).Any();
                         if (!prohibitedTraitsFulfilled)
                         {
                             //asteroid had prohibited traits
-                            Console.WriteLine("prohibited traits found");
+                            //Console.WriteLine("prohibited traits found");
                             break;
                         }
                     }
@@ -138,17 +138,17 @@ namespace TraitFinderApp.Client.Model
                 }
 
 
-                Console.WriteLine("seed fulfilled requirements!");
+                //Console.WriteLine("seed fulfilled requirements!");
 
-                foreach(var kvp in TraitStorage)
-                {
-                    Console.Write(kvp.Key.Name + ": ");
-                    foreach(var trait in kvp.Value)
-                    {
-                        Console.Write(trait.Name + " ");
-                    }
-                    Console.WriteLine();
-                }
+                //foreach(var kvp in TraitStorage)
+                //{
+                //    Console.Write(kvp.Key.Name + ": ");
+                //    foreach(var trait in kvp.Value)
+                //    {
+                //        Console.Write(trait.Name + " ");
+                //    }
+                //    Console.WriteLine();
+                //}
 
                 var asteroidQueryResults = new List<QueryAsteroidResult>(asteroidCount);
                     
@@ -159,9 +159,12 @@ namespace TraitFinderApp.Client.Model
 
                 results.Add(new()
                 {
+                    seed = startSeed,
+                    cluster = cluster,
                     asteroidsWithTraits = asteroidQueryResults
                 });
             }
+            searchQuery.AddQueryResults(results, startSeed);
         }
 
         internal static List<WorldTrait> GetAsteroidTraitsForSeed(Asteroid asteroid, int seed) => GetRandomTraits(seed, asteroid);

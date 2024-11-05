@@ -2,6 +2,7 @@
 using System.Xml.Linq;
 using TraitFinderApp.Client.Model.KleiClasses;
 using System;
+using MudBlazor.Utilities;
 
 namespace TraitFinderApp.Client.Model
 {
@@ -13,14 +14,12 @@ namespace TraitFinderApp.Client.Model
         }
         public override string ToString()
         {
-            return string.Empty;
-            //return $"<img src=\"{Image}\" alt=\"{Name}\">";
             return Name;
         }
-
-        public string ImageString()=> $"<img src=\"{Image}\" alt=\"{Name}\" style=\"width:24px; height:24px;\">";
-
         public override int GetHashCode() => Id.GetHashCode();
+
+        public string ImageString()=> $"<image width=\"20\" height=\"20\" xlink:href=\"{Image}\" alt=\"{Name}\">";
+
 
         public string Id;
         public string Name;

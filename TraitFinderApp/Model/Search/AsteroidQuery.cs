@@ -61,7 +61,8 @@ namespace TraitFinderApp.Client.Model.Search
 
         public void ResetAll()
         {
-            if(targetAsteroid.TraitRule.specificTraits.Count>0)
+            if (targetAsteroid?.TraitRule?.specificTraits?.Count > 0)
+                return;
 
             Guarantee = new HashSet<WorldTrait>();
             Prohibit = new HashSet<WorldTrait>();

@@ -1,6 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
-
+  
   <PropertyGroup>
+    <RunAOTCompilation>true</RunAOTCompilation>
+  </PropertyGroup>
+
+  
+  <PropertyGroup>
+
+    <BlazorWebAssemblyEnableLinking>true</BlazorWebAssemblyEnableLinking>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -29,7 +36,6 @@
   <ItemGroup>
     <Folder Include="wwwroot\css\" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="wwwroot\images\gamemodes\gamemode_basegame_standard.png" />
     <None Include="wwwroot\images\gamemodes\gamemode_basegame_thelab.png" />
@@ -47,7 +53,7 @@
       <WasmAppFiles Include="$(ProjectDir)$(PublishUrl)wwwroot\**\*.*" />
     </ItemGroup>
 
-    <Message Text="file count: @(WasmAppFiles->Count())" Importance="High"></Message>
+    <Message Text="file count: @(WasmAppFiles-&gt;Count())" Importance="High"></Message>
     <Message Text="Copy WasmAppFiles to $(SolutionDir)docs\" Importance="High"></Message>
 
     <Copy SourceFiles="@(WasmAppFiles)" DestinationFolder="$(SolutionDir)docs\%(RecursiveDir)" SkipUnchangedFiles="false" />

@@ -1,0 +1,15 @@
+﻿@using TraitFinderApp.Client.Model
+@using TraitFinderApp.Client.Model.Search
+@using TraitFinderApp.Model.Search
+
+<MudText Typo="Typo.h6">@queryResult.GetCoordinate()</MudText>
+<MudGrid Spacing="1">
+    <MudItem>
+
+    </MudItem>
+</MudGrid>
+
+@code {
+    [Parameter]
+    public QueryResult queryResult { get; set; } 
+}
