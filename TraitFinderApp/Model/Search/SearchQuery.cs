@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using TraitFinderApp.Model.Search;
 
 namespace TraitFinderApp.Client.Model.Search
@@ -15,6 +16,8 @@ namespace TraitFinderApp.Client.Model.Search
         public bool HasResults() => QueryResults != null && QueryResults.Any();
 
         public int CurrentQuerySeed = 1;
+
+        int QueryTarget = 5;
 
         #region dlc
 
@@ -90,7 +93,7 @@ namespace TraitFinderApp.Client.Model.Search
 
         public void StartSearching()
         {
-            DataImport.FetchSeeds(this, CurrentQuerySeed, 4, 5000);
+            DataImport.FetchSeeds(this, CurrentQuerySeed, QueryTarget, 5000);
         }
 
         public void ResetFilters()
@@ -98,7 +101,7 @@ namespace TraitFinderApp.Client.Model.Search
             if (SelectedCluster != null && SelectedCluster.HasFixedCoordinate())
                 return;
 
-            QueryResults = new List<QueryResult>(32);
+            QueryResults = new List<QueryResult>(QueryTarget);
 
             if (AsteroidParams != null)
             {
@@ -137,7 +140,18 @@ namespace TraitFinderApp.Client.Model.Search
         public void AddQueryResults(IEnumerable<QueryResult> results, int finalSeed)
         {
             CurrentQuerySeed = finalSeed;
-            QueryResults = (results); //or QueryResults.Concat
+
+            List<QueryResult> currentlist = QueryResults.ToList();
+            currentlist.AddRange(results);
+            currentlist.OrderBy(entry => entry.seed);
+            List<QueryResult> newList = new();
+            while (newList.Count < QueryTarget && currentlist.Any())
+            {
+                newList.Insert(0,currentlist.Last());
+                currentlist.Remove(currentlist.Last());
+
+            }
+            QueryResults = (newList); //or QueryResults.Concat
         }
     }
 }
