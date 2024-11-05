@@ -22,7 +22,7 @@
         font-weight: bold;
     }
 </style>
- 
+
 @if (!DataInitialized)
 {
     <MudStack Spacing="3" AlignItems="AlignItems.Center">
@@ -112,8 +112,8 @@ else
                 </MudStack>
             </MudContainer>
 
-            <MudContainer MaxWidth="MaxWidth.ExtraLarge" hidden="@(Query?.SelectedCluster == null)" Class="clusteritemselection">
-                <MudPaper Class="pa-3">
+            <MudContainer MaxWidth="MaxWidth.ExtraLarge" hidden="@(Query == null || !Query.HasClusterSelected())" Class="clusteritemselection">
+                <MudPaper Class="pa-3" Elevation="2">
                     <MudStack Spacing="2" AlignItems="AlignItems.Center">
                         <MudStack Row="true" Justify="Justify.Center" Spacing="3">
                             <MudText Class="trait-selector-header" GutterBottom Typo="Typo.h5">Configure your @Query?.SelectedCluster?.Name:</MudText>
@@ -128,7 +128,7 @@ else
                                 var world = placements[i].Asteroid;
                                 var queryAsteroid = Query.AsteroidParams[world];
                                 <MudItem>
-                                    <MudPaper MinHeight="110px" MinWidth="300px" Elevation="90" Outlined Class="pa-2">
+                                    <MudPaper MinHeight="110px" MinWidth="300px" Elevation="5" Outlined Class="pa-2">
                                         <MudStack Spacing="1" AlignItems="AlignItems.Start" Row Style="width:410px;" StretchItems="StretchItems.End">
                                             <MudImage ObjectFit="ObjectFit.Contain" Width="120" Height="120" Src="@world.Image" Alt="@world.Name" />
 
@@ -160,7 +160,7 @@ else
                                                     <!--Hack for visualizing traits by icon only-->
                                                     <MudStack Row Style="height:0px; margin-top:-4px; overflow:visible" Class="pl-4 pr-4">
                                                         <MudVirtualize Items="@queryAsteroid.Guarantee.ToList()" Context="trait">
-                                                            <MudImage Elevation="50" Style="position: relative; top: 12px" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
+                                                            <MudImage Style="position: relative; top: 12px" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
                                                         </MudVirtualize>
                                                     </MudStack>
 
@@ -207,7 +207,7 @@ else
                                                                     marginAdjustment = 4;
                                                                 string marginAdjustmentString = $"position:relative;top:12px;margin-right:{marginAdjustment}px;"; ;
                                                             }
-                                                            <MudImage Elevation="50" Style="@marginAdjustmentString" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
+                                                            <MudImage Style="@marginAdjustmentString" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
                                                         </MudVirtualize>
                                                     </MudStack>
 
@@ -246,41 +246,47 @@ else
                             }
                         </MudGrid>
                         <MudSpacer></MudSpacer>
-                        <MudStack Row Justify="Justify.Center">
+                        <MudStack Row Justify="Justify.Center" AlignItems="AlignItems.Center">
                             @{
                                 bool fixedCorrdinateFound = Query != null && Query.SelectedCluster != null && Query.SelectedCluster.HasFixedCoordinate();
                                 bool canDeleteQueryResults = Query != null && !Query.HasResults();
+                                string searchString = (Query?.CurrentQuerySeed > 1) || (Query?.SelectedCluster?.HasFixedCoordinate()??false) ? "Search for more seeds" : "Search for seeds";
                             }
-                            <MudButton Disabled="@fixedCorrdinateFound" Class="start-query-button" OnClick="(_)=> Query?.ResetFilters()" Color="Color.Secondary">Reset Trait Filters</MudButton>
+                            <MudButton Variant="Variant.Filled" Disabled="@fixedCorrdinateFound" Class="start-query-button" OnClick="(_)=> Query?.ResetFilters()" Color="Color.Secondary">Reset Trait Filters</MudButton>
                             <MudNumericField Variant="Variant.Outlined" Label="Starting Seed" @bind-Value=Query.CurrentQuerySeed Min="1"></MudNumericField>
-                            <MudButton Disabled="@fixedCorrdinateFound" OnClick="(_)=> Query?.StartSearching()" Color="Color.Primary">Start Searching Seeds</MudButton>
-                            <MudIconButton Disabled="@canDeleteQueryResults" Icon="@Icons.Material.Filled.Delete" OnClick="(_)=> Query?.ClearQueryResults()" Color="Color.Secondary">Clear Results</MudIconButton>
+                            <MudButton Variant="Variant.Filled" Disabled="@fixedCorrdinateFound" OnClick="(_)=> Query?.StartSearching()" Color="Color.Primary">@searchString</MudButton>
+                            <MudFab Disabled="@canDeleteQueryResults" StartIcon="@Icons.Material.Filled.Delete" OnClick="(_)=> Query?.ClearQueryResults()" Label="Clear Results" Color="Color.Secondary"></MudFab>
                         </MudStack>
                     </MudStack>
                 </MudPaper>
             </MudContainer>
-
-            @if (Query != null && Query.HasResults())
-            {
-                <MudContainer MaxWidth="MaxWidth.ExtraLarge" hidden="@(!Query?.HasResults())" >
-                    <MudPaper Class="pa-3">
-                        <MudStack Spacing="4" AlignItems="AlignItems.Center">
-                            <MudItem>
-                                <MudStack Row="true" Justify="Justify.Center" Spacing="3">
-                                    <MudText GutterBottom Typo="Typo.h5">Seed Query Results:</MudText>
-                                </MudStack>
-                                <MudSpacer></MudSpacer>
-                                <MudGrid Spacing="2">
-                                    <MudVirtualize SpacerElement="MudDivider" Items="@Query?.QueryResults?.ToList()" Context="queryResult">
-                                    <QueryResultVisualizer SearchQuery="Query" QueryResult="@queryResult"></QueryResultVisualizer>
-                                    </MudVirtualize>
-                                </MudGrid>
-                                <MudButton Class="query-results" OnClick="(_)=> GoToTraitSelection()" Color="Color.Secondary">Go back to search</MudButton>
-                            </MudItem>
-                        </MudStack>
-                    </MudPaper>
-                </MudContainer>
-            }
+            <MudContainer MaxWidth="MaxWidth.ExtraLarge" hidden="@(Query == null || Query != null && !Query.HasClusterSelected())">
+                <MudPaper Class="pa-3" Elevation="2">
+                    <MudStack Spacing="4" AlignItems="AlignItems.Center">
+                        <MudItem>
+                            <MudStack Row="true" Justify="Justify.Center" Spacing="3">
+                                <MudText GutterBottom Typo="Typo.h5">Seed Query Results:</MudText>
+                            </MudStack>
+                            <MudSpacer></MudSpacer>
+                            <MudGrid Spacing="2">
+                                @if (Query != null && Query.HasClusterSelected())
+                                {
+                                    if (Query.HasResults())
+                                    {
+                                        <MudVirtualize SpacerElement="MudDivider" Items="@Query?.QueryResults?.ToList()" Context="queryResult">
+                                            <QueryResultVisualizer SearchQuery="Query" QueryResult="@queryResult"></QueryResultVisualizer>
+                                        </MudVirtualize>
+                                    }
+                                    @for (int i = 0; i < Query?.QueryTarget - Query.QueryResults.Count(); i++)
+                                    {
+                                        <QueryResultPlaceholder AsteroidNumber="@Query.SelectedCluster.WorldPlacements.Count()"></QueryResultPlaceholder>
+                                    }
+                                }
+                            </MudGrid>
+                        </MudItem>
+                    </MudStack>
+                </MudPaper>
+            </MudContainer>
             <div id="end-page-id"></div>
         </MudStack>
     </MudContainer>
@@ -311,10 +317,10 @@ else
     }
 
 
-    public void StartSearching()
+    public async void StartSearching()
     {
         Query.StartSearching();
-
+        await ScrollToQuery();
     }
     public async Task GoToTraitSelection()
     {
@@ -327,6 +333,11 @@ else
         await Task.Delay(5);
         await ScrollManager.ScrollIntoViewAsync(".start-query-button", ScrollBehavior.Smooth);
     }
+    public async Task ScrollToResults()
+    {
+        await Task.Delay(5);
+        await ScrollManager.ScrollIntoViewAsync(".query-results", ScrollBehavior.Smooth);
+    }
 
     public async Task SelectCluster(ClusterLayout cluster)
     {
@@ -335,6 +346,6 @@ else
 
         Query.SelectCluster(cluster);
 
-        await ScrollToQuery();
+        await GoToTraitSelection();
     }
 }

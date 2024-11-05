@@ -11,6 +11,7 @@ namespace TraitFinderApp.Client.Model.Search
     {
         int worldIndex;
         Asteroid targetAsteroid;
+        SearchQuery parent;
 
         public IEnumerable<WorldTrait> Guarantee { get =>_guarantee; set {
                 _guarantee = value;
@@ -30,8 +31,9 @@ namespace TraitFinderApp.Client.Model.Search
         }
         private IEnumerable<WorldTrait> _prohibit = new HashSet<WorldTrait>();
 
-        public AsteroidQuery(Asteroid target, int index)
+        public AsteroidQuery(SearchQuery _parent,Asteroid target, int index)
         {
+            parent = _parent;
             targetAsteroid = target;
             Guarantee = new HashSet<WorldTrait>();
             Prohibit = new HashSet<WorldTrait>();
@@ -47,8 +49,7 @@ namespace TraitFinderApp.Client.Model.Search
                return !HasProhibitedTrait(trait)
                && Guarantee.Count() < targetAsteroid.TraitRule.max
                && AvailableTraits.Contains(trait);
-            }
-        
+            }      
         
         }
         public int GetMaxCount() => targetAsteroid.TraitRule.max;
@@ -76,6 +77,7 @@ namespace TraitFinderApp.Client.Model.Search
         public void ReevaluateAvailableTraits()
         {
             _availableTraits = GetAllCurrentlyAvailableTraits();
+            parent.ClearQueryResults();
         }
 
 

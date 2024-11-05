@@ -15,6 +15,7 @@ namespace TraitFinderApp.Client.Model
 
         public static bool ImportGameData(bool spacedOut)
         {
+            Console.WriteLine("reimport asteroids");
             var data = Newtonsoft.Json.JsonConvert.DeserializeObject<DataImport>(spacedOut ? json_SpacedOut : json_BaseGame);
             if (data != null)
             {
@@ -85,76 +86,74 @@ namespace TraitFinderApp.Client.Model
         {
             var cluster = searchQuery.SelectedCluster;
 
-            List<Asteroid> asteroids = new(searchQuery.SelectedCluster.WorldPlacements.Count);
+            var asteroids = new Tuple<Asteroid, int>[cluster.WorldPlacements.Count];
 
             List<QueryResult> results = new List<QueryResult>(targetCount);
 
-            foreach (var worldPlacement in cluster.WorldPlacements)
+            for (int i = 0; i < cluster.WorldPlacements.Count; i++)
             {
-                asteroids.Add(worldPlacement.Asteroid);
+                //0 seed always generates all asteroids with no traits
+                int offsetIndex = (startSeed > 0) ? i : 0;
+
+                asteroids[i] = (new(cluster.WorldPlacements[i].Asteroid, offsetIndex));
             }
             int queryableRange = startSeed + seedRange;
 
             Console.WriteLine(cluster.Name);
-            int asteroidCount = asteroids.Count;
+            int asteroidCount = asteroids.Length;
+
+            //check asteroids first that have forbidden traits
+            var asteroidsSortedByFilterCount = asteroids.OrderByDescending(searchEntry => searchQuery.GetTotalQueryParams(searchEntry.Item1)).ToArray();
+
+            Dictionary<Asteroid, AsteroidQuery> queryParams = new(searchQuery.AsteroidParams);
 
             Dictionary<Asteroid, List<WorldTrait>> TraitStorage = new(asteroidCount);
+
 
             while (startSeed < queryableRange && results.Count < targetCount)
             {
                 int localSeed = 0;
+                bool seedFailedQuery = false;
                 //Console.Write("Checking seed: "+startSeed);
-                foreach (var asteroid in asteroids)
+                for (int i = 0; i < asteroidCount; ++i)
                 {
-                    var traits = GetAsteroidTraitsForSeed(asteroid, startSeed+localSeed);
+                    var asteroidWithOffset = asteroidsSortedByFilterCount[i];
+                    var asteroid = asteroidWithOffset.Item1;
+                    localSeed = asteroidWithOffset.Item2;
+                    var traits = GetAsteroidTraitsForSeed(asteroid, startSeed + localSeed);
                     TraitStorage[asteroid] = traits;
 
-
-                    if (searchQuery.AsteroidParams.TryGetValue(asteroid, out var asteroidParams))
+                    if (queryParams.TryGetValue(asteroid, out var asteroidParams))
                     {
-                        bool requiredTraitsFulfilled = !asteroidParams.Guarantee.Except(traits).Any();
-                        if (!requiredTraitsFulfilled)
-                        {
-                            //not all guaranteed traits are in asteroid
-                            //Console.WriteLine("not all required traits fulfilled!");
-                            break;
-                        }
-                        bool prohibitedTraitsFulfilled = !asteroidParams.Prohibit.Intersect(traits).Any();
-                        if (!prohibitedTraitsFulfilled)
-                        {
+                        bool hasProhibited = asteroidParams.Prohibit.Any();
+                        bool hasGuaranteed = asteroidParams.Guarantee.Any();
+                        if (
                             //asteroid had prohibited traits
-                            //Console.WriteLine("prohibited traits found");
+                             hasProhibited && asteroidParams.Prohibit.Intersect(traits).Any()
+                            //not all guaranteed traits are in asteroid
+                            || hasGuaranteed && asteroidParams.Guarantee.Except(traits).Any()
+                            )
+                        {
+                            
+                            seedFailedQuery=true;
                             break;
                         }
                     }
-                    if(startSeed > 0) //0 seed always generates all asteroids with no traits
-                        ++localSeed;
                 }
 
                 ++startSeed;
-                if (localSeed < asteroidCount) //some asteroids were canceled, checking next
+                if (seedFailedQuery) //some asteroids were canceled, checking next
                 {
                     continue;
                 }
 
-
-                //Console.WriteLine("seed fulfilled requirements!");
-
-                //foreach(var kvp in TraitStorage)
-                //{
-                //    Console.Write(kvp.Key.Name + ": ");
-                //    foreach(var trait in kvp.Value)
-                //    {
-                //        Console.Write(trait.Name + " ");
-                //    }
-                //    Console.WriteLine();
-                //}
-
                 var asteroidQueryResults = new List<QueryAsteroidResult>(asteroidCount);
-                    
-                foreach (var kvp in TraitStorage)
+
+                foreach (var asteroidWithIndex in asteroids)
                 {
-                    asteroidQueryResults.Add(new(kvp.Key, new(kvp.Value)));
+                    var asteroid = asteroidWithIndex.Item1;
+                    if (TraitStorage.TryGetValue(asteroid, out var traitResults)) 
+                        asteroidQueryResults.Add(new(searchQuery,asteroid, new(traitResults)));
                 }
 
                 results.Add(new()
@@ -202,11 +201,11 @@ namespace TraitFinderApp.Client.Model
             List<WorldTrait> allTraitsLocal = new List<WorldTrait>(allTraits);
             TagSet requiredTags = ((rule.requiredTags != null) ? new TagSet(rule.requiredTags) : null);
             TagSet forbiddenTags = ((rule.forbiddenTags != null) ? new TagSet(rule.forbiddenTags) : null);
-            
-            allTraitsLocal.RemoveAll((WorldTrait trait) => 
-            (requiredTags != null && !trait.traitTagsSet.ContainsAll(requiredTags)) 
-            || (forbiddenTags != null && trait.traitTagsSet.ContainsOne(forbiddenTags)) 
-            || (rule.forbiddenTraits != null && rule.forbiddenTraits.Contains(trait.Id)) 
+
+            allTraitsLocal.RemoveAll((WorldTrait trait) =>
+            (requiredTags != null && !trait.traitTagsSet.ContainsAll(requiredTags))
+            || (forbiddenTags != null && trait.traitTagsSet.ContainsOne(forbiddenTags))
+            || (rule.forbiddenTraits != null && rule.forbiddenTraits.Contains(trait.Id))
             || !trait.IsValid(world, logErrors: true));
 
             int randomNumber = kRandom.Next(rule.min, Math.Max(rule.min, rule.max + 1));

@@ -1,11 +1,26 @@
 ﻿@inherits LayoutComponentBase
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 
-<MudThemeProvider Theme="@_theme" IsDarkMode="_isDarkMode" />
+<MudThemeProvider @ref="@_mudThemeProvider" Theme="@_theme" IsDarkMode="LocalStorageHelper.DarkThemeActive" />
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 <MudLayout>
-    <MudMainContent Class="pa-8">
+    <MudFab Style="position:fixed;top:25px;left:25px; z-index:99;"
+            StartIcon="@((_drawerOpen?@Icons.Material.Filled.Close:@Icons.Material.Filled.Settings))"
+            Color="Color.Primary"
+            OnClick="(_)=>ToggleDrawer()">
+    </MudFab>
+    <MudPaper MinHeight="100px" Elevation="10" MinWidth="100px" hidden="@(!_drawerOpen)" Style=" position:fixed;top:100px;left:25px; z-index:99;">
+        <MudStack Style="padding:5px">
+            <MudSwitch T="bool" @bind-Value="@PersistantTraitOrdering" Color="@Color.Success" UncheckedColor="@Color.Error" Label="Results inherit trait select order"></MudSwitch>
+            <MudSwitch T="bool" @bind-Value="@HideTraitlessAsteroids" Color="@Color.Success" UncheckedColor="@Color.Error" Label="Hide asteroids without traits in results"></MudSwitch>
+            <MudSwitch T="bool" ThumbIcon="@DarkLightModeButtonIcon" ThumbIconColor="@Color.Primary" @bind-Value="@LocalStorageHelper.DarkThemeActive" Label="Theme"></MudSwitch>
+        </MudStack>
+    </MudPaper>
+
+    <MudMainContent Class="pa-8">X
+
         @Body
     </MudMainContent>
 </MudLayout>
@@ -18,13 +33,54 @@
 </div>
 
 @code {
-    private bool _drawerOpen = true;
+    private bool _drawerOpen = false;
 
-    private bool _isDarkMode = true;
 
     private MudTheme? _theme = null;
+    private MudThemeProvider _mudThemeProvider;
 
+    public bool PersistantTraitOrdering
+    {
+        get => _persistantTraitOrdering;
+        set
+        {
+            _persistantTraitOrdering = value;
+            SetTraitOrderingPersistent(value);
+        }
+    }
+    private bool _persistantTraitOrdering = false;
 
+    public void SetTraitOrderingPersistent(bool enabled)
+    {
+        localStorage.SetItemAsync(LocalStorageHelper.PersistantTraitOrderingKey, enabled);
+        LocalStorageHelper.UsePersistentTraitOrdering = enabled;
+    }
+    public bool HideTraitlessAsteroids
+    {
+        get => _hideTraitlessAsteroids;
+        set
+        {
+            _hideTraitlessAsteroids = value;
+            SetHideTraitless(value);
+        }
+    }
+    private bool _hideTraitlessAsteroids = false;
+
+    public void SetHideTraitless(bool enabled)
+    {
+        localStorage.SetItemAsync(LocalStorageHelper.HideTraitlessKey, enabled);
+        LocalStorageHelper.HideTraitlessAsteroids = enabled;
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        PersistantTraitOrdering = await localStorage.GetItemAsync<bool>(LocalStorageHelper.PersistantTraitOrderingKey);
+        HideTraitlessAsteroids = await localStorage.GetItemAsync<bool>(LocalStorageHelper.HideTraitlessKey);
+        LocalStorageHelper.DarkThemeActive = await _mudThemeProvider.GetSystemPreference();
+
+        await base.OnInitializedAsync();
+    }
 
     protected override void OnInitialized()
 
@@ -33,11 +89,9 @@
         base.OnInitialized();
 
 
-
         _theme = new()
 
             {
-
                 PaletteLight = _lightPalette,
                 PaletteDark = _darkPalette,
                 LayoutProperties = new LayoutProperties()
@@ -46,26 +100,13 @@
 
     }
 
-
-
-
-
-    private void DrawerToggle()
-
-    {
-
-        _drawerOpen = !_drawerOpen;
-
-    }
-
-
-
     private void DarkModeToggle()
-
     {
-
-        _isDarkMode = !_isDarkMode;
-
+        LocalStorageHelper.DarkThemeActive = !LocalStorageHelper.DarkThemeActive;
+    }
+    private void ToggleDrawer()
+    {
+        _drawerOpen = !_drawerOpen;
     }
 
 
@@ -149,14 +190,13 @@
         };
 
 
-
-    public string DarkLightModeButtonIcon => _isDarkMode switch
-
+    public string DarkLightModeButtonIcon => LocalStorageHelper.DarkThemeActive
+    switch
     {
 
-        true => Icons.Material.Rounded.AutoMode,
+        true => Icons.Material.Rounded.DarkMode,
 
-        false => Icons.Material.Outlined.DarkMode,
+        false => Icons.Material.Outlined.LightMode ,
 
     };
 }

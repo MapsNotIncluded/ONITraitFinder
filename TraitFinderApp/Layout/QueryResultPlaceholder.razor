@@ -1,0 +1,24 @@
+﻿@using TraitFinderApp.Client.Model.Search
+
+<MudItem>
+    <MudPaper Outlined Elevation="10" Class="pa-1" Width="300px">
+        <MudStack Spacing="4">
+            <MudStack Row Spacing="1" AlignItems="AlignItems.Center" Justify="Justify.Center">
+                <MudSkeleton SkeletonType="SkeletonType.Rectangle" Animation="Animation.False" Width="240px" Height="46px" />
+            </MudStack>
+            @for (int i = 0; i < AsteroidNumber; i++)
+            {
+                <MudStack Row Spacing="1" AlignItems="AlignItems.Center" Style="padding:3px">
+                    <MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Circle" Width="55px" Height="55px" />
+                    <MudSkeleton Animation="Animation.False" SkeletonType="SkeletonType.Rectangle" Width="200px" Height="46px"  />
+                </MudStack>
+            }
+        </MudStack>
+    </MudPaper>
+</MudItem>
+
+@code {
+    [Parameter]
+    [EditorRequired]
+    public int AsteroidNumber { get; set; }
+}

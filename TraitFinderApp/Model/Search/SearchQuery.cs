@@ -17,7 +17,7 @@ namespace TraitFinderApp.Client.Model.Search
 
         public int CurrentQuerySeed = 1;
 
-        int QueryTarget = 5;
+        public int QueryTarget = 5;
 
         #region dlc
 
@@ -61,6 +61,8 @@ namespace TraitFinderApp.Client.Model.Search
         {
             ActiveMode = mode;
             SelectedCluster = null;
+            AsteroidParams = new(0);
+            ClearQueryResults();
         }
         public bool IsModeSelected(ClusterCategory mode) => ActiveMode == mode;
         public bool AnyModeSelected() => ActiveMode != null;
@@ -69,6 +71,10 @@ namespace TraitFinderApp.Client.Model.Search
         {
             SelectedCluster = cluster;
             InitializeAsteroidQueryParams();
+        }
+        public bool HasClusterSelected()
+        {
+            return SelectedCluster != null;
         }
 
         private void InitializeAsteroidQueryParams()
@@ -82,7 +88,7 @@ namespace TraitFinderApp.Client.Model.Search
             {
                 var asteroid = SelectedCluster.WorldPlacements[i].Asteroid;
 
-                AsteroidParams.Add(asteroid, new(asteroid, i));
+                AsteroidParams.Add(asteroid, new AsteroidQuery(this,asteroid, i));
 
             }
             if (hasFixedCoordinate)
@@ -95,11 +101,17 @@ namespace TraitFinderApp.Client.Model.Search
         {
             DataImport.FetchSeeds(this, CurrentQuerySeed, QueryTarget, 5000);
         }
-        public void ClearQueryResults()=> QueryResults = new List<QueryResult>(QueryTarget);
+        public void ClearQueryResults()
+        {
+            QueryResults = new List<QueryResult>(QueryTarget);
+            ResetQuerySeed();
+        }
 
         public void ResetFilters()
         {
             ClearQueryResults();
+            if (SelectedCluster == null)
+                return;
             if (SelectedCluster != null && SelectedCluster.HasFixedCoordinate())
                 return;
             if (AsteroidParams != null)
@@ -109,12 +121,19 @@ namespace TraitFinderApp.Client.Model.Search
                     item.Value.ResetAll();
                 }
             }
-            ResetQuerySeed();
         }
-        public void ResetQuerySeed() => CurrentQuerySeed = 1;
+        public void ResetQuerySeed()
+        {
+            if (SelectedCluster != null && SelectedCluster.HasFixedCoordinate())
+                return;
+            CurrentQuerySeed = 1;
+        }
 
         public void PrefillFixedTraits(int seed)
         {
+            if (SelectedCluster == null)
+                return;
+
             for (int i = 0; i < SelectedCluster.WorldPlacements.Count; i++)
             {
                 var asteroid = SelectedCluster.WorldPlacements[i].Asteroid;
@@ -144,15 +163,28 @@ namespace TraitFinderApp.Client.Model.Search
 
             List<QueryResult> currentlist = QueryResults.ToList();
             currentlist.AddRange(results);
-            currentlist.OrderBy(entry => entry.seed);
-            List<QueryResult> newList = new();
-            while (newList.Count < QueryTarget && currentlist.Any())
+            currentlist = currentlist.OrderBy(entry => entry.seed).ToList();
+            while (currentlist.Count > QueryTarget)
             {
-                newList.Insert(0,currentlist.Last());
-                currentlist.Remove(currentlist.Last());
-
+                currentlist.RemoveAt(0);
             }
-            QueryResults = (newList); //or QueryResults.Concat
+            QueryResults = (currentlist); //or QueryResults.Concat
+        }
+
+        public int GetTotalQueryParams(Asteroid asteroid)
+        {
+            int total = 0;  
+            if(AsteroidParams.TryGetValue(asteroid,out var query))
+            {
+                total += query.Guarantee.Count();
+                total += query.Prohibit.Count();
+            }
+            else
+            {
+                Console.WriteLine(asteroid.Name + " was not found in query???");
+            }
+
+            return total;
         }
     }
 }

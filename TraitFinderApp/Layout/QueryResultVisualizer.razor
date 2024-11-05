@@ -4,38 +4,49 @@
 @inject ClipboardService ClipboardService
 
 <MudItem>
-    <MudPaper Outlined Elevation="75" Class="pa-1" Width="300px">
+    <MudPaper Outlined Elevation="10" Class="pa-1" Width="300px">
         <MudStack Spacing="4">
             <MudStack Row Spacing="1" AlignItems="AlignItems.Center" Justify="Justify.Center">
                 <MudText Style="padding:4px" Typo="Typo.h6">@QueryResult.GetCoordinate()</MudText>
-                <MudIconButton Icon="@Icons.Material.Filled.ContentCopy" Color="Color.Tertiary" OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())"></MudIconButton>
+                <MudFab IconColor="Color.Tertiary" EndIcon="@Icons.Material.Filled.ContentCopy" OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())"></MudFab>
             </MudStack>
             <MudVirtualize Items="@QueryResult.asteroidsWithTraits" Context="asteroidQueryResult">
-                <MudStack Row Spacing="0">
+                @if (!LocalStorageHelper.HideTraitlessAsteroids || asteroidQueryResult.Traits.Any())
+                {
+                    <MudStack Row Spacing="0">
                     <MudTooltip Text="@asteroidQueryResult.Asteroid.Name" Arrow="true" Placement="Placement.Start">
                         <MudImage ObjectFit="ObjectFit.Contain" Width="55" Height="55" Src="@asteroidQueryResult.Asteroid.Image" Alt="@asteroidQueryResult.Asteroid.Name" />
                     </MudTooltip>
-                    <MudVirtualize Items="@asteroidQueryResult.Traits" Context="trait">
+                        <MudVirtualize Items="@asteroidQueryResult.GetTraitsForUI()" Context="trait">
                         @{
+                            bool isDarkTheme = LocalStorageHelper.DarkThemeActive;
                             string outlineStyle = SearchQuery.AsteroidHasTraitGuaranteed(asteroidQueryResult.Asteroid,trait) ? $"outline-style:solid; outline-color:#{trait.ColorHex};" : string.Empty;
 
-                                string traitColorStyle = $"background-color:#{trait.ColorHex}33;  outline-width:2px; {outlineStyle}";
+                            string modifierColor = isDarkTheme ? "black" : "white";
+
+                            string backgroundColorStyle = $"background-color:color-mix(in srgb, #{trait.ColorHex},{modifierColor} 66%);  outline-width:2px; {outlineStyle}";
+                            string colorStyle = $"background-color:#{trait.ColorHex};  outline-width:2px; {outlineStyle}";
                             string imageStyle = "margin-left:-5px; margin-right:5px";
                             string evilInvisibleString = " ";
                         }
                         <MudTooltip Text="@trait.Name" Arrow="true" Placement="Placement.Top">
-                            <MudChip T="string" Style="@traitColorStyle">
-                                <MudImage ObjectFit="ObjectFit.Contain" Width="20" Height="20" Src="@trait.Image" />
+                            <MudChip T="string" Variant="Variant.Text" Style="@backgroundColorStyle">
+                                    <MudImage ObjectFit="ObjectFit.Contain" Width="20" Height="20" Src="@trait.Image" />
                             </MudChip>
                         </MudTooltip>
                     </MudVirtualize>
-                </MudStack>
+                    </MudStack>
+                }
             </MudVirtualize>
         </MudStack>
     </MudPaper>
 </MudItem>
 
 @code {
+
+    [CascadingParameter]
+    protected MudTheme Theme { get; set; }
+
     [Parameter][EditorRequired]
     public QueryResult QueryResult { get; set; }
 
@@ -46,6 +57,7 @@
     {
         try
         {
+
             await ClipboardService.WriteTextAsync(text);
             Snackbar.Add("Seed copied to the clipboard!", Severity.Success);
         }
