@@ -14,7 +14,7 @@
     <MudPaper MinHeight="100px" Elevation="10" MinWidth="100px" hidden="@(!_drawerOpen)" Style=" position:fixed;top:100px;left:25px; z-index:99;">
         <MudStack Style="padding:5px">
             <MudSwitch T="bool" @bind-Value="@PersistantTraitOrdering" Color="@Color.Success" UncheckedColor="@Color.Error" Label="Results inherit trait select order"></MudSwitch>
-            <MudSwitch T="bool" @bind-Value="@HideTraitlessAsteroids" Color="@Color.Success" UncheckedColor="@Color.Error" Label="Hide asteroids without traits in results"></MudSwitch>
+            <MudSwitch T="bool" @bind-Value="@HideTraitlessAsteroids" Color="@Color.Success" UncheckedColor="@Color.Error" Label="Hide asteroids that cannot have traits in results"></MudSwitch>
             <MudSwitch T="bool" ThumbIcon="@DarkLightModeButtonIcon" ThumbIconColor="@Color.Primary" @bind-Value="@LocalStorageHelper.DarkThemeActive" Label="Theme"></MudSwitch>
         </MudStack>
     </MudPaper>

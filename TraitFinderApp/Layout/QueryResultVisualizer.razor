@@ -11,7 +11,7 @@
                 <MudFab IconColor="Color.Tertiary" EndIcon="@Icons.Material.Filled.ContentCopy" OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())"></MudFab>
             </MudStack>
             <MudVirtualize Items="@QueryResult.asteroidsWithTraits" Context="asteroidQueryResult">
-                @if (!LocalStorageHelper.HideTraitlessAsteroids || asteroidQueryResult.Traits.Any())
+                @if (!LocalStorageHelper.HideTraitlessAsteroids || !asteroidQueryResult.Asteroid.DisableWorldTraits)
                 {
                     <MudStack Row Spacing="0">
                     <MudTooltip Text="@asteroidQueryResult.Asteroid.Name" Arrow="true" Placement="Placement.Start">

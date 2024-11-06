@@ -123,7 +123,7 @@ else
                     <MudStack Spacing="2" AlignItems="AlignItems.Center">
                         <MudStack Row="true" Justify="Justify.Center" Spacing="3">
                             <MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h4">Configure your trait filters for @Query?.SelectedCluster?.Name</MudText>
-                            <MudTooltip Text="Reset all Trait Filters">
+                            <MudTooltip Text="Reset all trait filters">
                                 <MudIconButton Size="Size.Medium" Icon="@Icons.Material.Filled.DeleteForever" Disabled="@blockedFromReset" Class="start-query-button" OnClick="(_)=> Query?.ResetFilters()" Color="Color.Secondary"> </MudIconButton>
                             </MudTooltip>
                         </MudStack>
@@ -311,11 +311,14 @@ else
                                     }
                                     else
                                     {
-                                        <MudPaper Outlined Elevation="10" Class="pa-1" Width="300px" Height="200px">
-                                            <MudStack Spacing="0" AlignItems="AlignItems.Center" Justify="Justify.Center">
-                                                <MudText Align="Align.Center" Style="padding:4px" Typo="Typo.h6">No Results yet</MudText>
-                                                <MudText Align="Align.Center" Typo="Typo.body1">Try searching for more seeds</MudText>
-                                                <MudText Align="Align.Center" Typo="Typo.body1">The tool will keep the highest 5 seeds for comparison.</MudText>
+                                        <MudPaper Outlined Elevation="10" Class="pa-1" Width="300px" Height="360px">
+                                            <MudStack Spacing="2" AlignItems="AlignItems.Center" Justify="Justify.Center">
+                                                <MudText Align="Align.Center" Typo="Typo.h6">No Results yet</MudText>
+                                                <MudText Align="Align.Center" Typo="Typo.body1">Try searching for more seeds<br/><br/>The tool will keep the highest 5 seeds for easy comparison.</MudText>
+                                                <MudElement Style="height:65px"></MudElement>
+                                                <MudText Align="Align.Center" Typo="Typo.body1">Cannot seem to find a seed with all the traits you want and open to mods?</MudText>
+                                                <MudLink Style="text-align:center" Href="https://steamcommunity.com/sharedfiles/filedetails/?id=2947429297" Typo="Typo.body1">Install Cluster Generation Manager to simply select all the traits you want (and much more) for your game!</MudLink>
+
                                             </MudStack>
                                         </MudPaper>
                                     }
@@ -328,6 +331,10 @@ else
             <div id="end-page-id"></div>
         </MudStack>
     </MudContainer>
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+    <MudLink hidden="@(Query == null || !Query.HasClusterSelected())" Style="text-align:center;overflow: visible;height: 0px;" Underline="Underline.Always" Href="https://github.com/Sgt-Imalas/TraitFinder" Typo="Typo.subtitle2" Color="Color.Default">made by Sgt_Imalas</MudLink>
+    </div>
+    
 }
 
 
