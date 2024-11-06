@@ -605,7 +605,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-qhK59EN2fzTPl0GrDSozP\/awUyom6IXvHPTWg\/i2UqI=",
+      "hash": "sha256-yXtl2Xfe0AFmdOJcUalZ++3A02oNgS6qvQ52H9i1qI0=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -613,7 +613,7 @@
       "url": "_framework\/dotnet.native.8.0.10.5qu5xpewhc.js"
     },
     {
-      "hash": "sha256-4CdWRuvaRit50nEoxcJe3FBUxAxZg7QmRAhie8tKUEE=",
+      "hash": "sha256-uVBAtHqm6zyYemjPVk1r5WyOUGMLRr1qsMafGB\/BfkY=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -877,7 +877,7 @@
       "url": "_framework\/System.Xml.XDocument.wasm"
     },
     {
-      "hash": "sha256-bS4CyMJjxBKUhwEkBO1bLQ1Vt1s4DDmTN2RgEjiFvVM=",
+      "hash": "sha256-+YZD\/h+q\/slr0SF9h4WrMK3RokiknmZ\/rHv9\/10H\/N4=",
       "url": "_framework\/TraitFinderApp.wasm"
     },
     {
@@ -893,5 +893,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "lUx+ucOv"
+  "version": "MFkNlIXd"
 };
