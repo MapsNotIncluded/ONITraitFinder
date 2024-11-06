@@ -270,7 +270,14 @@ else
                             <MudItem>
                                 <MudStack Row Spacing="0" Justify="Justify.Center" AlignItems="AlignItems.Center">
                                     <MudText Inline Typo="Typo.h6" Style="text-overflow:ellipsis; white-space: nowrap;" Align="Align.Center">@coordTitleString</MudText>
-                                    <MudNumericField Variant="Variant.Outlined" @bind-Value=Query.CurrentQuerySeed Min="1"></MudNumericField>
+                                    @if (isFixedCoordinate)
+                                    {
+                                        <MudNumericField Variant="Variant.Outlined" Disabled=true Value="@Query?.SelectedCluster?.fixedCoordinate" Min="1"></MudNumericField>                                        
+                                    }
+                                    else
+                                    {
+                                        <MudNumericField Variant="Variant.Outlined" @bind-Value=Query.CurrentQuerySeed Min="1"></MudNumericField>
+                                    }
                                     <MudText Inline Typo="Typo.h6" Align="Align.Center">-0-0-0</MudText>
                                 </MudStack>
                             </MudItem>

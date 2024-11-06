@@ -128,40 +128,38 @@ namespace TraitFinderApp.Client.Model
                         bool hasProhibited = asteroidParams.Prohibit.Any();
                         bool hasGuaranteed = asteroidParams.Guarantee.Any();
                         if (
-                            //asteroid had prohibited traits
+                             //asteroid had prohibited traits
                              hasProhibited && asteroidParams.Prohibit.Intersect(traits).Any()
                             //not all guaranteed traits are in asteroid
                             || hasGuaranteed && asteroidParams.Guarantee.Except(traits).Any()
                             )
                         {
-                            
-                            seedFailedQuery=true;
+
+                            seedFailedQuery = true;
                             break;
                         }
                     }
                 }
+                if (!seedFailedQuery) //some asteroids were canceled, checking next
+                {
 
+                    var asteroidQueryResults = new List<QueryAsteroidResult>(asteroidCount);
+
+                    foreach (var asteroidWithIndex in asteroids)
+                    {
+                        var asteroid = asteroidWithIndex.Item1;
+                        if (TraitStorage.TryGetValue(asteroid, out var traitResults))
+                            asteroidQueryResults.Add(new(searchQuery, asteroid, new(traitResults)));
+                    }
+
+                    results.Add(new()
+                    {
+                        seed = startSeed,
+                        cluster = cluster,
+                        asteroidsWithTraits = asteroidQueryResults
+                    });
+                }
                 ++startSeed;
-                if (seedFailedQuery) //some asteroids were canceled, checking next
-                {
-                    continue;
-                }
-
-                var asteroidQueryResults = new List<QueryAsteroidResult>(asteroidCount);
-
-                foreach (var asteroidWithIndex in asteroids)
-                {
-                    var asteroid = asteroidWithIndex.Item1;
-                    if (TraitStorage.TryGetValue(asteroid, out var traitResults)) 
-                        asteroidQueryResults.Add(new(searchQuery,asteroid, new(traitResults)));
-                }
-
-                results.Add(new()
-                {
-                    seed = startSeed,
-                    cluster = cluster,
-                    asteroidsWithTraits = asteroidQueryResults
-                });
             }
             searchQuery.AddQueryResults(results, startSeed);
         }
