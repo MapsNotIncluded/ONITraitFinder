@@ -302,9 +302,15 @@ else
                                             <QueryResultVisualizer SearchQuery="Query" QueryResult="@queryResult"></QueryResultVisualizer>
                                         </MudVirtualize>
                                     }
-                                    @for (int i = 0; i < Query?.QueryTarget - Query.QueryResults.Count(); i++)
+                                    else
                                     {
-                                        <QueryResultPlaceholder AsteroidNumber="@Query.SelectedCluster.WorldPlacements.Count()"></QueryResultPlaceholder>
+                                        <MudPaper Outlined Elevation="10" Class="pa-1" Width="300px" Height="200px">
+                                            <MudStack Spacing="0" AlignItems="AlignItems.Center" Justify="Justify.Center">
+                                                <MudText Align="Align.Center" Style="padding:4px" Typo="Typo.h6">No Results yet</MudText>
+                                                <MudText Align="Align.Center" Typo="Typo.body1">Try searching for more seeds</MudText>
+                                                <MudText Align="Align.Center" Typo="Typo.body1">The tool will keep the highest 5 seeds for comparison.</MudText>
+                                            </MudStack>
+                                        </MudPaper>
                                     }
                                 }
                             </MudGrid>
