@@ -252,7 +252,6 @@ else
                                                         </MudSelect>
                                                     }
                                                 </MudStack>
-
                                             </MudStack>
                                         </MudPaper>
                                     </MudItem>
@@ -290,7 +289,7 @@ else
                                     <MudFab Disabled="@canDeleteQueryResults" StartIcon="@Icons.Material.Filled.Delete" OnClick="(_)=> Query?.ClearQueryResults()" Label="Clear Results" Color="Color.Secondary"></MudFab>
                                 </MudItem>
                                 <MudItem>
-                                    <MudFab Variant="Variant.Filled" Disabled="@fixedCorrdinateFound" OnClick="(_)=> Query?.StartSearching()" Color="Color.Primary" Label="@searchString"></MudFab>
+                                    <MudFab Variant="Variant.Filled" Disabled="@fixedCorrdinateFound" OnClick="(_)=> StartSearching()" Color="Color.Primary" Label="@searchString"></MudFab>
                                 </MudItem>
                             </MudGrid>
                         </MudStack>
@@ -299,7 +298,7 @@ else
                 <MudContainer MaxWidth="MaxWidth.ExtraLarge" hidden="@(Query == null || Query != null && !Query.HasClusterSelected())">
                     <MudPaper Class="pa-3" Elevation="2">
                         <MudStack Spacing="4" AlignItems="AlignItems.Center">
-                            <MudItem>
+                            <MudItem Class="query-results">
                                 <MudStack Row="true" Justify="Justify.Center" Spacing="3">
                                     <MudText GutterBottom Align="Align.Center" Typo="Typo.h4">Seed Query Results:</MudText>
                                 </MudStack>
@@ -337,8 +336,8 @@ else
             }
         </MudStack>
     </MudContainer>
-    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
-        <MudLink hidden="@(Query == null || !Query.HasClusterSelected())" Target="_blank" Style="text-align:center;overflow: visible;height: 0px;" Underline="Underline.Always" Href="https://github.com/Sgt-Imalas/TraitFinder" Typo="Typo.subtitle2" Color="Color.Default">made by Sgt_Imalas</MudLink>
+        <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+        <MudLink Class="query-results" hidden="@(Query == null || !Query.HasClusterSelected())" Target="_blank" Style="text-align:center;overflow: visible;height: 0px;" Underline="Underline.Always" Href="https://github.com/Sgt-Imalas/TraitFinder" Typo="Typo.subtitle2" Color="Color.Default">made by Sgt_Imalas</MudLink>
     </div>
 
 }
@@ -389,13 +388,17 @@ else
         so.MapGameData();
         DataInitialized = true;
         Query = new();
-
     }
 
+    bool overlay_visible;
     public async void StartSearching()
     {
-        Query.StartSearching();
-        await ScrollToQuery();
+        if(Query!=null)
+            await Query.StartSearching();
+
+        //await Task.Delay(500);
+        //overlay_visible = false;
+        await ScrollToResults();
     }
     public async Task GoToTraitSelection()
     {

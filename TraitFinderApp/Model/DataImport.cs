@@ -99,7 +99,7 @@ namespace TraitFinderApp.Client.Model
         public static Data BaseGame;
         public static Data SpacedOut;
 
-        internal static void FetchSeeds(SearchQuery searchQuery, int startSeed, int targetCount = 4, int seedRange = 2000)
+        internal static async Task FetchSeeds(SearchQuery searchQuery, int startSeed, int targetCount = 4, int seedRange = 2000)
         {
             var cluster = searchQuery.SelectedCluster;
 
@@ -124,7 +124,6 @@ namespace TraitFinderApp.Client.Model
             Dictionary<Asteroid, AsteroidQuery> queryParams = new(searchQuery.AsteroidParams);
 
             Dictionary<Asteroid, List<WorldTrait>> TraitStorage = new(asteroidCount);
-
 
             while (startSeed < queryableRange && results.Count < targetCount)
             {
