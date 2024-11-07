@@ -86,7 +86,7 @@ namespace TraitFinderApp.Client.Model.Search
         {
             var allTraits = new List<WorldTrait>(GetAllWorldCompatibleTraits());
 
-            var allSelected = Guarantee.Concat(Prohibit);
+            var allSelected = Guarantee;
 
             if (targetAsteroid.DisableWorldTraits)
                 return new();
