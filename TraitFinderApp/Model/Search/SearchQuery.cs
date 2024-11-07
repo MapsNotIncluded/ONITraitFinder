@@ -101,7 +101,7 @@ namespace TraitFinderApp.Client.Model.Search
 
         public async Task StartSearching()
         {
-            await DataImport.FetchSeeds(this, CurrentQuerySeed, QueryTarget, 10000);
+            await DataImport.FetchSeeds(this, CurrentQuerySeed, QueryTarget, 5000);
         }
         public void ClearQueryResults()
         {
