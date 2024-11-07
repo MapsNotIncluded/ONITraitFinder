@@ -21,42 +21,42 @@ namespace TraitFinderApp.Client.Model
         public List<Dlc> RequiredDlc;
         public string Name;
         public string Image;
-        public int ID; //underlying game enum value
+        public int Id; //underlying game enum value
 
         public static ClusterCategory BASEGAME_STANDARD = new ClusterCategory()
         {
             RequiredDlc = new() { Dlc.BASEGAME },
             Name = "Standard",
             Image = "./images/gamemodes/gamemode_basegame_standard.png",
-            ID = 0
+            Id = 0
         };
         public static ClusterCategory BASEGAME_THELAB = new ClusterCategory()
         {
             RequiredDlc = new() { Dlc.BASEGAME },
             Name = "The Lab",
             Image = "./images/gamemodes/gamemode_basegame_thelab.png",
-            ID = 3
+            Id = 3
         };
         public static ClusterCategory SPACEDOUT_CLASSIC = new ClusterCategory()
         {
             RequiredDlc = new() { Dlc.SPACEDOUT },
             Name = "Classic",
             Image = "./images/gamemodes/gamemode_spacedout_classic.png",
-            ID = 1
+            Id = 1
         };
         public static ClusterCategory SPACEDOUT_SPACEDOUT = new ClusterCategory()
         {
             RequiredDlc = new() { Dlc.SPACEDOUT },
             Name = "Spaced Out!",
             Image = "./images/gamemodes/gamemode_spacedout_spacedout.png",
-            ID = 1
+            Id = 1
         };
         public static ClusterCategory SPACEDOUT_THELAB = new ClusterCategory()
         {
             RequiredDlc = new() { Dlc.SPACEDOUT },
             Name = "The Lab",
             Image = "./images/gamemodes/gamemode_spacedout_thelab.png",
-            ID = 1
+            Id = 1
         };
         public static IEnumerable<ClusterCategory> Values
         {

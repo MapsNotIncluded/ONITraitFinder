@@ -6,12 +6,12 @@
         public string Name;
         public string Image;
         public bool DisableWorldTraits = false;
-        public List<WorldTraitRule>? TraitRules;
+        public List<WorldTraitRule> TraitRules;
         //all asteroids have only one trait rule (atm)
-        public WorldTraitRule TraitRule => TraitRules.FirstOrDefault();
 
         public float worldTraitScale = 1.0f;
 
+        public WorldTraitRule TraitRule() => TraitRules.FirstOrDefault();
         public Asteroid(string _id, string _name, string _image, List<WorldTraitRule> _rules)
         {
             Id = _id;
@@ -21,7 +21,7 @@
         }
         public Asteroid() { }
 
-        public void InitBindings()
+        public void InitBindings(Data data)
         {
             Image = $"./images/asteroids/{Path.GetFileName(Id)}.png";
         }
@@ -46,25 +46,9 @@
             TraitRules.Add(rule); return this;
         }
 
-        public static List<Asteroid> Values => KeyValues.Values.ToList();
-        public static Dictionary<string, Asteroid> KeyValues
-        {
-            get 
-            {
-                if(_values== null)
-                {
-                    DataImport.ImportGameData(true);
-                }
-
-                return _values;
-            }
-            set
-            {
-                _values = value;
-            }
-        }
-        private static Dictionary<string, Asteroid> _values = null;
-        
+        public static List<Asteroid> Values => DataImport.GetActive().asteroids.ToList();
+        public static Dictionary<string, Asteroid> KeyValues => DataImport.GetActive().asteroidsDict;
+                
         //public static Asteroid FORESTMOONLET = new Asteroid("ForestMoonlet", "Folia Asteroid").AddRule(new WorldTraitRule(2, 4).ForbiddenTag("Oil").ForbiddenTag("NonStartWorld").ForbiddenTrait("GeoDormant"));
         //public static Asteroid IDEALLANDINGSITE = new Asteroid("IdealLandingSite", "Irradiated Forest Asteroid").AddRule(new WorldTraitRule(2, 4).ForbiddenTag("Oil").ForbiddenTag("NonStartWorld").ForbiddenTrait("GeoDormant"));
     }

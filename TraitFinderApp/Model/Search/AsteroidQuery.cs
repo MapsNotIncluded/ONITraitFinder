@@ -47,29 +47,29 @@ namespace TraitFinderApp.Client.Model.Search
             else
             {
                return !HasProhibitedTrait(trait)
-               && Guarantee.Count() < targetAsteroid.TraitRule.max
+               && Guarantee.Count() < GetMaxCount()
                && AvailableTraits.Contains(trait);
             }      
         
         }
-        public int GetMaxCount() => targetAsteroid.TraitRule.max;
+        public int GetMaxCount() => targetAsteroid.TraitRule().max;
 
         public bool CanToggleProhibitedTrait(WorldTrait trait) => trait != null && !HasGuaranteedTrait(trait);
         public bool HasGuaranteedTrait(WorldTrait trait) => Guarantee.Contains(trait);
         public bool HasProhibitedTrait(WorldTrait trait) => Prohibit.Contains(trait);
         public bool CannotHaveTraits() => targetAsteroid.DisableWorldTraits;
-        public bool HasFixedTraits() => targetAsteroid.TraitRule.specificTraits != null && targetAsteroid.TraitRule.specificTraits.Count > 0;
+        public bool HasFixedTraits() => targetAsteroid.TraitRule().specificTraits != null && targetAsteroid.TraitRule().specificTraits.Count > 0;
 
         public void ResetAll()
         {
-            if (targetAsteroid?.TraitRule?.specificTraits?.Count > 0)
+            if (targetAsteroid?.TraitRule()?.specificTraits?.Count > 0)
                 return;
 
             Guarantee = new HashSet<WorldTrait>();
             Prohibit = new HashSet<WorldTrait>();
         }
 
-        public List<WorldTrait> GetAllWorldCompatibleTraits() => DataImport.GetCompatibleTraits(targetAsteroid);
+        public List<WorldTrait> GetAllWorldCompatibleTraits() => DataImport.GetActive().GetCompatibleTraits(targetAsteroid);
         private HashSet<WorldTrait> _availableTraits = new();
         public HashSet<WorldTrait> AvailableTraits => _availableTraits;
 

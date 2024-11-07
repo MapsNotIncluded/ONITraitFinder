@@ -40,7 +40,7 @@ namespace TraitFinderApp.Client.Model.Search
             {
                 if (dlc.IsMainVersion)
                 {
-                    DataImport.ImportGameData(dlc == Dlc.SPACEDOUT);
+                    DataImport.SetActiveVersion(dlc);
 
                     ActiveMode = null;
                     if (!ActiveDlcs.Contains(dlc))

@@ -50,25 +50,10 @@ namespace TraitFinderApp.Client.Model
             Id = string.Empty;
         }
 
-        public static List<WorldTrait> Values = KeyValues.Values.ToList();
+        public static List<WorldTrait> Values => DataImport.GetActive().worldTraits;
 
-        public static Dictionary<string, WorldTrait> KeyValues
-        {
-            get
-            {
-                if (_values == null)
-                {
-                    DataImport.ImportGameData(true);
-                }
-
-                return _values;
-            }
-            set
-            {
-                _values = value;
-            }
-        }
-        private static Dictionary<string, WorldTrait> _values = null;
+        public static Dictionary<string, WorldTrait> KeyValues => DataImport.GetActive().worldTraitsDict;
+        
 
         public bool IsValid(Asteroid world, bool logErrors)
         {
