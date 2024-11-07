@@ -140,7 +140,7 @@ namespace TraitFinderApp.Client.Model.Search
             {
                 var asteroid = SelectedCluster.WorldPlacements[i].Asteroid;
 
-                var traits = DataImport.GetAsteroidTraitsForSeed(asteroid, seed + i);
+                var traits = DataImport.GetRandomTraits(seed + i, asteroid);
                 AsteroidParams[asteroid].Guarantee = traits;
             }
         }

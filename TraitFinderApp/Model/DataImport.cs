@@ -187,11 +187,11 @@ namespace TraitFinderApp.Client.Model
             {
                 return new List<WorldTrait>();
             }
-            var worldTraits = WorldTrait.KeyValues;
+            var worldTraits = GetActive().worldTraitsDict;
 
 
             KRandom kRandom = new KRandom(seed);
-            List<WorldTrait> allTraits = new List<WorldTrait>(WorldTrait.Values);
+            List<WorldTrait> allTraits = new List<WorldTrait>(worldTraits.Values);
             List<WorldTrait> result = new List<WorldTrait>();
             TagSet tagSet = new TagSet();
             var rule = world.TraitRule();
@@ -200,14 +200,7 @@ namespace TraitFinderApp.Client.Model
             {
                 foreach (string specificTrait in rule.specificTraits)
                 {
-                    if (worldTraits.TryGetValue(specificTrait, out var _))
-                    {
-                        result.Add(worldTraits[specificTrait]);
-                    }
-                    else
-                    {
-                        Debug.Fail("World traits " + specificTrait + " doesn't exist, skipping.");
-                    }
+                    result.Add(worldTraits[specificTrait]);                    
                 }
             }
 
