@@ -4,6 +4,7 @@ namespace TraitFinderApp.Client.Model.KleiClasses
 {
     /// <summary>
     ///  not an actual class, use the commented out part in any oni mod to generate an updated json data export for the DataImport class
+    ///  also outdated most likely, check my main repo animexporttool project
     /// </summary>
     public class DataFetchPatch
     {

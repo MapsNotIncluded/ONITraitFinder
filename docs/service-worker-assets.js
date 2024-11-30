@@ -9,7 +9,7 @@
       "url": "data\/gamedata_base.json"
     },
     {
-      "hash": "sha256-4NIpmveLKWNJhjHgxT9QqjmRD1t8UgMYRjoBLINgJeI=",
+      "hash": "sha256-rh6eGIQJGjaQKd3a0SA+\/Ngd18iM2XxIkyCRGP2hDGA=",
       "url": "data\/gamedata_so.json"
     },
     {
@@ -29,27 +29,27 @@
       "url": "icons\/printingpod.ico"
     },
     {
-      "hash": "sha256-lHoTKaRVUXLTmmb3Dk6eUyioC1xc380HU6YR0WvYR9k=",
+      "hash": "sha256-YrwgK6dstOjBKCOXcxrjO8VblsW9JK1l9BSiosyNbZE=",
       "url": "images\/asteroids\/Badlands.png"
     },
     {
-      "hash": "sha256-x5llqGrCItvxkGZAPMA+RUA7SX1tONDJATEuW0Vqplc=",
+      "hash": "sha256-gU6ZhqgLoDBDIdnB8tlJer4OiXXjzTxubVJpAYksRLw=",
       "url": "images\/asteroids\/CeresBaseGameAsteroid.png"
     },
     {
-      "hash": "sha256-I0q8BvqQogt2\/YUzMQREg9i5BgqpnEXQSz\/SQ8HDm2g=",
+      "hash": "sha256-kBqmrZRHwvFUqyO3VHMeN6PU7a5+GE1vpxuU\/wQUNFI=",
       "url": "images\/asteroids\/CeresBaseGameShatteredAsteroid.png"
     },
     {
-      "hash": "sha256-Qzr+ebMopSaYZy5qJzrLoxBX6kOefxOfbiQY8Y4XEYg=",
+      "hash": "sha256-jY+oYTKRwNX0G+qP9FGDYdIp4wUgxwGtcv\/ziqSJef0=",
       "url": "images\/asteroids\/CeresClassicAsteroid.png"
     },
     {
-      "hash": "sha256-pkHaG1+\/BVJm8PsJ5uQHCfv9IyGlhZdAyiRNqAqaO5U=",
+      "hash": "sha256-9Cy47NyMw7bEsrRksUmGKS+Ksa6Hq0MdHBP9XRRmQsI=",
       "url": "images\/asteroids\/CeresClassicShatteredAsteroid.png"
     },
     {
-      "hash": "sha256-sQTxf2Uh2gsaX23dqRUi7MDE17dalpvbHyOGQ4WvlqY=",
+      "hash": "sha256-6qniCXjvOJTpI0WXKnOGLq6DSZuGL29hEUx1smNmNo4=",
       "url": "images\/asteroids\/CeresSpacedOutAsteroid.png"
     },
     {
@@ -57,143 +57,63 @@
       "url": "images\/asteroids\/ForestDefault.png"
     },
     {
-      "hash": "sha256-xIu8vTRy7HusbNFU0JBm\/FK\/pUJIyfHH6cVC0zrAygE=",
+      "hash": "sha256-AKFptGDm6Zvq\/1unxVnmMHOJ+fBnUF+213KHZprX70Y=",
       "url": "images\/asteroids\/ForestHot.png"
     },
     {
-      "hash": "sha256-CCRXf82OawJHaWOBc06+yhNDRVMQTNJb5uDXebwgjvo=",
+      "hash": "sha256-\/UEe5y0pbhWB+qVth672hmno0ZXGneUXLt7X7c08u\/k=",
       "url": "images\/asteroids\/ForestLush.png"
     },
     {
-      "hash": "sha256-6tDS7K+mma0nmur0Y63GTSShZJwqL1jgIYf5D9Y1vTc=",
+      "hash": "sha256-QOQvpyomEeA0TLiP5RG9DZFK1FbM6XwUdjsjHxnumVk=",
       "url": "images\/asteroids\/ForestMoonlet.png"
     },
     {
-      "hash": "sha256-6tDS7K+mma0nmur0Y63GTSShZJwqL1jgIYf5D9Y1vTc=",
-      "url": "images\/asteroids\/ForestMoonletOuter.png"
-    },
-    {
-      "hash": "sha256-6tDS7K+mma0nmur0Y63GTSShZJwqL1jgIYf5D9Y1vTc=",
-      "url": "images\/asteroids\/ForestMoonletWarp.png"
-    },
-    {
-      "hash": "sha256-6oRrGFPub1QqPc4R0P5B4x0D47oSl2LFK99f5cg4gNA=",
+      "hash": "sha256-ITYEipgGaORNGhGVa74qrqfFtkjs4fwXG6opSQga3h8=",
       "url": "images\/asteroids\/IdealLandingSite.png"
     },
     {
-      "hash": "sha256-6oRrGFPub1QqPc4R0P5B4x0D47oSl2LFK99f5cg4gNA=",
-      "url": "images\/asteroids\/IdealLandingSiteStart.png"
-    },
-    {
-      "hash": "sha256-6oRrGFPub1QqPc4R0P5B4x0D47oSl2LFK99f5cg4gNA=",
-      "url": "images\/asteroids\/IdealLandingSiteWarp.png"
-    },
-    {
-      "hash": "sha256-5+O8KfEEOZXQ3GsxS57zRieXx4ohV7eVgs90WPz0A8g=",
+      "hash": "sha256-PaCrjmhhkIP05ZD+5B80VBs6WhUQe1m0qrroEGM0Qa8=",
       "url": "images\/asteroids\/MarshyMoonlet.png"
     },
     {
-      "hash": "sha256-5+O8KfEEOZXQ3GsxS57zRieXx4ohV7eVgs90WPz0A8g=",
-      "url": "images\/asteroids\/MarshyMoonletStart.png"
-    },
-    {
-      "hash": "sha256-5+O8KfEEOZXQ3GsxS57zRieXx4ohV7eVgs90WPz0A8g=",
-      "url": "images\/asteroids\/MarshyMoonletWarp.png"
-    },
-    {
-      "hash": "sha256-WSCqRHesP35Y++5cbV6taqpvMD9CQdcdfoBX+36iLYc=",
-      "url": "images\/asteroids\/MediumForestyRadioactiveVanillaPlanetOuter.png"
-    },
-    {
-      "hash": "sha256-WSCqRHesP35Y++5cbV6taqpvMD9CQdcdfoBX+36iLYc=",
-      "url": "images\/asteroids\/MediumForestyRadioactiveVanillaPlanetStart.png"
-    },
-    {
-      "hash": "sha256-WSCqRHesP35Y++5cbV6taqpvMD9CQdcdfoBX+36iLYc=",
+      "hash": "sha256-U4G+dNcj6NRI1CEC97qoEFN9fCEdxKZ3PtZ7jr9y8aE=",
       "url": "images\/asteroids\/MediumForestyRadioactiveVanillaWarpPlanet.png"
     },
     {
-      "hash": "sha256-W\/oruIV63V6TVRt7BBG85kWWkCl47mee135cHPTr1BQ=",
+      "hash": "sha256-8cfveQSq7tcOQ0aKar+z+ci75uvtYR2RI7di44d5Qi8=",
       "url": "images\/asteroids\/MediumForestyWasteland.png"
     },
     {
-      "hash": "sha256-W\/oruIV63V6TVRt7BBG85kWWkCl47mee135cHPTr1BQ=",
-      "url": "images\/asteroids\/MediumForestyWastelandOuter.png"
-    },
-    {
-      "hash": "sha256-W\/oruIV63V6TVRt7BBG85kWWkCl47mee135cHPTr1BQ=",
-      "url": "images\/asteroids\/MediumForestyWastelandStart.png"
-    },
-    {
-      "hash": "sha256-oSn3hm+y0ll8spM9OpYEgPuflKgO+mUt9LyrJ7cI7F4=",
-      "url": "images\/asteroids\/MediumRadioactiveVanillaPlanetOuter.png"
-    },
-    {
-      "hash": "sha256-oSn3hm+y0ll8spM9OpYEgPuflKgO+mUt9LyrJ7cI7F4=",
-      "url": "images\/asteroids\/MediumRadioactiveVanillaPlanetStart.png"
-    },
-    {
-      "hash": "sha256-oSn3hm+y0ll8spM9OpYEgPuflKgO+mUt9LyrJ7cI7F4=",
+      "hash": "sha256-95W28cjt+eNMGPsd+bEhLrDgcWnzeXtLDRulksEWjKw=",
       "url": "images\/asteroids\/MediumRadioactiveVanillaWarpPlanet.png"
     },
     {
-      "hash": "sha256-8XwNaX1+ceVTyv3CuaXQH2a8b4FmMk76isIeRUL5wE0=",
-      "url": "images\/asteroids\/MediumSandyRadioactiveVanillaPlanetOuter.png"
-    },
-    {
-      "hash": "sha256-8XwNaX1+ceVTyv3CuaXQH2a8b4FmMk76isIeRUL5wE0=",
-      "url": "images\/asteroids\/MediumSandyRadioactiveVanillaPlanetStart.png"
-    },
-    {
-      "hash": "sha256-8XwNaX1+ceVTyv3CuaXQH2a8b4FmMk76isIeRUL5wE0=",
+      "hash": "sha256-Qjf7I8PgWFE+YxCv04M2MVe8MOAvrPZpqFNsJODzfgA=",
       "url": "images\/asteroids\/MediumSandyRadioactiveVanillaWarpPlanet.png"
     },
     {
-      "hash": "sha256-yQlo\/1peyC5VUNXNqqOfMssSFAC9DKB7oTzUlOYW8nk=",
+      "hash": "sha256-hUMVpmXbq79dkDnfSD2V\/r+qfxbplmdSGN7hA1EoFT4=",
       "url": "images\/asteroids\/MediumSandySwamp.png"
     },
     {
-      "hash": "sha256-yQlo\/1peyC5VUNXNqqOfMssSFAC9DKB7oTzUlOYW8nk=",
-      "url": "images\/asteroids\/MediumSandySwampOuter.png"
-    },
-    {
-      "hash": "sha256-yQlo\/1peyC5VUNXNqqOfMssSFAC9DKB7oTzUlOYW8nk=",
-      "url": "images\/asteroids\/MediumSandySwampStart.png"
-    },
-    {
-      "hash": "sha256-FrsClaI5JMhHOHhLSf1wwGDB+UsdHD7RHXGv2AYFlRc=",
+      "hash": "sha256-Zf2o54QnCCUzk7KtIkLNptdhp7gvOINgQKksBBj3MjU=",
       "url": "images\/asteroids\/MediumSwampy.png"
     },
     {
-      "hash": "sha256-FrsClaI5JMhHOHhLSf1wwGDB+UsdHD7RHXGv2AYFlRc=",
-      "url": "images\/asteroids\/MediumSwampyOuter.png"
-    },
-    {
-      "hash": "sha256-FrsClaI5JMhHOHhLSf1wwGDB+UsdHD7RHXGv2AYFlRc=",
-      "url": "images\/asteroids\/MediumSwampyStart.png"
-    },
-    {
-      "hash": "sha256-6oRrGFPub1QqPc4R0P5B4x0D47oSl2LFK99f5cg4gNA=",
+      "hash": "sha256-ITYEipgGaORNGhGVa74qrqfFtkjs4fwXG6opSQga3h8=",
       "url": "images\/asteroids\/MetalHeavyLandingSite.png"
     },
     {
-      "hash": "sha256-6oRrGFPub1QqPc4R0P5B4x0D47oSl2LFK99f5cg4gNA=",
-      "url": "images\/asteroids\/MetalHeavyLandingSiteStart.png"
-    },
-    {
-      "hash": "sha256-6oRrGFPub1QqPc4R0P5B4x0D47oSl2LFK99f5cg4gNA=",
-      "url": "images\/asteroids\/MetalHeavyLandingSiteWarp.png"
-    },
-    {
-      "hash": "sha256-FlI39yyr4NE0D8oFREZji9Vfd3wHFReQEYjCzHKwrJE=",
+      "hash": "sha256-4cjDD4rx2KR\/8ftlaHwt5Y7e\/2ZkIBanMdAXbwUrW+I=",
       "url": "images\/asteroids\/MiniBadlands.png"
     },
     {
-      "hash": "sha256-FlI39yyr4NE0D8oFREZji9Vfd3wHFReQEYjCzHKwrJE=",
+      "hash": "sha256-4cjDD4rx2KR\/8ftlaHwt5Y7e\/2ZkIBanMdAXbwUrW+I=",
       "url": "images\/asteroids\/MiniBadlandsStart.png"
     },
     {
-      "hash": "sha256-FlI39yyr4NE0D8oFREZji9Vfd3wHFReQEYjCzHKwrJE=",
+      "hash": "sha256-4cjDD4rx2KR\/8ftlaHwt5Y7e\/2ZkIBanMdAXbwUrW+I=",
       "url": "images\/asteroids\/MiniBadlandsWarp.png"
     },
     {
@@ -209,247 +129,167 @@
       "url": "images\/asteroids\/MiniFlippedWarp.png"
     },
     {
-      "hash": "sha256-MUqphH8YiVvsMtbtfrDZkPCVHZmyp1pkKYlq3ZD0E8o=",
+      "hash": "sha256-uUPwzJedSgI1AhfpwEvDktXcgTXtLc2W98iiMfmrxDs=",
       "url": "images\/asteroids\/MiniForestFrozen.png"
     },
     {
-      "hash": "sha256-MUqphH8YiVvsMtbtfrDZkPCVHZmyp1pkKYlq3ZD0E8o=",
+      "hash": "sha256-uUPwzJedSgI1AhfpwEvDktXcgTXtLc2W98iiMfmrxDs=",
       "url": "images\/asteroids\/MiniForestFrozenStart.png"
     },
     {
-      "hash": "sha256-MUqphH8YiVvsMtbtfrDZkPCVHZmyp1pkKYlq3ZD0E8o=",
+      "hash": "sha256-uUPwzJedSgI1AhfpwEvDktXcgTXtLc2W98iiMfmrxDs=",
       "url": "images\/asteroids\/MiniForestFrozenWarp.png"
     },
     {
-      "hash": "sha256-YO+Y6YPuMybi2OC7jOe07Wz2cIPj1iCW9fOKwarSOX4=",
+      "hash": "sha256-AWOKcEZtyyQVmcTnPilKt0+qyEt+EoGcbcOjpVhcQpc=",
       "url": "images\/asteroids\/MiniMetallicSwampy.png"
     },
     {
-      "hash": "sha256-YO+Y6YPuMybi2OC7jOe07Wz2cIPj1iCW9fOKwarSOX4=",
+      "hash": "sha256-AWOKcEZtyyQVmcTnPilKt0+qyEt+EoGcbcOjpVhcQpc=",
       "url": "images\/asteroids\/MiniMetallicSwampyStart.png"
     },
     {
-      "hash": "sha256-YO+Y6YPuMybi2OC7jOe07Wz2cIPj1iCW9fOKwarSOX4=",
-      "url": "images\/asteroids\/MiniMetallicSwampyWarp.png"
-    },
-    {
-      "hash": "sha256-MPEAyfFfxVuB1khmK0JCqd7DhlYZoZ6b0qOWkt\/9eDc=",
+      "hash": "sha256-mnUni5Mqx2\/HipF5Hpy2NLxeAiff9E35PX5jrdCMtYI=",
       "url": "images\/asteroids\/MiniRadioactiveOcean.png"
     },
     {
-      "hash": "sha256-MPEAyfFfxVuB1khmK0JCqd7DhlYZoZ6b0qOWkt\/9eDc=",
+      "hash": "sha256-mnUni5Mqx2\/HipF5Hpy2NLxeAiff9E35PX5jrdCMtYI=",
       "url": "images\/asteroids\/MiniRadioactiveOceanStart.png"
     },
     {
-      "hash": "sha256-MPEAyfFfxVuB1khmK0JCqd7DhlYZoZ6b0qOWkt\/9eDc=",
+      "hash": "sha256-mnUni5Mqx2\/HipF5Hpy2NLxeAiff9E35PX5jrdCMtYI=",
       "url": "images\/asteroids\/MiniRadioactiveOceanWarp.png"
     },
     {
-      "hash": "sha256-\/5UAJaD2PjYSQCBkWoPYuAnlARqM1Y03s77GBeS1534=",
+      "hash": "sha256-f+TESObgfPvMP8hfbIWkN2MqPV2eS6\/eE2OgYnfYRaI=",
       "url": "images\/asteroids\/MiniRegolithMoonlet.png"
     },
     {
-      "hash": "sha256-dm+fku13GIvnnS0O9FJ47Nnj90JUuVmb+PyXa4ilqOw=",
+      "hash": "sha256-Gs5tfU8B++ZdK9FMvJPR6+cKQQt+zvPsMIc5wFEs6t4=",
+      "url": "images\/asteroids\/MiniShatteredGeoAsteroid.png"
+    },
+    {
+      "hash": "sha256-uU980D6AtQ8lo1uA5n62j01rqXssuXqhuIjZjdSB9J0=",
+      "url": "images\/asteroids\/MiniShatteredStartAsteroid.png"
+    },
+    {
+      "hash": "sha256-05kEPOrD9fwHKI3H7un85UqFAuFPJKJbX0s\/FvAjaN8=",
+      "url": "images\/asteroids\/MiniShatteredWarpAsteroid.png"
+    },
+    {
+      "hash": "sha256-bSuc+c+C3+08NwY\/uRkCt14GE1RI6N0f9U3i7pZzirI=",
       "url": "images\/asteroids\/MixingCeresAsteroid.png"
     },
     {
-      "hash": "sha256-uC1Rc9AdEqgYrM6geo7chDRcRYRpVrEUMSX78mVrJcI=",
+      "hash": "sha256-+0b3r1Dab7jmpqUkc07hv88RgpAGQUFJ93DZvu4QmzY=",
       "url": "images\/asteroids\/MooMoonlet.png"
     },
     {
-      "hash": "sha256-uC1Rc9AdEqgYrM6geo7chDRcRYRpVrEUMSX78mVrJcI=",
-      "url": "images\/asteroids\/MooMoonletStart.png"
-    },
-    {
-      "hash": "sha256-uC1Rc9AdEqgYrM6geo7chDRcRYRpVrEUMSX78mVrJcI=",
-      "url": "images\/asteroids\/MooMoonletWarp.png"
-    },
-    {
-      "hash": "sha256-FsMDZ3X8rRYviPwF2Ob\/1RohHm7iPKOlH3bfTiO+SE8=",
+      "hash": "sha256-FVpMaIae5VsUw4\/ZdSuymxwbYeWyTMBR13rb64nWINo=",
       "url": "images\/asteroids\/NiobiumMoonlet.png"
     },
     {
-      "hash": "sha256-3+nVhUSZwW3Fnl49O4ItFyYi\/CMa\/qMUkrZ2yB5LXms=",
+      "hash": "sha256-hdeD6C\/VVpukGJQcfBeCLgN4LAzTl3HWazBtlL7QdOw=",
       "url": "images\/asteroids\/Oasis.png"
     },
     {
-      "hash": "sha256-Zn28L7tfNIbJndwQJ+tJGY6xTHdvidpS8IIbLUHm9uw=",
+      "hash": "sha256-rGy8WZk2Ya8mzJvwSbkfmvVDnWKVNFVW\/Cd6PA8uUl4=",
       "url": "images\/asteroids\/Oceania.png"
     },
     {
-      "hash": "sha256-8dtUgixyI4mb\/Q7Sa9mWSJCpKlWHv+7BByky3wr\/aFM=",
-      "url": "images\/asteroids\/OilRichTargetOuter.png"
-    },
-    {
-      "hash": "sha256-8dtUgixyI4mb\/Q7Sa9mWSJCpKlWHv+7BByky3wr\/aFM=",
-      "url": "images\/asteroids\/OilRichTargetStart.png"
-    },
-    {
-      "hash": "sha256-8dtUgixyI4mb\/Q7Sa9mWSJCpKlWHv+7BByky3wr\/aFM=",
+      "hash": "sha256-iJuYvsmTZ45Om+NPYfLffBayPpKBz2Yfa\/bdcI55+gM=",
       "url": "images\/asteroids\/OilRichWarpTarget.png"
     },
     {
-      "hash": "sha256-LUNV5PlOZ8easNRQzkSEfBumFhHeM\/vyUiB+PD+0jHc=",
-      "url": "images\/asteroids\/OilySwampOuter.png"
-    },
-    {
-      "hash": "sha256-LUNV5PlOZ8easNRQzkSEfBumFhHeM\/vyUiB+PD+0jHc=",
-      "url": "images\/asteroids\/OilySwampStart.png"
-    },
-    {
-      "hash": "sha256-MPEAyfFfxVuB1khmK0JCqd7DhlYZoZ6b0qOWkt\/9eDc=",
-      "url": "images\/asteroids\/RadioactiveMoonlet.png"
-    },
-    {
-      "hash": "sha256-MPEAyfFfxVuB1khmK0JCqd7DhlYZoZ6b0qOWkt\/9eDc=",
-      "url": "images\/asteroids\/RadioactiveMoonletStart.png"
-    },
-    {
-      "hash": "sha256-MPEAyfFfxVuB1khmK0JCqd7DhlYZoZ6b0qOWkt\/9eDc=",
-      "url": "images\/asteroids\/RadioactiveMoonletWarp.png"
-    },
-    {
-      "hash": "sha256-\/5UAJaD2PjYSQCBkWoPYuAnlARqM1Y03s77GBeS1534=",
+      "hash": "sha256-f+TESObgfPvMP8hfbIWkN2MqPV2eS6\/eE2OgYnfYRaI=",
       "url": "images\/asteroids\/RegolithMoonlet.png"
     },
     {
-      "hash": "sha256-25yFOnh9dmyM80Q9bFxTn+lZ6N7lG+iAkU\/sILlyy04=",
+      "hash": "sha256-eStiEG2ZusjgNr8hC6owLkrH47ZSotOk7UN6Ohs2vlY=",
       "url": "images\/asteroids\/SandstoneDefault.png"
     },
     {
-      "hash": "sha256-ONe6qSq9t+A9z5xQdKhxA4ldYb+BqyEDT5U4WihH5vw=",
+      "hash": "sha256-ImaUnkx2IOeUKkip7bVf3uJk4eCs5FD49ML8xMnlIDw=",
       "url": "images\/asteroids\/SandstoneFrozen.png"
     },
     {
-      "hash": "sha256-KjY2lV0VZK8XIlM7fzQPfU4yEzvMSXM4Eb1w9ew6lDQ=",
+      "hash": "sha256-T1ckWifmQApOx1oGbiDf+5bLbYf9E\/4+UxpZLfp6etM=",
       "url": "images\/asteroids\/StrangeAsteroidKleiFest2023.png"
     },
     {
-      "hash": "sha256-KjY2lV0VZK8XIlM7fzQPfU4yEzvMSXM4Eb1w9ew6lDQ=",
+      "hash": "sha256-T1ckWifmQApOx1oGbiDf+5bLbYf9E\/4+UxpZLfp6etM=",
       "url": "images\/asteroids\/StrangeAsteroidKleiFest2023Cluster.png"
     },
     {
-      "hash": "sha256-3bfo7YDxEquKYAK5bBqNQ5h81S0Aw7pSjR0zwBcYh4w=",
+      "hash": "sha256-kurP95sqs+t3WecCy2IGheyDyW2aCXIAWBnlycLeVT8=",
       "url": "images\/asteroids\/SwampMoonlet.png"
     },
     {
-      "hash": "sha256-3bfo7YDxEquKYAK5bBqNQ5h81S0Aw7pSjR0zwBcYh4w=",
-      "url": "images\/asteroids\/SwampMoonletOuter.png"
-    },
-    {
-      "hash": "sha256-3bfo7YDxEquKYAK5bBqNQ5h81S0Aw7pSjR0zwBcYh4w=",
-      "url": "images\/asteroids\/SwampMoonletWarp.png"
-    },
-    {
-      "hash": "sha256-H10sPn5kUGIv11ZuneO8cy3FN96rtNlwE+inMHNQ\/KA=",
+      "hash": "sha256-GnMIjrUhqC\/RhpWeHQIu1JAcrLrGSxu3PhTiw1UcON0=",
       "url": "images\/asteroids\/SwampyLandingSite.png"
     },
     {
-      "hash": "sha256-H10sPn5kUGIv11ZuneO8cy3FN96rtNlwE+inMHNQ\/KA=",
-      "url": "images\/asteroids\/SwampyLandingSiteStart.png"
-    },
-    {
-      "hash": "sha256-H10sPn5kUGIv11ZuneO8cy3FN96rtNlwE+inMHNQ\/KA=",
-      "url": "images\/asteroids\/SwampyLandingSiteWarp.png"
-    },
-    {
-      "hash": "sha256-0dpfN6VOchUbj87WR1u8J7\/6nv60bzYdpvuQRM2REvM=",
+      "hash": "sha256-eUnuEzM8B4l7rT1zuJnQParpyP8\/MUaFnooEuuN5QG0=",
       "url": "images\/asteroids\/TerraMoonlet.png"
     },
     {
-      "hash": "sha256-j+9F88O7PBA0QSj\/C+4YQ77loccQ6JbddxVbuWWDpOI=",
+      "hash": "sha256-eUnuEzM8B4l7rT1zuJnQParpyP8\/MUaFnooEuuN5QG0=",
+      "url": "images\/asteroids\/TinyStart.png"
+    },
+    {
+      "hash": "sha256-ip5gaB8QxtBWzSrQKbfCTDuX\/\/fiMX7HQz5LXLSKCas=",
       "url": "images\/asteroids\/TundraMoonlet.png"
     },
     {
-      "hash": "sha256-nvhb0fjgbeokWVymQ3fMOno2FLrzIX8ukpA6aAWbdgY=",
+      "hash": "sha256-D9jPhhW6SoBoJkfjEu6Ws6gqjBPzHxwenNJQontaij4=",
       "url": "images\/asteroids\/VanillaArboria.png"
-    },
-    {
-      "hash": "sha256-nvhb0fjgbeokWVymQ3fMOno2FLrzIX8ukpA6aAWbdgY=",
-      "url": "images\/asteroids\/VanillaArboriaOuter.png"
-    },
-    {
-      "hash": "sha256-nvhb0fjgbeokWVymQ3fMOno2FLrzIX8ukpA6aAWbdgY=",
-      "url": "images\/asteroids\/VanillaArboriaWarp.png"
     },
     {
       "hash": "sha256-2xcQJuPeRLo8ImCyIpN5Ve1t291mvq4IfGRMskL8zBs=",
       "url": "images\/asteroids\/VanillaAridio.png"
     },
     {
-      "hash": "sha256-2xcQJuPeRLo8ImCyIpN5Ve1t291mvq4IfGRMskL8zBs=",
-      "url": "images\/asteroids\/VanillaAridioOuter.png"
-    },
-    {
-      "hash": "sha256-2xcQJuPeRLo8ImCyIpN5Ve1t291mvq4IfGRMskL8zBs=",
-      "url": "images\/asteroids\/VanillaAridioWarp.png"
-    },
-    {
-      "hash": "sha256-1EHdS+Vs9Ej9XFvHbhepdrtNTTSwF4M6DG6283TQFEA=",
+      "hash": "sha256-Tu6067pUk0y7se85l1XibuGsgVkUkptImKaL63BqSPU=",
       "url": "images\/asteroids\/VanillaBadlands.png"
     },
     {
-      "hash": "sha256-1EHdS+Vs9Ej9XFvHbhepdrtNTTSwF4M6DG6283TQFEA=",
-      "url": "images\/asteroids\/VanillaBadlandsOuter.png"
-    },
-    {
-      "hash": "sha256-1EHdS+Vs9Ej9XFvHbhepdrtNTTSwF4M6DG6283TQFEA=",
-      "url": "images\/asteroids\/VanillaBadlandsWarp.png"
-    },
-    {
-      "hash": "sha256-aJVLQtRVBL\/DXmO2l96ZiIkz\/nWRSOjCAIUdRvtW+uY=",
+      "hash": "sha256-ngcg715WEij\/SnKnF95lXMvOyZkd4KmuYwlpOjm6yo4=",
       "url": "images\/asteroids\/VanillaForestDefault.png"
-    },
-    {
-      "hash": "sha256-aJVLQtRVBL\/DXmO2l96ZiIkz\/nWRSOjCAIUdRvtW+uY=",
-      "url": "images\/asteroids\/VanillaForestDefaultOuter.png"
-    },
-    {
-      "hash": "sha256-aJVLQtRVBL\/DXmO2l96ZiIkz\/nWRSOjCAIUdRvtW+uY=",
-      "url": "images\/asteroids\/VanillaForestDefaultWarp.png"
     },
     {
       "hash": "sha256-jfJDgiCBR4yEn+AXL3uqYouIDDe08rq5i19AZ6bP5Os=",
       "url": "images\/asteroids\/VanillaOasis.png"
     },
     {
-      "hash": "sha256-jfJDgiCBR4yEn+AXL3uqYouIDDe08rq5i19AZ6bP5Os=",
-      "url": "images\/asteroids\/VanillaOasisOuter.png"
-    },
-    {
-      "hash": "sha256-jfJDgiCBR4yEn+AXL3uqYouIDDe08rq5i19AZ6bP5Os=",
-      "url": "images\/asteroids\/VanillaOasisWarp.png"
-    },
-    {
-      "hash": "sha256-YPdF4P7RDQS2rhq7biDpFORA0FEt0J6ruzx1hn9nS0w=",
+      "hash": "sha256-T7l4Cu23ahxgG\/\/z5AA2sDqAHw0ZmwcmGgPb+VFaL4E=",
       "url": "images\/asteroids\/VanillaOceania.png"
     },
     {
-      "hash": "sha256-hmm06a4n9zE+S8X\/MxaB+e0bJ8PsaV0FLZTvZ6eQIAA=",
+      "hash": "sha256-r9UfE9QA8qFA9Iy3PcYaXtMSNA3cDvC+uPVGy2WQwp8=",
       "url": "images\/asteroids\/VanillaSandstoneDefault.png"
     },
     {
-      "hash": "sha256-t5RA2DlCyR8F7dqMaSDSJRBhf\/t093XhpuWOOcD\/dxI=",
+      "hash": "sha256-YJncy\/K+crzUdBQQEpo2YH3LC57V6urR5iHQVs4HWyM=",
       "url": "images\/asteroids\/VanillaSandstoneFrozen.png"
     },
     {
-      "hash": "sha256-AljsyLx8pKRTlBbggFrkBi9FvtWLFqBqf+W4Zcqn2yU=",
+      "hash": "sha256-NF1AiR1zS7of5BJnNfjwvhRB6JCuHDbqlwnvR0pXxcc=",
       "url": "images\/asteroids\/VanillaSwampDefault.png"
     },
     {
-      "hash": "sha256-u737f1H4ZIuTDQyf8dWdJTiAo9Nnr0vL+Bts+72fd8w=",
+      "hash": "sha256-o+5NeQAuV9D5dKTwGP4ZzNtMyyHvpF3evPz3Q\/K85DY=",
       "url": "images\/asteroids\/VanillaVolcanic.png"
     },
     {
-      "hash": "sha256-97L1BrAY1vd35SCMAp3DxKr70aj3RAou8drN6gpTJHw=",
+      "hash": "sha256-MzfH8yI02Xe2P4U\/MsX56eiLjnbxSWA5UYuT9GzDjUA=",
       "url": "images\/asteroids\/Volcanic.png"
     },
     {
-      "hash": "sha256-LUNV5PlOZ8easNRQzkSEfBumFhHeM\/vyUiB+PD+0jHc=",
+      "hash": "sha256-MqjLGNT+hFgiC92wuYO\/HD8rfwHZtCWzXb2hO8UQ8OQ=",
       "url": "images\/asteroids\/WarpOilySwamp.png"
     },
     {
-      "hash": "sha256-kQ6cNSk1J8sdvzPDNEpqApeLxabrOq0EY\/5wDgVadKw=",
+      "hash": "sha256-S\/kh+v17+6dAco0BfLaHyCFDafDWCEPCKMx6ZkoCoLI=",
       "url": "images\/asteroids\/WaterMoonlet.png"
     },
     {
@@ -613,7 +453,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-NmKlgwK0+wYdPPAbVP8W3aYNA8gIZVcOeOz1rwyQ8pM=",
+      "hash": "sha256-xnoiidKetE7XHvJYICWlmIuQP3OVPLdguykVr0cDy+w=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -621,7 +461,7 @@
       "url": "_framework\/dotnet.native.8.0.10.5qu5xpewhc.js"
     },
     {
-      "hash": "sha256-QRsmz4u9vxNbEi1kBAl+3msLCIK8Qicge7Ym+v4rLG8=",
+      "hash": "sha256-VE3gZLyvvvdXEfRafCbPvphr+Pu5F4t1IDoAT3M3k\/Y=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -885,7 +725,7 @@
       "url": "_framework\/System.Xml.XDocument.wasm"
     },
     {
-      "hash": "sha256-J5ljzwdQIHmDqGw4jPURjL\/YwFN62ibcUHagjG\/KKcM=",
+      "hash": "sha256-4g\/btTi0+sfwivmAkL2zmjGaK5DhFT+mlU18QfpCAVI=",
       "url": "_framework\/TraitFinderApp.wasm"
     },
     {
@@ -901,5 +741,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "xnjEcMQT"
+  "version": "K9S0SgfF"
 };

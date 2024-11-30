@@ -1,4 +1,6 @@
-﻿@page "/"
+﻿@page "/{OptionalSeed}"
+@page "/"
+@using System.Text.RegularExpressions
 @using TraitFinderApp.Client.Model
 @using TraitFinderApp.Client.Model.Search
 @using Newtonsoft.Json
@@ -95,7 +97,10 @@ else
                 </MudGrid>
 
                 <MudSpacer></MudSpacer>
-                <MudText hidden="@(!anyModeSelected)" Align="Align.Center" Typo="Typo.h4">Select your Asteroid Cluster:</MudText>
+                
+                string selectClusterText = Query.SpacedOutSelected() ?"Select your Asteroid Cluster:" : "Select your Asteroid:";                
+
+                <MudText hidden="@(!anyModeSelected)" Align="Align.Center" Typo="Typo.h4">@selectClusterText</MudText>
 
                 <MudContainer hidden="@(!anyModeSelected)">
                     <!--Cluster-->
@@ -128,7 +133,8 @@ else
                             <MudStack Row="true" Justify="Justify.Center" Spacing="3">
                                 <MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h4">Configure your trait filters for @Query?.SelectedCluster?.Name</MudText>
                                 <MudTooltip Text="Reset all trait filters">
-                                    <MudIconButton Size="Size.Medium" Icon="@Icons.Material.Filled.DeleteForever" Disabled="@blockedFromReset" Class="start-query-button" OnClick="(_)=> Query?.ResetFilters()" Color="Color.Secondary"> </MudIconButton>
+                                    
+                                    <MudFab Size="Size.Medium" StartIcon="@Icons.Material.Filled.DeleteForever" Disabled="@blockedFromReset" Class="start-query-button" OnClick="(_)=> Query?.ResetFilters()" Color="Color.Secondary"> </MudFab>
                                 </MudTooltip>
                             </MudStack>
                             <MudSpacer></MudSpacer>
@@ -336,7 +342,7 @@ else
             }
         </MudStack>
     </MudContainer>
-        <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
         <MudLink Class="query-results" hidden="@(Query == null || !Query.HasClusterSelected())" Target="_blank" Style="text-align:center;overflow: visible;height: 0px;" Underline="Underline.Always" Href="https://github.com/Sgt-Imalas/TraitFinder" Typo="Typo.subtitle2" Color="Color.Default">made by Sgt_Imalas</MudLink>
     </div>
 
@@ -345,6 +351,8 @@ else
 
 
 @code {
+    [Parameter]
+    public string OptionalSeed { get; set; }
     private bool DataInitialized = false;
     private SearchQuery? Query = null;
 
@@ -388,12 +396,68 @@ else
         so.MapGameData();
         DataInitialized = true;
         Query = new();
-    }
 
+        if (OptionalSeed != null && OptionalSeed.Length > 0)
+        {
+            Console.WriteLine("Parsing optional seed...");
+            var settingCoordinate = ParseSettingCoordinate(OptionalSeed);
+            if (settingCoordinate.Length < 4 || settingCoordinate.Length > 6 || !int.TryParse(settingCoordinate[2], out int _))
+                return;
+
+            foreach (var entry in settingCoordinate)
+            {
+                Console.WriteLine(entry);
+            }
+
+            var prefix = settingCoordinate[1];
+
+            Data dataCollection;
+            if (DataImport.BaseGame.clusters.Any(clusterLayout => clusterLayout.Prefix == prefix))
+            {
+                dataCollection = DataImport.BaseGame;
+                Console.WriteLine("Is base game cluster");
+            }
+            else if (DataImport.SpacedOut.clusters.Any(clusterLayout => clusterLayout.Prefix == prefix))
+            {
+                dataCollection = DataImport.SpacedOut;
+                Console.WriteLine("Is spaced out cluster");
+            }
+            else
+                return;
+
+            var cluster = dataCollection.clusters.First(clusterLayout => clusterLayout.Prefix == prefix);
+
+            foreach(var dlc in cluster.RequiredDlcs)
+                Query.SetDlcEnabled(dlc, true);
+
+            Query.SelectMode(cluster.ClusterCategory);
+            await SelectCluster(cluster);
+
+            await Query.SearchFixedSeed(int.Parse(settingCoordinate[2]));
+            await ScrollToResults();
+            await ScrollToResults();
+            await ScrollToResults();
+            await ScrollToResults();
+
+        }
+    }
+    public static string[] ParseSettingCoordinate(string coord)
+    {
+        Match match = new Regex("(.*)-(\\d*)-(.*)-(.*)-(.*)").Match(coord);
+        for (int index = 1; index <= 2; ++index)
+        {
+            if (match.Groups.Count == 1)
+                match = new Regex("(.*)-(\\d*)-(.*)-(.*)-(.*)".Remove("(.*)-(\\d*)-(.*)-(.*)-(.*)".Length - index * 5)).Match(coord);
+        }
+        string[] settingCoordinate = new string[match.Groups.Count];
+        for (int groupnum = 0; groupnum < match.Groups.Count; ++groupnum)
+            settingCoordinate[groupnum] = match.Groups[groupnum].Value;
+        return settingCoordinate;
+    }
     bool overlay_visible;
     public async void StartSearching()
     {
-        if(Query!=null)
+        if (Query != null)
             await Query.StartSearching();
 
         //await Task.Delay(500);

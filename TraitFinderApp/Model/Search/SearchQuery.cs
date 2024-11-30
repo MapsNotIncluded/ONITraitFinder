@@ -78,6 +78,7 @@ namespace TraitFinderApp.Client.Model.Search
         {
             return SelectedCluster != null;
         }
+        public bool SpacedOutSelected() => IsDlcSelected(Dlc.SPACEDOUT);
 
         private void InitializeAsteroidQueryParams()
         {
@@ -98,7 +99,10 @@ namespace TraitFinderApp.Client.Model.Search
                 PrefillFixedTraits(fixedCoordinate);
             }
         }
-
+        public async Task SearchFixedSeed(int seed)
+        {
+            await DataImport.FetchSeeds(this, seed, 1, 1);
+        }
         public async Task StartSearching()
         {
             await DataImport.FetchSeeds(this, CurrentQuerySeed, QueryTarget, 5000);
