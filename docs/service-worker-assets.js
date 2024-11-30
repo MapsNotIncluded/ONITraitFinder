@@ -13,16 +13,8 @@
       "url": "data\/gamedata_so.json"
     },
     {
-      "hash": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=",
+      "hash": "sha256-d3PhqSxp4zEI56UBJ44g9o99BfQxJto3hwvFcd5tS8A=",
       "url": "favicon.png"
-    },
-    {
-      "hash": "sha256-DbpQaq68ZSb5IoPosBErM1QWBfsbTxpJqhU0REi6wP4=",
-      "url": "icon-192.png"
-    },
-    {
-      "hash": "sha256-oEo6d+KqX5fjxTiZk\/w9NB3Mi0+ycS5yLwCKwr4IkbA=",
-      "url": "icon-512.png"
     },
     {
       "hash": "sha256-NX9lJtaPdlazC0e361JghYaafUk9jIT1bF5ZKu8wsVw=",
@@ -453,7 +445,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-xnoiidKetE7XHvJYICWlmIuQP3OVPLdguykVr0cDy+w=",
+      "hash": "sha256-QDt\/DgMplScb89aVEh4hVW8spVc0IzyTQOqeDArZutU=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -461,7 +453,7 @@
       "url": "_framework\/dotnet.native.8.0.10.5qu5xpewhc.js"
     },
     {
-      "hash": "sha256-VE3gZLyvvvdXEfRafCbPvphr+Pu5F4t1IDoAT3M3k\/Y=",
+      "hash": "sha256-0gHgds200NvIsoUkbaaVBdFZjYT4ENVjOO615KGZzwU=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -725,7 +717,7 @@
       "url": "_framework\/System.Xml.XDocument.wasm"
     },
     {
-      "hash": "sha256-4g\/btTi0+sfwivmAkL2zmjGaK5DhFT+mlU18QfpCAVI=",
+      "hash": "sha256-Kmph8LHmuwvj+ndNSbf9RoPPmq3bj5VT2OgAGsrwknk=",
       "url": "_framework\/TraitFinderApp.wasm"
     },
     {
@@ -741,5 +733,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "K9S0SgfF"
+  "version": "k\/3YlYT9"
 };
