@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TraitFinderApp",
   "resources": {
-    "hash": "sha256-yS9GFgV38thneTcG4Luu67EQS7jslu/bijVWRARZV28=",
+    "hash": "sha256-pq0vIj45pnAI27qtSg7P7P/Zb/xxLAkpuAQli0JV/EA=",
     "jsModuleNative": {
       "dotnet.native.8.0.10.5qu5xpewhc.js": "sha256-TQf7yyr/i47GASKhv9t426AMQsIyY/PqeQ4CnwK9O2s="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.10.5pejt2vjyv.js": "sha256-FjrgL9dY6dc2yUoXDWowSfachSgM8O29qUMWDQOJKRI="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-0gHgds200NvIsoUkbaaVBdFZjYT4ENVjOO615KGZzwU="
+      "dotnet.native.wasm": "sha256-RcSY28VS8GPvHQZoPzcjA0If7YJn3x/yNSwZjWrJr4E="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -82,7 +82,7 @@
       "System.Xml.Linq.wasm": "sha256-VY+WTqYbw4LGWnTMkJjsfqKF/mUynOF3ioTNZ0Hlb7s=",
       "System.Xml.ReaderWriter.wasm": "sha256-dnVqmNUiM0Sd7uxAHFa2MnsHMcF5JNcRvb3JTkk1+PI=",
       "System.Xml.XDocument.wasm": "sha256-Cy/b283xboGd/FENjDI+rENBqJOBdwLXhAhwbzY3Po4=",
-      "TraitFinderApp.wasm": "sha256-Kmph8LHmuwvj+ndNSbf9RoPPmq3bj5VT2OgAGsrwknk="
+      "TraitFinderApp.wasm": "sha256-/2gQHxHoTUeidZ/7yazzPujAAKDxjduBtTjK1St0bKw="
     }
   },
   "cacheBootResources": true,
