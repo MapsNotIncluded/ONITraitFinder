@@ -15,7 +15,8 @@ namespace TraitFinderApp.Client.Model
         public int clusterCategory;
         public int fixedCoordinate;
 
-        public string DisplayName() => Name.Replace("Moonlet Cluster - ", string.Empty);
+        public string DisplayName() => Name;
+        
         public string Image() => WorldPlacements[startWorldIndex].Asteroid.Image;
 
 

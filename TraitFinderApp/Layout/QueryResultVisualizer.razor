@@ -2,6 +2,7 @@
 @using TraitFinderApp.Model.Search
 @inject ISnackbar Snackbar;
 @inject ClipboardService ClipboardService
+@inject IStringLocalizer<App> L
 
 <MudItem>
     <MudPaper Outlined Elevation="10" Class="pa-1" Width="300px">
@@ -29,7 +30,7 @@
                             string imageStyle = "margin-left:-5px; margin-right:5px";
                             string evilInvisibleString = " ";
                         }
-                        <MudTooltip Text="@trait.Name" Arrow="true" Placement="Placement.Top">
+                        <MudTooltip Text="@L[@trait.Name]" Arrow="true" Placement="Placement.Top">
                             <MudChip T="string" Variant="Variant.Text" Style="@backgroundColorStyle">
                                     <MudImage ObjectFit="ObjectFit.Contain" Width="20" Height="20" Src="@trait.Image" />
                             </MudChip>

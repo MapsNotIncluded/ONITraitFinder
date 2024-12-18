@@ -38,7 +38,7 @@
         },
         {
             "Id": "expansion1::clusters/MiniClusterBadlandsStart",
-            "Name": "Moonlet Cluster - The Desolands",
+            "Name": "The Desolands Cluster",
             "Prefix": "M-BAD-C",
             "menuOrder": 40,
             "startWorldIndex": 0,
@@ -50,7 +50,7 @@
         },
         {
             "Id": "expansion1::clusters/MiniClusterFlippedStart",
-            "Name": "Moonlet Cluster - Flipped",
+            "Name": "Flipped Cluster",
             "Prefix": "M-FLIP-C",
             "menuOrder": 60,
             "startWorldIndex": 1,
@@ -62,7 +62,7 @@
         },
         {
             "Id": "expansion1::clusters/MiniClusterForestFrozenStart",
-            "Name": "Moonlet Cluster - Frozen Forest",
+            "Name": "Frozen Forest Cluster",
             "Prefix": "M-FRZ-C",
             "menuOrder": 50,
             "startWorldIndex": 1,
@@ -74,7 +74,7 @@
         },
         {
             "Id": "expansion1::clusters/MiniClusterMetallicSwampyStart",
-            "Name": "Moonlet Cluster - Metallic Swampy",
+            "Name": "Metallic Swampy Cluster",
             "Prefix": "M-SWMP-C",
             "menuOrder": 30,
             "startWorldIndex": 1,
@@ -86,7 +86,7 @@
         },
         {
             "Id": "expansion1::clusters/MiniClusterRadioactiveOceanStart",
-            "Name": "Moonlet Cluster - Radioactive Ocean",
+            "Name": "Radioactive Ocean Cluster",
             "Prefix": "M-RAD-C",
             "menuOrder": 70,
             "startWorldIndex": 1,
@@ -278,7 +278,7 @@
         },
         {
             "Id": "dlc2::clusters/CeresSpacedOutShatteredCluster",
-            "Name": "Mini Cluster - Ceres Mantle",
+            "Name": "Ceres Mantle Cluster",
             "Prefix": "M-CERS-C",
             "menuOrder": 80,
             "startWorldIndex": 0,

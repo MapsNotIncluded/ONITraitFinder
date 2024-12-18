@@ -22,7 +22,7 @@
         {
             ID = SPACEDOUT_ID,
             IsMainVersion = true,
-            Name = "Spaced Out",
+            Name = "Spaced Out!",
             Image = "./images/logos/logo_spaced_out.png",
         };
         public static readonly Dlc FROSTYPLANET = new Dlc()

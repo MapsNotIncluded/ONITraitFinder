@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Results inherit trait select order" xml:space="preserve">
+    <value>Ergebnisse behalten die Sortierung der Filter bei</value>
+  </data>
+  <data name="Hide asteroids that cannot have traits in results" xml:space="preserve">
+    <value>Blende Asteroiden ohne Eigenschaften in den Ergebnissen aus</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="Seed copied to the clipboard!" xml:space="preserve">
+    <value>Seed in die Zwischenablage kopiert!</value>
+  </data>
+  <data name="World Trait Finder" xml:space="preserve">
+    <value>Welt-Eigenschafts-Finder</value>
+  </data>
+  <data name="Select your game version and dlcs." xml:space="preserve">
+    <value>Wähle die Spielversion und DLCs</value>
+  </data>
+  <data name="Select your game mode:" xml:space="preserve">
+    <value>Wähle deinen Spielmodus:</value>
+  </data>
+  <data name="Frosty Planet" xml:space="preserve">
+    <value>Frosty Planet</value>
+  </data>
+  <data name="Spaced Out!" xml:space="preserve">
+    <value>Spaced Out!</value>
+  </data>
+  <data name="Base Game" xml:space="preserve">
+    <value>Basisspiel</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="The Lab" xml:space="preserve">
+    <value>Das Labor</value>
+  </data>
+  <data name="Classic" xml:space="preserve">
+    <value>Klassisch</value>
+  </data>
+  <data name="Select your Asteroid Cluster:" xml:space="preserve">
+    <value>Wähle dein Asteroiden-Cluster:</value>
+  </data>
+  <data name="Select your Asteroid:" xml:space="preserve">
+    <value>Wähle deinen Asteroiden:</value>
+  </data>
+  <data name="Configure your trait filters for {0}" xml:space="preserve">
+    <value>Konfiguriere den Eigenschaftsfilter für {0}</value>
+  </data>
+  <data name="Reset all trait filters" xml:space="preserve">
+    <value>Alle Filter zurücksetzen</value>
+  </data>
+  <data name="Starter Asteroid" xml:space="preserve">
+    <value>Start-Asteroid</value>
+  </data>
+  <data name="This asteroid cannot generate any traits." xml:space="preserve">
+    <value>Dieser Asteroid kann keine Eigenschaften generieren</value>
+  </data>
+  <data name="Guaranteed traits ({0} max)" xml:space="preserve">
+    <value>Garantierte Eigensch. (max. {0})</value>
+  </data>
+  <data name="Forbidden traits" xml:space="preserve">
+    <value>Verbotene Eigensch.</value>
+  </data>
+  <data name="Search for more seeds" xml:space="preserve">
+    <value>Nach mehr Seeds suchen</value>
+  </data>
+  <data name="Search for seeds" xml:space="preserve">
+    <value>Nach Seeds suchen</value>
+  </data>
+  <data name="Starting Seed:" xml:space="preserve">
+    <value>Start-Seed:</value>
+  </data>
+  <data name="Clear Results" xml:space="preserve">
+    <value>Ergebnisse löschen</value>
+  </data>
+  <data name="Seed Query Results:" xml:space="preserve">
+    <value>Seed-Suchergebnisse:</value>
+  </data>
+  <data name="No Results yet" xml:space="preserve">
+    <value>Noch keine Ergebnisse</value>
+  </data>
+  <data name="Try searching for more seeds" xml:space="preserve">
+    <value>Versuche, nach mehr Seeds zu suchen</value>
+  </data>
+  <data name="The tool will keep the highest 5 seeds for easy comparison." xml:space="preserve">
+    <value>Das Tool wird die neuesten 5 Ergebnisse im Zwischenspeicher halten</value>
+  </data>
+  <data name="Cannot seem to find a seed with all the traits you want and open to mods?" xml:space="preserve">
+    <value>Findest du keinen Seed mit allen gewünschten Eigenschaften und hast nichst gegen Mods?</value>
+  </data>
+  <data name="Install Cluster Generation Manager to simply select all the traits you want (and much more) for your game!" xml:space="preserve">
+    <value>Installiere Cluster Generation Manager, um einfach alle gewünschten Eigenschaften (und vieles mehr) auszuwählen!</value>
+  </data>
+  <data name="Made by {0}" xml:space="preserve">
+    <value>Erstellt von {0}</value>
+  </data>
+  <data name="Translation by {0}" xml:space="preserve">
+    <value>Übersetzung von {0}</value>
+  </data>
+  <data name="Terra" xml:space="preserve">
+    <value>Terra</value>
+  </data>
+  <data name="Folia Cluster" xml:space="preserve">
+    <value>Folia-Cluster</value>
+  </data>
+  <data name="Skewed Asteroid" xml:space="preserve">
+    <value>Schräger Asteroid</value>
+  </data>
+  <data name="The Desolands Cluster" xml:space="preserve">
+    <value>Ödland-Cluster</value>
+  </data>
+  <data name="Flipped Cluster" xml:space="preserve">
+    <value>Umgedreht-Cluster</value>
+  </data>
+  <data name="Frozen Forest Cluster" xml:space="preserve">
+    <value>Gefrorener Wald</value>
+  </data>
+  <data name="Metallic Swampy Cluster" xml:space="preserve">
+    <value>Metallischer Sumpf-Asteroid</value>
+  </data>
+  <data name="Radioactive Ocean Cluster" xml:space="preserve">
+    <value>Radioaktiver Ozean-Cluster</value>
+  </data>
+  <data name="Terrania Cluster" xml:space="preserve">
+    <value>Terrania-Cluster</value>
+  </data>
+  <data name="Quagmiris Cluster" xml:space="preserve">
+    <value>Quagmiris-Cluster</value>
+  </data>
+  <data name="Arboria Cluster" xml:space="preserve">
+    <value>Arboria-Cluster</value>
+  </data>
+  <data name="Aridio Cluster" xml:space="preserve">
+    <value>Aridio-Cluster</value>
+  </data>
+  <data name="The Badlands Cluster" xml:space="preserve">
+    <value>Ödland-Cluster</value>
+  </data>
+  <data name="Verdante Cluster" xml:space="preserve">
+    <value>Verdante-Cluster</value>
+  </data>
+  <data name="Oasisse Cluster" xml:space="preserve">
+    <value>Oasisse-Cluster</value>
+  </data>
+  <data name="Oceania Cluster" xml:space="preserve">
+    <value>Oceania-Cluster</value>
+  </data>
+  <data name="Terra Cluster" xml:space="preserve">
+    <value>Terra-Cluster</value>
+  </data>
+  <data name="Rime Cluster" xml:space="preserve">
+    <value>Rime-Cluster</value>
+  </data>
+  <data name="Squelchy Cluster" xml:space="preserve">
+    <value>Sumpfiger Cluster</value>
+  </data>
+  <data name="Volcanea Cluster" xml:space="preserve">
+    <value>Volcanea-Cluster</value>
+  </data>
+  <data name="Ceres Cluster" xml:space="preserve">
+    <value>Ceres-Cluster</value>
+  </data>
+  <data name="Blasted Ceres Cluster" xml:space="preserve">
+    <value>Zerstörter Ceres-Cluster</value>
+  </data>
+  <data name="Ceres Minor Cluster" xml:space="preserve">
+    <value>Kleiner Ceres Cluster</value>
+  </data>
+  <data name="Ceres Mantle Cluster" xml:space="preserve">
+    <value>Ceres Mantel</value>
+  </data>
+  <data name="Folia Asteroid" xml:space="preserve">
+    <value>Folia-Asteroid</value>
+  </data>
+  <data name="Irradiated Swampy Asteroid" xml:space="preserve">
+    <value>Verstrahlter Sumpfasteroid</value>
+  </data>
+  <data name="Rusty Oil Asteroid" xml:space="preserve">
+    <value>Rostiger Öl-Asteroid</value>
+  </data>
+  <data name="Tundra Asteroid" xml:space="preserve">
+    <value>Tundra-Asteroid</value>
+  </data>
+  <data name="Marshy Asteroid" xml:space="preserve">
+    <value>Sumpfiger Asteroid</value>
+  </data>
+  <data name="Moo Asteroid" xml:space="preserve">
+    <value>Muh Asteroid</value>
+  </data>
+  <data name="Water Asteroid" xml:space="preserve">
+    <value>Wasser-Asteroid</value>
+  </data>
+  <data name="Superconductive Asteroid" xml:space="preserve">
+    <value>Supraleitender Asteroid</value>
+  </data>
+  <data name="Regolith Asteroid" xml:space="preserve">
+    <value>Felsiger Asteroid</value>
+  </data>
+  <data name="Radioactive Swamp Asteroid" xml:space="preserve">
+    <value>Radioaktiver Sumpf-Asteroid</value>
+  </data>
+  <data name="The Desolands Asteroid" xml:space="preserve">
+    <value>Der Ödland-Asteroid</value>
+  </data>
+  <data name="Radioactive Ocean Asteroid" xml:space="preserve">
+    <value>Radioaktiver Ozean-Asteroid</value>
+  </data>
+  <data name="Metallic Swampy Asteroid" xml:space="preserve">
+    <value>Metallischer Sumpf-Asteroid</value>
+  </data>
+  <data name="Frozen Forest Asteroid" xml:space="preserve">
+    <value>Gefrorener Wald-Asteroid</value>
+  </data>
+  <data name="Flipped Asteroid" xml:space="preserve">
+    <value>Umgedrehter Asteroid</value>
+  </data>
+  <data name="Terrania Asteroid" xml:space="preserve">
+    <value>Terrania-Asteroid</value>
+  </data>
+  <data name="Irradiated Forest Asteroid" xml:space="preserve">
+    <value>Verstrahlter Waldasteroid</value>
+  </data>
+  <data name="Oily Swamp Asteroid" xml:space="preserve">
+    <value>Öliger Sumpf-Asteroid</value>
+  </data>
+  <data name="Quagmiris Asteroid" xml:space="preserve">
+    <value>Quagmiris-Asteroid</value>
+  </data>
+  <data name="Irradiated Marsh Asteroid" xml:space="preserve">
+    <value>Verstrahlter Moorasteroid</value>
+  </data>
+  <data name="Arboria Asteroid" xml:space="preserve">
+    <value>Arboria-Asteroid</value>
+  </data>
+  <data name="Radioactive Terra Asteroid" xml:space="preserve">
+    <value>Radioaktiver Terra-Asteroid</value>
+  </data>
+  <data name="Aridio Asteroid" xml:space="preserve">
+    <value>Aridio-Asteroid</value>
+  </data>
+  <data name="Radioactive Terrabog Asteroid" xml:space="preserve">
+    <value>Radioaktiver Terrabog-Asteroid</value>
+  </data>
+  <data name="The Badlands Asteroid" xml:space="preserve">
+    <value>Der Ödland-Asteroid</value>
+  </data>
+  <data name="Verdante Asteroid" xml:space="preserve">
+    <value>Verdante-Asteroid</value>
+  </data>
+  <data name="Oasisse Asteroid" xml:space="preserve">
+    <value>Oasisse-Asteroid</value>
+  </data>
+  <data name="Oceania Asteroid" xml:space="preserve">
+    <value>Oceania-Asteroid</value>
+  </data>
+  <data name="Glowood Wasteland Asteroid" xml:space="preserve">
+    <value>Asteroid der Glutholz-Wüste</value>
+  </data>
+  <data name="Terra Asteroid" xml:space="preserve">
+    <value>Terra-Asteroid</value>
+  </data>
+  <data name="Rime Asteroid" xml:space="preserve">
+    <value>Rime-Asteroid</value>
+  </data>
+  <data name="Stinko Swamp Asteroid" xml:space="preserve">
+    <value>Stinkender Sumpf-Asteroid</value>
+  </data>
+  <data name="Squelchy Asteroid" xml:space="preserve">
+    <value>Sumpfiger Asteroid</value>
+  </data>
+  <data name="Radioactive Forest Asteroid" xml:space="preserve">
+    <value>Radioaktiver Wald-Asteroid</value>
+  </data>
+  <data name="Volcanea Asteroid" xml:space="preserve">
+    <value>Volcanea-Asteroid</value>
+  </data>
+  <data name="Ceres Asteroid" xml:space="preserve">
+    <value>Ceres-Asteroid</value>
+  </data>
+  <data name="Blasted Ceres" xml:space="preserve">
+    <value>Zerstörter Ceres</value>
+  </data>
+  <data name="Ceres Minor" xml:space="preserve">
+    <value>Kleiner Ceres</value>
+  </data>
+  <data name="Ceres Mantle Asteroid" xml:space="preserve">
+    <value>Ceres Mantel-Asteroid</value>
+  </data>
+  <data name="Sweet Ceres Asteroid" xml:space="preserve">
+    <value>Süßer Ceres Asteroid</value>
+  </data>
+  <data name="Ceres Core Asteroid" xml:space="preserve">
+    <value>Ceres Kern-Asteroid</value>
+  </data>
+  <data name="Ceres Fragment" xml:space="preserve">
+    <value>Ceres-Fragment</value>
+  </data>
+  <data name="Large Boulders" xml:space="preserve">
+    <value>Große Felsbrocken</value>
+  </data>
+  <data name="Medium Boulders" xml:space="preserve">
+    <value>Mittlere Felsbrocken</value>
+  </data>
+  <data name="Mixed Boulders" xml:space="preserve">
+    <value>Gemischte Felsbrocken</value>
+  </data>
+  <data name="Small Boulders" xml:space="preserve">
+    <value>Kleine Felsbrocken</value>
+  </data>
+  <data name="Trapped Oil" xml:space="preserve">
+    <value>Eingeschlossenes Öl</value>
+  </data>
+  <data name="Frozen Core" xml:space="preserve">
+    <value>Gefrorener Kern</value>
+  </data>
+  <data name="Geoactive" xml:space="preserve">
+    <value>Geoaktiv</value>
+  </data>
+  <data name="Geodes" xml:space="preserve">
+    <value>Geoden</value>
+  </data>
+  <data name="Geodormant" xml:space="preserve">
+    <value>Geodormant</value>
+  </data>
+  <data name="Large Glaciers" xml:space="preserve">
+    <value>Große Gletscher</value>
+  </data>
+  <data name="Magma Channels" xml:space="preserve">
+    <value>Magmakanäle</value>
+  </data>
+  <data name="Metal Poor" xml:space="preserve">
+    <value>Metallarm</value>
+  </data>
+  <data name="Metal Rich" xml:space="preserve">
+    <value>Metallreich</value>
+  </data>
+  <data name="Alternate Pod Location" xml:space="preserve">
+    <value>Alternative Drucker-Position</value>
+  </data>
+  <data name="Slime Molds" xml:space="preserve">
+    <value>Schleimpilze</value>
+  </data>
+  <data name="Crashed Satellites" xml:space="preserve">
+    <value>Abgestürzte Satelliten</value>
+  </data>
+  <data name="Frozen Friend" xml:space="preserve">
+    <value>Gefrorener Freund</value>
+  </data>
+  <data name="Irregular Oil" xml:space="preserve">
+    <value>Irreguläres Öl</value>
+  </data>
+  <data name="Lush Core" xml:space="preserve">
+    <value>Üppiger Kern</value>
+  </data>
+  <data name="Metallic Caves" xml:space="preserve">
+    <value>Metallhöhlen</value>
+  </data>
+  <data name="Radioactive Crust" xml:space="preserve">
+    <value>Radioaktive Kruste</value>
+  </data>
+  <data name="Subsurface Ocean" xml:space="preserve">
+    <value>Untergrundozean</value>
+  </data>
+  <data name="Volcanic Activity" xml:space="preserve">
+    <value>Vulkanische Aktivität</value>
+  </data>
+  <data name="The Badlands" xml:space="preserve">
+    <value>Das Ödland</value>
+  </data>
+  <data name="Arboria" xml:space="preserve">
+    <value>Arboria</value>
+  </data>
+  <data name="Aridio" xml:space="preserve">
+    <value>Aridio</value>
+  </data>
+  <data name="Verdante" xml:space="preserve">
+    <value>Verdante</value>
+  </data>
+  <data name="Oasisse" xml:space="preserve">
+    <value>Oasisse</value>
+  </data>
+  <data name="Oceania" xml:space="preserve">
+    <value>Oceania</value>
+  </data>
+  <data name="Rime" xml:space="preserve">
+    <value>Rime</value>
+  </data>
+  <data name="Volcanea" xml:space="preserve">
+    <value>Volcanea</value>
+  </data>
+  <data name="Ceres" xml:space="preserve">
+    <value>Ceres</value>
+  </data>
+  <data name="This cluster always generates the same seed!" xml:space="preserve">
+    <value>Dieses Cluster generiert immer mit dem selben Seed!</value>
+  </data>
+  <data name="_TranslationAuthor" xml:space="preserve">
+    <value>Sgt_Imalas</value>
+  </data>
+</root>
