@@ -124,7 +124,7 @@
     <value>在结果中隐藏无法拥有特质的小行星</value>
   </data>
   <data name="Theme" xml:space="preserve">
-    <value>主题</value>
+    <value>主题切换</value>
   </data>
   <data name="Seed copied to the clipboard!" xml:space="preserve">
     <value>种子已复制到剪贴簿!</value>
