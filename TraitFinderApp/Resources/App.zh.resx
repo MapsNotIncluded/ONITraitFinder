@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Results inherit trait select order" xml:space="preserve">
-    <value>结果继承特质选择顺序</value>
+    <value>结果保留特质选择顺序</value>
   </data>
   <data name="Hide asteroids that cannot have traits in results" xml:space="preserve">
-    <value>隐藏无法在结果中拥有特质的小行星</value>
+    <value>在结果中隐藏无法拥有特质的小行星</value>
   </data>
   <data name="Theme" xml:space="preserve">
     <value>主题</value>
@@ -133,10 +133,10 @@
     <value>星球特质查找器</value>
   </data>
   <data name="Select your game version and dlcs." xml:space="preserve">
-    <value>选择您的游戏版本和DLC.</value>
+    <value>选择你的游戏版本和DLC.</value>
   </data>
   <data name="Select your game mode:" xml:space="preserve">
-    <value>选择您的游戏模式:</value>
+    <value>选择你的游戏模式:</value>
   </data>
   <data name="Frosty Planet" xml:space="preserve">
     <value>冰冻星球</value>
@@ -157,13 +157,13 @@
     <value>经典</value>
   </data>
   <data name="Select your Asteroid Cluster:" xml:space="preserve">
-    <value>选择您的小行星群:</value>
+    <value>选择你的小行星群:</value>
   </data>
   <data name="Select your Asteroid:" xml:space="preserve">
-    <value>选择您的小行星:</value>
+    <value>选择你的小行星:</value>
   </data>
   <data name="Configure your trait filters for {0}" xml:space="preserve">
-    <value>为 {0} 配置您的特质筛选器</value>
+    <value>为 {0} 配置你的特质筛选器</value>
   </data>
   <data name="Reset all trait filters" xml:space="preserve">
     <value>重置所有特质筛选器</value>
@@ -175,10 +175,10 @@
     <value>此小行星无法生成任何特质.</value>
   </data>
   <data name="Guaranteed traits ({0} max)" xml:space="preserve">
-    <value>保证特质 (最多 {0} 个)</value>
+    <value>保留特质 (最多 {0} 个)</value>
   </data>
   <data name="Forbidden traits" xml:space="preserve">
-    <value>禁止的特质</value>
+    <value>禁止特质</value>
   </data>
   <data name="Search for more seeds" xml:space="preserve">
     <value>搜索更多种子</value>
@@ -205,10 +205,10 @@
     <value>该工具将保留最高的5个种子以便比较.</value>
   </data>
   <data name="Cannot seem to find a seed with all the traits you want and open to mods?" xml:space="preserve">
-    <value>似乎找不到具有您想要的所有特质的种子?考虑使用模组!</value>
+    <value>似乎找不到你想要特质的种子?请考虑使用模组!</value>
   </data>
   <data name="Install Cluster Generation Manager to simply select all the traits you want (and much more) for your game!" xml:space="preserve">
-    <value>安装星群生成管理器以轻松选择您想要的所有特质(以及更多)!</value>
+    <value>安装星群生成管理器以轻松选择你想要的所有特质!</value>
   </data>
   <data name="Made by {0}" xml:space="preserve">
     <value>由 {0} 制作</value>
