@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Results inherit trait select order" xml:space="preserve">
-    <value>结果保留特质选择顺序</value>
+    <value>在结果中保留特质选择顺序</value>
   </data>
   <data name="Hide asteroids that cannot have traits in results" xml:space="preserve">
     <value>在结果中隐藏无法拥有特质的小行星</value>
