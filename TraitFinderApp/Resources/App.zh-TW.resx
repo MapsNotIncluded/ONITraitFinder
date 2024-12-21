@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Results inherit trait select order" xml:space="preserve">
-    <value>結果繼承特質選擇順序</value>
+    <value>結果保留特質選擇順序</value>
   </data>
   <data name="Hide asteroids that cannot have traits in results" xml:space="preserve">
-    <value>隱藏無法在結果中擁有特質的小行星</value>
+    <value>在結果中隱藏無法擁有特質的小行星</value>
   </data>
   <data name="Theme" xml:space="preserve">
-    <value>主題</value>
+    <value>主題切換</value>
   </data>
   <data name="Seed copied to the clipboard!" xml:space="preserve">
     <value>種子已複製到剪貼簿!</value>
@@ -133,10 +133,10 @@
     <value>星球特質查找器</value>
   </data>
   <data name="Select your game version and dlcs." xml:space="preserve">
-    <value>選擇您的遊戲版本和DLC.</value>
+    <value>選擇你的遊戲版本和DLC.</value>
   </data>
   <data name="Select your game mode:" xml:space="preserve">
-    <value>選擇您的遊戲模式:</value>
+    <value>選擇你的遊戲模式:</value>
   </data>
   <data name="Frosty Planet" xml:space="preserve">
     <value>冰凍星球</value>
@@ -157,13 +157,13 @@
     <value>經典</value>
   </data>
   <data name="Select your Asteroid Cluster:" xml:space="preserve">
-    <value>選擇您的小行星群:</value>
+    <value>選擇你的小行星群:</value>
   </data>
   <data name="Select your Asteroid:" xml:space="preserve">
-    <value>選擇您的小行星:</value>
+    <value>選擇你的小行星:</value>
   </data>
   <data name="Configure your trait filters for {0}" xml:space="preserve">
-    <value>為 {0} 配置您的特質篩選器</value>
+    <value>為 {0} 配置你的特質篩選器</value>
   </data>
   <data name="Reset all trait filters" xml:space="preserve">
     <value>重置所有特質篩選器</value>
@@ -175,10 +175,10 @@
     <value>此小行星無法生成任何特質.</value>
   </data>
   <data name="Guaranteed traits ({0} max)" xml:space="preserve">
-    <value>保證特質 (最多 {0} 個)</value>
+    <value>保留特質 (最多 {0} 個)</value>
   </data>
   <data name="Forbidden traits" xml:space="preserve">
-    <value>禁止的特質</value>
+    <value>禁止特質</value>
   </data>
   <data name="Search for more seeds" xml:space="preserve">
     <value>搜索更多種子</value>
@@ -205,10 +205,10 @@
     <value>該工具將保留最高的5個種子以便比較.</value>
   </data>
   <data name="Cannot seem to find a seed with all the traits you want and open to mods?" xml:space="preserve">
-    <value>似乎找不到具有您想要的所有特質的種子?考慮使用模組!</value>
+    <value>似乎找不到你想要特質的種子?請考慮使用模組!</value>
   </data>
   <data name="Install Cluster Generation Manager to simply select all the traits you want (and much more) for your game!" xml:space="preserve">
-    <value>安裝星群生成管理器以輕鬆選擇您想要的所有特質(以及更多)!</value>
+    <value>安裝星群生成管理器以輕鬆選擇你想要的所有特質!</value>
   </data>
   <data name="Made by {0}" xml:space="preserve">
     <value>由 {0} 製作</value>
@@ -241,10 +241,10 @@
     <value>放射性海洋星群</value>
   </data>
   <data name="Terrania Cluster" xml:space="preserve">
-    <value>類地星群</value>
+    <value>砂土星群</value>
   </data>
   <data name="Quagmiris Cluster" xml:space="preserve">
-    <value>泥濘星群</value>
+    <value>泥潭星群</value>
   </data>
   <data name="Arboria Cluster" xml:space="preserve">
     <value>喬木星群</value>
@@ -516,6 +516,6 @@
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="_TranslationAuthor" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
-    <comment>put your name here when making a translation</comment>
+    <comment>jason83228</comment>
   </data>
 </root>
