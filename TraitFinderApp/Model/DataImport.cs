@@ -7,12 +7,16 @@ using static System.Net.WebRequestMethods;
 using System.Text.Json;
 using static MudBlazor.CategoryTypes;
 using Newtonsoft.Json;
+using OniStarmapGenerator.Model.Search;
+using TraitFinderApp.Model.KleiClasses;
+using OniStarmapGenerator.Model;
+using static MudBlazor.Icons.Custom;
 
 namespace TraitFinderApp.Client.Model
 {
     public class Data
     {
-        public Data(){}
+        public Data() { }
 
         public List<ClusterLayout> clusters { get; set; }
         public List<Asteroid> asteroids { get; set; }
@@ -93,17 +97,37 @@ namespace TraitFinderApp.Client.Model
             return _compatibleTraits[asteroid];
         }
     }
+    public class StarmapData
+    {
+        public Dictionary<string, VanillaStarmapLocation> Locations;
+        public void MapGameData()
+        {
+
+        }
+
+    }
 
     public class DataImport
     {
+        public static StarmapData StarmapImport;
+        public static List<VanillaStarmapLocation> GetVanillaStarmapLocations()
+        {
+            return StarmapImport.Locations.Values.ToList();
+        }
+
+
         public static Data BaseGame;
         public static Data SpacedOut;
 
         internal static async Task FetchSeeds(SearchQuery searchQuery, int startSeed, int targetCount = 4, int seedRange = 2000)
         {
             var cluster = searchQuery.SelectedCluster;
+            bool checkForStarmap = searchQuery.HasStarmapFilters();
+            bool isBaseGame = searchQuery.ActiveDlcs.Contains(Dlc.BASEGAME);
+
 
             var asteroids = new Tuple<Asteroid, int>[cluster.WorldPlacements.Count];
+            var dlcs = searchQuery.ActiveDlcs;
 
             List<QueryResult> results = new List<QueryResult>(targetCount);
 
@@ -125,39 +149,61 @@ namespace TraitFinderApp.Client.Model
 
             Dictionary<Asteroid, List<WorldTrait>> TraitStorage = new(asteroidCount);
 
+            List<SpaceDestination> destinations = new();
+
             while (startSeed < queryableRange && results.Count < targetCount)
             {
                 int localSeed = 0;
                 bool seedFailedQuery = false;
                 //Console.Write("Checking seed: "+startSeed);
-                for (int i = 0; i < asteroidCount; ++i)
+                if (isBaseGame)
                 {
-                    var asteroidWithOffset = asteroidsSortedByFilterCount[i];
-                    var asteroid = asteroidWithOffset.Item1;
-                    localSeed = asteroidWithOffset.Item2;
-                    var traits = GetRandomTraits(startSeed + localSeed, asteroid);
-                    TraitStorage[asteroid] = traits;
-
-                    if (queryParams.TryGetValue(asteroid, out var asteroidParams))
-                    {
-                        bool hasProhibited = asteroidParams.Prohibit.Any();
-                        bool hasGuaranteed = asteroidParams.Guarantee.Any();
-                        if (
-                             //asteroid had prohibited traits
-                             hasProhibited && asteroidParams.Prohibit.Intersect(traits).Any()
-                            //not all guaranteed traits are in asteroid
-                            || hasGuaranteed && asteroidParams.Guarantee.Except(traits).Any()
-                            )
+                    destinations = GenerateRandomDestinations(startSeed, dlcs);
+                    if (checkForStarmap)
+					{
+						HashSet<VanillaStarmapLocation> requiredStarmapLocations = new(searchQuery.RequiredStarmapLocations);
+						for (int i = 0; i < destinations.Count; i++)
                         {
-
+                            var destination = destinations[i];
+                            requiredStarmapLocations.Remove(destination.Type);
+                            if (!requiredStarmapLocations.Any())
+                                break;
+                        }
+                        if (requiredStarmapLocations.Any())
                             seedFailedQuery = true;
-                            break;
+                    }
+
+                }
+                if (!seedFailedQuery)
+                {
+                    for (int i = 0; i < asteroidCount; ++i)
+                    {
+                        var asteroidWithOffset = asteroidsSortedByFilterCount[i];
+                        var asteroid = asteroidWithOffset.Item1;
+                        localSeed = asteroidWithOffset.Item2;
+                        var traits = GetRandomTraits(startSeed + localSeed, asteroid);
+                        TraitStorage[asteroid] = traits;
+
+                        if (queryParams.TryGetValue(asteroid, out var asteroidParams))
+                        {
+                            bool hasProhibited = asteroidParams.Prohibit.Any();
+                            bool hasGuaranteed = asteroidParams.Guarantee.Any();
+                            if (
+                                 //asteroid had prohibited traits
+                                 hasProhibited && asteroidParams.Prohibit.Intersect(traits).Any()
+                                //not all guaranteed traits are in asteroid
+                                || hasGuaranteed && asteroidParams.Guarantee.Except(traits).Any()
+                                )
+                            {
+
+                                seedFailedQuery = true;
+                                break;
+                            }
                         }
                     }
                 }
                 if (!seedFailedQuery) //some asteroids were canceled, checking next
                 {
-
                     var asteroidQueryResults = new List<QueryAsteroidResult>(asteroidCount);
 
                     foreach (var asteroidWithIndex in asteroids)
@@ -166,19 +212,259 @@ namespace TraitFinderApp.Client.Model
                         if (TraitStorage.TryGetValue(asteroid, out var traitResults))
                             asteroidQueryResults.Add(new(searchQuery, asteroid, new(traitResults)));
                     }
-
-                    results.Add(new()
+                    var queryResult = new QueryResult()
                     {
                         seed = startSeed,
                         cluster = cluster,
                         asteroidsWithTraits = asteroidQueryResults
-                    });
+                    };
+                    if (isBaseGame)
+                    {
+                        int maxDistance = destinations.Select(x => x.distance).Max();
+
+
+                        var bands = new DistanceBand[maxDistance + 1];
+                        for (int i = 0; i < bands.Length; i++)
+                        {
+                            bands[i] = new(i);
+                        }
+
+
+                        foreach (var entry in destinations)
+                        {
+                            bands[entry.distance].Destinations.Add(entry.Type);
+                        }
+                        queryResult.distanceBands = bands.ToList();
+                    }
+                    results.Add(queryResult);
                 }
                 ++startSeed;
             }
             searchQuery.AddQueryResults(results, startSeed);
         }
 
+        private static List<SpaceDestination> GenerateFixedDestinations()
+        {
+            return new List<SpaceDestination>()
+            {
+                new SpaceDestination(0, "CarbonaceousAsteroid", 0),
+                new SpaceDestination(1, "CarbonaceousAsteroid", 0),
+                new SpaceDestination(2, "MetallicAsteroid", 1),
+                new SpaceDestination(3, "RockyAsteroid", 2),
+                new SpaceDestination(4, "IcyDwarf", 3),
+                new SpaceDestination(5, "OrganicDwarf", 4)
+            };
+        }
+
+        public class spaceDesinations
+        {
+            public string type;
+            public int minTier, maxTier;
+        }
+
+        public static spaceDesinations ceresBaseGameExtraDestionation = new()
+        {
+            type = "DLC2CeresSpaceDestination",
+            minTier = 3,
+            maxTier = 10
+        };
+
+
+
+        private static List<SpaceDestination> GenerateRandomDestinations(int seed, List<Dlc> mixingDlcs)
+        {
+            var destinations = GenerateFixedDestinations();
+
+
+            KRandom rng = new KRandom(seed);
+            List<List<string>> stringListList = new List<List<string>>()
+            {
+              new List<string>(),
+              new List<string>() { "OilyAsteriod" },
+              new List<string>() { "Satellite" },
+              new List<string>()
+              {
+                "Satellite",
+                "RockyAsteroid",
+                "CarbonaceousAsteroid",
+                "ForestPlanet"
+              },
+              new List<string>()
+              {
+                "MetallicAsteroid",
+                "RockyAsteroid",
+                "CarbonaceousAsteroid",
+                "SaltDwarf"
+              },
+              new List<string>()
+              {
+                "MetallicAsteroid",
+                "RockyAsteroid",
+                "CarbonaceousAsteroid",
+                "IcyDwarf",
+                "OrganicDwarf"
+              },
+              new List<string>()
+              {
+                "IcyDwarf",
+                "OrganicDwarf",
+                "DustyMoon",
+                "ChlorinePlanet",
+                "RedDwarf"
+              },
+              new List<string>()
+              {
+                "DustyMoon",
+                "TerraPlanet",
+                "VolcanoPlanet"
+              },
+              new List<string>()
+              {
+                "TerraPlanet",
+                "GasGiant",
+                "IceGiant",
+                "RustPlanet"
+              },
+              new List<string>()
+              {
+                "GasGiant",
+                "IceGiant",
+                "HeliumGiant"
+              },
+              new List<string>()
+              {
+                "RustPlanet",
+                "VolcanoPlanet",
+                "RockyAsteroid",
+                "TerraPlanet",
+                "MetallicAsteroid"
+              },
+              new List<string>()
+              {
+                "ShinyPlanet",
+                "MetallicAsteroid",
+                "RockyAsteroid"
+              },
+              new List<string>()
+              {
+                "GoldAsteroid",
+                "OrganicDwarf",
+                "ForestPlanet",
+                "ChlorinePlanet"
+              },
+              new List<string>()
+              {
+                "IcyDwarf",
+                "MetallicAsteroid",
+                "DustyMoon",
+                "VolcanoPlanet",
+                "IceGiant"
+              },
+              new List<string>()
+              {
+                "ShinyPlanet",
+                "RedDwarf",
+                "RockyAsteroid",
+                "GasGiant"
+              },
+              new List<string>()
+              {
+                "HeliumGiant",
+                "ForestPlanet",
+                "OilyAsteriod"
+              },
+              new List<string>()
+              {
+                "GoldAsteroid",
+                "SaltDwarf",
+                "TerraPlanet",
+                "VolcanoPlanet"
+              }
+            };
+            List<int> list = new List<int>();
+            int num1 = 3;
+            int minValue = 15;
+            int maxValue = 25;
+            for (int index1 = 0; index1 < stringListList.Count; ++index1)
+            {
+                if (stringListList[index1].Count != 0)
+                {
+                    for (int index2 = 0; index2 < num1; ++index2)
+                        list.Add(index1);
+                }
+            }
+            int nextId = destinations.Count;
+            int num2 = rng.Next(minValue, maxValue);
+            List<SpaceDestination> collection1 = new List<SpaceDestination>();
+            for (int index3 = 0; index3 < num2; ++index3)
+            {
+                int index4 = rng.Next(0, list.Count - 1);
+                int num3 = list[index4];
+                list.RemoveAt(index4);
+                List<string> stringList = stringListList[num3];
+                string type = stringList[rng.Next(0, stringList.Count)];
+                SpaceDestination spaceDestination = new SpaceDestination(GetNextID(), type, num3);
+                collection1.Add(spaceDestination);
+
+            }
+            list.ShuffleSeeded(rng);
+            List<SpaceDestination> collection2 = new List<SpaceDestination>();
+            var mixingDestinations = new List<spaceDesinations>();
+            if (mixingDlcs.Contains(Dlc.BASEGAME) && mixingDlcs.Contains(Dlc.FROSTYPLANET))
+            {
+                mixingDestinations.Add(ceresBaseGameExtraDestionation);
+            }
+            foreach (var spaceDesination in mixingDestinations)
+            {
+                bool flag = false;
+                if (list.Count > 0)
+                {
+                    for (int index = 0; index < list.Count; ++index)
+                    {
+                        int distance = list[index];
+                        if (distance >= spaceDesination.minTier && distance <= spaceDesination.maxTier)
+                        {
+                            SpaceDestination spaceDestination = new SpaceDestination(GetNextID(), spaceDesination.type, distance);
+                            collection2.Add(spaceDestination);
+                            list.RemoveAt(index);
+                            flag = true;
+                            break;
+                        }
+                    }
+                }
+                if (!flag)
+                {
+                    for (int index = 0; index < collection1.Count; ++index)
+                    {
+                        SpaceDestination spaceDestination = collection1[index];
+                        if (spaceDestination.distance >= spaceDesination.minTier && spaceDestination.distance <= spaceDesination.maxTier)
+                        {
+                            collection1[index] = new SpaceDestination(GetNextID(), spaceDesination.type, spaceDestination.distance);
+
+
+                            flag = true;
+                            break;
+                        }
+                    }
+                }
+                if (!flag)
+                {
+                    Console.WriteLine("error while placing the mixing destination");
+                }
+            }
+            destinations.AddRange(collection1);
+            destinations.Add(new SpaceDestination(GetNextID(), "Earth", 4));
+            destinations.Add(new SpaceDestination(GetNextID(), "Wormhole", stringListList.Count));
+            destinations.AddRange(collection2);
+
+
+
+            return destinations;
+
+            int GetNextID() => nextId++;
+
+
+        }
 
         public static List<WorldTrait> GetRandomTraits(int seed, Asteroid world)
         {
@@ -199,7 +485,7 @@ namespace TraitFinderApp.Client.Model
             {
                 foreach (string specificTrait in rule.specificTraits)
                 {
-                    result.Add(worldTraits[specificTrait]);                    
+                    result.Add(worldTraits[specificTrait]);
                 }
             }
 

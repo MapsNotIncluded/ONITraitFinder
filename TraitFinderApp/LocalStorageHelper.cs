@@ -7,5 +7,6 @@
         public static bool DarkThemeActive = true;
         public static bool UsePersistentTraitOrdering = false;
         public static bool HideTraitlessAsteroids = false;
+        public static bool HideLocationlessDistances = false;
     }
 }

@@ -1,0 +1,1006 @@
+{
+	"Locations": {
+		"Satellite": {
+			"Id": "Satellite",
+			"Name": "Satellite",
+			"Description": "An artificial construct that has escaped its orbit. It no longer appears to be monitored.",
+			"Image": "asteroid",
+			"Ressources_Elements": {
+				"Steel": 100.0,
+				"Copper": 100.0,
+				"Glass": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"MetallicAsteroid": {
+			"Id": "MetallicAsteroid",
+			"Name": "Metallic Asteroid",
+			"Description": "A shimmering conglomerate of various metals.",
+			"Image": "nebula",
+			"Ressources_Elements": {
+				"Iron": 100.0,
+				"Copper": 100.0,
+				"Obsidian": 100.0
+			},
+			"Ressources_Entities": { "HatchMetal": 3 }
+		},
+		"RockyAsteroid": {
+			"Id": "RockyAsteroid",
+			"Name": "Rocky Asteroid",
+			"Description": "A minor mineral planet. Unlike a comet, it does not possess a tail.",
+			"Image": "new_12",
+			"Ressources_Elements": {
+				"Cuprite": 100.0,
+				"SedimentaryRock": 100.0,
+				"IgneousRock": 100.0
+			},
+			"Ressources_Entities": { "HatchHard": 3 }
+		},
+		"CarbonaceousAsteroid": {
+			"Id": "CarbonaceousAsteroid",
+			"Name": "Carbon Asteroid",
+			"Description": "A common asteroid containing several useful resources.",
+			"Image": "new_08",
+			"Ressources_Elements": {
+				"RefinedCarbon": 100.0,
+				"Carbon": 100.0,
+				"Diamond": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"IcyDwarf": {
+			"Id": "IcyDwarf",
+			"Name": "Interstellar Ice",
+			"Description": "A terrestrial destination, frozen completely solid.",
+			"Image": "icyMoon",
+			"Ressources_Elements": {
+				"Ice": 100.0,
+				"SolidCarbonDioxide": 100.0,
+				"SolidOxygen": 100.0
+			},
+			"Ressources_Entities": {
+				"ColdBreatherSeed": 3,
+				"ColdWheatSeed": 4
+			}
+		},
+		"OrganicDwarf": {
+			"Id": "OrganicDwarf",
+			"Name": "Organic Mass",
+			"Description": "A mass of organic material similar to the ooze used to print Duplicants. This sample is heavily degraded.",
+			"Image": "organicAsteroid",
+			"Ressources_Elements": {
+				"SlimeMold": 100.0,
+				"Algae": 100.0,
+				"ContaminatedOxygen": 100.0
+			},
+			"Ressources_Entities": {
+				"Moo": 2,
+				"GasGrassSeed": 12
+			}
+		},
+		"DustyMoon": {
+			"Id": "DustyMoon",
+			"Name": "Dusty Dwarf",
+			"Description": "A loosely held together composite of minerals.",
+			"Image": "new_05",
+			"Ressources_Elements": {
+				"Regolith": 100.0,
+				"MaficRock": 100.0,
+				"SedimentaryRock": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"TerraPlanet": {
+			"Id": "TerraPlanet",
+			"Name": "Terrestrial Planet",
+			"Description": "A planet with a walkable surface, though it does not possess the resources to sustain long-term life.",
+			"Image": "terra",
+			"Ressources_Elements": {
+				"Water": 100.0,
+				"Algae": 100.0,
+				"Oxygen": 100.0,
+				"Dirt": 100.0
+			},
+			"Ressources_Entities": {
+				"PrickleFlowerSeed": 4,
+				"PacuEgg": 4
+			}
+		},
+		"VolcanoPlanet": {
+			"Id": "VolcanoPlanet",
+			"Name": "Volcanic Planet",
+			"Description": "A large terrestrial object composed mainly of molten rock.",
+			"Image": "planet",
+			"Ressources_Elements": {
+				"Magma": 100.0,
+				"IgneousRock": 100.0,
+				"Katairite": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"GasGiant": {
+			"Id": "GasGiant",
+			"Name": "Gas Giant",
+			"Description": "A massive volume of <link=\"HYDROGEN\">Hydrogen Gas</link> formed around a small solid center.",
+			"Image": "gasGiant",
+			"Ressources_Elements": {
+				"Methane": 100.0,
+				"Hydrogen": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"IceGiant": {
+			"Id": "IceGiant",
+			"Name": "Ice Giant",
+			"Description": "A massive volume of frozen material, primarily composed of <link=\"ICE\">Ice</link>.",
+			"Image": "icyMoon",
+			"Ressources_Elements": {
+				"Ice": 100.0,
+				"SolidCarbonDioxide": 100.0,
+				"SolidOxygen": 100.0,
+				"SolidMethane": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"SaltDwarf": {
+			"Id": "SaltDwarf",
+			"Name": "Salty Dwarf",
+			"Description": "A dwarf planet with unusually high sodium concentrations.",
+			"Image": "new_01",
+			"Ressources_Elements": {
+				"SaltWater": 100.0,
+				"SolidCarbonDioxide": 100.0,
+				"Brine": 100.0
+			},
+			"Ressources_Entities": { "SaltPlantSeed": 3 }
+		},
+		"RustPlanet": {
+			"Id": "RustPlanet",
+			"Name": "Oxidized Asteroid",
+			"Description": "A small planet covered in large swathes of brown rust.",
+			"Image": "new_06",
+			"Ressources_Elements": {
+				"Rust": 100.0,
+				"SolidCarbonDioxide": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"ForestPlanet": {
+			"Id": "ForestPlanet",
+			"Name": "Living Planet",
+			"Description": "A small green planet displaying several markers of primitive life.",
+			"Image": "new_07",
+			"Ressources_Elements": {
+				"AluminumOre": 100.0,
+				"SolidOxygen": 100.0
+			},
+			"Ressources_Entities": {
+				"Squirrel": 1,
+				"ForestTreeSeed": 4
+			}
+		},
+		"RedDwarf": {
+			"Id": "RedDwarf",
+			"Name": "Red Dwarf",
+			"Description": "An M-class star orbited by clusters of extractable aluminum and methane.",
+			"Image": "sun",
+			"Ressources_Elements": {
+				"Aluminum": 100.0,
+				"LiquidMethane": 100.0,
+				"Fossil": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"GoldAsteroid": {
+			"Id": "GoldAsteroid",
+			"Name": "Gilded Asteroid",
+			"Description": "A rich asteroid with thin gold coating and veins of gold deposits throughout.",
+			"Image": "new_02",
+			"Ressources_Elements": {
+				"Gold": 100.0,
+				"Fullerene": 100.0,
+				"FoolsGold": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"HeliumGiant": {
+			"Id": "HeliumGiant",
+			"Name": "Helium Giant",
+			"Description": "A massive volume of <link=\"HELIUM\">Helium</link> formed around a small solid center.",
+			"Image": "new_11",
+			"Ressources_Elements": {
+				"LiquidHydrogen": 100.0,
+				"Water": 100.0,
+				"Niobium": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"OilyAsteriod": {
+			"Id": "OilyAsteriod",
+			"Name": "Oily Asteroid",
+			"Description": "A viscous asteroid that is only loosely held together. Contains fossil fuel resources.",
+			"Image": "new_09",
+			"Ressources_Elements": {
+				"SolidMethane": 100.0,
+				"SolidCarbonDioxide": 100.0,
+				"CrudeOil": 100.0,
+				"Petroleum": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"ShinyPlanet": {
+			"Id": "ShinyPlanet",
+			"Name": "Glimmering Planet",
+			"Description": "A planet composed of rare, shimmering minerals. From the distance, it looks like gem in the sky.",
+			"Image": "new_04",
+			"Ressources_Elements": {
+				"Tungsten": 100.0,
+				"Wolframite": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"ChlorinePlanet": {
+			"Id": "ChlorinePlanet",
+			"Name": "Chlorine Planet",
+			"Description": "A noxious planet permeated by unbreathable chlorine.",
+			"Image": "new_10",
+			"Ressources_Elements": {
+				"SolidChlorine": 100.0,
+				"BleachStone": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"SaltDesertPlanet": {
+			"Id": "SaltDesertPlanet",
+			"Name": "Arid Planet",
+			"Description": "A sweltering, desert-like planet covered in surface salt deposits.",
+			"Image": "new_10",
+			"Ressources_Elements": {
+				"Salt": 100.0,
+				"CrushedRock": 100.0
+			},
+			"Ressources_Entities": { "Crab": 1 }
+		},
+		"Wormhole": {
+			"Id": "Wormhole",
+			"Name": "Temporal Tear",
+			"Description": "The source of our misfortune, though it may also be our shot at freedom. Traces of Neutronium are detectable in my readings.",
+			"Image": "new_03",
+			"Ressources_Elements": { "Vacuum": 100.0 },
+			"Ressources_Entities": null
+		},
+		"Earth": {
+			"Id": "Earth",
+			"Name": "Shattered Planet",
+			"Description": "A once-habitable planet that has sustained massive damage.\n\nA powerful containment field prevents our rockets from traveling to its surface.",
+			"Image": "earth",
+			"Ressources_Elements": {},
+			"Ressources_Entities": null
+		},
+		"DLC2CeresSpaceDestination": {
+			"Id": "DLC2CeresSpaceDestination",
+			"Name": "Ceres",
+			"Description": "A frozen planet peppered with cinnabar deposits.",
+			"Image": "ceres_debris_field",
+			"Ressources_Elements": {
+				"Cinnabar": 100.0,
+				"Mercury": 100.0,
+				"Ice": 100.0
+			},
+			"Ressources_Entities": {
+				"WoodDeer": 3,
+				"HardSkinBerryPlantSeed": 4
+			}
+		}
+	},
+	"Elements": {
+		"CrushedIce": {
+			"Id": "CrushedIce",
+			"Name": "<link=\"CRUSHEDICE\">Crushed Ice</link>"
+		},
+		"Diamond": {
+			"Id": "Diamond",
+			"Name": "<link=\"DIAMOND\">Diamond</link>"
+		},
+		"Aerogel": {
+			"Id": "Aerogel",
+			"Name": "<link=\"AEROGEL\">Aerogel</link>"
+		},
+		"Isoresin": {
+			"Id": "Isoresin",
+			"Name": "<link=\"ISORESIN\">Isoresin</link>"
+		},
+		"Sucrose": {
+			"Id": "Sucrose",
+			"Name": "<link=\"SUCROSE\">Sucrose</link>"
+		},
+		"PhosphateNodules": {
+			"Id": "PhosphateNodules",
+			"Name": "<link=\"PHOSPHATENODULES\">Phosphate Nodules</link>"
+		},
+		"Algae": {
+			"Id": "Algae",
+			"Name": "<link=\"ALGAE\">Algae</link>"
+		},
+		"MilkFat": {
+			"Id": "MilkFat",
+			"Name": "<link=\"MILKFAT\">Brackwax</link>"
+		},
+		"Niobium": {
+			"Id": "Niobium",
+			"Name": "<link=\"NIOBIUM\">Niobium</link>"
+		},
+		"MilkIce": {
+			"Id": "MilkIce",
+			"Name": "<link=\"MILKICE\">Frozen Brackene</link>"
+		},
+		"Cuprite": {
+			"Id": "Cuprite",
+			"Name": "<link=\"CUPRITE\">Copper Ore</link>"
+		},
+		"Copper": {
+			"Id": "Copper",
+			"Name": "<link=\"COPPER\">Copper</link>"
+		},
+		"CrushedRock": {
+			"Id": "CrushedRock",
+			"Name": "<link=\"CRUSHEDROCK\">Crushed Rock</link>"
+		},
+		"SuperInsulator": {
+			"Id": "SuperInsulator",
+			"Name": "<link=\"SUPERINSULATOR\">Insulite</link>"
+		},
+		"Tallow": {
+			"Id": "Tallow",
+			"Name": "<link=\"TALLOW\">Tallow</link>"
+		},
+		"Yellowcake": {
+			"Id": "Yellowcake",
+			"Name": "<link=\"YELLOWCAKE\">Yellowcake</link>"
+		},
+		"BrineIce": {
+			"Id": "BrineIce",
+			"Name": "<link=\"BRINEICE\">Brine Ice</link>"
+		},
+		"SolidViscoGel": {
+			"Id": "SolidViscoGel",
+			"Name": "<link=\"SOLIDVISCOGEL\">Solid Visco-Gel</link>"
+		},
+		"Ceramic": {
+			"Id": "Ceramic",
+			"Name": "<link=\"CERAMIC\">Ceramic</link>"
+		},
+		"Cobaltite": {
+			"Id": "Cobaltite",
+			"Name": "<link=\"COBALTITE\">Cobalt Ore</link>"
+		},
+		"Fertilizer": {
+			"Id": "Fertilizer",
+			"Name": "<link=\"FERTILIZER\">Fertilizer</link>"
+		},
+		"SolidCrudeOil": {
+			"Id": "SolidCrudeOil",
+			"Name": "<link=\"SOLIDCRUDEOIL\">Solid Crude Oil</link>"
+		},
+		"Wolframite": {
+			"Id": "Wolframite",
+			"Name": "<link=\"WOLFRAMITE\">Wolframite</link>"
+		},
+		"SlimeMold": {
+			"Id": "SlimeMold",
+			"Name": "<link=\"SLIMEMOLD\">Slime</link>"
+		},
+		"Polypropylene": {
+			"Id": "Polypropylene",
+			"Name": "<link=\"POLYPROPYLENE\">Plastic</link>"
+		},
+		"SolidNaphtha": {
+			"Id": "SolidNaphtha",
+			"Name": "<link=\"SOLIDNAPHTHA\">Solid Naphtha</link>"
+		},
+		"Tungsten": {
+			"Id": "Tungsten",
+			"Name": "<link=\"TUNGSTEN\">Tungsten</link>"
+		},
+		"SandCement": {
+			"Id": "SandCement",
+			"Name": "<link=\"SANDCEMENT\">Sand Cement</link>"
+		},
+		"RefinedCarbon": {
+			"Id": "RefinedCarbon",
+			"Name": "<link=\"REFINEDCARBON\">Refined Carbon</link>"
+		},
+		"Steel": {
+			"Id": "Steel",
+			"Name": "<link=\"STEEL\">Steel</link>"
+		},
+		"Phosphorite": {
+			"Id": "Phosphorite",
+			"Name": "<link=\"PHOSPHORITE\">Phosphorite</link>"
+		},
+		"SolidHydrogen": {
+			"Id": "SolidHydrogen",
+			"Name": "<link=\"SOLIDHYDROGEN\">Solid Hydrogen</link>"
+		},
+		"BleachStone": {
+			"Id": "BleachStone",
+			"Name": "<link=\"BLEACHSTONE\">Bleach Stone</link>"
+		},
+		"Lead": {
+			"Id": "Lead",
+			"Name": "<link=\"LEAD\">Lead</link>"
+		},
+		"Sulfur": {
+			"Id": "Sulfur",
+			"Name": "<link=\"SULFUR\">Sulfur</link>"
+		},
+		"Lime": {
+			"Id": "Lime",
+			"Name": "<link=\"LIME\">Lime</link>"
+		},
+		"SolidSyngas": {
+			"Id": "SolidSyngas",
+			"Name": "<link=\"SYNGAS\">Solid Synthesis Gas</link>"
+		},
+		"SolidChlorine": {
+			"Id": "SolidChlorine",
+			"Name": "<link=\"SOLIDCHLORINE\">Solid Chlorine</link>"
+		},
+		"SolidMercury": {
+			"Id": "SolidMercury",
+			"Name": "<link=\"SOLIDMERCURY\">Mercury</link>"
+		},
+		"SolidNuclearWaste": {
+			"Id": "SolidNuclearWaste",
+			"Name": "<link=\"SOLIDNUCLEARWASTE\">Solid Nuclear Waste</link>"
+		},
+		"Obsidian": {
+			"Id": "Obsidian",
+			"Name": "<link=\"OBSIDIAN\">Obsidian</link>"
+		},
+		"SolidPetroleum": {
+			"Id": "SolidPetroleum",
+			"Name": "<link=\"SOLIDPETROLEUM\">Solid Petroleum</link>"
+		},
+		"SolidSuperCoolant": {
+			"Id": "SolidSuperCoolant",
+			"Name": "<link=\"SOLIDSUPERCOOLANT\">Solid Super Coolant</link>"
+		},
+		"IgneousRock": {
+			"Id": "IgneousRock",
+			"Name": "<link=\"IGNEOUSROCK\">Igneous Rock</link>"
+		},
+		"EnrichedUranium": {
+			"Id": "EnrichedUranium",
+			"Name": "<link=\"ENRICHEDURANIUM\">Enriched Uranium</link>"
+		},
+		"Brick": {
+			"Id": "Brick",
+			"Name": "<link=\"BRICK\">Brick</link>"
+		},
+		"Gold": {
+			"Id": "Gold",
+			"Name": "<link=\"GOLD\">Gold</link>"
+		},
+		"Rust": {
+			"Id": "Rust",
+			"Name": "<link=\"RUST\">Rust</link>"
+		},
+		"Gunk": {
+			"Id": "Gunk",
+			"Name": "<link=\"GUNK\">Solid Gunk</link>"
+		},
+		"FrozenPhytoOil": {
+			"Id": "FrozenPhytoOil",
+			"Name": "<link=\"FROZENPHYTOOIL\">Frozen Phyto Oil</link>"
+		},
+		"Corium": {
+			"Id": "Corium",
+			"Name": "<link=\"CORIUM\">Corium</link>"
+		},
+		"Phosphorus": {
+			"Id": "Phosphorus",
+			"Name": "<link=\"PHOSPHORUS\">Refined Phosphorus</link>"
+		},
+		"Granite": {
+			"Id": "Granite",
+			"Name": "<link=\"GRANITE\">Granite</link>"
+		},
+		"Radium": {
+			"Id": "Radium",
+			"Name": "<link=\"RADIUM\">Radium</link>"
+		},
+		"WoodLog": {
+			"Id": "WoodLog",
+			"Name": "<link=\"WOOD\">Wood</link>"
+		},
+		"Electrum": {
+			"Id": "Electrum",
+			"Name": "<link=\"ELECTRUM\">Electrum</link>"
+		},
+		"SolidCarbonDioxide": {
+			"Id": "SolidCarbonDioxide",
+			"Name": "<link=\"SOLIDCARBONDIOXIDE\">Solid Carbon Dioxide</link>"
+		},
+		"Cobalt": {
+			"Id": "Cobalt",
+			"Name": "<link=\"COBALT\">Cobalt</link>"
+		},
+		"CarbonFibre": {
+			"Id": "CarbonFibre",
+			"Name": "<link=\"CARBONFIBRE\">Carbon Fiber</link>"
+		},
+		"UraniumOre": {
+			"Id": "UraniumOre",
+			"Name": "<link=\"URANIUMORE\">Uranium Ore</link>"
+		},
+		"SolidPropane": {
+			"Id": "SolidPropane",
+			"Name": "<link=\"SOLIDPROPANE\">Solid Propane</link>"
+		},
+		"AluminumOre": {
+			"Id": "AluminumOre",
+			"Name": "<link=\"ALUMINUMORE\">Aluminum Ore</link>"
+		},
+		"SedimentaryRock": {
+			"Id": "SedimentaryRock",
+			"Name": "<link=\"SEDIMENTARYROCK\">Sedimentary Rock</link>"
+		},
+		"Fullerene": {
+			"Id": "Fullerene",
+			"Name": "<link=\"FULLERENE\">Fullerene</link>"
+		},
+		"GoldAmalgam": {
+			"Id": "GoldAmalgam",
+			"Name": "<link=\"GOLDAMALGAM\">Gold Amalgam</link>"
+		},
+		"Salt": {
+			"Id": "Salt",
+			"Name": "<link=\"SALT\">Salt</link>"
+		},
+		"Sand": {
+			"Id": "Sand",
+			"Name": "<link=\"SAND\">Sand</link>"
+		},
+		"Snow": {
+			"Id": "Snow",
+			"Name": "<link=\"SNOW\">Snow</link>"
+		},
+		"SandStone": {
+			"Id": "SandStone",
+			"Name": "<link=\"SANDSTONE\">Sandstone</link>"
+		},
+		"Glass": {
+			"Id": "Glass",
+			"Name": "<link=\"GLASS\">Glass</link>"
+		},
+		"Clay": {
+			"Id": "Clay",
+			"Name": "<link=\"CLAY\">Clay</link>"
+		},
+		"ToxicSand": {
+			"Id": "ToxicSand",
+			"Name": "<link=\"TOXICSAND\">Polluted Dirt</link>"
+		},
+		"Ice": {
+			"Id": "Ice",
+			"Name": "<link=\"ICE\">Ice</link>"
+		},
+		"Graphite": {
+			"Id": "Graphite",
+			"Name": "<link=\"GRAPHITE\">Graphite</link>"
+		},
+		"ToxicMud": {
+			"Id": "ToxicMud",
+			"Name": "<link=\"TOXICMUD\">Polluted Mud</link>"
+		},
+		"Mud": {
+			"Id": "Mud",
+			"Name": "<link=\"MUD\">Mud</link>"
+		},
+		"Carbon": {
+			"Id": "Carbon",
+			"Name": "<link=\"CARBON\">Coal</link>"
+		},
+		"SolidOxygen": {
+			"Id": "SolidOxygen",
+			"Name": "<link=\"SOLIDOXYGEN\">Solid Oxygen</link>"
+		},
+		"Creature": {
+			"Id": "Creature",
+			"Name": "<link=\"CREATURE\">Genetic Ooze</link>"
+		},
+		"DepletedUranium": {
+			"Id": "DepletedUranium",
+			"Name": "<link=\"DEPLETEDURANIUM\">Depleted Uranium</link>"
+		},
+		"Katairite": {
+			"Id": "Katairite",
+			"Name": "<link=\"KATAIRITE\">Abyssalite</link>"
+		},
+		"SolidMethane": {
+			"Id": "SolidMethane",
+			"Name": "<link=\"SOLIDMETHANE\">Solid Methane</link>"
+		},
+		"HardPolypropylene": {
+			"Id": "HardPolypropylene",
+			"Name": "<link=\"HARDPOLYPROPYLENE\">Plastium</link>"
+		},
+		"OxyRock": {
+			"Id": "OxyRock",
+			"Name": "<link=\"OXYROCK\">Oxylite</link>"
+		},
+		"MaficRock": {
+			"Id": "MaficRock",
+			"Name": "<link=\"MAFICROCK\">Mafic Rock</link>"
+		},
+		"Iron": {
+			"Id": "Iron",
+			"Name": "<link=\"IRON\">Iron</link>"
+		},
+		"Regolith": {
+			"Id": "Regolith",
+			"Name": "<link=\"REGOLITH\">Regolith</link>"
+		},
+		"SolidResin": {
+			"Id": "SolidResin",
+			"Name": "<link=\"SOLIDRESIN\">Solid Resin</link>"
+		},
+		"Slabs": {
+			"Id": "Slabs",
+			"Name": "<link=\"SLABS\">Building Slab</link>"
+		},
+		"Bitumen": {
+			"Id": "Bitumen",
+			"Name": "<link=\"BITUMEN\">Bitumen</link>"
+		},
+		"StableSnow": {
+			"Id": "StableSnow",
+			"Name": "Packed <link=\"SNOW\">Snow</link>"
+		},
+		"TempConductorSolid": {
+			"Id": "TempConductorSolid",
+			"Name": "<link=\"TEMPCONDUCTORSOLID\">Thermium</link>"
+		},
+		"IronOre": {
+			"Id": "IronOre",
+			"Name": "<link=\"IRONORE\">Iron Ore</link>"
+		},
+		"Dirt": {
+			"Id": "Dirt",
+			"Name": "<link=\"DIRT\">Dirt</link>"
+		},
+		"Cement": {
+			"Id": "Cement",
+			"Name": "<link=\"CEMENT\">Cement</link>"
+		},
+		"DirtyIce": {
+			"Id": "DirtyIce",
+			"Name": "<link=\"DIRTYICE\">Polluted Ice</link>"
+		},
+		"CementMix": {
+			"Id": "CementMix",
+			"Name": "<link=\"CEMENTMIX\">Cement Mix</link>"
+		},
+		"Fossil": {
+			"Id": "Fossil",
+			"Name": "<link=\"FOSSIL\">Fossil</link>"
+		},
+		"Unobtanium": {
+			"Id": "Unobtanium",
+			"Name": "<link=\"UNOBTANIUM\">Neutronium</link>"
+		},
+		"Cinnabar": {
+			"Id": "Cinnabar",
+			"Name": "<link=\"CINNABAR\">Cinnabar Ore</link>"
+		},
+		"SolidEthanol": {
+			"Id": "SolidEthanol",
+			"Name": "<link=\"SOLIDETHANOL\">Solid Ethanol</link>"
+		},
+		"FoolsGold": {
+			"Id": "FoolsGold",
+			"Name": "<link=\"FOOLSGOLD\">Pyrite</link>"
+		},
+		"Aluminum": {
+			"Id": "Aluminum",
+			"Name": "<link=\"ALUMINUM\">Aluminum</link>"
+		},
+		"LiquidHelium": {
+			"Id": "LiquidHelium",
+			"Name": "<link=\"LIQUIDHELIUM\">Helium</link>"
+		},
+		"LiquidOxygen": {
+			"Id": "LiquidOxygen",
+			"Name": "<link=\"LIQUIDOXYGEN\">Liquid Oxygen</link>"
+		},
+		"ViscoGel": {
+			"Id": "ViscoGel",
+			"Name": "<link=\"VISCOGEL\">Visco-Gel Fluid</link>"
+		},
+		"MoltenAluminum": {
+			"Id": "MoltenAluminum",
+			"Name": "<link=\"MOLTENALUMINUM\">Molten Aluminum</link>"
+		},
+		"MoltenLead": {
+			"Id": "MoltenLead",
+			"Name": "<link=\"MOLTENLEAD\">Molten Lead</link>"
+		},
+		"LiquidCarbonDioxide": {
+			"Id": "LiquidCarbonDioxide",
+			"Name": "<link=\"LIQUIDCARBONDIOXIDE\">Liquid Carbon Dioxide</link>"
+		},
+		"CrudeOil": {
+			"Id": "CrudeOil",
+			"Name": "<link=\"CRUDEOIL\">Crude Oil</link>"
+		},
+		"MoltenGlass": {
+			"Id": "MoltenGlass",
+			"Name": "<link=\"MOLTENGLASS\">Molten Glass</link>"
+		},
+		"LiquidSulfur": {
+			"Id": "LiquidSulfur",
+			"Name": "<link=\"LIQUIDSULFUR\">Liquid Sulfur</link>"
+		},
+		"MoltenGold": {
+			"Id": "MoltenGold",
+			"Name": "<link=\"MOLTENGOLD\">Molten Gold</link>"
+		},
+		"Magma": {
+			"Id": "Magma",
+			"Name": "<link=\"MAGMA\">Magma</link>"
+		},
+		"Chlorine": {
+			"Id": "Chlorine",
+			"Name": "<link=\"CHLORINE\">Liquid Chlorine</link>"
+		},
+		"LiquidHydrogen": {
+			"Id": "LiquidHydrogen",
+			"Name": "<link=\"LIQUIDHYDROGEN\">Liquid Hydrogen</link>"
+		},
+		"Resin": {
+			"Id": "Resin",
+			"Name": "<link=\"RESIN\">Liquid Resin</link>"
+		},
+		"LiquidGunk": {
+			"Id": "LiquidGunk",
+			"Name": "<link=\"LIQUIDGUNK\">Gunk</link>"
+		},
+		"LiquidPropane": {
+			"Id": "LiquidPropane",
+			"Name": "<link=\"LIQUIDPROPANE\">Liquid Propane</link>"
+		},
+		"MoltenTungsten": {
+			"Id": "MoltenTungsten",
+			"Name": "<link=\"MOLTENTUNGSTEN\">Molten Tungsten</link>"
+		},
+		"Petroleum": {
+			"Id": "Petroleum",
+			"Name": "<link=\"PETROLEUM\">Petroleum</link>"
+		},
+		"MoltenSalt": {
+			"Id": "MoltenSalt",
+			"Name": "<link=\"MOLTENSALT\">Molten Salt</link>"
+		},
+		"MoltenCobalt": {
+			"Id": "MoltenCobalt",
+			"Name": "<link=\"MOLTENCOBALT\">Molten Cobalt</link>"
+		},
+		"Brine": {
+			"Id": "Brine",
+			"Name": "<link=\"BRINE\">Brine</link>"
+		},
+		"NuclearWaste": {
+			"Id": "NuclearWaste",
+			"Name": "<link=\"NUCLEARWASTE\">Liquid Nuclear Waste</link>"
+		},
+		"SuperCoolant": {
+			"Id": "SuperCoolant",
+			"Name": "<link=\"SUPERCOOLANT\">Super Coolant</link>"
+		},
+		"Ethanol": {
+			"Id": "Ethanol",
+			"Name": "<link=\"ETHANOL\">Ethanol</link>"
+		},
+		"PhytoOil": {
+			"Id": "PhytoOil",
+			"Name": "<link=\"PHYTOOIL\">Phyto Oil</link>"
+		},
+		"Milk": {
+			"Id": "Milk",
+			"Name": "<link=\"MILK\">Brackene</link>"
+		},
+		"LiquidMethane": {
+			"Id": "LiquidMethane",
+			"Name": "<link=\"LIQUIDMETHANE\">Liquid Methane</link>"
+		},
+		"MoltenIron": {
+			"Id": "MoltenIron",
+			"Name": "<link=\"MOLTENIRON\">Molten Iron</link>"
+		},
+		"MoltenCarbon": {
+			"Id": "MoltenCarbon",
+			"Name": "<link=\"MOLTENCARBON\">Liquid Carbon</link>"
+		},
+		"MoltenSyngas": {
+			"Id": "MoltenSyngas",
+			"Name": "<link=\"SYNGAS\">Molten Synthesis Gas</link>"
+		},
+		"SugarWater": {
+			"Id": "SugarWater",
+			"Name": "<link=\"SUGARWATER\">Nectar</link>"
+		},
+		"Naphtha": {
+			"Id": "Naphtha",
+			"Name": "<link=\"NAPHTHA\">Liquid Naphtha</link>"
+		},
+		"MoltenSucrose": {
+			"Id": "MoltenSucrose",
+			"Name": "<link=\"MOLTENSUCROSE\">Liquid Sucrose</link>"
+		},
+		"LiquidPhosphorus": {
+			"Id": "LiquidPhosphorus",
+			"Name": "<link=\"LIQUIDPHOSPHORUS\">Liquid Phosphorus</link>"
+		},
+		"MoltenSteel": {
+			"Id": "MoltenSteel",
+			"Name": "<link=\"MOLTENSTEEL\">Molten Steel</link>"
+		},
+		"MoltenNiobium": {
+			"Id": "MoltenNiobium",
+			"Name": "<link=\"MOLTENNIOBIUM\">Molten Niobium</link>"
+		},
+		"Mercury": {
+			"Id": "Mercury",
+			"Name": "<link=\"MERCURY\">Mercury</link>"
+		},
+		"DirtyWater": {
+			"Id": "DirtyWater",
+			"Name": "<link=\"DIRTYWATER\">Polluted Water</link>"
+		},
+		"Water": {
+			"Id": "Water",
+			"Name": "<link=\"WATER\">Water</link>"
+		},
+		"SaltWater": {
+			"Id": "SaltWater",
+			"Name": "<link=\"SALTWATER\">Salt Water</link>"
+		},
+		"MoltenUranium": {
+			"Id": "MoltenUranium",
+			"Name": "<link=\"MOLTENURANIUM\">Liquid Uranium</link>"
+		},
+		"MoltenCopper": {
+			"Id": "MoltenCopper",
+			"Name": "<link=\"MOLTENCOPPER\">Molten Copper</link>"
+		},
+		"SulfurGas": {
+			"Id": "SulfurGas",
+			"Name": "<link=\"SULFURGAS\">Sulfur Gas</link>"
+		},
+		"SaltGas": {
+			"Id": "SaltGas",
+			"Name": "<link=\"SALTGAS\">Salt Gas</link>"
+		},
+		"Propane": {
+			"Id": "Propane",
+			"Name": "<link=\"PROPANE\">Propane Gas</link>"
+		},
+		"NiobiumGas": {
+			"Id": "NiobiumGas",
+			"Name": "<link=\"NIOBIUMGAS\">Niobium Gas</link>"
+		},
+		"Helium": {
+			"Id": "Helium",
+			"Name": "<link=\"HELIUM\">Helium</link>"
+		},
+		"Oxygen": {
+			"Id": "Oxygen",
+			"Name": "<link=\"OXYGEN\">Oxygen</link>"
+		},
+		"CobaltGas": {
+			"Id": "CobaltGas",
+			"Name": "<link=\"COBALTGAS\">Cobalt Gas</link>"
+		},
+		"SteelGas": {
+			"Id": "SteelGas",
+			"Name": "<link=\"STEELGAS\">Steel Gas</link>"
+		},
+		"ChlorineGas": {
+			"Id": "ChlorineGas",
+			"Name": "<link=\"CHLORINEGAS\">Chlorine Gas</link>"
+		},
+		"Hydrogen": {
+			"Id": "Hydrogen",
+			"Name": "<link=\"HYDROGEN\">Hydrogen Gas</link>"
+		},
+		"SourGas": {
+			"Id": "SourGas",
+			"Name": "<link=\"SOURGAS\">Sour Gas</link>"
+		},
+		"Steam": {
+			"Id": "Steam",
+			"Name": "<link=\"STEAM\">Steam</link>"
+		},
+		"Methane": {
+			"Id": "Methane",
+			"Name": "<link=\"METHANE\">Natural Gas</link>"
+		},
+		"MercuryGas": {
+			"Id": "MercuryGas",
+			"Name": "<link=\"MERCURYGAS\">Mercury Gas</link>"
+		},
+		"GoldGas": {
+			"Id": "GoldGas",
+			"Name": "<link=\"GOLDGAS\">Gold Gas</link>"
+		},
+		"EthanolGas": {
+			"Id": "EthanolGas",
+			"Name": "<link=\"ETHANOLGAS\">Ethanol Gas</link>"
+		},
+		"RockGas": {
+			"Id": "RockGas",
+			"Name": "<link=\"ROCKGAS\">Rock Gas</link>"
+		},
+		"CarbonGas": {
+			"Id": "CarbonGas",
+			"Name": "<link=\"CARBONGAS\">Carbon Gas</link>"
+		},
+		"SuperCoolantGas": {
+			"Id": "SuperCoolantGas",
+			"Name": "<link=\"SUPERCOOLANTGAS\">Super Coolant Gas</link>"
+		},
+		"AluminumGas": {
+			"Id": "AluminumGas",
+			"Name": "<link=\"ALUMINUMGAS\">Aluminum Gas</link>"
+		},
+		"TungstenGas": {
+			"Id": "TungstenGas",
+			"Name": "<link=\"TUNGSTENGAS\">Tungsten Gas</link>"
+		},
+		"ContaminatedOxygen": {
+			"Id": "ContaminatedOxygen",
+			"Name": "<link=\"CONTAMINATEDOXYGEN\">Polluted Oxygen</link>"
+		},
+		"LeadGas": {
+			"Id": "LeadGas",
+			"Name": "<link=\"LEADGAS\">Lead Gas</link>"
+		},
+		"Fallout": {
+			"Id": "Fallout",
+			"Name": "<link=\"FALLOUT\">Nuclear Fallout</link>"
+		},
+		"Syngas": {
+			"Id": "Syngas",
+			"Name": "<link=\"SYNGAS\">Synthesis Gas</link>"
+		},
+		"IronGas": {
+			"Id": "IronGas",
+			"Name": "<link=\"IRONGAS\">Iron Gas</link>"
+		},
+		"PhosphorusGas": {
+			"Id": "PhosphorusGas",
+			"Name": "<link=\"PHOSPHORUSGAS\">Phosphorus Gas</link>"
+		},
+		"CarbonDioxide": {
+			"Id": "CarbonDioxide",
+			"Name": "<link=\"CARBONDIOXIDE\">Carbon Dioxide</link>"
+		},
+		"CopperGas": {
+			"Id": "CopperGas",
+			"Name": "<link=\"COPPERGAS\">Copper Gas</link>"
+		},
+		"Void": {
+			"Id": "Void",
+			"Name": "<link=\"VOID\">Void</link>"
+		},
+		"COMPOSITION": {
+			"Id": "COMPOSITION",
+			"Name": "<link=\"COMPOSITION\">Composition</link>"
+		},
+		"Vacuum": {
+			"Id": "Vacuum",
+			"Name": "<link=\"VACUUM\">Vacuum</link>"
+		}
+	}
+}
