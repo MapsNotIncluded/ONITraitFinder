@@ -162,8 +162,8 @@
   <data name="Select your Asteroid:" xml:space="preserve">
     <value>Select your Asteroid:</value>
   </data>
-  <data name="Configure your trait filters for {0}" xml:space="preserve">
-    <value>Configure your trait filters for {0}</value>
+  <data name="Configure your filters for {0}" xml:space="preserve">
+    <value>Configure your filters for {0}</value>
   </data>
   <data name="Reset all trait filters" xml:space="preserve">
     <value>Reset all trait filters</value>

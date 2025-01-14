@@ -1,4 +1,6 @@
 ﻿
+using OniStarmapGenerator.Model;
+using OniStarmapGenerator.Model.Search;
 using System.Collections.Generic;
 using TraitFinderApp.Model.Search;
 
@@ -15,9 +17,21 @@ namespace TraitFinderApp.Client.Model.Search
         public IEnumerable<QueryResult> QueryResults = new HashSet<QueryResult>(32);
         public bool HasResults() => QueryResults != null && QueryResults.Any();
 
-        public bool HasFilters() => AsteroidParams!=null&& AsteroidParams.Any(param => param.Value.HasFilters());
+        public bool HasFilters() => AsteroidParams!=null && AsteroidParams.Any(param => param.Value.HasFilters())|| RequiredStarmapLocations.Any();
+		public bool HasStarmapFilters() => RequiredStarmapLocations != null && RequiredStarmapLocations.Any();
 
-        public int CurrentQuerySeed = 1;
+
+		public IEnumerable<VanillaStarmapLocation> RequiredStarmapLocations
+		{
+			get => _requiredStarmapLocations; set
+			{
+				_requiredStarmapLocations = value;
+			}
+		}
+		private IEnumerable<VanillaStarmapLocation> _requiredStarmapLocations = new HashSet<VanillaStarmapLocation>(16);
+
+
+		public int CurrentQuerySeed = 1;
 
         public int QueryTarget = 5;
 
@@ -115,6 +129,7 @@ namespace TraitFinderApp.Client.Model.Search
 
         public void ResetFilters()
         {
+            RequiredStarmapLocations = new HashSet<VanillaStarmapLocation>(16);
             ClearQueryResults();
             if (SelectedCluster == null)
                 return;

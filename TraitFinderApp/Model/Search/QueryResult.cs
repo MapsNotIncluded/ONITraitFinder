@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using OniStarmapGenerator.Model.Search;
+using System.Xml.Linq;
 using TraitFinderApp.Client.Model;
 
 namespace TraitFinderApp.Model.Search
@@ -8,6 +9,8 @@ namespace TraitFinderApp.Model.Search
         public int seed;
         public ClusterLayout cluster;
         public List<QueryAsteroidResult> asteroidsWithTraits;
+        public List<DistanceBand> distanceBands;
+        public bool ShowStarmap = false;
 
         public override bool Equals(object? obj)
         {

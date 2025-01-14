@@ -1,71 +1,115 @@
-﻿@using TraitFinderApp.Client.Model.Search
+﻿@using OniStarmapGenerator.Model
+@using OniStarmapGenerator.Model.Search
+@using TraitFinderApp.Client.Model.Search
 @using TraitFinderApp.Model.Search
 @inject ISnackbar Snackbar;
 @inject ClipboardService ClipboardService
 @inject IStringLocalizer<App> L
 
 <MudItem>
-    <MudPaper Outlined Elevation="10" Class="pa-1" Width="300px">
-        <MudStack Spacing="4">
-            <MudStack Row Spacing="1" AlignItems="AlignItems.Center" Justify="Justify.Center">
-                <MudText Style="padding:4px" Typo="Typo.h6">@QueryResult.GetCoordinate()</MudText>
-                <MudFab IconColor="Color.Tertiary" EndIcon="@Icons.Material.Filled.ContentCopy" OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())"></MudFab>
-            </MudStack>
-            <MudVirtualize Items="@QueryResult.asteroidsWithTraits" Context="asteroidQueryResult">
-                @if (!LocalStorageHelper.HideTraitlessAsteroids || !asteroidQueryResult.Asteroid.DisableWorldTraits)
-                {
-                    <MudStack Row Spacing="0">
-                    <MudTooltip Text="@asteroidQueryResult.Asteroid.Name" Arrow="true" Placement="Placement.Start">
-                        <MudImage ObjectFit="ObjectFit.Contain" Width="55" Height="55" Src="@asteroidQueryResult.Asteroid.Image" Alt="@asteroidQueryResult.Asteroid.Name" />
-                    </MudTooltip>
-                        <MudVirtualize Items="@asteroidQueryResult.GetTraitsForUI()" Context="trait">
-                        @{
-                            bool isDarkTheme = LocalStorageHelper.DarkThemeActive;
-                            string outlineStyle = SearchQuery.AsteroidHasTraitGuaranteed(asteroidQueryResult.Asteroid,trait) ? $"outline-style:solid; outline-color:#{trait.ColorHex};" : string.Empty;
+	<MudPaper Outlined Elevation="10" Class="pa-1" Width="300px">
+		<MudStack Spacing="4">
+			<MudStack Row Spacing="1" AlignItems="AlignItems.Center" Justify="Justify.Center">
+				<MudText Style="padding:4px" Typo="Typo.h6">@QueryResult.GetCoordinate()</MudText>
+				<MudFab IconColor="Color.Tertiary" EndIcon="@Icons.Material.Filled.ContentCopy" OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())"></MudFab>
+			</MudStack>
+			<MudVirtualize Items="@QueryResult.asteroidsWithTraits" Context="asteroidQueryResult">
+				@if (!LocalStorageHelper.HideTraitlessAsteroids || !asteroidQueryResult.Asteroid.DisableWorldTraits)
+				{
+					<MudStack Row Spacing="0">
+						<MudTooltip Text="@asteroidQueryResult.Asteroid.Name" Arrow="true" Placement="Placement.Start">
+							<MudImage ObjectFit="ObjectFit.Contain" Width="55" Height="55" Src="@asteroidQueryResult.Asteroid.Image" Alt="@asteroidQueryResult.Asteroid.Name" />
+						</MudTooltip>
+						<MudVirtualize Items="@asteroidQueryResult.GetTraitsForUI()" Context="trait">
+							@{
+								bool isDarkTheme = LocalStorageHelper.DarkThemeActive;
+								string outlineStyle = SearchQuery.AsteroidHasTraitGuaranteed(asteroidQueryResult.Asteroid, trait) ? $"outline-style:solid; outline-color:#{trait.ColorHex};" : string.Empty;
 
-                            string modifierColor = isDarkTheme ? "black" : "white";
+								string modifierColor = isDarkTheme ? "black" : "white";
 
-                            string backgroundColorStyle = $"background-color:color-mix(in srgb, #{trait.ColorHex},{modifierColor} 66%);  outline-width:2px; {outlineStyle}";
-                            string colorStyle = $"background-color:#{trait.ColorHex};  outline-width:2px; {outlineStyle}";
-                            string imageStyle = "margin-left:-5px; margin-right:5px";
-                            string evilInvisibleString = " ";
-                        }
-                        <MudTooltip Text="@L[@trait.Name]" Arrow="true" Placement="Placement.Top">
-                            <MudChip T="string" Variant="Variant.Text" Style="@backgroundColorStyle">
-                                    <MudImage ObjectFit="ObjectFit.Contain" Width="20" Height="20" Src="@trait.Image" />
-                            </MudChip>
-                        </MudTooltip>
-                    </MudVirtualize>
-                    </MudStack>
-                }
-            </MudVirtualize>
-        </MudStack>
-    </MudPaper>
+								string backgroundColorStyle = $"background-color:color-mix(in srgb, #{trait.ColorHex},{modifierColor} 66%);  outline-width:2px; {outlineStyle}";
+								string colorStyle = $"background-color:#{trait.ColorHex};  outline-width:2px; {outlineStyle}";
+								string imageStyle = "margin-left:-5px; margin-right:5px";
+								string evilInvisibleString = " ";
+							}
+							<MudTooltip Text="@L[@trait.Name]" Arrow="true" Placement="Placement.Top">
+								<MudChip T="string" Variant="Variant.Text" Style="@backgroundColorStyle">
+									<MudImage ObjectFit="ObjectFit.Contain" Width="20" Height="20" Src="@trait.Image" />
+								</MudChip>
+							</MudTooltip>
+						</MudVirtualize>
+					</MudStack>
+				}
+			</MudVirtualize>
+			@if (QueryResult?.cluster?.RequiredDlcs?.Contains(Client.Model.Dlc.BASEGAME) ?? false)
+			{
+				<MudButton  FullWidth Variant="Variant.Outlined" Color="Color.Default" OnClick="@ToggleStarmap">@L[!QueryResult.ShowStarmap?"Show Starmap":"Hide Starmap"]</MudButton>
+
+				if (QueryResult.ShowStarmap)
+				{
+					<MudStack Spacing="4">
+						<MudVirtualize T="DistanceBand" Items="@QueryResult.distanceBands.OrderBy(band => band.Distance).ToList()" Context="distanceEntry">
+							@if (!LocalStorageHelper.HideLocationlessDistances || distanceEntry.HasLocations)
+							{
+								<MudDivider></MudDivider>
+								<MudStack Row Spacing="0" AlignItems="AlignItems.Center" Style="min-height:40px">
+									<MudText>@distanceEntry.GetDistanceText()</MudText>
+									<MudVirtualize T="VanillaStarmapLocation" Items="@distanceEntry.Destinations" Context="location">
+										@{
+											bool isDarkTheme = LocalStorageHelper.DarkThemeActive;
+											string reverseColor = !isDarkTheme ? "black" : "white";
+											string outlineStyle = SearchQuery.RequiredStarmapLocations.Contains(location) ? $"outline-style:solid; outline-color:{reverseColor};" : string.Empty;
+
+											string modifierColor = isDarkTheme ? "black" : "white";
+
+											string backgroundColorStyle = $"outline-width:2px; {outlineStyle}";
+											string colorStyle = $"outline-width:2px; {outlineStyle}";
+											string imageStyle = "margin-left:-5px; margin-right:5px";
+											string evilInvisibleString = " ";
+										}
+										<MudTooltip Text="@location.Name" Arrow="true" Placement="Placement.Bottom">
+											<MudChip T="string" Variant="Variant.Text" Style="@backgroundColorStyle">
+												<MudImage ObjectFit="ObjectFit.Contain" Width="20" Height="20" Src="@location.Image" />
+											</MudChip>
+										</MudTooltip>
+									</MudVirtualize>
+								</MudStack>
+							}
+						</MudVirtualize>
+					</MudStack>
+				}
+			}
+		</MudStack>
+	</MudPaper>
 </MudItem>
 
 @code {
 
-    [CascadingParameter]
-    protected MudTheme Theme { get; set; }
+	[CascadingParameter]
+	protected MudTheme Theme { get; set; }
 
-    [Parameter][EditorRequired]
-    public QueryResult QueryResult { get; set; }
+	[Parameter]
+	[EditorRequired]
+	public QueryResult QueryResult { get; set; }
 
-    [Parameter][EditorRequired]
-    public SearchQuery SearchQuery { get; set; }
+	[Parameter]
+	[EditorRequired]
+	public SearchQuery SearchQuery { get; set; }
 
-    async Task CopyToClipboard(string text)
-    {
-        try
-        {
+	private void ToggleStarmap() => QueryResult.ShowStarmap = !QueryResult.ShowStarmap;
 
-            await ClipboardService.WriteTextAsync(text);
-            Snackbar.Add("Seed copied to the clipboard!", Severity.Success);
-        }
-        catch
-        {
-            Console.WriteLine("Cannot write text to clipboard");
-        }
+	async Task CopyToClipboard(string text)
+	{
+		try
+		{
 
-    }
+			await ClipboardService.WriteTextAsync(text);
+			Snackbar.Add("Seed copied to the clipboard!", Severity.Success);
+		}
+		catch
+		{
+			Console.WriteLine("Cannot write text to clipboard");
+		}
+
+	}
 }
