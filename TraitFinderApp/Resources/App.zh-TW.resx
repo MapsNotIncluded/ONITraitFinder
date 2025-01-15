@@ -162,8 +162,8 @@
   <data name="Select your Asteroid:" xml:space="preserve">
     <value>選擇你的小行星:</value>
   </data>
-  <data name="Configure your trait filters for {0}" xml:space="preserve">
-    <value>為 {0} 配置你的特質篩選器</value>
+  <data name="Configure your filters for {0}" xml:space="preserve">
+    <value>為 {0} 配置你的篩選器</value>
   </data>
   <data name="Reset all trait filters" xml:space="preserve">
     <value>重置所有特質篩選器</value>
