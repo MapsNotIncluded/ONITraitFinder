@@ -100,9 +100,12 @@ namespace TraitFinderApp.Client.Model
     public class StarmapData
     {
         public Dictionary<string, VanillaStarmapLocation> Locations;
-        public void MapGameData()
+        public Dictionary<string, VanillaStarmapLocation> LocationsWithoutFP;
+		public void MapGameData()
         {
             Locations.Remove("SaltDesertPlanet"); //not found in starmap gen, disable it
+            LocationsWithoutFP = new(Locations);
+            LocationsWithoutFP.Remove("DLC2CeresSpaceDestination");
 		}
 
     }
@@ -110,9 +113,11 @@ namespace TraitFinderApp.Client.Model
     public class DataImport
     {
         public static StarmapData StarmapImport;
-        public static List<VanillaStarmapLocation> GetVanillaStarmapLocations()
+        public static List<VanillaStarmapLocation> GetVanillaStarmapLocations(List<Dlc> ActiveDlcs, List<Dlc> requiredDlcs)
         {
-            return StarmapImport.Locations.Values.Where(e=>!e.Disabled).ToList();
+            if (!ActiveDlcs.Contains(Dlc.FROSTYPLANET) || requiredDlcs.Contains(Dlc.FROSTYPLANET)) //no ceres destination for ceres itself 
+                return StarmapImport.LocationsWithoutFP.Values.ToList();
+            return StarmapImport.Locations.Values.ToList();
         }
 
 
@@ -127,7 +132,10 @@ namespace TraitFinderApp.Client.Model
 
 
             var asteroids = new Tuple<Asteroid, int>[cluster.WorldPlacements.Count];
-            var dlcs = searchQuery.ActiveDlcs;
+            var dlcs = new List<Dlc>(searchQuery.ActiveDlcs);
+			dlcs.RemoveAll(e => cluster.RequiredDlcs.Contains(e));
+
+			bool ceresCluster = cluster.RequiredDlcs.Contains(Dlc.FROSTYPLANET);
 
             List<QueryResult> results = new List<QueryResult>(targetCount);
 
@@ -410,7 +418,7 @@ namespace TraitFinderApp.Client.Model
             list.ShuffleSeeded(rng);
             List<SpaceDestination> collection2 = new List<SpaceDestination>();
             var mixingDestinations = new List<spaceDesinations>();
-            if (mixingDlcs.Contains(Dlc.BASEGAME) && mixingDlcs.Contains(Dlc.FROSTYPLANET))
+            if (mixingDlcs.Contains(Dlc.FROSTYPLANET))
             {
                 mixingDestinations.Add(ceresBaseGameExtraDestionation);
             }

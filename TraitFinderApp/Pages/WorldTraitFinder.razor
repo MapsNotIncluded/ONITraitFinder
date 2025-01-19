@@ -305,7 +305,7 @@ else
 															MultiSelectionTextFunc="@((_)=> Query.HasStarmapFilters() ? "‎ ":string.Empty)"
 															@bind-SelectedValues="Query.RequiredStarmapLocations">
 
-													<MudVirtualize Items="@DataImport.GetVanillaStarmapLocations()" Context="location">
+														<MudVirtualize Items="@DataImport.GetVanillaStarmapLocations(Query.ActiveDlcs,Query.SelectedCluster.RequiredDlcs)" Context="location">
 														<MudSelectItem Value="@(location)">
 															<MudStack Row AlignItems="AlignItems.Start" Spacing="1">
 																<MudImage ObjectPosition="ObjectPosition.Left" Src="@location.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>

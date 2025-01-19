@@ -667,7 +667,7 @@
     <value>Show Starmap</value>
   </data>
   <data name="Hide Starmap" xml:space="preserve">
-    <value />
+    <value>Hide Starmap</value>
   </data>
   <data name="Guaranteed Starmap Locations" xml:space="preserve">
     <value>Guaranteed Starmap Locations</value>
