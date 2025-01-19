@@ -299,7 +299,7 @@ else
 															Margin="Margin.Dense"
 															AnchorOrigin="Origin.BottomCenter"
 															TransformOrigin="Origin.TopCenter"
-															Label="@($"Guaranteed Starmap Locations")"
+															Label="@(@L[$"Guaranteed Starmap Locations"])"
 															   Text="@(Query.HasStarmapFilters() ? "‎ ":string.Empty)"
 															   ToStringFunc="@((_)=> Query.HasStarmapFilters() ? "‎ ":string.Empty)"
 															MultiSelectionTextFunc="@((_)=> Query.HasStarmapFilters() ? "‎ ":string.Empty)"
