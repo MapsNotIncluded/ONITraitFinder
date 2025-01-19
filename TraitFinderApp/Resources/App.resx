@@ -672,4 +672,79 @@
   <data name="Guaranteed Starmap Locations" xml:space="preserve">
     <value>Guaranteed Starmap Locations</value>
   </data>
+  <data name="Show Trait Info" xml:space="preserve">
+    <value>Show Trait Info</value>
+  </data>
+  <data name="Trait Info" xml:space="preserve">
+    <value>Trait Info</value>
+  </data>
+  <data name="Several active Volcanoes have been detected in this world" xml:space="preserve">
+    <value>Several active Volcanoes have been detected in this world</value>
+  </data>
+  <data name="Below the crust of this world is a Salt Water sea" xml:space="preserve">
+    <value>Below the crust of this world is a Salt Water sea</value>
+  </data>
+  <data name="Deposits of Uranium Ore are found in this world's crust" xml:space="preserve">
+    <value>Deposits of Uranium Ore are found in this world's crust</value>
+  </data>
+  <data name="This world has caves of metal ore" xml:space="preserve">
+    <value>This world has caves of metal ore</value>
+  </data>
+  <data name="This world has a lush forest core" xml:space="preserve">
+    <value>This world has a lush forest core</value>
+  </data>
+  <data name="The Oil on this asteroid is anything but regular!" xml:space="preserve">
+    <value>The Oil on this asteroid is anything but regular!</value>
+  </data>
+  <data name="This world contains a frozen friend from a long time ago" xml:space="preserve">
+    <value>This world contains a frozen friend from a long time ago</value>
+  </data>
+  <data name="This world contains crashed radioactive satellites" xml:space="preserve">
+    <value>This world contains crashed radioactive satellites</value>
+  </data>
+  <data name="Sickly Slime growths have crept all over this world" xml:space="preserve">
+    <value>Sickly Slime growths have crept all over this world</value>
+  </data>
+  <data name="The Printing Pod didn't end up in the asteroid's exact center this time... but it's still nowhere near the surface" xml:space="preserve">
+    <value>The Printing Pod didn't end up in the asteroid's exact center this time... but it's still nowhere near the surface</value>
+  </data>
+  <data name="This asteroid is an abundant source of Metal Ore" xml:space="preserve">
+    <value>This asteroid is an abundant source of Metal Ore</value>
+  </data>
+  <data name="There is a reduced amount of Metal Ore on this world, proceed with caution!" xml:space="preserve">
+    <value>There is a reduced amount of Metal Ore on this world, proceed with caution!</value>
+  </data>
+  <data name="The Magma from this world's core has leaked into the mantle and crust" xml:space="preserve">
+    <value>The Magma from this world's core has leaked into the mantle and crust</value>
+  </data>
+  <data name="Huge chunks of primordial Ice are scattered across this world" xml:space="preserve">
+    <value>Huge chunks of primordial Ice are scattered across this world</value>
+  </data>
+  <data name="This world has fewer Geysers and Vents than usual" xml:space="preserve">
+    <value>This world has fewer Geysers and Vents than usual</value>
+  </data>
+  <data name="Large geodes containing rare material caches are deposited across this world" xml:space="preserve">
+    <value>Large geodes containing rare material caches are deposited across this world</value>
+  </data>
+  <data name="This world has more Geysers and Vents than usual" xml:space="preserve">
+    <value>This world has more Geysers and Vents than usual</value>
+  </data>
+  <data name="This world has a chilly core of solid Ice" xml:space="preserve">
+    <value>This world has a chilly core of solid Ice</value>
+  </data>
+  <data name="Most of the Oil in this world will need to be extracted with Oil Wells" xml:space="preserve">
+    <value>Most of the Oil in this world will need to be extracted with Oil Wells</value>
+  </data>
+  <data name="Tiny boulders make digging through this world more difficult" xml:space="preserve">
+    <value>Tiny boulders make digging through this world more difficult</value>
+  </data>
+  <data name="Boulders of various sizes make digging through this world more difficult" xml:space="preserve">
+    <value>Boulders of various sizes make digging through this world more difficult</value>
+  </data>
+  <data name="Mid-sized boulders make digging through this world more difficult" xml:space="preserve">
+    <value>Mid-sized boulders make digging through this world more difficult</value>
+  </data>
+  <data name="Huge boulders make digging through this world more difficult" xml:space="preserve">
+    <value>Huge boulders make digging through this world more difficult</value>
+  </data>
 </root>

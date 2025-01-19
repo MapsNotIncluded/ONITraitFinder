@@ -1,557 +1,575 @@
 ﻿{
-  "clusters": [
-    {
-      "Id": "clusters/Badlands",
-      "Name": "The Badlands",
-      "Prefix": "BAD-A",
-      "menuOrder": 70,
-      "startWorldIndex": 0,
-      "RequiredDlcsIDs": [ "" ],
-      "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-      "WorldPlacementIDs": [ "worlds/Badlands" ],
-      "clusterCategory": 0,
-      "fixedCoordinate": -1
-    },
-    {
-      "Id": "clusters/ForestDefault",
-      "Name": "Arboria",
-      "Prefix": "FRST-A",
-      "menuOrder": 50,
-      "startWorldIndex": 0,
-      "RequiredDlcsIDs": [ "" ],
-      "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-      "WorldPlacementIDs": [ "worlds/ForestDefault" ],
-      "clusterCategory": 0,
-      "fixedCoordinate": -1
-    },
-    {
-      "Id": "clusters/ForestHot",
-      "Name": "Aridio",
-      "Prefix": "HTFST-A",
-      "menuOrder": 80,
-      "startWorldIndex": 0,
-      "RequiredDlcsIDs": [ "" ],
-      "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-      "WorldPlacementIDs": [ "worlds/ForestHot" ],
-      "clusterCategory": 0,
-      "fixedCoordinate": -1
-    },
-    {
-      "Id": "clusters/ForestLush",
-      "Name": "Verdante",
-      "Prefix": "LUSH-A",
-      "menuOrder": 40,
-      "startWorldIndex": 0,
-      "RequiredDlcsIDs": [ "" ],
-      "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-      "WorldPlacementIDs": [ "worlds/ForestLush" ],
-      "clusterCategory": 0,
-      "fixedCoordinate": -1
-    },
-    {
-      "Id": "clusters/KleiFest2023",
-      "Name": "Skewed Asteroid",
-      "Prefix": "KF23-A",
-      "menuOrder": 0,
-      "startWorldIndex": 0,
-      "RequiredDlcsIDs": [ "" ],
-      "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-      "WorldPlacementIDs": [ "worlds/StrangeAsteroidKleiFest2023" ],
-      "clusterCategory": 3,
-      "fixedCoordinate": 7
-    },
-    {
-      "Id": "clusters/Oasis",
-      "Name": "Oasisse",
-      "Prefix": "OASIS-A",
-      "menuOrder": 90,
-      "startWorldIndex": 0,
-      "RequiredDlcsIDs": [ "" ],
-      "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-      "WorldPlacementIDs": [ "worlds/Oasis" ],
-      "clusterCategory": 0,
-      "fixedCoordinate": -1
-    },
-    {
-      "Id": "clusters/Oceania",
-      "Name": "Oceania",
-      "Prefix": "OCAN-A",
-      "menuOrder": 10,
-      "startWorldIndex": 0,
-      "RequiredDlcsIDs": [ "" ],
-      "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-      "WorldPlacementIDs": [ "worlds/Oceania" ],
-      "clusterCategory": 0,
-      "fixedCoordinate": -1
-    },
-    {
-      "Id": "clusters/SandstoneDefault",
-      "Name": "Terra",
-      "Prefix": "SNDST-A",
-      "menuOrder": 0,
-      "startWorldIndex": 0,
-      "RequiredDlcsIDs": [ "" ],
-      "ForbiddenDlcIDs": null,
-      "WorldPlacementIDs": [ "worlds/SandstoneDefault" ],
-      "clusterCategory": 0,
-      "fixedCoordinate": -1
-    },
-    {
-      "Id": "clusters/SandstoneFrozen",
-      "Name": "Rime",
-      "Prefix": "S-FRZ",
-      "menuOrder": 20,
-      "startWorldIndex": 0,
-      "RequiredDlcsIDs": [ "" ],
-      "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-      "WorldPlacementIDs": [ "worlds/SandstoneFrozen" ],
-      "clusterCategory": 0,
-      "fixedCoordinate": -1
-    },
-    {
-      "Id": "clusters/Volcanic",
-      "Name": "Volcanea",
-      "Prefix": "VOLCA",
-      "menuOrder": 60,
-      "startWorldIndex": 0,
-      "RequiredDlcsIDs": [ "" ],
-      "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-      "WorldPlacementIDs": [ "worlds/Volcanic" ],
-      "clusterCategory": 0,
-      "fixedCoordinate": -1
-    },
-    {
-      "Id": "dlc2::clusters/CeresBaseGameCluster",
-      "Name": "Ceres",
-      "Prefix": "CER-A",
-      "menuOrder": 1,
-      "startWorldIndex": 0,
-      "RequiredDlcsIDs": [ "DLC2_ID" ],
-      "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-      "WorldPlacementIDs": [ "dlc2::worlds/CeresBaseGameAsteroid" ],
-      "clusterCategory": 0,
-      "fixedCoordinate": -1
-    },
-    {
-      "Id": "dlc2::clusters/CeresBaseGameShatteredCluster",
-      "Name": "Blasted Ceres",
-      "Prefix": "CERS-A",
-      "menuOrder": 10,
-      "startWorldIndex": 0,
-      "RequiredDlcsIDs": [ "DLC2_ID" ],
-      "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-      "WorldPlacementIDs": [ "dlc2::worlds/CeresBaseGameShatteredAsteroid" ],
-      "clusterCategory": 3,
-      "fixedCoordinate": -1
-    }
-  ],
-  "asteroids": [
-    {
-      "Id": "worlds/Badlands",
-      "Name": "The Badlands",
-      "Image": null,
-      "DisableWorldTraits": false,
-      "TraitRules": [
+    "clusters": [
         {
-          "min": 2,
-          "max": 4,
-          "requiredTags": null,
-          "specificTraits": null,
-          "forbiddenTags": null,
-          "forbiddenTraits": null
-        }
-      ],
-      "worldTraitScale": 1.0
-    },
-    {
-      "Id": "worlds/ForestDefault",
-      "Name": "Arboria",
-      "Image": null,
-      "DisableWorldTraits": false,
-      "TraitRules": [
+            "Id": "clusters/Badlands",
+            "Name": "The Badlands",
+            "Prefix": "BAD-A",
+            "menuOrder": 70,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "worlds/Badlands" ],
+            "clusterCategory": 0,
+            "fixedCoordinate": -1
+        },
         {
-          "min": 2,
-          "max": 4,
-          "requiredTags": null,
-          "specificTraits": null,
-          "forbiddenTags": null,
-          "forbiddenTraits": null
-        }
-      ],
-      "worldTraitScale": 1.0
-    },
-    {
-      "Id": "worlds/ForestHot",
-      "Name": "Aridio",
-      "Image": null,
-      "DisableWorldTraits": false,
-      "TraitRules": [
+            "Id": "clusters/ForestDefault",
+            "Name": "Arboria",
+            "Prefix": "FRST-A",
+            "menuOrder": 50,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "worlds/ForestDefault" ],
+            "clusterCategory": 0,
+            "fixedCoordinate": -1
+        },
         {
-          "min": 2,
-          "max": 4,
-          "requiredTags": null,
-          "specificTraits": null,
-          "forbiddenTags": null,
-          "forbiddenTraits": null
-        }
-      ],
-      "worldTraitScale": 1.0
-    },
-    {
-      "Id": "worlds/ForestLush",
-      "Name": "Verdante",
-      "Image": null,
-      "DisableWorldTraits": false,
-      "TraitRules": [
+            "Id": "clusters/ForestHot",
+            "Name": "Aridio",
+            "Prefix": "HTFST-A",
+            "menuOrder": 80,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "worlds/ForestHot" ],
+            "clusterCategory": 0,
+            "fixedCoordinate": -1
+        },
         {
-          "min": 2,
-          "max": 4,
-          "requiredTags": null,
-          "specificTraits": null,
-          "forbiddenTags": null,
-          "forbiddenTraits": null
-        }
-      ],
-      "worldTraitScale": 1.0
-    },
-    {
-      "Id": "worlds/StrangeAsteroidKleiFest2023",
-      "Name": "Skewed Asteroid",
-      "Image": null,
-      "DisableWorldTraits": false,
-      "TraitRules": [
+            "Id": "clusters/ForestLush",
+            "Name": "Verdante",
+            "Prefix": "LUSH-A",
+            "menuOrder": 40,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "worlds/ForestLush" ],
+            "clusterCategory": 0,
+            "fixedCoordinate": -1
+        },
         {
-          "min": 0,
-          "max": 0,
-          "requiredTags": null,
-          "specificTraits": [ "traits/Geodes" ],
-          "forbiddenTags": null,
-          "forbiddenTraits": null
-        }
-      ],
-      "worldTraitScale": 0.9
-    },
-    {
-      "Id": "worlds/Oasis",
-      "Name": "Oasisse",
-      "Image": null,
-      "DisableWorldTraits": false,
-      "TraitRules": [
+            "Id": "clusters/KleiFest2023",
+            "Name": "Skewed Asteroid",
+            "Prefix": "KF23-A",
+            "menuOrder": 0,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "worlds/StrangeAsteroidKleiFest2023" ],
+            "clusterCategory": 3,
+            "fixedCoordinate": 7
+        },
         {
-          "min": 2,
-          "max": 4,
-          "requiredTags": null,
-          "specificTraits": null,
-          "forbiddenTags": null,
-          "forbiddenTraits": null
-        }
-      ],
-      "worldTraitScale": 1.0
-    },
-    {
-      "Id": "worlds/Oceania",
-      "Name": "Oceania",
-      "Image": null,
-      "DisableWorldTraits": false,
-      "TraitRules": [
+            "Id": "clusters/Oasis",
+            "Name": "Oasisse",
+            "Prefix": "OASIS-A",
+            "menuOrder": 90,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "worlds/Oasis" ],
+            "clusterCategory": 0,
+            "fixedCoordinate": -1
+        },
         {
-          "min": 2,
-          "max": 4,
-          "requiredTags": null,
-          "specificTraits": null,
-          "forbiddenTags": null,
-          "forbiddenTraits": null
-        }
-      ],
-      "worldTraitScale": 1.0
-    },
-    {
-      "Id": "worlds/SandstoneDefault",
-      "Name": "Terra",
-      "Image": null,
-      "DisableWorldTraits": true,
-      "TraitRules": [
+            "Id": "clusters/Oceania",
+            "Name": "Oceania",
+            "Prefix": "OCAN-A",
+            "menuOrder": 10,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "worlds/Oceania" ],
+            "clusterCategory": 0,
+            "fixedCoordinate": -1
+        },
         {
-          "min": 2,
-          "max": 4,
-          "requiredTags": null,
-          "specificTraits": null,
-          "forbiddenTags": null,
-          "forbiddenTraits": null
-        }
-      ],
-      "worldTraitScale": 1.0
-    },
-    {
-      "Id": "worlds/SandstoneFrozen",
-      "Name": "Rime",
-      "Image": null,
-      "DisableWorldTraits": false,
-      "TraitRules": [
+            "Id": "clusters/SandstoneDefault",
+            "Name": "Terra",
+            "Prefix": "SNDST-A",
+            "menuOrder": 0,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "" ],
+            "ForbiddenDlcIDs": null,
+            "WorldPlacementIDs": [ "worlds/SandstoneDefault" ],
+            "clusterCategory": 0,
+            "fixedCoordinate": -1
+        },
         {
-          "min": 2,
-          "max": 4,
-          "requiredTags": null,
-          "specificTraits": null,
-          "forbiddenTags": null,
-          "forbiddenTraits": null
-        }
-      ],
-      "worldTraitScale": 1.0
-    },
-    {
-      "Id": "worlds/Volcanic",
-      "Name": "Volcanea",
-      "Image": null,
-      "DisableWorldTraits": false,
-      "TraitRules": [
+            "Id": "clusters/SandstoneFrozen",
+            "Name": "Rime",
+            "Prefix": "S-FRZ",
+            "menuOrder": 20,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "worlds/SandstoneFrozen" ],
+            "clusterCategory": 0,
+            "fixedCoordinate": -1
+        },
         {
-          "min": 2,
-          "max": 4,
-          "requiredTags": null,
-          "specificTraits": null,
-          "forbiddenTags": null,
-          "forbiddenTraits": null
-        }
-      ],
-      "worldTraitScale": 1.0
-    },
-    {
-      "Id": "dlc2::worlds/CeresBaseGameAsteroid",
-      "Name": "Ceres",
-      "Image": null,
-      "DisableWorldTraits": false,
-      "TraitRules": [
+            "Id": "clusters/Volcanic",
+            "Name": "Volcanea",
+            "Prefix": "VOLCA",
+            "menuOrder": 60,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "worlds/Volcanic" ],
+            "clusterCategory": 0,
+            "fixedCoordinate": -1
+        },
         {
-          "min": 2,
-          "max": 4,
-          "requiredTags": null,
-          "specificTraits": null,
-          "forbiddenTags": [ "Surface", "Oil", "NonStartWorld" ],
-          "forbiddenTraits": [ "traits/MagmaVents" ]
-        }
-      ],
-      "worldTraitScale": 1.0
-    },
-    {
-      "Id": "dlc2::worlds/CeresBaseGameShatteredAsteroid",
-      "Name": "Blasted Ceres",
-      "Image": null,
-      "DisableWorldTraits": false,
-      "TraitRules": [
+            "Id": "dlc2::clusters/CeresBaseGameCluster",
+            "Name": "Ceres",
+            "Prefix": "CER-A",
+            "menuOrder": 1,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "DLC2_ID" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "dlc2::worlds/CeresBaseGameAsteroid" ],
+            "clusterCategory": 0,
+            "fixedCoordinate": -1
+        },
         {
-          "min": 2,
-          "max": 4,
-          "requiredTags": null,
-          "specificTraits": null,
-          "forbiddenTags": [ "Surface", "Oil", "NonStartWorld", "Core" ],
-          "forbiddenTraits": [ "traits/MagmaVents", "traits/MisalignedStart" ]
+            "Id": "dlc2::clusters/CeresBaseGameShatteredCluster",
+            "Name": "Blasted Ceres",
+            "Prefix": "CERS-A",
+            "menuOrder": 10,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "DLC2_ID" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "dlc2::worlds/CeresBaseGameShatteredAsteroid" ],
+            "clusterCategory": 3,
+            "fixedCoordinate": -1
         }
-      ],
-      "worldTraitScale": 1.0
-    },
-    {
-      "Id": "dlc2::worlds/MixingCeresAsteroid",
-      "Name": "Ceres Fragment",
-      "Image": null,
-      "DisableWorldTraits": false,
-      "TraitRules": [
+    ],
+    "asteroids": [
         {
-          "min": 0,
-          "max": 2,
-          "requiredTags": null,
-          "specificTraits": null,
-          "forbiddenTags": [ "StartWorldOnly", "Geodes", "Oil", "GenericGeysers", "StartChange", "VeryCold", "LargeWorld", "Surface" ],
-          "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/MetalCaves" ]
+            "Id": "worlds/Badlands",
+            "Name": "The Badlands",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "worlds/ForestDefault",
+            "Name": "Arboria",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "worlds/ForestHot",
+            "Name": "Aridio",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "worlds/ForestLush",
+            "Name": "Verdante",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "worlds/StrangeAsteroidKleiFest2023",
+            "Name": "Skewed Asteroid",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 0,
+                    "max": 0,
+                    "requiredTags": null,
+                    "specificTraits": [ "traits/Geodes" ],
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
+                }
+            ],
+            "worldTraitScale": 0.9
+        },
+        {
+            "Id": "worlds/Oasis",
+            "Name": "Oasisse",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "worlds/Oceania",
+            "Name": "Oceania",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "worlds/SandstoneDefault",
+            "Name": "Terra",
+            "Image": null,
+            "DisableWorldTraits": true,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "worlds/SandstoneFrozen",
+            "Name": "Rime",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "worlds/Volcanic",
+            "Name": "Volcanea",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "dlc2::worlds/CeresBaseGameAsteroid",
+            "Name": "Ceres",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "Surface", "Oil", "NonStartWorld" ],
+                    "forbiddenTraits": [ "traits/MagmaVents" ]
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "dlc2::worlds/CeresBaseGameShatteredAsteroid",
+            "Name": "Blasted Ceres",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "Surface", "Oil", "NonStartWorld", "Core" ],
+                    "forbiddenTraits": [ "traits/MagmaVents", "traits/MisalignedStart" ]
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "dlc2::worlds/MixingCeresAsteroid",
+            "Name": "Ceres Fragment",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 0,
+                    "max": 2,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "StartWorldOnly", "Geodes", "Oil", "GenericGeysers", "StartChange", "VeryCold", "LargeWorld", "Surface" ],
+                    "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/MetalCaves" ]
+                }
+            ],
+            "worldTraitScale": 0.08
         }
-      ],
-      "worldTraitScale": 0.08
-    }
-  ],
-  "worldTraits": [
-    {
-      "Id": "traits/BouldersLarge",
-      "Name": "Large Boulders",
-      "ColorHex": "BDBDBD",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [ "traits/BouldersMixed" ],
-      "exclusiveWithTags": [],
-      "traitTags": [ "LargeWorld", "Geodes" ],
-      "globalFeatureMods": { "features/traits/BoulderLarge": 5 }
-    },
-    {
-      "Id": "traits/BouldersMedium",
-      "Name": "Medium Boulders",
-      "ColorHex": "BDBDBD",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [ "traits/BouldersLarge", "AllowExceedNodeBorders" ],
-      "exclusiveWithTags": [],
-      "traitTags": [ "Geodes" ],
-      "globalFeatureMods": { "features/traits/BoulderMedium": 10 }
-    },
-    {
-      "Id": "traits/BouldersMixed",
-      "Name": "Mixed Boulders",
-      "ColorHex": "BDBDBD",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [ "traits/BouldersSmall" ],
-      "exclusiveWithTags": [],
-      "traitTags": [ "Geodes" ],
-      "globalFeatureMods": {
-        "features/traits/BoulderSmall": 10,
-        "features/traits/BoulderMedium": 5,
-        "features/traits/BoulderLarge": 2
-      }
-    },
-    {
-      "Id": "traits/BouldersSmall",
-      "Name": "Small Boulders",
-      "ColorHex": "BDBDBD",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [ "traits/BouldersMedium" ],
-      "exclusiveWithTags": [],
-      "traitTags": [ "Geodes" ],
-      "globalFeatureMods": { "features/traits/BoulderSmall": 20 }
-    },
-    {
-      "Id": "traits/DeepOil",
-      "Name": "Trapped Oil",
-      "ColorHex": "6C6C6C",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [],
-      "exclusiveWithTags": [],
-      "traitTags": [ "AboveCore", "Oil" ],
-      "globalFeatureMods": {}
-    },
-    {
-      "Id": "traits/FrozenCore",
-      "Name": "Frozen Core",
-      "ColorHex": "91D8F0",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [],
-      "exclusiveWithTags": [ "CoreTrait" ],
-      "traitTags": [ "Core", "VeryCold" ],
-      "globalFeatureMods": {}
-    },
-    {
-      "Id": "traits/GeoActive",
-      "Name": "Geoactive",
-      "ColorHex": "F8A22E",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [ "traits/GeoDormant" ],
-      "exclusiveWithTags": [],
-      "traitTags": [ "Geysers", "GenericGeysers" ],
-      "globalFeatureMods": {}
-    },
-    {
-      "Id": "traits/Geodes",
-      "Name": "Geodes",
-      "ColorHex": "D077FB",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [],
-      "exclusiveWithTags": [],
-      "traitTags": [ "Geodes" ],
-      "globalFeatureMods": { "features/traits/Geode": 10 }
-    },
-    {
-      "Id": "traits/GeoDormant",
-      "Name": "Geodormant",
-      "ColorHex": "8494A1",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [ "traits/GeoActive" ],
-      "exclusiveWithTags": [],
-      "traitTags": [ "Geysers", "GenericGeysers" ],
-      "globalFeatureMods": {}
-    },
-    {
-      "Id": "traits/GlaciersLarge",
-      "Name": "Large Glaciers",
-      "ColorHex": "91D8F0",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [],
-      "exclusiveWithTags": [],
-      "traitTags": [ "LargeWorld", "VeryCold" ],
-      "globalFeatureMods": { "features/traits/GlacierLarge": 5 }
-    },
-    {
-      "Id": "traits/IrregularOil",
-      "Name": "Irregular Oil",
-      "ColorHex": "6C6C6C",
-      "forbiddenDLCIds": [ "EXPANSION1_ID" ],
-      "exclusiveWith": [],
-      "exclusiveWithTags": [],
-      "traitTags": [ "AboveCore", "Oil" ],
-      "globalFeatureMods": {}
-    },
-    {
-      "Id": "traits/MagmaVents",
-      "Name": "Magma Channels",
-      "ColorHex": "FA4545",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [],
-      "exclusiveWithTags": [],
-      "traitTags": [ "VeryHot", "AboveCore", "Challenge" ],
-      "globalFeatureMods": {}
-    },
-    {
-      "Id": "traits/MetalPoor",
-      "Name": "Metal Poor",
-      "ColorHex": "8494A1",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [ "traits/MetalRich" ],
-      "exclusiveWithTags": [],
-      "traitTags": [ "Metal" ],
-      "globalFeatureMods": {}
-    },
-    {
-      "Id": "traits/MetalRich",
-      "Name": "Metal Rich",
-      "ColorHex": "DAA932",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [ "traits/MetalPoor" ],
-      "exclusiveWithTags": [],
-      "traitTags": [ "Metal" ],
-      "globalFeatureMods": {}
-    },
-    {
-      "Id": "traits/MisalignedStart",
-      "Name": "Alternate Pod Location",
-      "ColorHex": "E9DC96",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [],
-      "exclusiveWithTags": [],
-      "traitTags": [ "StartChange", "StartWorldOnly" ],
-      "globalFeatureMods": {}
-    },
-    {
-      "Id": "traits/SlimeSplats",
-      "Name": "Slime Molds",
-      "ColorHex": "83B520",
-      "forbiddenDLCIds": [],
-      "exclusiveWith": [],
-      "exclusiveWithTags": [],
-      "traitTags": [ "Germs" ],
-      "globalFeatureMods": { "features/traits/SlimeSplat": 30 }
-    },
-    {
-      "Id": "traits/SubsurfaceOcean",
-      "Name": "Subsurface Ocean",
-      "ColorHex": "12D1F4",
-      "forbiddenDLCIds": [ "EXPANSION1_ID" ],
-      "exclusiveWith": [],
-      "exclusiveWithTags": [ "SurfaceTrait" ],
-      "traitTags": [ "Surface", "Wet" ],
-      "globalFeatureMods": {}
-    },
-    {
-      "Id": "traits/Volcanoes",
-      "Name": "Volcanic Activity",
-      "ColorHex": "FA4545",
-      "forbiddenDLCIds": [ "EXPANSION1_ID" ],
-      "exclusiveWith": [],
-      "exclusiveWithTags": [],
-      "traitTags": [ "VeryHot", "Challenge" ],
-      "globalFeatureMods": {}
-    }
-  ]
+    ],
+    "worldTraits": [
+        {
+            "Id": "traits/BouldersLarge",
+            "Name": "Large Boulders",
+            "Description": "Huge boulders make digging through this world more difficult",
+            "ColorHex": "BDBDBD",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [ "traits/BouldersMixed" ],
+            "exclusiveWithTags": [],
+            "traitTags": [ "LargeWorld", "Geodes" ],
+            "globalFeatureMods": { "features/traits/BoulderLarge": 5 }
+        },
+        {
+            "Id": "traits/BouldersMedium",
+            "Name": "Medium Boulders",
+            "Description": "Mid-sized boulders make digging through this world more difficult",
+            "ColorHex": "BDBDBD",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [ "traits/BouldersLarge", "AllowExceedNodeBorders" ],
+            "exclusiveWithTags": [],
+            "traitTags": [ "Geodes" ],
+            "globalFeatureMods": { "features/traits/BoulderMedium": 10 }
+        },
+        {
+            "Id": "traits/BouldersMixed",
+            "Name": "Mixed Boulders",
+            "Description": "Boulders of various sizes make digging through this world more difficult",
+            "ColorHex": "BDBDBD",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [ "traits/BouldersSmall" ],
+            "exclusiveWithTags": [],
+            "traitTags": [ "Geodes" ],
+            "globalFeatureMods": {
+                "features/traits/BoulderSmall": 10,
+                "features/traits/BoulderMedium": 5,
+                "features/traits/BoulderLarge": 2
+            }
+        },
+        {
+            "Id": "traits/BouldersSmall",
+            "Name": "Small Boulders",
+            "Description": "Tiny boulders make digging through this world more difficult",
+            "ColorHex": "BDBDBD",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [ "traits/BouldersMedium" ],
+            "exclusiveWithTags": [],
+            "traitTags": [ "Geodes" ],
+            "globalFeatureMods": { "features/traits/BoulderSmall": 20 }
+        },
+        {
+            "Id": "traits/DeepOil",
+            "Name": "Trapped Oil",
+            "Description": "Most of the Oil in this world will need to be extracted with Oil Wells",
+            "ColorHex": "6C6C6C",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [],
+            "exclusiveWithTags": [],
+            "traitTags": [ "AboveCore", "Oil" ],
+            "globalFeatureMods": {}
+        },
+        {
+            "Id": "traits/FrozenCore",
+            "Name": "Frozen Core",
+            "Description": "This world has a chilly core of solid Ice",
+            "ColorHex": "91D8F0",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [],
+            "exclusiveWithTags": [ "CoreTrait" ],
+            "traitTags": [ "Core", "VeryCold" ],
+            "globalFeatureMods": {}
+        },
+        {
+            "Id": "traits/GeoActive",
+            "Name": "Geoactive",
+            "Description": "This world has more Geysers and Vents than usual",
+            "ColorHex": "F8A22E",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [ "traits/GeoDormant" ],
+            "exclusiveWithTags": [],
+            "traitTags": [ "Geysers", "GenericGeysers" ],
+            "globalFeatureMods": {}
+        },
+        {
+            "Id": "traits/Geodes",
+            "Name": "Geodes",
+            "Description": "Large geodes containing rare material caches are deposited across this world",
+            "ColorHex": "D077FB",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [],
+            "exclusiveWithTags": [],
+            "traitTags": [ "Geodes" ],
+            "globalFeatureMods": { "features/traits/Geode": 10 }
+        },
+        {
+            "Id": "traits/GeoDormant",
+            "Name": "Geodormant",
+            "Description": "This world has fewer Geysers and Vents than usual",
+            "ColorHex": "8494A1",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [ "traits/GeoActive" ],
+            "exclusiveWithTags": [],
+            "traitTags": [ "Geysers", "GenericGeysers" ],
+            "globalFeatureMods": {}
+        },
+        {
+            "Id": "traits/GlaciersLarge",
+            "Name": "Large Glaciers",
+            "Description": "Huge chunks of primordial Ice are scattered across this world",
+            "ColorHex": "91D8F0",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [],
+            "exclusiveWithTags": [],
+            "traitTags": [ "LargeWorld", "VeryCold" ],
+            "globalFeatureMods": { "features/traits/GlacierLarge": 5 }
+        },
+        {
+            "Id": "traits/IrregularOil",
+            "Name": "Irregular Oil",
+            "Description": "The Oil on this asteroid is anything but regular!",
+            "ColorHex": "6C6C6C",
+            "forbiddenDLCIds": [ "EXPANSION1_ID" ],
+            "exclusiveWith": [],
+            "exclusiveWithTags": [],
+            "traitTags": [ "AboveCore", "Oil" ],
+            "globalFeatureMods": {}
+        },
+        {
+            "Id": "traits/MagmaVents",
+            "Name": "Magma Channels",
+            "Description": "The Magma from this world's core has leaked into the mantle and crust",
+            "ColorHex": "FA4545",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [],
+            "exclusiveWithTags": [],
+            "traitTags": [ "VeryHot", "AboveCore", "Challenge" ],
+            "globalFeatureMods": {}
+        },
+        {
+            "Id": "traits/MetalPoor",
+            "Name": "Metal Poor",
+            "Description": "There is a reduced amount of Metal Ore on this world, proceed with caution!",
+            "ColorHex": "8494A1",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [ "traits/MetalRich" ],
+            "exclusiveWithTags": [],
+            "traitTags": [ "Metal" ],
+            "globalFeatureMods": {}
+        },
+        {
+            "Id": "traits/MetalRich",
+            "Name": "Metal Rich",
+            "Description": "This asteroid is an abundant source of Metal Ore",
+            "ColorHex": "DAA932",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [ "traits/MetalPoor" ],
+            "exclusiveWithTags": [],
+            "traitTags": [ "Metal" ],
+            "globalFeatureMods": {}
+        },
+        {
+            "Id": "traits/MisalignedStart",
+            "Name": "Alternate Pod Location",
+            "Description": "The Printing Pod didn't end up in the asteroid's exact center this time... but it's still nowhere near the surface",
+            "ColorHex": "E9DC96",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [],
+            "exclusiveWithTags": [],
+            "traitTags": [ "StartChange", "StartWorldOnly" ],
+            "globalFeatureMods": {}
+        },
+        {
+            "Id": "traits/SlimeSplats",
+            "Name": "Slime Molds",
+            "Description": "Sickly Slime growths have crept all over this world",
+            "ColorHex": "83B520",
+            "forbiddenDLCIds": [],
+            "exclusiveWith": [],
+            "exclusiveWithTags": [],
+            "traitTags": [ "Germs" ],
+            "globalFeatureMods": { "features/traits/SlimeSplat": 30 }
+        },
+        {
+            "Id": "traits/SubsurfaceOcean",
+            "Name": "Subsurface Ocean",
+            "Description": "Below the crust of this world is a Salt Water sea",
+            "ColorHex": "12D1F4",
+            "forbiddenDLCIds": [ "EXPANSION1_ID" ],
+            "exclusiveWith": [],
+            "exclusiveWithTags": [ "SurfaceTrait" ],
+            "traitTags": [ "Surface", "Wet" ],
+            "globalFeatureMods": {}
+        },
+        {
+            "Id": "traits/Volcanoes",
+            "Name": "Volcanic Activity",
+            "Description": "Several active Volcanoes have been detected in this world",
+            "ColorHex": "FA4545",
+            "forbiddenDLCIds": [ "EXPANSION1_ID" ],
+            "exclusiveWith": [],
+            "exclusiveWithTags": [],
+            "traitTags": [ "VeryHot", "Challenge" ],
+            "globalFeatureMods": {}
+        }
+    ]
 }

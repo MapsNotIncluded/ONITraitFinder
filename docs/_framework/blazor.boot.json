@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TraitFinderApp",
   "resources": {
-    "hash": "sha256-YeBVa2elVkptiQivNqOw9yI51yJP5fQ3JjKff4rKrMw=",
+    "hash": "sha256-OlDviRlFP/76VA6G52iKN6tij6/ZEgXyeuGcnHrV8i0=",
     "jsModuleNative": {
       "dotnet.native.8.0.10.5qu5xpewhc.js": "sha256-LrBvdaLo+DjBKJEulvrxGFy88YXBHeowF/jy0t9oeHs="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.10.5pejt2vjyv.js": "sha256-FjrgL9dY6dc2yUoXDWowSfachSgM8O29qUMWDQOJKRI="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-rPl5G/rm654+33Q1/zzDQwHzW+PuBcPSgN9TRI+4VNw="
+      "dotnet.native.wasm": "sha256-P1zYFchUjmjHuceQQ4kzQrlifdwShXl4V67mGSRyyaw="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -36,7 +36,7 @@
       "Microsoft.Extensions.Primitives.wasm": "sha256-VGn7CTsubHQn2m/GID5AEdeHcxY9KByAhaAlGfYWKN4=",
       "Microsoft.JSInterop.wasm": "sha256-MgOPaK8kXPJtiaWYSZraoOTiMWVLe3icYttQho4UAk4=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-r/+bWAAxKn2+Wu3MRYDXvKEbHjLNuptflgNuNhQdK6w=",
-      "MudBlazor.wasm": "sha256-Wlsp67UcEwFAycgddvlubbTMUMPoGW0W6WgyJ+4BOus=",
+      "MudBlazor.wasm": "sha256-omzVrNy4U4PE1Em+qT8GW6mnPjqOjFiZK46WtOF1NoM=",
       "netstandard.wasm": "sha256-Y30ncVt24oANreHOcbs/caOKTULskxil+6uW4PpyMD8=",
       "Newtonsoft.Json.wasm": "sha256-GlXMWKvDs45M2pACoR3Y4Qh8mcrOZGljqmvJY+6JZ5s=",
       "System.Collections.Concurrent.wasm": "sha256-UIm3A+2FOuk9QkV+5rZ7kjp4euwan8xGW7kIn7zSXRA=",
@@ -60,7 +60,7 @@
       "System.Net.Http.wasm": "sha256-uh/A77cqXSJQbBG5BBmwlWoZQOS73niaWiK9VENK9Wk=",
       "System.Net.Primitives.wasm": "sha256-qVxsE3U6sOnnu0P5A6oXLTbN6v1CQPzUJHnjIcGDkRg=",
       "System.ObjectModel.wasm": "sha256-si10dsWsYdrk5m/EKtaUaj3smaUn1w4KriH4a6LhbXA=",
-      "System.Private.CoreLib.wasm": "sha256-ih61isSowvK9XuTKMWfnX08RtnVeO+8iThOjheNMqmA=",
+      "System.Private.CoreLib.wasm": "sha256-JOU3XwuzUaWXvdx20wxjC8V7K6bW0J+IO5lrB5YuBig=",
       "System.Private.Uri.wasm": "sha256-cOmU32chqgnb3JvVG9OSW0PB7zBa7lSCmwEtQHAEU3s=",
       "System.Private.Xml.Linq.wasm": "sha256-rNaGj57rSPJuAHHj8qULEn+KGhPsNxEbQE22r9rYgC8=",
       "System.Private.Xml.wasm": "sha256-3JvNw6o09NrxM7WSB+xHoczSRbx/B3jgsITGdNJ8/jQ=",
@@ -72,7 +72,7 @@
       "System.Runtime.Numerics.wasm": "sha256-GYdJx0xMhiSR9oewdCCVMwBuIRYU8w8T4XzuWquWPZo=",
       "System.Runtime.Serialization.Formatters.wasm": "sha256-3g6k8nhrgr9/V5cxYAxXS16lVSMfWpZ2P7hP7raAwAQ=",
       "System.Runtime.Serialization.Primitives.wasm": "sha256-pHrNxv4caKETNiPjSu1/5MLBIwSsOdYKP+sckGwlG5Y=",
-      "System.Runtime.wasm": "sha256-cVnU3iD96P2ddVj53Q/NKoHKYda5x7gyf1JOtR3S2B4=",
+      "System.Runtime.wasm": "sha256-3JV7tx9t4G6w9kp/gVLZpH9yb/ZtUdWqfSS6bHmVBoo=",
       "System.Security.Cryptography.wasm": "sha256-lDN7yj3OtlhBmf07AJ0F+6L+tPXQ6P3cytwMfAraBnk=",
       "System.Text.Encoding.Extensions.wasm": "sha256-YeH3v+kBT2JOrtHhi9MKCqkrYIKLUfTZqmr9ukUy0iM=",
       "System.Text.Encodings.Web.wasm": "sha256-IVTIHIvFQbGSx++qVMfv3nvTtXTJ6A3SXC5aqAFcwlQ=",
@@ -83,17 +83,17 @@
       "System.Xml.Linq.wasm": "sha256-VY+WTqYbw4LGWnTMkJjsfqKF/mUynOF3ioTNZ0Hlb7s=",
       "System.Xml.ReaderWriter.wasm": "sha256-dnVqmNUiM0Sd7uxAHFa2MnsHMcF5JNcRvb3JTkk1+PI=",
       "System.Xml.XDocument.wasm": "sha256-Cy/b283xboGd/FENjDI+rENBqJOBdwLXhAhwbzY3Po4=",
-      "TraitFinderApp.wasm": "sha256-1EO2TMvU2ZVigWzn/305R4geBNGhp46wNtm3hvSNPMc="
+      "TraitFinderApp.wasm": "sha256-WOxFcOX0k17JdxR/ObTJzUA9u2LfLpN3Z/b2y4UQlYE="
     },
     "satelliteResources": {
       "de": {
-        "TraitFinderApp.resources.wasm": "sha256-wFkfXVCgVWZkllWKNxt2YYyTBTglD9NUL1UtJW8wQU8="
+        "TraitFinderApp.resources.wasm": "sha256-poMOZ83/EbFmtlNR0JIn4safSMpFAEeJkAg8lkV3hlE="
       },
       "zh": {
-        "TraitFinderApp.resources.wasm": "sha256-pcaooCHuZA2es2XEQ7+LCHqIXuz0Q+rQyNhffHyDrBU="
+        "TraitFinderApp.resources.wasm": "sha256-3r64A0t1rkpv1La56469cqOOH3Qmz7lzDGWfXQsqy6s="
       },
       "zh-TW": {
-        "TraitFinderApp.resources.wasm": "sha256-knQqHVCKppQOTM3ni4Z4FWa1MEcjVALbHL05qDD3ieQ="
+        "TraitFinderApp.resources.wasm": "sha256-hDjY8jcOCjD7jrj8Uc69L5/pKsF5j/+rlG9+iXkGBLI="
       }
     }
   },

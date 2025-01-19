@@ -23,7 +23,8 @@ namespace TraitFinderApp.Client.Model
 
         public string Id;
         public string Name;
-        public string ColorHex;
+        public string Description;
+		public string ColorHex;
         public string Image=> "./images/traits/" + Path.GetFileName(Id)+".png";
         public List<string> forbiddenDLCIds, exclusiveWith, exclusiveWithTags, traitTags;
         public Dictionary<string, int> globalFeatureMods { get; set; }
@@ -46,8 +47,6 @@ namespace TraitFinderApp.Client.Model
             exclusiveWithTags = new List<string>();
             forbiddenDLCIds = new List<string>();
             traitTags = new List<string>();
-            Name = string.Empty;
-            Id = string.Empty;
         }
 
         public static List<WorldTrait> Values => DataImport.GetActive().worldTraits;

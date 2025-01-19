@@ -48,7 +48,7 @@ namespace TraitFinderApp.Client.Model
             }
             Console.WriteLine(clusters.Count + " clusters initialized");
             worldTraitsDict = new();
-            Console.WriteLine(worldTraitsDict.Count + " worldTraits");
+            Console.WriteLine(worldTraits.Count + " worldTraits");
             foreach (var trait in worldTraits)
             {
                 worldTraitsDict[trait.Id] = trait;

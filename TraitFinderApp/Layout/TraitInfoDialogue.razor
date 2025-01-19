@@ -1,0 +1,40 @@
+﻿@using TraitFinderApp.Client.Model
+@inject IStringLocalizer<App> L
+<MudDialog>
+	<TitleContent>
+		<MudStack Row>
+			<MudText Typo="Typo.h5">@L["Trait Infos"]</MudText>
+
+		</MudStack>
+	</TitleContent>
+	<DialogContent>
+		<MudExpansionPanels Elevation="6" MultiExpansion>
+
+			@foreach (var trait in WorldTrait.Values)
+			{
+				Console.WriteLine(trait.Name + ": " + trait.Description);
+				<MudExpansionPanel>
+					<TitleContent>
+						<MudStack Row AlignItems="AlignItems.Start" Spacing="1">
+							<MudImage ObjectPosition="ObjectPosition.Left" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
+							<MudText Align="Align.Left">@L[@trait.Name]</MudText>
+						</MudStack>
+					</TitleContent>
+					<ChildContent>
+						@L[@trait.Description ?? "No description found"]
+					</ChildContent>
+				</MudExpansionPanel>
+			}
+		</MudExpansionPanels>
+	</DialogContent>
+</MudDialog>
+
+@code {
+
+	[CascadingParameter]
+	private IMudDialogInstance MudDialog { get; set; }
+
+	private void Submit() => MudDialog.Close(DialogResult.Ok(true));
+
+	private void Cancel() => MudDialog.Cancel();
+}

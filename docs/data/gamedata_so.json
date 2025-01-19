@@ -121,6 +121,18 @@
             "fixedCoordinate": -1
         },
         {
+            "Id": "expansion1::clusters/TinyStartCluster",
+            "Name": "Tiny Start FOR DEVS",
+            "Prefix": "TNY-C",
+            "menuOrder": -1,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "EXPANSION1_ID" ],
+            "ForbiddenDlcIDs": null,
+            "WorldPlacementIDs": [ "expansion1::worlds/TinyStart" ],
+            "clusterCategory": 3,
+            "fixedCoordinate": -1
+        },
+        {
             "Id": "expansion1::clusters/VanillaArboriaCluster",
             "Name": "Arboria Cluster",
             "Prefix": "V-FRST-C",
@@ -835,6 +847,23 @@
             "worldTraitScale": 0.2
         },
         {
+            "Id": "expansion1::worlds/TinyStart",
+            "Name": "Tiny Start FOR DEVS",
+            "Image": null,
+            "DisableWorldTraits": true,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
+                }
+            ],
+            "worldTraitScale": 0.12
+        },
+        {
             "Id": "expansion1::worlds/VanillaArboria",
             "Name": "Arboria Asteroid",
             "Image": null,
@@ -1213,6 +1242,7 @@
         {
             "Id": "traits/BouldersLarge",
             "Name": "Large Boulders",
+            "Description": "Huge boulders make digging through this world more difficult",
             "ColorHex": "BDBDBD",
             "forbiddenDLCIds": [],
             "exclusiveWith": [ "traits/BouldersMixed" ],
@@ -1223,6 +1253,7 @@
         {
             "Id": "traits/BouldersMedium",
             "Name": "Medium Boulders",
+            "Description": "Mid-sized boulders make digging through this world more difficult",
             "ColorHex": "BDBDBD",
             "forbiddenDLCIds": [],
             "exclusiveWith": [ "traits/BouldersLarge", "AllowExceedNodeBorders" ],
@@ -1233,6 +1264,7 @@
         {
             "Id": "traits/BouldersMixed",
             "Name": "Mixed Boulders",
+            "Description": "Boulders of various sizes make digging through this world more difficult",
             "ColorHex": "BDBDBD",
             "forbiddenDLCIds": [],
             "exclusiveWith": [ "traits/BouldersSmall" ],
@@ -1247,6 +1279,7 @@
         {
             "Id": "traits/BouldersSmall",
             "Name": "Small Boulders",
+            "Description": "Tiny boulders make digging through this world more difficult",
             "ColorHex": "BDBDBD",
             "forbiddenDLCIds": [],
             "exclusiveWith": [ "traits/BouldersMedium" ],
@@ -1257,6 +1290,7 @@
         {
             "Id": "traits/DeepOil",
             "Name": "Trapped Oil",
+            "Description": "Most of the Oil in this world will need to be extracted with Oil Wells",
             "ColorHex": "6C6C6C",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1267,6 +1301,7 @@
         {
             "Id": "traits/FrozenCore",
             "Name": "Frozen Core",
+            "Description": "This world has a chilly core of solid Ice",
             "ColorHex": "91D8F0",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1277,6 +1312,7 @@
         {
             "Id": "traits/GeoActive",
             "Name": "Geoactive",
+            "Description": "This world has more Geysers and Vents than usual",
             "ColorHex": "F8A22E",
             "forbiddenDLCIds": [],
             "exclusiveWith": [ "traits/GeoDormant" ],
@@ -1287,6 +1323,7 @@
         {
             "Id": "traits/Geodes",
             "Name": "Geodes",
+            "Description": "Large geodes containing rare material caches are deposited across this world",
             "ColorHex": "D077FB",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1297,6 +1334,7 @@
         {
             "Id": "traits/GeoDormant",
             "Name": "Geodormant",
+            "Description": "This world has fewer Geysers and Vents than usual",
             "ColorHex": "8494A1",
             "forbiddenDLCIds": [],
             "exclusiveWith": [ "traits/GeoActive" ],
@@ -1307,6 +1345,7 @@
         {
             "Id": "traits/GlaciersLarge",
             "Name": "Large Glaciers",
+            "Description": "Huge chunks of primordial Ice are scattered across this world",
             "ColorHex": "91D8F0",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1317,6 +1356,7 @@
         {
             "Id": "traits/MagmaVents",
             "Name": "Magma Channels",
+            "Description": "The Magma from this world's core has leaked into the mantle and crust",
             "ColorHex": "FA4545",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1327,6 +1367,7 @@
         {
             "Id": "traits/MetalPoor",
             "Name": "Metal Poor",
+            "Description": "There is a reduced amount of Metal Ore on this world, proceed with caution!",
             "ColorHex": "8494A1",
             "forbiddenDLCIds": [],
             "exclusiveWith": [ "traits/MetalRich" ],
@@ -1337,6 +1378,7 @@
         {
             "Id": "traits/MetalRich",
             "Name": "Metal Rich",
+            "Description": "This asteroid is an abundant source of Metal Ore",
             "ColorHex": "DAA932",
             "forbiddenDLCIds": [],
             "exclusiveWith": [ "traits/MetalPoor" ],
@@ -1347,6 +1389,7 @@
         {
             "Id": "traits/MisalignedStart",
             "Name": "Alternate Pod Location",
+            "Description": "The Printing Pod didn't end up in the asteroid's exact center this time... but it's still nowhere near the surface",
             "ColorHex": "E9DC96",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1357,6 +1400,7 @@
         {
             "Id": "traits/SlimeSplats",
             "Name": "Slime Molds",
+            "Description": "Sickly Slime growths have crept all over this world",
             "ColorHex": "83B520",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1367,6 +1411,7 @@
         {
             "Id": "expansion1::traits/CrashedSatellites",
             "Name": "Crashed Satellites",
+            "Description": "This world contains crashed radioactive satellites",
             "ColorHex": "5CD64C",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1377,6 +1422,7 @@
         {
             "Id": "expansion1::traits/DistressSignal",
             "Name": "Frozen Friend",
+            "Description": "This world contains a frozen friend from a long time ago",
             "ColorHex": "8494A1",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1387,6 +1433,7 @@
         {
             "Id": "expansion1::traits/IrregularOil",
             "Name": "Irregular Oil",
+            "Description": "The Oil on this asteroid is anything but regular!",
             "ColorHex": "6C6C6C",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1397,6 +1444,7 @@
         {
             "Id": "expansion1::traits/LushCore",
             "Name": "Lush Core",
+            "Description": "This world has a lush forest core",
             "ColorHex": "52A247",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1407,6 +1455,7 @@
         {
             "Id": "expansion1::traits/MetalCaves",
             "Name": "Metallic Caves",
+            "Description": "This world has caves of metal ore",
             "ColorHex": "DAA932",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1417,6 +1466,7 @@
         {
             "Id": "expansion1::traits/RadioactiveCrust",
             "Name": "Radioactive Crust",
+            "Description": "Deposits of Uranium Ore are found in this world's crust",
             "ColorHex": "5CD64C",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1427,6 +1477,7 @@
         {
             "Id": "expansion1::traits/SubsurfaceOcean",
             "Name": "Subsurface Ocean",
+            "Description": "Below the crust of this world is a Salt Water sea",
             "ColorHex": "12D1F4",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
@@ -1437,6 +1488,7 @@
         {
             "Id": "expansion1::traits/Volcanoes",
             "Name": "Volcanic Activity",
+            "Description": "Several active Volcanoes have been detected in this world",
             "ColorHex": "FA4545",
             "forbiddenDLCIds": [],
             "exclusiveWith": [],
