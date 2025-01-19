@@ -121,7 +121,7 @@
 		"GasGiant": {
 			"Id": "GasGiant",
 			"Name": "Gas Giant",
-			"Description": "A massive volume of <link=\"HYDROGEN\">Hydrogen Gas</link> formed around a small solid center.",
+			"Description": "A massive volume of Hydrogen Gas formed around a small solid center.",
 			"Image": "gasGiant",
 			"Ressources_Elements": {
 				"Methane": 100.0,
@@ -132,7 +132,7 @@
 		"IceGiant": {
 			"Id": "IceGiant",
 			"Name": "Ice Giant",
-			"Description": "A massive volume of frozen material, primarily composed of <link=\"ICE\">Ice</link>.",
+			"Description": "A massive volume of frozen material, primarily composed of Ice.",
 			"Image": "icyMoon",
 			"Ressources_Elements": {
 				"Ice": 100.0,
@@ -206,7 +206,7 @@
 		"HeliumGiant": {
 			"Id": "HeliumGiant",
 			"Name": "Helium Giant",
-			"Description": "A massive volume of <link=\"HELIUM\">Helium</link> formed around a small solid center.",
+			"Description": "A massive volume of Helium formed around a small solid center.",
 			"Image": "new_11",
 			"Ressources_Elements": {
 				"LiquidHydrogen": 100.0,

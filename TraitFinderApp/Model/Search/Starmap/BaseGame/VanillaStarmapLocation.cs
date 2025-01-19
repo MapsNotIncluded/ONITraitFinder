@@ -9,6 +9,7 @@
         public string Image => $"./images/Starmap/starmap_destinations_basegame/{Path.GetFileName(Id)}.png";
         public Dictionary<string, float> Ressources_Elements;
         public Dictionary<string, int> Ressources_Entities;
+        public bool Disabled = false;
 
 
         public override int GetHashCode() => Id.GetHashCode();

@@ -16,6 +16,7 @@
         <MudStack Style="padding:5px">
             <MudSwitch T="bool" @bind-Value="@PersistantTraitOrdering" Color="@Color.Success" UncheckedColor="@Color.Error" Label=@L["Results inherit trait select order"]></MudSwitch>
             <MudSwitch T="bool" @bind-Value="@HideTraitlessAsteroids" Color="@Color.Success" UncheckedColor="@Color.Error" Label=@L["Hide asteroids that cannot have traits in results"]></MudSwitch>
+            <MudSwitch T="bool" @bind-Value="@HideLocationlessDistanceBands" Color="@Color.Success" UncheckedColor="@Color.Error" Label=@L["Hide starmap distances that dont have destinations in results"]></MudSwitch>
             <MudSwitch T="bool" ThumbIcon="@DarkLightModeButtonIcon" ThumbIconColor="@Color.Primary" @bind-Value="@LocalStorageHelper.DarkThemeActive" Label=@L["Theme"]></MudSwitch>
         </MudStack>
     </MudPaper>
@@ -39,6 +40,24 @@
     private MudTheme? _theme = null;
     private MudThemeProvider _mudThemeProvider;
 
+
+
+
+    public bool HideLocationlessDistanceBands
+    {
+        get => _hideLocationlessDistanceBands;
+        set
+        {
+            _hideLocationlessDistanceBands = value;
+            SetLocationlessDistanceHidingPersistent(value);
+        }
+    }
+    private bool _hideLocationlessDistanceBands = false;
+    public void SetLocationlessDistanceHidingPersistent(bool enabled)
+    {
+        localStorage.SetItemAsync(LocalStorageHelper.HideLocationlessDistancesKey, enabled);
+        LocalStorageHelper.HideLocationlessDistances = enabled;
+    }
     public bool PersistantTraitOrdering
     {
         get => _persistantTraitOrdering;

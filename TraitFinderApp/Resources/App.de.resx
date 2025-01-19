@@ -513,7 +513,16 @@
   <data name="This cluster always generates the same seed!" xml:space="preserve">
     <value>Dieses Cluster generiert immer mit dem selben Seed!</value>
   </data>
+  <data name="Hide starmap distances that dont have destinations in results" xml:space="preserve">
+    <value>Verstecke Sternkarten-Distanzen ohne Reiseziele</value>
+  </data>
   <data name="_TranslationAuthor" xml:space="preserve">
     <value>Sgt_Imalas</value>
+  </data>
+  <data name="Starmap Destinations" xml:space="preserve">
+    <value>Sternenkarten-Ziel</value>
+  </data>
+  <data name="Satellite" xml:space="preserve">
+    <value>Satellit</value>
   </data>
 </root>

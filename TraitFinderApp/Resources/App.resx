@@ -513,9 +513,160 @@
   <data name="This cluster always generates the same seed!" xml:space="preserve">
     <value>This cluster always generates the same seed!</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="_TranslationAuthor" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="Hide starmap distances that dont have destinations in results" xml:space="preserve">
+    <value>Hide starmap distances that dont have destinations in results</value>
+  </data>
+  <data name="_TranslationAuthor" xml:space="preserve">
     <value />
-    <comment>put your name here when making a translation</comment>
+  </data>
+  <data name="Starmap Destinations" xml:space="preserve">
+    <value>Starmap Destinations</value>
+  </data>
+  <data name="Satellite" xml:space="preserve">
+    <value>Satellite</value>
+  </data>
+  <data name="An artificial construct that has escaped its orbit. It no longer appears to be monitored." xml:space="preserve">
+    <value>An artificial construct that has escaped its orbit. It no longer appears to be monitored.</value>
+  </data>
+  <data name="Metallic Asteroid" xml:space="preserve">
+    <value>Metallic Asteroid</value>
+  </data>
+  <data name="A shimmering conglomerate of various metals." xml:space="preserve">
+    <value>A shimmering conglomerate of various metals.</value>
+  </data>
+  <data name="Rocky Asteroid" xml:space="preserve">
+    <value>Rocky Asteroid</value>
+  </data>
+  <data name="A minor mineral planet. Unlike a comet, it does not possess a tail." xml:space="preserve">
+    <value>A minor mineral planet. Unlike a comet, it does not possess a tail.</value>
+  </data>
+  <data name="Carbon Asteroid" xml:space="preserve">
+    <value>Carbon Asteroid</value>
+  </data>
+  <data name="A common asteroid containing several useful resources." xml:space="preserve">
+    <value>A common asteroid containing several useful resources.</value>
+  </data>
+  <data name="Interstellar Ice" xml:space="preserve">
+    <value>Interstellar Ice</value>
+  </data>
+  <data name="A terrestrial destination, frozen completely solid." xml:space="preserve">
+    <value>A terrestrial destination, frozen completely solid.</value>
+  </data>
+  <data name="Organic Mass" xml:space="preserve">
+    <value>Organic Mass</value>
+  </data>
+  <data name="A mass of organic material similar to the ooze used to print Duplicants. This sample is heavily degraded." xml:space="preserve">
+    <value>A mass of organic material similar to the ooze used to print Duplicants. This sample is heavily degraded.</value>
+  </data>
+  <data name="Dusty Dwarf" xml:space="preserve">
+    <value>Dusty Dwarf</value>
+  </data>
+  <data name="A loosely held together composite of minerals." xml:space="preserve">
+    <value>A loosely held together composite of minerals.</value>
+  </data>
+  <data name="Terrestrial Planet" xml:space="preserve">
+    <value>Terrestrial Planet</value>
+  </data>
+  <data name="A planet with a walkable surface, though it does not possess the resources to sustain long-term life." xml:space="preserve">
+    <value>A planet with a walkable surface, though it does not possess the resources to sustain long-term life.</value>
+  </data>
+  <data name="Volcanic Planet" xml:space="preserve">
+    <value>Volcanic Planet</value>
+  </data>
+  <data name="A large terrestrial object composed mainly of molten rock." xml:space="preserve">
+    <value>A large terrestrial object composed mainly of molten rock.</value>
+  </data>
+  <data name="Gas Giant" xml:space="preserve">
+    <value>Gas Giant</value>
+  </data>
+  <data name="A massive volume of Hydrogen Gas formed around a small solid center." xml:space="preserve">
+    <value>A massive volume of Hydrogen Gas formed around a small solid center.</value>
+  </data>
+  <data name="Ice Giant" xml:space="preserve">
+    <value>Ice Giant</value>
+  </data>
+  <data name="A massive volume of frozen material, primarily composed of Ice." xml:space="preserve">
+    <value>A massive volume of frozen material, primarily composed of Ice.</value>
+  </data>
+  <data name="Salty Dwarf" xml:space="preserve">
+    <value>Salty Dwarf</value>
+  </data>
+  <data name="A dwarf planet with unusually high sodium concentrations." xml:space="preserve">
+    <value>A dwarf planet with unusually high sodium concentrations.</value>
+  </data>
+  <data name="Oxidized Asteroid" xml:space="preserve">
+    <value>Oxidized Asteroid</value>
+  </data>
+  <data name="A small planet covered in large swathes of brown rust." xml:space="preserve">
+    <value>A small planet covered in large swathes of brown rust.</value>
+  </data>
+  <data name="Living Planet" xml:space="preserve">
+    <value>Living Planet</value>
+  </data>
+  <data name="A small green planet displaying several markers of primitive life." xml:space="preserve">
+    <value>A small green planet displaying several markers of primitive life.</value>
+  </data>
+  <data name="Red Dwarf" xml:space="preserve">
+    <value>Red Dwarf</value>
+  </data>
+  <data name="An M-class star orbited by clusters of extractable aluminum and methane." xml:space="preserve">
+    <value>An M-class star orbited by clusters of extractable aluminum and methane.</value>
+  </data>
+  <data name="Gilded Asteroid" xml:space="preserve">
+    <value>Gilded Asteroid</value>
+  </data>
+  <data name="A rich asteroid with thin gold coating and veins of gold deposits throughout." xml:space="preserve">
+    <value>A rich asteroid with thin gold coating and veins of gold deposits throughout.</value>
+  </data>
+  <data name="Helium Giant" xml:space="preserve">
+    <value>Helium Giant</value>
+  </data>
+  <data name="A massive volume of Helium formed around a small solid center." xml:space="preserve">
+    <value>A massive volume of Helium formed around a small solid center.</value>
+  </data>
+  <data name="Oily Asteroid" xml:space="preserve">
+    <value>Oily Asteroid</value>
+  </data>
+  <data name="A viscous asteroid that is only loosely held together. Contains fossil fuel resources." xml:space="preserve">
+    <value>A viscous asteroid that is only loosely held together. Contains fossil fuel resources.</value>
+  </data>
+  <data name="Glimmering Planet" xml:space="preserve">
+    <value>Glimmering Planet</value>
+  </data>
+  <data name="A planet composed of rare, shimmering minerals. From the distance, it looks like gem in the sky." xml:space="preserve">
+    <value>A planet composed of rare, shimmering minerals. From the distance, it looks like gem in the sky.</value>
+  </data>
+  <data name="Chlorine Planet" xml:space="preserve">
+    <value>Chlorine Planet</value>
+  </data>
+  <data name="A noxious planet permeated by unbreathable chlorine." xml:space="preserve">
+    <value>A noxious planet permeated by unbreathable chlorine.</value>
+  </data>
+  <data name="Arid Planet" xml:space="preserve">
+    <value>Arid Planet</value>
+  </data>
+  <data name="A sweltering, desert-like planet covered in surface salt deposits." xml:space="preserve">
+    <value>A sweltering, desert-like planet covered in surface salt deposits.</value>
+  </data>
+  <data name="Temporal Tear" xml:space="preserve">
+    <value>Temporal Tear</value>
+  </data>
+  <data name="The source of our misfortune, though it may also be our shot at freedom. Traces of Neutronium are detectable in my readings." xml:space="preserve">
+    <value>The source of our misfortune, though it may also be our shot at freedom. Traces of Neutronium are detectable in my readings.</value>
+  </data>
+  <data name="Shattered Planet" xml:space="preserve">
+    <value>Shattered Planet</value>
+  </data>
+  <data name="A once-habitable planet that has sustained massive damage.\n\nA powerful containment field prevents our rockets from traveling to its surface." xml:space="preserve">
+    <value>A once-habitable planet that has sustained massive damage.\n\nA powerful containment field prevents our rockets from traveling to its surface.</value>
+  </data>
+  <data name="A frozen planet peppered with cinnabar deposits." xml:space="preserve">
+    <value>A frozen planet peppered with cinnabar deposits.</value>
+  </data>
+  <data name="Show Starmap" xml:space="preserve">
+    <value>Show Starmap</value>
+  </data>
+  <data name="Hide Starmap" xml:space="preserve">
+    <value />
   </data>
 </root>

@@ -309,7 +309,7 @@ else
 														<MudSelectItem Value="@(location)">
 															<MudStack Row AlignItems="AlignItems.Start" Spacing="1">
 																<MudImage ObjectPosition="ObjectPosition.Left" Src="@location.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
-																<MudText Align="Align.Left">@location.Name</MudText>
+																<MudText Align="Align.Left">@L[@location.Name]</MudText>
 															</MudStack>
 														</MudSelectItem>
 													</MudVirtualize>
@@ -478,7 +478,7 @@ else
 		if (basegame_starmap == null)
 			return;
 		DataImport.StarmapImport = basegame_starmap;
-		basegame.MapGameData();
+		basegame_starmap.MapGameData();
 
 
 

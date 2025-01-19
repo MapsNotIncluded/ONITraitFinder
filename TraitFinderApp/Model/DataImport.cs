@@ -102,8 +102,8 @@ namespace TraitFinderApp.Client.Model
         public Dictionary<string, VanillaStarmapLocation> Locations;
         public void MapGameData()
         {
-
-        }
+            Locations.Remove("SaltDesertPlanet"); //not found in starmap gen, disable it
+		}
 
     }
 
@@ -112,7 +112,7 @@ namespace TraitFinderApp.Client.Model
         public static StarmapData StarmapImport;
         public static List<VanillaStarmapLocation> GetVanillaStarmapLocations()
         {
-            return StarmapImport.Locations.Values.ToList();
+            return StarmapImport.Locations.Values.Where(e=>!e.Disabled).ToList();
         }
 
 
