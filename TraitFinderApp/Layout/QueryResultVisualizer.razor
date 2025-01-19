@@ -41,7 +41,7 @@
 					</MudStack>
 				}
 			</MudVirtualize>
-			@if (QueryResult?.cluster?.RequiredDlcs?.Contains(Client.Model.Dlc.BASEGAME) ?? false)
+			@if ((QueryResult?.cluster?.ForbiddenDlcs?.Contains(Client.Model.Dlc.SPACEDOUT) ?? false) || (QueryResult?.cluster?.RequiredDlcs?.Contains(Client.Model.Dlc.BASEGAME) ?? false))
 			{
 				<MudButton  FullWidth Variant="Variant.Outlined" Color="Color.Default" OnClick="@ToggleStarmap">@L[!QueryResult.ShowStarmap?"Show Starmap":"Hide Starmap"]</MudButton>
 
