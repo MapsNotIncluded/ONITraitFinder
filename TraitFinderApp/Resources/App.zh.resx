@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Results inherit trait select order" xml:space="preserve">
-    <value>结果保留特质选择顺序</value>
+    <value>在结果中保持特质选择顺序</value>
   </data>
   <data name="Hide asteroids that cannot have traits in results" xml:space="preserve">
-    <value>在结果中隐藏无法拥有特质的小行星</value>
+    <value>在结果中隐藏无特质的小行星</value>
   </data>
   <data name="Theme" xml:space="preserve">
     <value>主题切换</value>
@@ -162,8 +162,8 @@
   <data name="Select your Asteroid:" xml:space="preserve">
     <value>选择你的小行星:</value>
   </data>
-  <data name="Configure your trait filters for {0}" xml:space="preserve">
-    <value>为 {0} 配置你的特质筛选器</value>
+  <data name="Configure your filters for {0}" xml:space="preserve">
+    <value>为 {0} 配置你的筛选器</value>
   </data>
   <data name="Reset all trait filters" xml:space="preserve">
     <value>重置所有特质筛选器</value>
