@@ -517,7 +517,7 @@
   <data name="Hide starmap distances that dont have destinations in results" type="System.Resources.ResXNullRef, System.Windows.Forms">
   <value>在结果中隐藏星图中无目的地的距离</value>
   </data>
-  <data name="_TranslationAuthor2" xml:space="preserve">
+  <data name="_TranslationAuthor" xml:space="preserve">
     <value>jason83228</value>
   </data>
   <data name="Starmap Destinations" xml:space="preserve">
