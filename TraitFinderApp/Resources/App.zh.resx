@@ -674,10 +674,10 @@
     <value>保留星图目的地</value>
   </data>
   <data name="Show Trait Info" xml:space="preserve">
-    <value>显示特质讯息</value>
+    <value>显示特质详情</value>
   </data>
   <data name="Trait Info" xml:space="preserve">
-    <value>特质讯息</value>
+    <value>特质详情</value>
   </data>
   <data name="Several active Volcanoes have been detected in this world" xml:space="preserve">
     <value>这颗星球上能侦测到许多活体火山</value>
