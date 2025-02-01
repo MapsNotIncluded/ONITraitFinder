@@ -102,13 +102,12 @@
 	{
 		try
 		{
-
 			await ClipboardService.WriteTextAsync(text);
-			Snackbar.Add("Seed copied to the clipboard!", Severity.Success);
+			Snackbar.Add(L["Seed copied to the clipboard!"], Severity.Success);
 		}
 		catch
 		{
-			Console.WriteLine("Cannot write text to clipboard");
+			Console.WriteLine(L["Cannot write text to clipboard"]);
 		}
 
 	}

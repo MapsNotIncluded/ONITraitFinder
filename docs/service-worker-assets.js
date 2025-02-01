@@ -549,7 +549,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-j9vezkWhcnLMKJn38Lz0Dq33VmGynaCK0srpJAKQm2w=",
+      "hash": "sha256-uo+qaMs7v4Pwb7z3zJkK+NXaXPSOzOiDkDUvZp07uxU=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -557,7 +557,7 @@
       "url": "_framework\/dotnet.native.8.0.10.5qu5xpewhc.js"
     },
     {
-      "hash": "sha256-P1zYFchUjmjHuceQQ4kzQrlifdwShXl4V67mGSRyyaw=",
+      "hash": "sha256-BCtsy4MoHtGF6ig3mgFEAddrvD131bIkz8ryxMIiNHo=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -825,19 +825,19 @@
       "url": "_framework\/System.Xml.XDocument.wasm"
     },
     {
-      "hash": "sha256-WOxFcOX0k17JdxR\/ObTJzUA9u2LfLpN3Z\/b2y4UQlYE=",
+      "hash": "sha256-zLx4dPjoKmNLXuNZGyxTA6wlFRpjWu9tmHkzbYsfiT4=",
       "url": "_framework\/TraitFinderApp.wasm"
     },
     {
-      "hash": "sha256-poMOZ83\/EbFmtlNR0JIn4safSMpFAEeJkAg8lkV3hlE=",
+      "hash": "sha256-r9W9x9YrjrbW9T6KcwX0XlY18A64S1mEWAwjF9Pxg1E=",
       "url": "_framework\/de\/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-3r64A0t1rkpv1La56469cqOOH3Qmz7lzDGWfXQsqy6s=",
+      "hash": "sha256-gT65VWCIlz6cibfVkkqR4CJtbPuDZzV8Ye9y2QwVO9Y=",
       "url": "_framework\/zh\/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-hDjY8jcOCjD7jrj8Uc69L5\/pKsF5j\/+rlG9+iXkGBLI=",
+      "hash": "sha256-jifmjLgDcqzfpAHN0179K+S8kFfmOdyq429UpXRWAPU=",
       "url": "_framework\/zh-TW\/TraitFinderApp.resources.wasm"
     },
     {
@@ -853,5 +853,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "tlgPf6LD"
+  "version": "IF76Petn"
 };

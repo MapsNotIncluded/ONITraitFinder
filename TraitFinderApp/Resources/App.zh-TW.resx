@@ -513,8 +513,7 @@
   <data name="This cluster always generates the same seed!" xml:space="preserve">
     <value>這個星球總是生成相同的種子！</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Hide starmap distances that dont have destinations in results" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="Hide starmap distances that dont have destinations in results" xml:space="preserve">
     <value>在結果中隱藏星圖中無目的地的距離</value>
   </data>
   <data name="_TranslationAuthor" xml:space="preserve">
