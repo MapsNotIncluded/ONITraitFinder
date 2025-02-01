@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Results inherit trait select order" xml:space="preserve">
-    <value>在結果中保持特質選擇順序</value>
+    <value>在結果中保持特質選擇的順序</value>
   </data>
   <data name="Hide asteroids that cannot have traits in results" xml:space="preserve">
-    <value>在結果中隱藏無特質的小行星</value>
+    <value>在結果中隱藏無法生成特質的小行星</value>
   </data>
   <data name="Theme" xml:space="preserve">
     <value>主題切換</value>
@@ -166,10 +166,10 @@
     <value>為 {0} 配置你的篩選器</value>
   </data>
   <data name="Reset all trait filters" xml:space="preserve">
-    <value>重置所有特質篩選器</value>
+    <value>重置所有篩選器</value>
   </data>
   <data name="Starter Asteroid" xml:space="preserve">
-    <value>起始小行星</value>
+    <value>初始小行星</value>
   </data>
   <data name="This asteroid cannot generate any traits." xml:space="preserve">
     <value>此小行星無法生成任何特質.</value>
@@ -511,13 +511,241 @@
     <value>穀神星</value>
   </data>
   <data name="This cluster always generates the same seed!" xml:space="preserve">
-    <value>這個星群總是生成相同的種子！</value>
+    <value>這個星球總是生成相同的種子！</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Hide starmap distances that dont have destinations in results" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+    <value>在結果中隱藏星圖中無目的地的距離</value>
   </data>
-  <data name="_TranslationAuthor2" xml:space="preserve">
+  <data name="_TranslationAuthor" xml:space="preserve">
     <value>jason83228</value>
+  </data>
+  <data name="Starmap Destinations" xml:space="preserve">
+    <value>星圖目的地</value>
+  </data>
+  <data name="Satellite" xml:space="preserve">
+    <value>衛星</value>
+  </data>
+  <data name="An artificial construct that has escaped its orbit. It no longer appears to be monitored." xml:space="preserve">
+    <value>一個人造結構,已經偏離了自己的軌道.它似乎不再受控制了.</value>
+  </data>
+  <data name="Metallic Asteroid" xml:space="preserve">
+    <value>金屬小行星</value>
+  </data>
+  <data name="A shimmering conglomerate of various metals." xml:space="preserve">
+    <value>由各種金屬組成的閃閃發光的礫岩.</value>
+  </data>
+  <data name="Rocky Asteroid" xml:space="preserve">
+    <value>岩石小行星</value>
+  </data>
+  <data name="A minor mineral planet. Unlike a comet, it does not possess a tail." xml:space="preserve">
+    <value>一顆小型的礦物行星.不像彗星,它沒有拖尾.</value>
+  </data>
+  <data name="Carbon Asteroid" xml:space="preserve">
+    <value>碳質小行星</value>
+  </data>
+  <data name="A common asteroid containing several useful resources." xml:space="preserve">
+    <value>一顆常見的小行星,包含了幾個有用的資源.</value>
+  </data>
+  <data name="Interstellar Ice" xml:space="preserve">
+    <value>星際冰星</value>
+  </data>
+  <data name="A terrestrial destination, frozen completely solid." xml:space="preserve">
+    <value>一個類地地區,已經完全凍結了.</value>
+  </data>
+  <data name="Organic Mass" xml:space="preserve">
+    <value>有機質體</value>
+  </data>
+  <data name="A mass of organic material similar to the ooze used to print Duplicants. This sample is heavily degraded." xml:space="preserve">
+    <value>一片類似印製複製人的遺傳生物軟泥的有機材料.這個樣品已經嚴重降解了.</value>
+  </data>
+  <data name="Dusty Dwarf" xml:space="preserve">
+    <value>塵埃矮星</value>
+  </data>
+  <data name="A loosely held together composite of minerals." xml:space="preserve">
+    <value>一個鬆散地結合在一起的礦石混合體.</value>
+  </data>
+  <data name="Terrestrial Planet" xml:space="preserve">
+    <value>類地行星</value>
+  </data>
+  <data name="A planet with a walkable surface, though it does not possess the resources to sustain long-term life." xml:space="preserve">
+    <value>一顆表面上可行走的行星,但不具備可以維持生命長期生存的資源.</value>
+  </data>
+  <data name="Volcanic Planet" xml:space="preserve">
+    <value>火山行星</value>
+  </data>
+  <data name="A large terrestrial object composed mainly of molten rock." xml:space="preserve">
+    <value>一個主要由熔融岩石構成的大型類地體.</value>
+  </data>
+  <data name="Gas Giant" xml:space="preserve">
+    <value>氣體巨星</value>
+  </data>
+  <data name="A massive volume of Hydrogen Gas formed around a small solid center." xml:space="preserve">
+    <value>由大量氫氣圍繞著一個小的固體核心形成的星體.</value>
+  </data>
+  <data name="Ice Giant" xml:space="preserve">
+    <value>寒冰巨星</value>
+  </data>
+  <data name="A massive volume of frozen material, primarily composed of Ice." xml:space="preserve">
+    <value>大量的冰凍物質,主要由冰構成.</value>
+  </data>
+  <data name="Salty Dwarf" xml:space="preserve">
+    <value>鹽質矮星</value>
+  </data>
+  <data name="A dwarf planet with unusually high sodium concentrations." xml:space="preserve">
+    <value>一顆矮星,其中的鈉濃度異常高.</value>
+  </data>
+  <data name="Oxidized Asteroid" xml:space="preserve">
+    <value>氧化小行星</value>
+  </data>
+  <data name="A small planet covered in large swathes of brown rust." xml:space="preserve">
+    <value>一顆小行星,表面覆蓋著大量褐色的鐵鏽.</value>
+  </data>
+  <data name="Living Planet" xml:space="preserve">
+    <value>生命行星</value>
+  </data>
+  <data name="A small green planet displaying several markers of primitive life." xml:space="preserve">
+    <value>一顆小的綠色行星,上面有原始生命的標誌.</value>
+  </data>
+  <data name="Red Dwarf" xml:space="preserve">
+    <value>紅矮星</value>
+  </data>
+  <data name="An M-class star orbited by clusters of extractable aluminum and methane." xml:space="preserve">
+    <value>一顆M級恆星,由可提取的鋁和甲烷環繞組成.</value>
+  </data>
+  <data name="Gilded Asteroid" xml:space="preserve">
+    <value>金質小行星</value>
+  </data>
+  <data name="A rich asteroid with thin gold coating and veins of gold deposits throughout." xml:space="preserve">
+    <value>一顆豐富的小行星,表面有一層薄薄的金,並且有金礦脈貫穿整個星球.</value>
+  </data>
+  <data name="Helium Giant" xml:space="preserve">
+    <value>氦巨星</value>
+  </data>
+  <data name="A massive volume of Helium formed around a small solid center." xml:space="preserve">
+    <value>由大量氦氣圍繞著一個小的固體核心形成的星體.</value>
+  </data>
+  <data name="Oily Asteroid" xml:space="preserve">
+    <value>油質小行星</value>
+  </data>
+  <data name="A viscous asteroid that is only loosely held together. Contains fossil fuel resources." xml:space="preserve">
+    <value>一顆鬆散地結合在一起的黏稠小行星.含化石燃料資源.</value>
+  </data>
+  <data name="Glimmering Planet" xml:space="preserve">
+    <value>閃爍行星</value>
+  </data>
+  <data name="A planet composed of rare, shimmering minerals. From the distance, it looks like gem in the sky." xml:space="preserve">
+    <value>一顆由閃光的稀有金屬組成的行星.從遠處看,它就像天上的寶石一樣.</value>
+  </data>
+  <data name="Chlorine Planet" xml:space="preserve">
+    <value>氯行星</value>
+  </data>
+  <data name="A noxious planet permeated by unbreathable chlorine." xml:space="preserve">
+    <value>一顆滲透著氯氣的有毒行星.</value>
+  </data>
+  <data name="Arid Planet" xml:space="preserve">
+    <value>乾燥行星</value>
+  </data>
+  <data name="A sweltering, desert-like planet covered in surface salt deposits." xml:space="preserve">
+    <value>一顆酷熱的沙漠般行星,表面覆著鹽礦.</value>
+  </data>
+  <data name="Temporal Tear" xml:space="preserve">
+    <value>時間裂口</value>
+  </data>
+  <data name="The source of our misfortune, though it may also be our shot at freedom. Traces of Neutronium are detectable in my readings." xml:space="preserve">
+    <value>雖然這是我們不幸事故的起源,但它可能也是我們通往自由的通道.可以偵測到中子質的痕跡.</value>
+  </data>
+  <data name="Shattered Planet" xml:space="preserve">
+    <value>碎裂行星</value>
+  </data>
+  <data name="A once-habitable planet that has sustained massive damage.\n\nA powerful containment field prevents our rockets from traveling to its surface." xml:space="preserve">
+    <value>一顆曾經宜居的行星,現已遭到了巨大的破壞. \n\n一個強大的力場阻擋了我們的火箭前進到地面.</value>
+  </data>
+  <data name="A frozen planet peppered with cinnabar deposits." xml:space="preserve">
+    <value>一顆佈滿硃砂沉積物的冰凍行星.</value>
+  </data>
+  <data name="Show Starmap" xml:space="preserve">
+    <value>顯示星圖</value>
+  </data>
+  <data name="Hide Starmap" xml:space="preserve">
+    <value>隱藏星圖</value>
+  </data>
+  <data name="Guaranteed Starmap Locations" xml:space="preserve">
+    <value>保留星圖目的地</value>
+  </data>
+  <data name="Show Trait Info" xml:space="preserve">
+    <value>顯示特質詳情</value>
+  </data>
+  <data name="Trait Info" xml:space="preserve">
+    <value>特質詳情</value>
+  </data>
+  <data name="Several active Volcanoes have been detected in this world" xml:space="preserve">
+    <value>這顆星球上能偵測到許多活體火山</value>
+  </data>
+  <data name="Below the crust of this world is a Salt Water sea" xml:space="preserve">
+    <value>這顆星球的地殼之下是由鹽水構成的海</value>
+  </data>
+  <data name="Deposits of Uranium Ore are found in this world's crust" xml:space="preserve">
+    <value>這顆星球的地殼中發現有鈾礦礦藏</value>
+  </data>
+  <data name="This world has caves of metal ore" xml:space="preserve">
+    <value>這顆星球有金屬礦石洞穴</value>
+  </data>
+  <data name="This world has a lush forest core" xml:space="preserve">
+    <value>這顆星球有一個繁茂的森林核心</value>
+  </data>
+  <data name="The Oil on this asteroid is anything but regular!" xml:space="preserve">
+    <value>原油在這顆星球上分佈不規則!</value>
+  </data>
+  <data name="This world contains a frozen friend from a long time ago" xml:space="preserve">
+    <value>這顆星球含有來自很久以前的被冷凍的朋友</value>
+  </data>
+  <data name="This world contains crashed radioactive satellites" xml:space="preserve">
+    <value>這顆星球含有墜毀的放射性衛星</value>
+  </data>
+  <data name="Sickly Slime growths have crept all over this world" xml:space="preserve">
+    <value>黏黏的菌泥在這顆星球上到處都是</value>
+  </data>
+  <data name="The Printing Pod didn't end up in the asteroid's exact center this time... but it's still nowhere near the surface" xml:space="preserve">
+    <value>列印艙沒能落在這顆星球的中心…離地表仍然很遠</value>
+  </data>
+  <data name="This asteroid is an abundant source of Metal Ore" xml:space="preserve">
+    <value>這顆星球有豐富的金屬礦石</value>
+  </data>
+  <data name="There is a reduced amount of Metal Ore on this world, proceed with caution!" xml:space="preserve">
+    <value>這顆星球的金屬礦石數量較少,謹慎行事!</value>
+  </data>
+  <data name="The Magma from this world's core has leaked into the mantle and crust" xml:space="preserve">
+    <value>這顆星球核心區的岩漿已經蔓延到了地函和地殼中了</value>
+  </data>
+  <data name="Huge chunks of primordial Ice are scattered across this world" xml:space="preserve">
+    <value>這顆星球中分散著許多大塊的原生冰</value>
+  </data>
+  <data name="This world has fewer Geysers and Vents than usual" xml:space="preserve">
+    <value>這顆星球有比平常更少的間歇泉和噴孔</value>
+  </data>
+  <data name="Large geodes containing rare material caches are deposited across this world" xml:space="preserve">
+    <value>這顆星球沉積了許多含有稀有物質的大型晶洞</value>
+  </data>
+  <data name="This world has more Geysers and Vents than usual" xml:space="preserve">
+    <value>這顆星球有比平常更多的間歇泉和噴孔</value>
+  </data>
+  <data name="This world has a chilly core of solid Ice" xml:space="preserve">
+    <value>這顆星球有著由堅實的冰組成的冰冷核心</value>
+  </data>
+  <data name="Most of the Oil in this world will need to be extracted with Oil Wells" xml:space="preserve">
+    <value>這顆星球的大多數原油必須通過油井提取出來</value>
+  </data>
+  <data name="Tiny boulders make digging through this world more difficult" xml:space="preserve">
+    <value>小型石塊使挖穿這顆星球更困難了</value>
+  </data>
+  <data name="Boulders of various sizes make digging through this world more difficult" xml:space="preserve">
+    <value>各種大小的石塊使挖穿這顆星球更困難了</value>
+  </data>
+  <data name="Mid-sized boulders make digging through this world more difficult" xml:space="preserve">
+    <value>中型石塊使挖穿這顆星球更困難了</value>
+  </data>
+  <data name="Huge boulders make digging through this world more difficult" xml:space="preserve">
+    <value>大型石塊使挖穿這顆星球更困難了</value>
   </data>
 </root>
