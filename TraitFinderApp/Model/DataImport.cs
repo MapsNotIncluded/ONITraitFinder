@@ -11,6 +11,7 @@ using OniStarmapGenerator.Model.Search;
 using TraitFinderApp.Model.KleiClasses;
 using OniStarmapGenerator.Model;
 using static MudBlazor.Icons.Custom;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TraitFinderApp.Client.Model
 {
@@ -112,7 +113,68 @@ namespace TraitFinderApp.Client.Model
 
     public class DataImport
     {
-        public static StarmapData StarmapImport;
+        public static HashSet<string> FailedSeeds;
+        public const string FAILED_SEEDS_URL = "https://ingest.mapsnotincluded.org/list-worldgen-failures";
+		public static async Task FetchFailedSeeds(HttpClient Http)
+        {
+			var failedSeedFetch = await Http.GetAsync(FAILED_SEEDS_URL);
+			if (failedSeedFetch == null)
+				return;
+
+			var fetchedFailedSeedsString = await failedSeedFetch.Content.ReadAsStringAsync();
+			if (fetchedFailedSeedsString == null)
+				return;
+
+            FailedSeeds = fetchedFailedSeedsString.Split('\n').ToHashSet();
+			//Console.WriteLine(fetchedFailedSeedsString);
+
+		}
+		public static async Task FetchBaseGameData(HttpClient Http)
+		{
+			var baseGameResponse = await Http.GetAsync("./data/gamedata_base.json");
+			if (baseGameResponse == null)
+				return;
+			var basegamejson = await baseGameResponse.Content.ReadAsStringAsync();
+			if (basegamejson == null)
+				return;
+
+			var basegame = JsonConvert.DeserializeObject<Data>(basegamejson);
+			if (basegame == null)
+				return;
+			BaseGame = basegame;
+			basegame.MapGameData();
+		}
+		public static async Task FetchSpacedOutData(HttpClient Http)
+		{
+			var soResponse = await Http.GetAsync("./data/gamedata_so.json");
+			if (soResponse == null)
+				return;
+			var sojson = await soResponse.Content.ReadAsStringAsync();
+			if (sojson == null)
+				return;
+			var so = JsonConvert.DeserializeObject<Data>(sojson);
+			if (so == null)
+				return;
+			SpacedOut = so;
+			so.MapGameData();
+		}
+        public static async Task FetchStarmapDestinationData(HttpClient Http)
+		{
+			var basegame_starmap_file = await Http.GetAsync("./data/BasegameStarmapDestinations.json");
+			if (basegame_starmap_file == null)
+				return;
+			var basegame_starmap_json = await basegame_starmap_file.Content.ReadAsStringAsync();
+			if (basegame_starmap_json == null)
+				return;
+
+			var basegame_starmap = JsonConvert.DeserializeObject<StarmapData>(basegame_starmap_json);
+			if (basegame_starmap == null)
+				return;
+			StarmapImport = basegame_starmap;
+			basegame_starmap.MapGameData();
+		}
+
+		public static StarmapData StarmapImport;
         public static List<VanillaStarmapLocation> GetVanillaStarmapLocations(List<Dlc> ActiveDlcs, List<Dlc> requiredDlcs)
         {
             if (!ActiveDlcs.Contains(Dlc.FROSTYPLANET) || requiredDlcs.Contains(Dlc.FROSTYPLANET)) //no ceres destination for ceres itself 
@@ -159,12 +221,19 @@ namespace TraitFinderApp.Client.Model
 
             List<SpaceDestination> destinations = new();
 
+
             while (startSeed < queryableRange && results.Count < targetCount)
-            {
-                int localSeed = 0;
+			{
+				int localSeed = 0;
                 bool seedFailedQuery = false;
-                //Console.Write("Checking seed: "+startSeed);
-                if (isBaseGame)
+
+				string fullSeed = string.Concat(cluster.Prefix, "-", startSeed, "-0-0-0"); //doesnt check for mixed seeds; adjust if mixed seeds ever become a thing in this finder
+                
+                if (FailedSeeds.Contains(fullSeed)) //if worldgen failed during generation, its in this hashset
+                    seedFailedQuery = true;
+
+				//Console.Write("Checking seed: "+startSeed);
+				if (isBaseGame && !seedFailedQuery)
                 {
                     destinations = GenerateRandomDestinations(startSeed, dlcs);
                     if (checkForStarmap)
@@ -264,20 +333,18 @@ namespace TraitFinderApp.Client.Model
             };
         }
 
-        public class spaceDesinations
+        public class spaceDestinations
         {
             public string type;
             public int minTier, maxTier;
         }
 
-        public static spaceDesinations ceresBaseGameExtraDestionation = new()
+        public static spaceDestinations ceresBaseGameExtraDestionation = new()
         {
             type = "DLC2CeresSpaceDestination",
             minTier = 3,
             maxTier = 10
         };
-
-
 
         private static List<SpaceDestination> GenerateRandomDestinations(int seed, List<Dlc> mixingDlcs)
         {
@@ -417,7 +484,7 @@ namespace TraitFinderApp.Client.Model
             }
             list.ShuffleSeeded(rng);
             List<SpaceDestination> collection2 = new List<SpaceDestination>();
-            var mixingDestinations = new List<spaceDesinations>();
+            var mixingDestinations = new List<spaceDestinations>();
             if (mixingDlcs.Contains(Dlc.FROSTYPLANET))
             {
                 mixingDestinations.Add(ceresBaseGameExtraDestionation);
