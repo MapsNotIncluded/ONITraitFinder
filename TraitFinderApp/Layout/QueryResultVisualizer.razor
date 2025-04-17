@@ -146,7 +146,7 @@
 
 	protected override async Task OnInitializedAsync()
 	{
-		MNI_Embedded = !Env.BaseAddress.Contains("sgt-imalas.github.io");
+		MNI_Embedded = Env.BaseAddress.Contains("embedd");
 		Console.WriteLine(Env.BaseAddress);
 		Console.WriteLine("Checking coordinate result");
 		string coordinate = QueryResult.GetCoordinate();
