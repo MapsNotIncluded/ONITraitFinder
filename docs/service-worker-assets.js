@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "uOsYrIU4",
+  "version": "AAonvFiA",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -278,11 +278,11 @@ self.assetsManifest = {
       "url": "_framework/System.wasm"
     },
     {
-      "hash": "sha256-n3ICcmw5J0wsJ4Uk5+EGG5GiaV2oEI6y61lHuvD+nFE=",
+      "hash": "sha256-JkvybsvGU5F6gILmQcTvcWAi+3JcoFKg0rbalC+EmJU=",
       "url": "_framework/TraitFinderApp.wasm"
     },
     {
-      "hash": "sha256-dEhDsOud2hr7KwydC8njTmLSUKp2Xd0lTYffs+Hupf4=",
+      "hash": "sha256-nyB53Aq3STVEyw0tsf7j4+/ItZ8kBzksRdT09hnIqec=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -290,7 +290,7 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-lGVogYHcB9O/ysCkJuq3vcdE9zeio6IIPLIjsCmZ8dw=",
+      "hash": "sha256-jQ3bOrr5R7btgslFnkPH3kovx0ehJrL8ZieJMsXSfog=",
       "url": "_framework/de/TraitFinderApp.resources.wasm"
     },
     {
@@ -302,7 +302,7 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.js"
     },
     {
-      "hash": "sha256-sDDhsjIXyJpMHLnh/6+oLTd0jB672BtLzacVoBjtLWs=",
+      "hash": "sha256-9x1WC0AWlaBgYDk7gaxgIXTCljTLLx+m0l1B+LvVIRw=",
       "url": "_framework/dotnet.native.wasm"
     },
     {
@@ -322,11 +322,11 @@ self.assetsManifest = {
       "url": "_framework/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-6ZbTwPWt4Up/zRC8k1SP4vRRhjziv5yf06wdVleF5bY=",
+      "hash": "sha256-HiYCSFydGJqfX/s+8KLT+OMPoSQ885zg2dyXWhHWlB0=",
       "url": "_framework/zh-TW/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-KjFODSBXNhqKpvcC3+mKiTZ2nupuUiuepPiB6EiTF3g=",
+      "hash": "sha256-7n7YlWJWtSAX3WdietoHJxZrirO4swfpMedXZakUv2w=",
       "url": "_framework/zh/TraitFinderApp.resources.wasm"
     },
     {
@@ -838,7 +838,7 @@ self.assetsManifest = {
       "url": "images/traits/Volcanoes.png"
     },
     {
-      "hash": "sha256-NStUShDOPj9xBZoQM2rK5JWFDITvlsbo1/eqUbRHqfY=",
+      "hash": "sha256-HbRyRKg63aTdOIAYoAHaD7XcqUJxFF4fCyDVysQirKs=",
       "url": "index.html"
     },
     {

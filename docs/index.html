@@ -46,10 +46,15 @@
                 </div>
             </div>
         </div>
+        <script>
+            function isEmbeddedInIframe() {
+                return window.self !== window.top;
+            }
+        </script>
         <script src="_framework/blazor.webassembly.js"></script>
         <script src="_content/MudBlazor/MudBlazor.min.js"></script>
         <script>navigator.serviceWorker.register('service-worker.js');</script>
-          
+
     </div>
 </body>
 

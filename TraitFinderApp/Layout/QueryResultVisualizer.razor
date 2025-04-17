@@ -146,8 +146,8 @@
 
 	protected override async Task OnInitializedAsync()
 	{
-		MNI_Embedded = Env.BaseAddress.Contains("embedd");
-		Console.WriteLine(Env.BaseAddress);
+		MNI_Embedded = await JSRuntime.InvokeAsync<bool>("isEmbeddedInIframe");
+		Console.WriteLine("IsEmbedded: " + MNI_Embedded);
 		Console.WriteLine("Checking coordinate result");
 		string coordinate = QueryResult.GetCoordinate();
 		string request = string.Format(ExternalRoutes.API_URL_CHECK_MAP_EXISTS, coordinate);
