@@ -747,4 +747,13 @@
   <data name="Huge boulders make digging through this world more difficult" xml:space="preserve">
     <value>大型石塊使挖穿這顆星球更困難了</value>
   </data>
+  <data name="Copy the coordinate to the clipboard" xml:space="preserve">
+    <value />
+  </data>
+  <data name="View in the Map Explorer" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Request the coordinate to be added to the Map Explorer" xml:space="preserve">
+    <value />
+  </data>
 </root>

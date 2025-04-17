@@ -514,7 +514,7 @@
     <value>这个星球总是生成相同的种子！ </value>
   </data>
   <data name="Hide starmap distances that dont have destinations in results" xml:space="preserve">
-  <value>在结果中隐藏星图中无目的地的距离</value>
+    <value>在结果中隐藏星图中无目的地的距离</value>
   </data>
   <data name="_TranslationAuthor" xml:space="preserve">
     <value>jason83228</value>
@@ -562,7 +562,7 @@
     <value>尘埃矮星</value>
   </data>
   <data name="A loosely held together composite of minerals." xml:space="preserve">
-  <value>一个松散地结合在一起的矿石混合体.</value>
+    <value>一个松散地结合在一起的矿石混合体.</value>
   </data>
   <data name="Terrestrial Planet" xml:space="preserve">
     <value>类地行星</value>
@@ -746,5 +746,14 @@
   </data>
   <data name="Huge boulders make digging through this world more difficult" xml:space="preserve">
     <value>大型石块使挖穿这颗星球更困难了</value>
+  </data>
+  <data name="Copy the coordinate to the clipboard" xml:space="preserve">
+    <value />
+  </data>
+  <data name="View in the Map Explorer" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Request the coordinate to be added to the Map Explorer" xml:space="preserve">
+    <value />
   </data>
 </root>
