@@ -377,9 +377,11 @@ else
 									{
 										if (Query.HasResults())
 										{
-											<MudVirtualize SpacerElement="MudDivider" Items="@Query?.QueryResults?.ToList()" Context="queryResult">
-												<QueryResultVisualizer SearchQuery="Query" QueryResult="@queryResult"></QueryResultVisualizer>
-											</MudVirtualize>
+											foreach (var result in Query?.QueryResults)
+											{
+												
+												<QueryResultVisualizer SearchQuery="Query" QueryResult="@result"></QueryResultVisualizer>
+											}
 										}
 										else
 										{

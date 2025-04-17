@@ -18,7 +18,7 @@
 				<MudTooltip Arrow Text="@L["Copy the coordinate to the clipboard"]">
 					<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.ContentCopy" IconColor="Color.Tertiary" OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())"></MudFab>
 				</MudTooltip>
-				<MudTooltip Arrow Text="@L["Request the coordinate to be added to the Map Explorer"]">
+				<MudTooltip Arrow Text="@L[ "Request the coordinate to be added to the Map Explorer"]">
 					<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.PlaylistAdd" IconColor="Color.Warning" hidden=@(SeedExistsInMapExplorer||!MNI_Embedded) OnClick="(_)=>RequestOrOpenInNewTab()"></MudFab>
 				</MudTooltip>
 				<MudTooltip Arrow Text="@L["View in the Map Explorer"]">
@@ -134,11 +134,21 @@
 
 	[Parameter]
 	[EditorRequired]
-	public QueryResult QueryResult { get; set; }
+	public QueryResult QueryResult
+	{
+		get => _queryResult;
+		set
+		{
+			_queryResult = value;
+			RefreshSeedInDBState();
+		}
+	}
+
+	private QueryResult _queryResult;
 
 	[Parameter]
 	[EditorRequired]
-	public SearchQuery SearchQuery { get; set; }
+	public SearchQuery SearchQuery { get; set; } 
 
 	private void ToggleStarmap() => QueryResult.ShowStarmap = !QueryResult.ShowStarmap;
 	private bool SeedExistsInMapExplorer = false;
@@ -148,23 +158,27 @@
 	{
 		MNI_Embedded = await JSRuntime.InvokeAsync<bool>("isEmbeddedInIframe");
 		Console.WriteLine("IsEmbedded: " + MNI_Embedded);
-		Console.WriteLine("Checking coordinate result");
+		#if DEBUG
+			MNI_Embedded = true;
+		#endif
+		await RefreshSeedInDBState();
+	}
+	async Task RefreshSeedInDBState()
+	{
 		string coordinate = QueryResult.GetCoordinate();
 		string request = string.Format(ExternalRoutes.API_URL_CHECK_MAP_EXISTS, coordinate);
 
 		HttpResponseMessage? mapExistsRequest = await Http.GetAsync(request);
 		SeedExistsInMapExplorer = mapExistsRequest?.IsSuccessStatusCode ?? false;
+		StateHasChanged();
 	}
+
 
 	async Task RequestOrOpenInNewTab()
 	{
 		await OpenExplorerInNewTab(); //temp. until the thing works
 		return;
-		string coordinate = QueryResult.GetCoordinate();
-		string request = string.Format(ExternalRoutes.API_URL_CHECK_MAP_EXISTS, coordinate);
-
-		HttpResponseMessage? mapExistsRequest = await Http.GetAsync(request);
-		SeedExistsInMapExplorer = mapExistsRequest?.IsSuccessStatusCode ?? false;
+		await RefreshSeedInDBState();
 
 		if (SeedExistsInMapExplorer)
 		{
