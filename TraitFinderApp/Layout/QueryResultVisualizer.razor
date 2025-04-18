@@ -158,7 +158,7 @@
 	{
 		MNI_Embedded = await JSRuntime.InvokeAsync<bool>("isEmbeddedInIframe");
 		Console.WriteLine("IsEmbedded: " + MNI_Embedded);
-		#if DEBUG
+#if DEBUG
 			MNI_Embedded = true;
 		#endif
 		await RefreshSeedInDBState();
@@ -178,8 +178,8 @@
 	{
 		await OpenExplorerInNewTab(); //temp. until the thing works
 		return;
-		await RefreshSeedInDBState();
 
+		await RefreshSeedInDBState();
 		if (SeedExistsInMapExplorer)
 		{
 			await OpenExplorerInNewTab();
@@ -189,15 +189,15 @@
 			await RequestSeed();
 		}
 	}
+	async Task RequestSeed()
+	{
+
+	}
 
 	async Task OpenExplorerInNewTab()
 	{
 		string url = string.Format(ExternalRoutes.MNI_VIEW_IN_EXPLORER, QueryResult.GetCoordinate());
 		await JSRuntime.InvokeVoidAsync("open", url, "_blank");
-	}
-	async Task RequestSeed()
-	{
-
 	}
 	async Task CopyToClipboard(string text)
 	{

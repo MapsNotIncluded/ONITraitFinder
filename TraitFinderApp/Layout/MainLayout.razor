@@ -1,6 +1,8 @@
 ﻿@inherits LayoutComponentBase
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inject IStringLocalizer<App> L
+@inject IJSRuntime JSRuntime;
+@inject NavigationManager NavigationManager;
 
 <MudThemeProvider @ref="@_mudThemeProvider" Theme="@_theme" IsDarkMode="LocalStorageHelper.DarkThemeActive" />
 <MudPopoverProvider />
@@ -96,6 +98,7 @@
     {
         PersistantTraitOrdering = await localStorage.GetItemAsync<bool>(LocalStorageHelper.PersistantTraitOrderingKey);
         HideTraitlessAsteroids = await localStorage.GetItemAsync<bool>(LocalStorageHelper.HideTraitlessKey);
+        HideLocationlessDistanceBands = await localStorage.GetItemAsync<bool>(LocalStorageHelper.HideLocationlessDistancesKey);
         LocalStorageHelper.DarkThemeActive = await _mudThemeProvider.GetSystemPreference();
 
         await base.OnInitializedAsync();
@@ -116,6 +119,15 @@
                 LayoutProperties = new LayoutProperties()
 
             };
+        var uri = new Uri(NavigationManager.Uri);
+
+        // Parse the query string
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        // Extract the "token" parameter
+        var JwtToken = query["token"];
+        var embed = query["embedded"];
+
+        Console.WriteLine($"JWT Token: {JwtToken}, embedd: {embed}");
 
     }
 
