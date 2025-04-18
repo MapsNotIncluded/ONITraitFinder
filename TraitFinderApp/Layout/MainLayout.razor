@@ -10,9 +10,9 @@
 <MudSnackbarProvider />
 <MudLayout>
     <MudFab Style="position:fixed;top:25px;left:25px; z-index:99;"
-            StartIcon="@((_drawerOpen?@Icons.Material.Filled.Close:@Icons.Material.Filled.Settings))"
-            Color="Color.Primary"
-            OnClick="(_)=>ToggleDrawer()">
+    StartIcon="@((_drawerOpen?@Icons.Material.Filled.Close:@Icons.Material.Filled.Settings))"
+    Color="Color.Primary"
+    OnClick="(_)=>ToggleDrawer()">
     </MudFab>
     <MudPaper MinHeight="100px" Elevation="10" MinWidth="100px" hidden="@(!_drawerOpen)" Style=" position:fixed;top:100px;left:25px; z-index:99;">
         <MudStack Style="padding:5px">
@@ -124,10 +124,10 @@
         // Parse the query string
         var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
         // Extract the "token" parameter
-        var JwtToken = query["token"];
-        var embed = query["embedded"];
+        LocalStorageHelper.MNI_Token = query["token"];
+        LocalStorageHelper.EmbbeddedIn = query["embedded"];
 
-        Console.WriteLine($"JWT Token: {JwtToken}, embedd: {embed}");
+        Console.WriteLine($"JWT Token: {LocalStorageHelper.MNI_Token}, embedd: {LocalStorageHelper.EmbbeddedIn}");
 
     }
 

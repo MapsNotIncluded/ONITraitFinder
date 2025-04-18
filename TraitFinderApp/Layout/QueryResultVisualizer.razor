@@ -1,5 +1,7 @@
 ﻿@using OniStarmapGenerator.Model
 @using OniStarmapGenerator.Model.Search
+@using System.Net.Http.Headers
+@using System.Timers
 @using TraitFinderApp.Client.Model.Search
 @using TraitFinderApp.Model.Search
 @using Microsoft.AspNetCore.Components.WebAssembly.Hosting
@@ -18,44 +20,34 @@
 				<MudTooltip Arrow Text="@L["Copy the coordinate to the clipboard"]">
 					<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.ContentCopy" IconColor="Color.Tertiary" OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())"></MudFab>
 				</MudTooltip>
-				<MudTooltip Arrow Text="@L[ "Request the coordinate to be added to the Map Explorer"]">
-					<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.PlaylistAdd" IconColor="Color.Warning" hidden=@(SeedExistsInMapExplorer||!MNI_Embedded) OnClick="(_)=>RequestOrOpenInNewTab()"></MudFab>
-				</MudTooltip>
-				<MudTooltip Arrow Text="@L["View in the Map Explorer"]">
-					<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.OpenInNew" Color="Color.Success" hidden=@(!SeedExistsInMapExplorer||!MNI_Embedded) OnClick="(_)=> OpenExplorerInNewTab()"></MudFab>
-				</MudTooltip>
-				@* <MudMenu>
-					<ActivatorContent>
-						<MudFab IconColor="Color.Tertiary" EndIcon="@Icons.Material.Filled.ExpandMore"></MudFab>
-					</ActivatorContent>
-					<ChildContent>
-						<MudMenuItem OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())">
-							<ChildContent>
-								<MudStack Row>
-									<MudIcon Icon="@Icons.Material.Filled.ContentCopy" Color="Color.Tertiary"></MudIcon>
-									<MudText Color="Color.Tertiary">Copy to Clipboard</MudText>
-								</MudStack>
-							</ChildContent>
-						</MudMenuItem>
-						<MudMenuItem OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())" hidden=@(SeedExistsInMapExplorer)>
-							<ChildContent>
-								<MudStack Row>
-									<MudIcon Icon="@Icons.Material.Filled.ContentCopy" Color="Color.Primary"></MudIcon>
-									<MudText Color="Color.Primary">Request for Map Explorer</MudText>
-								</MudStack>
-							</ChildContent>
-						</MudMenuItem>
-						<MudMenuItem OnClick="(_)=> OpenExplorerInNewTab()" hidden=@(!SeedExistsInMapExplorer)>
-							<ChildContent>
-								<MudStack Row>
-									<MudIcon Icon="@Icons.Material.Filled.OpenInNew" Color="Color.Success"></MudIcon>
-									<MudText Color="Color.Success">View in Map Explorer</MudText>
-								</MudStack>
-							</ChildContent>
-						</MudMenuItem>
-					</ChildContent>
-				</MudMenu>
- *@
+
+				@if (MNI_Embedded)
+				{
+					if (IsFailedSeed)
+					{
+                        <MudTooltip Arrow Text="@L["Seed failed generating!"]">  
+                           <MudIcon Icon="@Icons.Material.Filled.Error" Color="Color.Error" Style="font-size: 57px; margin-top:3px; margin-bottom:-3px"></MudIcon>
+                        </MudTooltip>
+					}
+					else
+					{
+						<MudTooltip Arrow Text="@L["Request the coordinate to be added to the Map Explorer"]">
+
+							@if (SeedIsRequested)
+							{
+								<MudProgressCircular Size="Size.Medium" Color="Color.Warning" Indeterminate="true" hidden=@(SeedExistsInMapExplorer||!MNI_Embedded) />
+							}
+							else
+							{
+								<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.PlaylistAdd" IconColor="Color.Warning" hidden=@(SeedExistsInMapExplorer||!MNI_Embedded) OnClick="(_)=>RequestOrOpenInNewTab()"></MudFab>
+							}
+						</MudTooltip>
+						<MudTooltip Arrow Text="@L["View in the Map Explorer"]">
+							<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.OpenInNew" Color="Color.Success" hidden=@(!SeedExistsInMapExplorer||!MNI_Embedded) OnClick="(_)=> OpenExplorerInNewTab()"></MudFab>
+						</MudTooltip>
+
+					}
+				}
 			</MudStack>
 			<MudVirtualize Items="@QueryResult.asteroidsWithTraits" Context="asteroidQueryResult">
 				@if (!LocalStorageHelper.HideTraitlessAsteroids || !asteroidQueryResult.Asteroid.DisableWorldTraits)
@@ -140,6 +132,10 @@
 		set
 		{
 			_queryResult = value;
+			SeedIsRequested = false;
+			IsFailedSeed = false;
+			if (_timer != null)
+				_timer.Enabled = false;
 			RefreshSeedInDBState();
 		}
 	}
@@ -148,19 +144,20 @@
 
 	[Parameter]
 	[EditorRequired]
-	public SearchQuery SearchQuery { get; set; } 
+	public SearchQuery SearchQuery { get; set; }
 
 	private void ToggleStarmap() => QueryResult.ShowStarmap = !QueryResult.ShowStarmap;
 	private bool SeedExistsInMapExplorer = false;
+	private bool IsFailedSeed = false;
+	private bool SeedIsRequested = false;
 	private bool MNI_Embedded = false;
 
 	protected override async Task OnInitializedAsync()
 	{
-		MNI_Embedded = await JSRuntime.InvokeAsync<bool>("isEmbeddedInIframe");
-		Console.WriteLine("IsEmbedded: " + MNI_Embedded);
+		MNI_Embedded = LocalStorageHelper.IsEmbeddedIn(out _);
 #if DEBUG
-			MNI_Embedded = true;
-		#endif
+		MNI_Embedded = true;
+#endif
 		await RefreshSeedInDBState();
 	}
 	async Task RefreshSeedInDBState()
@@ -170,15 +167,31 @@
 
 		HttpResponseMessage? mapExistsRequest = await Http.GetAsync(request);
 		SeedExistsInMapExplorer = mapExistsRequest?.IsSuccessStatusCode ?? false;
+
+		if (mapExistsRequest?.StatusCode == System.Net.HttpStatusCode.Gone)
+		{
+			IsFailedSeed = true;
+		}
+
+		if (SeedExistsInMapExplorer)
+			_timer.Enabled = false;
 		StateHasChanged();
 	}
 
+	private System.Timers.Timer _timer = null;
+	protected override void OnInitialized()
+	{
+		_timer = new();
+		_timer.Interval = 30000;
+		_timer.Elapsed += async (object? sender, ElapsedEventArgs e) =>
+		{
+			await InvokeAsync(RefreshSeedInDBState);
+		};
+		_timer.Enabled = false;
+	}
 
 	async Task RequestOrOpenInNewTab()
 	{
-		await OpenExplorerInNewTab(); //temp. until the thing works
-		return;
-
 		await RefreshSeedInDBState();
 		if (SeedExistsInMapExplorer)
 		{
@@ -191,7 +204,36 @@
 	}
 	async Task RequestSeed()
 	{
+		if (!LocalStorageHelper.TryGetMNIToken(out var token))
+		{
+			Snackbar.Add(L["Request not possible right now!"], Severity.Error);
+			return;
+		}
 
+		var request = new HttpRequestMessage(HttpMethod.Post, ExternalRoutes.API_POST_REQUEST_COORDINATE)
+			{
+				Content = new StringContent(QueryResult.GetCoordinate())
+			};
+		request.Headers.Add("token", token);
+		var response = await Http.SendAsync(request);
+
+		if (response.IsSuccessStatusCode)
+		{
+			Snackbar.Add(L["Seed request for Map Explorer sent!"], Severity.Success);
+			SeedIsRequested = true;
+		}
+		else if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
+		{
+			Snackbar.Add(L["Map was already requested, please be patient!"], Severity.Warning);
+			Console.WriteLine($"conflict: {response.StatusCode}");
+			SeedIsRequested = true;
+		}
+		else
+		{
+			Snackbar.Add(L["Seed request for Map Explorer failed!"], Severity.Error);
+			Console.WriteLine($"Request failed: {response.StatusCode}");
+		}
+		_timer.Enabled = true;
 	}
 
 	async Task OpenExplorerInNewTab()

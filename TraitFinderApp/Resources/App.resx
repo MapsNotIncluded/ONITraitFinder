@@ -756,4 +756,16 @@
   <data name="Request the coordinate to be added to the Map Explorer" xml:space="preserve">
     <value>Request the coordinate to be added to the Map Explorer</value>
   </data>
+  <data name="Seed request for Map Explorer sent!" xml:space="preserve">
+    <value>Seed request for Map Explorer sent!</value>
+  </data>
+  <data name="Map was already requested, please be patient!" xml:space="preserve">
+    <value>Map was already requested, please be patient!</value>
+  </data>
+  <data name="Seed request for Map Explorer failed!" xml:space="preserve">
+    <value>Seed request for Map Explorer failed!</value>
+  </data>
+  <data name="Seed failed generating!" xml:space="preserve">
+    <value>Seed failed generating!</value>
+  </data>
 </root>
