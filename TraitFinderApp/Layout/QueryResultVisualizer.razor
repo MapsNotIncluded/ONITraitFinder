@@ -21,7 +21,7 @@
 					<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.ContentCopy" IconColor="Color.Tertiary" OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())"></MudFab>
 				</MudTooltip>
 
-				@if (MNI_Embedded)
+				@if (MNI_Embedded && LocalStorageHelper.TryGetMNIToken(out _))
 				{
 					if (IsFailedSeed)
 					{
@@ -32,7 +32,6 @@
 					else
 					{
 						<MudTooltip Arrow Text="@L["Request the coordinate to be added to the Map Explorer"]">
-
 							@if (SeedIsRequested)
 							{
 								<MudProgressCircular Size="Size.Medium" Color="Color.Warning" Indeterminate="true" hidden=@(SeedExistsInMapExplorer||!MNI_Embedded) />
@@ -45,7 +44,6 @@
 						<MudTooltip Arrow Text="@L["View in the Map Explorer"]">
 							<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.OpenInNew" Color="Color.Success" hidden=@(!SeedExistsInMapExplorer||!MNI_Embedded) OnClick="(_)=> OpenExplorerInNewTab()"></MudFab>
 						</MudTooltip>
-
 					}
 				}
 			</MudStack>
@@ -157,6 +155,7 @@
 		MNI_Embedded = LocalStorageHelper.IsEmbeddedIn(out _);
 #if DEBUG
 		MNI_Embedded = true;
+		//IsFailedSeed = true;
 #endif
 		await RefreshSeedInDBState();
 	}
@@ -168,7 +167,7 @@
 		HttpResponseMessage? mapExistsRequest = await Http.GetAsync(request);
 		SeedExistsInMapExplorer = mapExistsRequest?.IsSuccessStatusCode ?? false;
 
-		if (mapExistsRequest?.StatusCode == System.Net.HttpStatusCode.Gone)
+		if (mapExistsRequest?.StatusCode == System.Net.HttpStatusCode.NotAcceptable)
 		{
 			IsFailedSeed = true;
 		}
