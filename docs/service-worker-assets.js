@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "Y0ciSWYB",
+  "version": "yLOrJE0M",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -318,11 +318,11 @@ self.assetsManifest = {
       "url": "_framework/System.wasm"
     },
     {
-      "hash": "sha256-Wkr6GMsX3hhhBktQrZvxYW/Urgv/2dKyseISVSWQiQ0=",
+      "hash": "sha256-sPWP6UW5J80xnHkF27q9SlaU04+6fIhEfwK3M34kUVo=",
       "url": "_framework/TraitFinderApp.wasm"
     },
     {
-      "hash": "sha256-ihBrHF9nrUutlokOBxcA+7LbsaFQa/FGsQ6qnmcE53o=",
+      "hash": "sha256-+7fhVko3Dq1I3oNF7yWKitFkLCbwn2DRguPnx1GZbqc=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -330,7 +330,7 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-c/K2f15Or1rDaFC1iHQWZS6mOlAHjJqb0hXQHxIgvvY=",
+      "hash": "sha256-PFr9ZdpaPQM8y4jgNIcT2vbgkKAvSHoP6dMSIKOIPU4=",
       "url": "_framework/de/TraitFinderApp.resources.wasm"
     },
     {
@@ -342,7 +342,7 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.js"
     },
     {
-      "hash": "sha256-IKlA+fUkQ13w4Ngzj8gBBSOWalHaHz7HhHaM+xFBSOg=",
+      "hash": "sha256-mFozXRl/a+PPDjFPlOBSwL4vqYuqgNyqZ+0gh/Y+lWg=",
       "url": "_framework/dotnet.native.wasm"
     },
     {
@@ -366,11 +366,11 @@ self.assetsManifest = {
       "url": "_framework/netstandard.wasm"
     },
     {
-      "hash": "sha256-gFEnP6a6UczisKMrw3p6bBu/KYsDFGmhJ/tdrLQfmkY=",
+      "hash": "sha256-w+XeQVO+4C6BeEytB4nGI5vibhvhAxkQB1ZVnpZuQb4=",
       "url": "_framework/zh-TW/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-VS4h+p+jnGQk4YE9wd85PgWoJeXySptyP2bayIdFwwY=",
+      "hash": "sha256-cLaLABwVaSS8t+MB+4+jTaVtlfvNBd2CUXsm2XwO9cM=",
       "url": "_framework/zh/TraitFinderApp.resources.wasm"
     },
     {

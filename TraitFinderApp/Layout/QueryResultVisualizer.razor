@@ -21,7 +21,7 @@
 					<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.ContentCopy" IconColor="Color.Tertiary" OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())"></MudFab>
 				</MudTooltip>
 
-				@if (MNI_Embedded && LocalStorageHelper.TryGetMNIToken(out _))
+				@if (MNI_Embedded)
 				{
 					if (IsFailedSeed)
 					{
@@ -31,14 +31,14 @@
 					}
 					else
 					{
-						<MudTooltip Arrow Text="@L["Request the coordinate to be added to the Map Explorer"]">
+						<MudTooltip Arrow Text="@L[LocalStorageHelper.TryGetMNIToken(out _)?"Request the coordinate to be added to the Map Explorer":"Login with Steam first to request coordinates"]">
 							@if (SeedIsRequested)
 							{
 								<MudProgressCircular Size="Size.Medium" Color="Color.Warning" Indeterminate="true" hidden=@(SeedExistsInMapExplorer||!MNI_Embedded) />
 							}
 							else
 							{
-								<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.PlaylistAdd" IconColor="Color.Warning" hidden=@(SeedExistsInMapExplorer||!MNI_Embedded) OnClick="(_)=>RequestOrOpenInNewTab()"></MudFab>
+								<MudFab Disabled=@(!LocalStorageHelper.TryGetMNIToken(out _)) Size=Size.Medium EndIcon="@Icons.Material.Filled.PlaylistAdd" IconColor="Color.Warning" hidden=@(SeedExistsInMapExplorer||!MNI_Embedded) OnClick="(_)=>RequestOrOpenInNewTab()"></MudFab>
 							}
 						</MudTooltip>
 						<MudTooltip Arrow Text="@L["View in the Map Explorer"]">

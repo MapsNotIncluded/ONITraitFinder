@@ -768,4 +768,7 @@
   <data name="Seed failed generating!" xml:space="preserve">
     <value>Seed failed generating!</value>
   </data>
+  <data name="Login with Steam first to request coordinates" xml:space="preserve">
+    <value>Login with Steam first to request coordinates</value>
+  </data>
 </root>
