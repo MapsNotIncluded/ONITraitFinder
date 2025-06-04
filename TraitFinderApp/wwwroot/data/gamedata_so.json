@@ -256,7 +256,7 @@
             "Id": "dlc2::clusters/CeresClassicCluster",
             "Name": "Ceres Cluster",
             "Prefix": "V-CER-C",
-            "menuOrder": 1,
+            "menuOrder": 9,
             "startWorldIndex": 0,
             "RequiredDlcsIDs": [ "EXPANSION1_ID", "DLC2_ID" ],
             "ForbiddenDlcIDs": null,
@@ -280,7 +280,7 @@
             "Id": "dlc2::clusters/CeresSpacedOutCluster",
             "Name": "Ceres Minor Cluster",
             "Prefix": "CER-C",
-            "menuOrder": 1,
+            "menuOrder": 9,
             "startWorldIndex": 0,
             "RequiredDlcsIDs": [ "EXPANSION1_ID", "DLC2_ID" ],
             "ForbiddenDlcIDs": null,
@@ -297,6 +297,30 @@
             "RequiredDlcsIDs": [ "EXPANSION1_ID", "DLC2_ID" ],
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "dlc2::worlds/MiniShatteredStartAsteroid", "dlc2::worlds/MiniShatteredWarpAsteroid", "dlc2::worlds/MiniShatteredGeoAsteroid", "expansion1::worlds/SwampyLandingSite", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
+            "clusterCategory": 2,
+            "fixedCoordinate": -1
+        },
+        {
+            "Id": "dlc4::clusters/PrehistoricClassicCluster",
+            "Name": "Relica Cluster",
+            "Prefix": "V-PRE-C",
+            "menuOrder": 8,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "EXPANSION1_ID", "DLC4_ID" ],
+            "ForbiddenDlcIDs": null,
+            "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricClassicAsteroid", "expansion1::worlds/MediumSwampy", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
+            "clusterCategory": 1,
+            "fixedCoordinate": -1
+        },
+        {
+            "Id": "dlc4::clusters/PrehistoricSpacedOutCluster",
+            "Name": "Relica Minor Cluster",
+            "Prefix": "PRE-C",
+            "menuOrder": 8,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "EXPANSION1_ID", "DLC4_ID" ],
+            "ForbiddenDlcIDs": null,
+            "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricSpacedOutAsteroid", "expansion1::worlds/IdealLandingSite", "expansion1::worlds/WarpOilySandySwamp", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
             "clusterCategory": 2,
             "fixedCoordinate": -1
         }
@@ -1232,7 +1256,75 @@
                     "requiredTags": null,
                     "specificTraits": null,
                     "forbiddenTags": [ "StartWorldOnly", "Geodes", "Oil", "GenericGeysers", "StartChange", "VeryCold", "LargeWorld", "Surface" ],
-                    "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/MetalCaves" ]
+                    "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/MetalCaves", "expansion1::traits/CrashedSatellites" ]
+                }
+            ],
+            "worldTraitScale": 0.08
+        },
+        {
+            "Id": "dlc4::worlds/PrehistoricClassicAsteroid",
+            "Name": "Relica Asteroid",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "Surface", "Oil", "NonStartWorld" ],
+                    "forbiddenTraits": [ "traits/MisalignedStart", "expansion1::traits/CrashedSatellites" ]
+                }
+            ],
+            "worldTraitScale": 0.9
+        },
+        {
+            "Id": "dlc4::worlds/PrehistoricSpacedOutAsteroid",
+            "Name": "Relica Minor",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "Surface", "Oil", "NonStartWorld" ],
+                    "forbiddenTraits": [ "traits/MisalignedStart", "expansion1::traits/CrashedSatellites", "traits/GeoDormant" ]
+                }
+            ],
+            "worldTraitScale": 0.44
+        },
+        {
+            "Id": "expansion1::worlds/WarpOilySandySwamp",
+            "Name": "Oily Sandy Swamp Asteroid",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 1,
+                    "max": 2,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "GenericGeysers", "StartWorldOnly", "LargeWorld", "Challenge" ],
+                    "forbiddenTraits": null
+                }
+            ],
+            "worldTraitScale": 0.2
+        },
+        {
+            "Id": "dlc4::worlds/MixingPrehistoricAsteroid",
+            "Name": "Relica Fragment",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 0,
+                    "max": 2,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "StartWorldOnly", "Geodes", "Oil", "GenericGeysers", "StartChange", "LargeWorld", "Surface" ],
+                    "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/MetalCaves", "expansion1::traits/CrashedSatellites" ]
                 }
             ],
             "worldTraitScale": 0.08

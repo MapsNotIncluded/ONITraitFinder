@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "yLOrJE0M",
+  "version": "7yIJkH8Y",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -218,7 +218,7 @@ self.assetsManifest = {
       "url": "_framework/System.ObjectModel.wasm"
     },
     {
-      "hash": "sha256-VVoW0npU1rDuuptq9VqVbGJuVAa9XG9vh6lZPxldEDQ=",
+      "hash": "sha256-/nECROF8f1tUSM0EyP3gbgyiIzoZBHp/SZZVo52JSsM=",
       "url": "_framework/System.Private.CoreLib.wasm"
     },
     {
@@ -250,7 +250,7 @@ self.assetsManifest = {
       "url": "_framework/System.Runtime.InteropServices.JavaScript.wasm"
     },
     {
-      "hash": "sha256-iUE1dWLeI3J2W6ZJDDAmo2hZiLr7dw24/AajC2yLouo=",
+      "hash": "sha256-1BgiZ8m0CcGGTdvVZcLiRXkB4AOR4rRY6N1aYoxY37E=",
       "url": "_framework/System.Runtime.InteropServices.wasm"
     },
     {
@@ -318,11 +318,11 @@ self.assetsManifest = {
       "url": "_framework/System.wasm"
     },
     {
-      "hash": "sha256-sPWP6UW5J80xnHkF27q9SlaU04+6fIhEfwK3M34kUVo=",
+      "hash": "sha256-HehvdEKh0icnRH0aXOzSFAPVVhUp1uammChcAzMmgDg=",
       "url": "_framework/TraitFinderApp.wasm"
     },
     {
-      "hash": "sha256-+7fhVko3Dq1I3oNF7yWKitFkLCbwn2DRguPnx1GZbqc=",
+      "hash": "sha256-s/mtAJc5rVDsNNVxsjwhSBDHkJ2keuUxOrESoCGnMaw=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -330,7 +330,7 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-PFr9ZdpaPQM8y4jgNIcT2vbgkKAvSHoP6dMSIKOIPU4=",
+      "hash": "sha256-4OhGWFYxxpzsKXThM3rsxsuGR8//sAADEmycSk43eb0=",
       "url": "_framework/de/TraitFinderApp.resources.wasm"
     },
     {
@@ -342,7 +342,7 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.js"
     },
     {
-      "hash": "sha256-mFozXRl/a+PPDjFPlOBSwL4vqYuqgNyqZ+0gh/Y+lWg=",
+      "hash": "sha256-Rb+3APTgd5o5YHfYcgl/0l8h+akNXJUvGc3pn2/ewR4=",
       "url": "_framework/dotnet.native.wasm"
     },
     {
@@ -366,23 +366,23 @@ self.assetsManifest = {
       "url": "_framework/netstandard.wasm"
     },
     {
-      "hash": "sha256-w+XeQVO+4C6BeEytB4nGI5vibhvhAxkQB1ZVnpZuQb4=",
+      "hash": "sha256-bQ3ACmPz6uheT5viA7TqphCLIjImQTZm4olXKTP6lkQ=",
       "url": "_framework/zh-TW/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-cLaLABwVaSS8t+MB+4+jTaVtlfvNBd2CUXsm2XwO9cM=",
+      "hash": "sha256-a+9Zv1LgpZlLOhAa7/mHN51eA5DAq4Fw9SbC7IjaGHg=",
       "url": "_framework/zh/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-ryr1JIS4GafUTR2w0TIpmxaH/pfpObBvOeNrJsmEwWY=",
+      "hash": "sha256-jQcAh3z7Mzo7C0Mv3DrdOW6+pvFfPM06vbIqhMYKkAY=",
       "url": "data/BasegameStarmapDestinations.json"
     },
     {
-      "hash": "sha256-4AtB+d5gEU9Ru7oT0yZhWbSvTNm3ioNpBIYmMO/zFgM=",
+      "hash": "sha256-RnN35FCYhV27vfDF/oWFVr98bd62Mmik9HNjlRGGO+0=",
       "url": "data/gamedata_base.json"
     },
     {
-      "hash": "sha256-BaLyct9QyOBsswK65GOPNiR7hjLUjQ8MXIM7iNw3Lks=",
+      "hash": "sha256-U6cP9TjWA4CWu5dr+ZAybiW1jG226OhWTxIaVuElGwc=",
       "url": "data/gamedata_so.json"
     },
     {
@@ -398,99 +398,103 @@ self.assetsManifest = {
       "url": "images/Starmap/Starmap_Icon.png"
     },
     {
-      "hash": "sha256-eFw4RkmbGTW6PmmupIOdoNxDdf60kE6xgqz3+6Piu4s=",
+      "hash": "sha256-vHc/tjZdF2N4kcHfUD4N6UG1yA4IQUY41pfTm0apcpU=",
       "url": "images/Starmap/starmap_destinations_basegame/CarbonaceousAsteroid.png"
     },
     {
-      "hash": "sha256-AhN4lkBLSb1DsVNiiTR/xaHDAlTj9lnBJzU7NOHtkgs=",
+      "hash": "sha256-feDO8Q0CNcmXftl8MvQp4sRXmB+5chl70AgjCVM6wGo=",
       "url": "images/Starmap/starmap_destinations_basegame/ChlorinePlanet.png"
     },
     {
-      "hash": "sha256-Wf2AVlxs9izyPPHsnZnlYlYCH9nHuPm5KU8MLP6kin4=",
+      "hash": "sha256-Ye4QLqenw/7Kq0Xf7DpR3N9428mbFXe0aziUssrAc6A=",
       "url": "images/Starmap/starmap_destinations_basegame/DLC2CeresSpaceDestination.png"
     },
     {
-      "hash": "sha256-MlOzmq7hjYDEC20nnKAxi11LK/O2EqFf/NuYYb7gS+A=",
+      "hash": "sha256-Ky0OIsOxHdzuxmqgW692INXD/xNwZP6zk1APn/dOlPA=",
+      "url": "images/Starmap/starmap_destinations_basegame/DLC4PrehistoricSpaceDestination.png"
+    },
+    {
+      "hash": "sha256-Reb6edN38pK5VD1EakyJl2Vd0jkzs9Cvew7ZDB0dWc0=",
       "url": "images/Starmap/starmap_destinations_basegame/DustyMoon.png"
     },
     {
-      "hash": "sha256-DDxlirQmJ8yGXYqoXOADsOaKqj4GjDov3yyFnyawLlo=",
+      "hash": "sha256-QZYkCAZSmn4Sv6MuBvnkKgQbxArO8TGqDxrt8O8Ocjk=",
       "url": "images/Starmap/starmap_destinations_basegame/Earth.png"
     },
     {
-      "hash": "sha256-u1snjblauEBrKurQBuJcjAYNoDGz8507RXfV02FpfhM=",
+      "hash": "sha256-ibSPEP5py6JmkBMIaY9clFSZOQCJP5BXjkyd4JF1FJ8=",
       "url": "images/Starmap/starmap_destinations_basegame/ForestPlanet.png"
     },
     {
-      "hash": "sha256-W1VPjYfwX3p7VRRg+eVCL7z9aeckxmBpjXzgGYnz1qs=",
+      "hash": "sha256-UT4SwkSY3g+NJD9aR6dUUoRow7mg+RMC49QWZQAl41Q=",
       "url": "images/Starmap/starmap_destinations_basegame/GasGiant.png"
     },
     {
-      "hash": "sha256-rYha/0OTQPqwsRYIQzh8lW67Ni9JbvyqKIWdbJ10jWM=",
+      "hash": "sha256-SItRSUe17Apk60hlJCQdWWbY5T/J5vdHS7jk9mnMXDQ=",
       "url": "images/Starmap/starmap_destinations_basegame/GoldAsteroid.png"
     },
     {
-      "hash": "sha256-ZclqsBDjGr3c4vuvYYrEgDWiTiMyxEwnTIbjIIQOMYM=",
+      "hash": "sha256-L+azmTAmdeDVVO4gPsNTe2N996hQ4OFxa7rcODlosUU=",
       "url": "images/Starmap/starmap_destinations_basegame/HeliumGiant.png"
     },
     {
-      "hash": "sha256-qVXeYNBae8ppeovTuxnEZxM68v/fDDDV7feYXw+PluE=",
+      "hash": "sha256-ThriJyGf73HSt7iInxDZ8Q6QQcHGFADMltUlbxMa22o=",
       "url": "images/Starmap/starmap_destinations_basegame/IceGiant.png"
     },
     {
-      "hash": "sha256-qVXeYNBae8ppeovTuxnEZxM68v/fDDDV7feYXw+PluE=",
+      "hash": "sha256-ThriJyGf73HSt7iInxDZ8Q6QQcHGFADMltUlbxMa22o=",
       "url": "images/Starmap/starmap_destinations_basegame/IcyDwarf.png"
     },
     {
-      "hash": "sha256-Ac/pLiJGl6DzPHoZFQ8YDjKLauQ7nPgrPRdkpGL8Ixo=",
+      "hash": "sha256-0RZloKRJBzk6azUeTzIeKzn25HBBA6y8iIoE6Lf/DTQ=",
       "url": "images/Starmap/starmap_destinations_basegame/MetallicAsteroid.png"
     },
     {
-      "hash": "sha256-Thron0f04u7RZQ6teAYgjnlSG7TXXpoCsyF2P/2KA8A=",
+      "hash": "sha256-AxAR2tLMMDq2XziPEX7A5Ry+3uTv+i0GW27SiSf7VoQ=",
       "url": "images/Starmap/starmap_destinations_basegame/OilyAsteriod.png"
     },
     {
-      "hash": "sha256-5+osa8j/wHLw7jDMAuKv98kB6YrxWxklgKlgS84xyRw=",
+      "hash": "sha256-ugf6swET880JlWVGTvV+6s3m4xrNIv38sAhuJw7LIPg=",
       "url": "images/Starmap/starmap_destinations_basegame/OrganicDwarf.png"
     },
     {
-      "hash": "sha256-sPGPyr8GSnJMLGiBrrug69Wu0paWm3RbMMqm1i+MZ0g=",
+      "hash": "sha256-vf7VJZf7OzQhQNjjnUCOlanQapmjSYDyz9ll1CAnjjM=",
       "url": "images/Starmap/starmap_destinations_basegame/RedDwarf.png"
     },
     {
-      "hash": "sha256-qW0skqxTp6JUmROC6SZ920xI7I7WO23i/OebBIduhRo=",
+      "hash": "sha256-ivpN1BDjAezz6DJvtoIijN2QTe3N0NJ3bVTxzkK6Ug4=",
       "url": "images/Starmap/starmap_destinations_basegame/RockyAsteroid.png"
     },
     {
-      "hash": "sha256-g9oWPJthlpDmA3tZfxw6MH9c75UJujsb9a4W6xfEKOk=",
+      "hash": "sha256-uxICmsufLtWHoreDTh2bBXji3sV1GOT6PLInGnSbE4s=",
       "url": "images/Starmap/starmap_destinations_basegame/RustPlanet.png"
     },
     {
-      "hash": "sha256-AhN4lkBLSb1DsVNiiTR/xaHDAlTj9lnBJzU7NOHtkgs=",
+      "hash": "sha256-feDO8Q0CNcmXftl8MvQp4sRXmB+5chl70AgjCVM6wGo=",
       "url": "images/Starmap/starmap_destinations_basegame/SaltDesertPlanet.png"
     },
     {
-      "hash": "sha256-UfQZ9mRopRd4hCKgq8xcNKGQKfwp7x2Pe9jsM2WpPyY=",
+      "hash": "sha256-sa1NB13jP4E5Xu+npF+JM5ntpmNX9Qz9JvARlXwHvzY=",
       "url": "images/Starmap/starmap_destinations_basegame/SaltDwarf.png"
     },
     {
-      "hash": "sha256-NZfHFngE+o/bX8YfYG+MfLA/wxl/ua0W1qbW0vPS1lI=",
+      "hash": "sha256-Go5ks5edkfvMiknCFONpJPxT2U9FWp1GzWO87QSleE0=",
       "url": "images/Starmap/starmap_destinations_basegame/Satellite.png"
     },
     {
-      "hash": "sha256-1kfyOrD1JvIpX3QsEKf2iyEMLZpI4oskJt3f3z55+Lk=",
+      "hash": "sha256-JoIZwiO6iyLFmVU/pGRWk4WZ+AI6iP9ZIh954ucbpvU=",
       "url": "images/Starmap/starmap_destinations_basegame/ShinyPlanet.png"
     },
     {
-      "hash": "sha256-H9OXyGQfz1cHHx90tTVYp1bO4k0NmCA+5EwUs5fHFOc=",
+      "hash": "sha256-/MLpO+sjuHFFkwwao3JMiFuyeJ97KaiLLXiVt30dNUo=",
       "url": "images/Starmap/starmap_destinations_basegame/TerraPlanet.png"
     },
     {
-      "hash": "sha256-NYzVe1Zeiv0M1oEQuVtZB/jmG3krhuF+3rtlcRLSu6s=",
+      "hash": "sha256-BUSWXlFYwBoQ6ITKGy9jHXCiMMoQNGdKWohKYdLKuzQ=",
       "url": "images/Starmap/starmap_destinations_basegame/VolcanoPlanet.png"
     },
     {
-      "hash": "sha256-DeIT4SjtetWPXxrfxMcYc64LPssvxG52ft1O9qztFlM=",
+      "hash": "sha256-ZAXvV1IogrzMbQDBUJDb5hyHQ4hBcwbE4kvzK4/mhPM=",
       "url": "images/Starmap/starmap_destinations_basegame/Wormhole.png"
     },
     {
@@ -646,6 +650,10 @@ self.assetsManifest = {
       "url": "images/asteroids/MixingCeresAsteroid.png"
     },
     {
+      "hash": "sha256-cZrtUU7W3DzEK23gokWMvUySsZ20lQpZCEq9h8csX9U=",
+      "url": "images/asteroids/MixingPrehistoricAsteroid.png"
+    },
+    {
       "hash": "sha256-+0b3r1Dab7jmpqUkc07hv88RgpAGQUFJ93DZvu4QmzY=",
       "url": "images/asteroids/MooMoonlet.png"
     },
@@ -664,6 +672,18 @@ self.assetsManifest = {
     {
       "hash": "sha256-iJuYvsmTZ45Om+NPYfLffBayPpKBz2Yfa/bdcI55+gM=",
       "url": "images/asteroids/OilRichWarpTarget.png"
+    },
+    {
+      "hash": "sha256-kc7rzYqKdyRQTJSdJWxCDlVeMCa430e4riy94tFv0M0=",
+      "url": "images/asteroids/PrehistoricBaseGameAsteroid.png"
+    },
+    {
+      "hash": "sha256-7QovPMoldvhLvUVOhcX+pAgLQLKBm87WNm/d2GfQGAA=",
+      "url": "images/asteroids/PrehistoricClassicAsteroid.png"
+    },
+    {
+      "hash": "sha256-IDL4ZWa9EmQaM8l2iWQBINz9gcP6CRyFARtYbUHzwA8=",
+      "url": "images/asteroids/PrehistoricSpacedOutAsteroid.png"
     },
     {
       "hash": "sha256-f+TESObgfPvMP8hfbIWkN2MqPV2eS6/eE2OgYnfYRaI=",
@@ -776,6 +796,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-0br9NmuJyxlHmhUAcNdXyWJxmGbdCJ9DXflko1O+cg8=",
       "url": "images/gamemodes/gamemode_spacedout_thelab.png"
+    },
+    {
+      "hash": "sha256-Yts26DrYdHPR0w3imCFqZXNjVPVmim+pCm7SBiIg6UE=",
+      "url": "images/logos/Prehistoric_Planet_Banner.png"
     },
     {
       "hash": "sha256-06dinl0oCmCvNitckhYtTlfyxmEJkO60w/5IyoRoa/o=",

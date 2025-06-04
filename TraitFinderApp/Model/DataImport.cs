@@ -335,18 +335,19 @@ namespace TraitFinderApp.Client.Model
 
         public class spaceDestinations
         {
+            public spaceDestinations() { }
+			public spaceDestinations(string type, int minTier, int maxTier)
+			{
+				this.type = type;
+				this.minTier = minTier;
+				this.maxTier = maxTier;
+			}
+
             public string type;
             public int minTier, maxTier;
         }
 
-        public static spaceDestinations ceresBaseGameExtraDestionation = new()
-        {
-            type = "DLC2CeresSpaceDestination",
-            minTier = 3,
-            maxTier = 10
-        };
-
-        private static List<SpaceDestination> GenerateRandomDestinations(int seed, List<Dlc> mixingDlcs)
+		private static List<SpaceDestination> GenerateRandomDestinations(int seed, List<Dlc> mixingDlcs)
         {
             var destinations = GenerateFixedDestinations();
 
@@ -485,11 +486,9 @@ namespace TraitFinderApp.Client.Model
             list.ShuffleSeeded(rng);
             List<SpaceDestination> collection2 = new List<SpaceDestination>();
             var mixingDestinations = new List<spaceDestinations>();
-            if (mixingDlcs.Contains(Dlc.FROSTYPLANET))
-            {
-                mixingDestinations.Add(ceresBaseGameExtraDestionation);
-            }
-            foreach (var spaceDesination in mixingDestinations)
+            Dlc.AddMixingDestinations(mixingDestinations, mixingDlcs);
+		
+			foreach (var spaceDesination in mixingDestinations)
             {
                 bool flag = false;
                 if (list.Count > 0)

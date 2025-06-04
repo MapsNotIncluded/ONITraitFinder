@@ -124,7 +124,7 @@
             "Id": "dlc2::clusters/CeresBaseGameCluster",
             "Name": "Ceres",
             "Prefix": "CER-A",
-            "menuOrder": 1,
+            "menuOrder": 9,
             "startWorldIndex": 0,
             "RequiredDlcsIDs": [ "DLC2_ID" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
@@ -142,6 +142,18 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "dlc2::worlds/CeresBaseGameShatteredAsteroid" ],
             "clusterCategory": 3,
+            "fixedCoordinate": -1
+        },
+        {
+            "Id": "dlc4::clusters/PrehistoricBaseGameCluster",
+            "Name": "Relica Cluster",
+            "Prefix": "PRE-A",
+            "menuOrder": 8,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "DLC4_ID" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricBaseGameAsteroid" ],
+            "clusterCategory": 0,
             "fixedCoordinate": -1
         }
     ],
@@ -362,7 +374,41 @@
                     "requiredTags": null,
                     "specificTraits": null,
                     "forbiddenTags": [ "StartWorldOnly", "Geodes", "Oil", "GenericGeysers", "StartChange", "VeryCold", "LargeWorld", "Surface" ],
-                    "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/MetalCaves" ]
+                    "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/MetalCaves", "expansion1::traits/CrashedSatellites" ]
+                }
+            ],
+            "worldTraitScale": 0.08
+        },
+        {
+            "Id": "dlc4::worlds/PrehistoricBaseGameAsteroid",
+            "Name": "Relica",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "Surface", "Oil", "NonStartWorld" ],
+                    "forbiddenTraits": [ "traits/MisalignedStart" ]
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "dlc4::worlds/MixingPrehistoricAsteroid",
+            "Name": "Relica Fragment",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 0,
+                    "max": 2,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "StartWorldOnly", "Geodes", "Oil", "GenericGeysers", "StartChange", "LargeWorld", "Surface" ],
+                    "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/MetalCaves", "expansion1::traits/CrashedSatellites" ]
                 }
             ],
             "worldTraitScale": 0.08
