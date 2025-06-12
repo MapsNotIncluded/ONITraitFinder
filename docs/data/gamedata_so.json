@@ -341,7 +341,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 1.0
+            "worldTraitScale": 1.0,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/ForestMoonlet",
@@ -358,7 +359,8 @@
                     "forbiddenTraits": [ "traits/GeoDormant" ]
                 }
             ],
-            "worldTraitScale": 0.44
+            "worldTraitScale": 0.44,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/SwampyLandingSite",
@@ -375,7 +377,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/OilRichWarpTarget",
@@ -392,7 +395,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/TundraMoonlet",
@@ -409,7 +413,8 @@
                     "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/MetalCaves" ]
                 }
             ],
-            "worldTraitScale": 0.08
+            "worldTraitScale": 0.08,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/MarshyMoonlet",
@@ -426,7 +431,8 @@
                     "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "traits/SlimeSplats", "expansion1::traits/LushCore", "expansion1::traits/MetalCaves" ]
                 }
             ],
-            "worldTraitScale": 0.06
+            "worldTraitScale": 0.06,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/MooMoonlet",
@@ -443,7 +449,8 @@
                     "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "traits/SlimeSplats" ]
                 }
             ],
-            "worldTraitScale": 0.08
+            "worldTraitScale": 0.08,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/WaterMoonlet",
@@ -460,7 +467,8 @@
                     "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "traits/SlimeSplats" ]
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/NiobiumMoonlet",
@@ -477,7 +485,8 @@
                     "forbiddenTraits": [ "traits/SlimeSplats", "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/DistressSignal", "expansion1::traits/CrashedSatellites", "expansion1::traits/MetalCaves" ]
                 }
             ],
-            "worldTraitScale": 0.06
+            "worldTraitScale": 0.06,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/RegolithMoonlet",
@@ -494,7 +503,8 @@
                     "forbiddenTraits": [ "traits/SlimeSplats", "traits/MagmaVents", "expansion1::traits/Volcanoes" ]
                 }
             ],
-            "worldTraitScale": 0.15
+            "worldTraitScale": 0.15,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/StrangeAsteroidKleiFest2023Cluster",
@@ -511,7 +521,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MediumRadioactiveVanillaWarpPlanet",
@@ -528,7 +539,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.3
+            "worldTraitScale": 0.3,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MiniRegolithMoonlet",
@@ -545,7 +557,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.09
+            "worldTraitScale": 0.09,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/MiniBadlandsStart",
@@ -562,7 +575,8 @@
                     "forbiddenTraits": [ "expansion1::traits/IrregularOil" ]
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MiniRadioactiveOceanWarp",
@@ -579,7 +593,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MiniMetallicSwampy",
@@ -596,7 +611,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/MiniForestFrozen",
@@ -613,7 +629,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/MiniFlipped",
@@ -630,7 +647,8 @@
                     "forbiddenTraits": [ "expansion1::traits/CrashedSatellites", "expansion1::traits/Volcanoes" ]
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/MiniBadlandsWarp",
@@ -647,7 +665,8 @@
                     "forbiddenTraits": [ "expansion1::traits/IrregularOil" ]
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MiniFlippedStart",
@@ -664,7 +683,8 @@
                     "forbiddenTraits": [ "expansion1::traits/CrashedSatellites", "traits/MisalignedStart", "expansion1::traits/Volcanoes" ]
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MiniRadioactiveOcean",
@@ -681,7 +701,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/MiniForestFrozenStart",
@@ -698,7 +719,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MiniBadlands",
@@ -715,7 +737,8 @@
                     "forbiddenTraits": [ "expansion1::traits/IrregularOil" ]
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/MiniMetallicSwampyStart",
@@ -732,7 +755,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MiniForestFrozenWarp",
@@ -749,7 +773,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MiniRadioactiveOceanStart",
@@ -766,7 +791,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MiniFlippedWarp",
@@ -783,7 +809,8 @@
                     "forbiddenTraits": [ "expansion1::traits/CrashedSatellites", "expansion1::traits/Volcanoes" ]
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/TerraMoonlet",
@@ -800,7 +827,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.44
+            "worldTraitScale": 0.44,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/IdealLandingSite",
@@ -817,7 +845,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": []
         },
         {
             "Id": "expansion1::worlds/WarpOilySwamp",
@@ -834,7 +863,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/SwampMoonlet",
@@ -851,7 +881,8 @@
                     "forbiddenTraits": [ "traits/GeoDormant" ]
                 }
             ],
-            "worldTraitScale": 0.44
+            "worldTraitScale": 0.44,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MetalHeavyLandingSite",
@@ -868,8 +899,9 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
-        },        
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": []
+        },
         {
             "Id": "expansion1::worlds/VanillaArboria",
             "Name": "Arboria Asteroid",
@@ -885,7 +917,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MediumSandyRadioactiveVanillaWarpPlanet",
@@ -902,7 +935,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.3
+            "worldTraitScale": 0.3,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/VanillaAridio",
@@ -919,7 +953,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MediumSandySwamp",
@@ -936,7 +971,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.3
+            "worldTraitScale": 0.3,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/VanillaBadlands",
@@ -953,7 +989,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/VanillaForestDefault",
@@ -970,7 +1007,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/VanillaOasis",
@@ -987,7 +1025,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/VanillaOceania",
@@ -1004,7 +1043,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MediumForestyWasteland",
@@ -1021,7 +1061,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.3
+            "worldTraitScale": 0.3,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/VanillaSandstoneDefault",
@@ -1038,7 +1079,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/VanillaSandstoneFrozen",
@@ -1055,7 +1097,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MediumSwampy",
@@ -1072,7 +1115,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.3
+            "worldTraitScale": 0.3,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/VanillaSwampDefault",
@@ -1089,7 +1133,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/MediumForestyRadioactiveVanillaWarpPlanet",
@@ -1106,7 +1151,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.3
+            "worldTraitScale": 0.3,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "expansion1::worlds/VanillaVolcanic",
@@ -1123,7 +1169,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "dlc2::worlds/CeresClassicAsteroid",
@@ -1140,7 +1187,8 @@
                     "forbiddenTraits": [ "traits/MagmaVents" ]
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter", "GeothermalController" ]
         },
         {
             "Id": "dlc2::worlds/CeresClassicShatteredAsteroid",
@@ -1157,7 +1205,8 @@
                     "forbiddenTraits": [ "traits/MagmaVents", "traits/MisalignedStart" ]
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter", "GeothermalController" ]
         },
         {
             "Id": "dlc2::worlds/CeresSpacedOutAsteroid",
@@ -1174,7 +1223,8 @@
                     "forbiddenTraits": [ "traits/GeoDormant", "traits/MagmaVents" ]
                 }
             ],
-            "worldTraitScale": 0.44
+            "worldTraitScale": 0.44,
+            "SpecialPOIs": [ "Teleporter", "GeothermalController" ]
         },
         {
             "Id": "dlc2::worlds/MiniShatteredStartAsteroid",
@@ -1191,7 +1241,8 @@
                     "forbiddenTraits": [ "traits/MisalignedStart" ]
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "dlc2::worlds/MiniShatteredWarpAsteroid",
@@ -1208,7 +1259,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "dlc2::worlds/MiniShatteredGeoAsteroid",
@@ -1225,7 +1277,8 @@
                     "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/CrashedSatellites" ]
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "GeothermalController" ]
         },
         {
             "Id": "dlc2::worlds/MixingCeresAsteroid",
@@ -1242,7 +1295,8 @@
                     "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/MetalCaves", "expansion1::traits/CrashedSatellites" ]
                 }
             ],
-            "worldTraitScale": 0.08
+            "worldTraitScale": 0.08,
+            "SpecialPOIs": []
         },
         {
             "Id": "dlc4::worlds/PrehistoricClassicAsteroid",
@@ -1259,7 +1313,8 @@
                     "forbiddenTraits": [ "traits/MisalignedStart", "expansion1::traits/CrashedSatellites" ]
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter", "LargeImpactor" ]
         },
         {
             "Id": "dlc4::worlds/PrehistoricShatteredClassicAsteroid",
@@ -1284,7 +1339,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.9
+            "worldTraitScale": 0.9,
+            "SpecialPOIs": [ "Teleporter", "LargeImpactor" ]
         },
         {
             "Id": "dlc4::worlds/PrehistoricSpacedOutAsteroid",
@@ -1301,7 +1357,8 @@
                     "forbiddenTraits": [ "traits/MisalignedStart", "expansion1::traits/CrashedSatellites", "traits/GeoDormant" ]
                 }
             ],
-            "worldTraitScale": 0.44
+            "worldTraitScale": 0.44,
+            "SpecialPOIs": [ "Teleporter", "LargeImpactor" ]
         },
         {
             "Id": "expansion1::worlds/WarpOilySandySwamp",
@@ -1318,7 +1375,8 @@
                     "forbiddenTraits": null
                 }
             ],
-            "worldTraitScale": 0.2
+            "worldTraitScale": 0.2,
+            "SpecialPOIs": [ "Teleporter" ]
         },
         {
             "Id": "dlc4::worlds/MixingPrehistoricAsteroid",
@@ -1335,7 +1393,8 @@
                     "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/MetalCaves", "expansion1::traits/CrashedSatellites" ]
                 }
             ],
-            "worldTraitScale": 0.08
+            "worldTraitScale": 0.08,
+            "SpecialPOIs": []
         }
     ],
     "worldTraits": [

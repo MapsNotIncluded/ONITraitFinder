@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "lOU8rXA8",
+  "version": "INOG+4QT",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -318,11 +318,11 @@ self.assetsManifest = {
       "url": "_framework/System.wasm"
     },
     {
-      "hash": "sha256-gPGZ5LXyMtvqO85cWJCkHWwDAR75zMFKn7V3XhmPzZc=",
+      "hash": "sha256-AiVFAAAr7BMJeHrPiNuJ7eBa5/BcvgP7MGp+EKEPiSI=",
       "url": "_framework/TraitFinderApp.wasm"
     },
     {
-      "hash": "sha256-rhKIObQflq/MXCDqDUIXy7Tvmm5+btkSdtppTYMUhEY=",
+      "hash": "sha256-Dbbl0AB33zsbFucSOs8KbADsyOFyc5XQhTvNbyGK7hs=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -330,7 +330,7 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-2UQfaqFjMjt2P+GEvkfTqnH+7UotjNYqZprkzlqz66E=",
+      "hash": "sha256-flu3KWFLDyi0DVFpV9de9Tsosk5lSMeKwR4pv+2xhg0=",
       "url": "_framework/de/TraitFinderApp.resources.wasm"
     },
     {
@@ -342,7 +342,7 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.js"
     },
     {
-      "hash": "sha256-4iFB94HeCX2V2bL7w5MFoR7KCoPCdRzOYGpI0o1psDQ=",
+      "hash": "sha256-gWWQr1LPHgRsRSC4ZWPnrHNPPnLnFluiNFm+x+Lz2k4=",
       "url": "_framework/dotnet.native.wasm"
     },
     {
@@ -366,11 +366,11 @@ self.assetsManifest = {
       "url": "_framework/netstandard.wasm"
     },
     {
-      "hash": "sha256-jZtWWSPJOoIYw4thJ7mquOOntSxcBQg/8c+H25GoLLM=",
+      "hash": "sha256-MpWxnAxeWhe006Qn+wPxX8IY9R0YWIdma2sqbn8w+qQ=",
       "url": "_framework/zh-TW/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-UwdQUcPEbD/7FrC8CEruFaUKL/T15zJrFcfZ55BPxBo=",
+      "hash": "sha256-dyngf70R5uhInRs3VfBsUVwGoPDWly08IhN9KooK15o=",
       "url": "_framework/zh/TraitFinderApp.resources.wasm"
     },
     {
@@ -378,11 +378,11 @@ self.assetsManifest = {
       "url": "data/BasegameStarmapDestinations.json"
     },
     {
-      "hash": "sha256-SSOcWNLjZwGiAW8qF3YVhaagJIM12EXPnliSs8nZ9EQ=",
+      "hash": "sha256-lASHVmztra8eJo3lXg/WoOZvJ6cN4qhaXyM5AETUYgM=",
       "url": "data/gamedata_base.json"
     },
     {
-      "hash": "sha256-SNgeXlIkSuH8f9xoI+ycfRG/lerJ0mRO+JGEKGZzUY0=",
+      "hash": "sha256-lH/rto/2qLDvR3TVTtRuncVvEX9UCy9twdzM7zZOBnk=",
       "url": "data/gamedata_so.json"
     },
     {
@@ -392,6 +392,18 @@ self.assetsManifest = {
     {
       "hash": "sha256-d3PhqSxp4zEI56UBJ44g9o99BfQxJto3hwvFcd5tS8A=",
       "url": "favicon.png"
+    },
+    {
+      "hash": "sha256-J3pD9hU4VLqeBRRir+C+haVVSD3xFpWVQ2tMNJ5BLHo=",
+      "url": "icons/building_geothermal_heat_pump.webp"
+    },
+    {
+      "hash": "sha256-9lEnrAkwN1AU25qlYioEmS5dUvEfrk3jJT88Zw0wsOA=",
+      "url": "icons/building_teleporter_transmitter.webp"
+    },
+    {
+      "hash": "sha256-EsugvnwNasFXO4j5+2E+QfI9i14wxLwkpkpUlPlssoo=",
+      "url": "icons/potato.webp"
     },
     {
       "hash": "sha256-NX9lJtaPdlazC0e361JghYaafUk9jIT1bF5ZKu8wsVw=",
@@ -412,6 +424,18 @@ self.assetsManifest = {
     {
       "hash": "sha256-Ye4QLqenw/7Kq0Xf7DpR3N9428mbFXe0aziUssrAc6A=",
       "url": "images/Starmap/starmap_destinations_basegame/DLC2CeresSpaceDestination.png"
+    },
+    {
+      "hash": "sha256-ZBW1MH53Wi5CdeJRbrR3TXzmvTkqUu9QwDq7+1PS6Lw=",
+      "url": "images/Starmap/starmap_destinations_basegame/DLC4PrehistoricDemoliorSpaceDestination.png"
+    },
+    {
+      "hash": "sha256-TdDw8aRcimOfyxdVqH5CM4qWTRMSck43091Zlgzbhz0=",
+      "url": "images/Starmap/starmap_destinations_basegame/DLC4PrehistoricDemoliorSpaceDestination2.png"
+    },
+    {
+      "hash": "sha256-Tomp3KG19Ai+7tTgm69CYYUg9v7aRnu+eO5LqZ+6XO0=",
+      "url": "images/Starmap/starmap_destinations_basegame/DLC4PrehistoricDemoliorSpaceDestination3.png"
     },
     {
       "hash": "sha256-Ky0OIsOxHdzuxmqgW692INXD/xNwZP6zk1APn/dOlPA=",
