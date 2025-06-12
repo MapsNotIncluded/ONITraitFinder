@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "7yIJkH8Y",
+  "version": "zBa5pcu4",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -318,11 +318,11 @@ self.assetsManifest = {
       "url": "_framework/System.wasm"
     },
     {
-      "hash": "sha256-HehvdEKh0icnRH0aXOzSFAPVVhUp1uammChcAzMmgDg=",
+      "hash": "sha256-H4udJtJ6cKeaAl6IBTfaA2lVtcaysdThonJtzsBCoTc=",
       "url": "_framework/TraitFinderApp.wasm"
     },
     {
-      "hash": "sha256-s/mtAJc5rVDsNNVxsjwhSBDHkJ2keuUxOrESoCGnMaw=",
+      "hash": "sha256-/ZUFlFq/otmlMfRIjQTbShNE8MleuueqjGN/gaVF5fg=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -330,7 +330,7 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-4OhGWFYxxpzsKXThM3rsxsuGR8//sAADEmycSk43eb0=",
+      "hash": "sha256-aAtupclfvr+KgeUdPIA/3PE16l9vzvWjnom7iomPJ5c=",
       "url": "_framework/de/TraitFinderApp.resources.wasm"
     },
     {
@@ -342,7 +342,7 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.js"
     },
     {
-      "hash": "sha256-Rb+3APTgd5o5YHfYcgl/0l8h+akNXJUvGc3pn2/ewR4=",
+      "hash": "sha256-5fo5ia2qx7RAqgf01WJggQ6rrZIwysBI2R3LDGkH18w=",
       "url": "_framework/dotnet.native.wasm"
     },
     {
@@ -366,24 +366,28 @@ self.assetsManifest = {
       "url": "_framework/netstandard.wasm"
     },
     {
-      "hash": "sha256-bQ3ACmPz6uheT5viA7TqphCLIjImQTZm4olXKTP6lkQ=",
+      "hash": "sha256-79CyJ/K8tJJVCh0JD6N3xFccqAYzxs+yWNP8FsX//9A=",
       "url": "_framework/zh-TW/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-a+9Zv1LgpZlLOhAa7/mHN51eA5DAq4Fw9SbC7IjaGHg=",
+      "hash": "sha256-lX1NmmL8uOumIBLl1xJ+GvcCoHdvkd8ZHxV33bM9kgU=",
       "url": "_framework/zh/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-jQcAh3z7Mzo7C0Mv3DrdOW6+pvFfPM06vbIqhMYKkAY=",
+      "hash": "sha256-83vHTbLWZL02T4wSoq+RvI8jyPjaMGJ/OkOWywDJAyM=",
       "url": "data/BasegameStarmapDestinations.json"
     },
     {
-      "hash": "sha256-RnN35FCYhV27vfDF/oWFVr98bd62Mmik9HNjlRGGO+0=",
+      "hash": "sha256-SSOcWNLjZwGiAW8qF3YVhaagJIM12EXPnliSs8nZ9EQ=",
       "url": "data/gamedata_base.json"
     },
     {
-      "hash": "sha256-U6cP9TjWA4CWu5dr+ZAybiW1jG226OhWTxIaVuElGwc=",
+      "hash": "sha256-SNgeXlIkSuH8f9xoI+ycfRG/lerJ0mRO+JGEKGZzUY0=",
       "url": "data/gamedata_so.json"
+    },
+    {
+      "hash": "sha256-Q8F4XGlt2HIavRDvcjAwSIZUZshSbaTsotpGXGgNst8=",
+      "url": "data/mixing_data.json"
     },
     {
       "hash": "sha256-d3PhqSxp4zEI56UBJ44g9o99BfQxJto3hwvFcd5tS8A=",
@@ -682,6 +686,14 @@ self.assetsManifest = {
       "url": "images/asteroids/PrehistoricClassicAsteroid.png"
     },
     {
+      "hash": "sha256-gdp7RsuIcH7DkTcK2r9GkKZjCi8wrMQs7IGb6faZQc4=",
+      "url": "images/asteroids/PrehistoricShatteredBaseGameAsteroid.png"
+    },
+    {
+      "hash": "sha256-gdp7RsuIcH7DkTcK2r9GkKZjCi8wrMQs7IGb6faZQc4=",
+      "url": "images/asteroids/PrehistoricShatteredClassicAsteroid.png"
+    },
+    {
       "hash": "sha256-IDL4ZWa9EmQaM8l2iWQBINz9gcP6CRyFARtYbUHzwA8=",
       "url": "images/asteroids/PrehistoricSpacedOutAsteroid.png"
     },
@@ -768,6 +780,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-MzfH8yI02Xe2P4U/MsX56eiLjnbxSWA5UYuT9GzDjUA=",
       "url": "images/asteroids/Volcanic.png"
+    },
+    {
+      "hash": "sha256-+Lhj1/JtYXzlzKfBUcuS65QvkXAj8cfFTEPKsK8prcI=",
+      "url": "images/asteroids/WarpOilySandySwamp.png"
     },
     {
       "hash": "sha256-MqjLGNT+hFgiC92wuYO/HD8rfwHZtCWzXb2hO8UQ8OQ=",

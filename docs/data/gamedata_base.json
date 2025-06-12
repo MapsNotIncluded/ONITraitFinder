@@ -146,7 +146,7 @@
         },
         {
             "Id": "dlc4::clusters/PrehistoricBaseGameCluster",
-            "Name": "Relica Cluster",
+            "Name": "Relica",
             "Prefix": "PRE-A",
             "menuOrder": 8,
             "startWorldIndex": 0,
@@ -154,6 +154,18 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricBaseGameAsteroid" ],
             "clusterCategory": 0,
+            "fixedCoordinate": -1
+        },
+        {
+            "Id": "dlc4::clusters/PrehistoricShatteredBaseGameCluster",
+            "Name": "RelicAAAAAAAGHH",
+            "Prefix": "PRES-A",
+            "menuOrder": 9,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "DLC4_ID" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricShatteredBaseGameAsteroid" ],
+            "clusterCategory": 3,
             "fixedCoordinate": -1
         }
     ],
@@ -392,6 +404,31 @@
                     "specificTraits": null,
                     "forbiddenTags": [ "Surface", "Oil", "NonStartWorld" ],
                     "forbiddenTraits": [ "traits/MisalignedStart" ]
+                }
+            ],
+            "worldTraitScale": 1.0
+        },
+        {
+            "Id": "dlc4::worlds/PrehistoricShatteredBaseGameAsteroid",
+            "Name": "RelicAAAAAAAGHH",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 2,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "Surface", "Oil", "NonStartWorld" ],
+                    "forbiddenTraits": [ "traits/MisalignedStart", "traits/GeoActive", "traits/GeoDormant", "traits/Volcanoes" ]
+                },
+                {
+                    "min": 0,
+                    "max": 0,
+                    "requiredTags": null,
+                    "specificTraits": [ "traits/GeoActive", "traits/Volcanoes" ],
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
                 }
             ],
             "worldTraitScale": 1.0

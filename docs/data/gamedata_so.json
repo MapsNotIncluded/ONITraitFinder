@@ -121,18 +121,6 @@
             "fixedCoordinate": -1
         },
         {
-            "Id": "expansion1::clusters/TinyStartCluster",
-            "Name": "Tiny Start FOR DEVS",
-            "Prefix": "TNY-C",
-            "menuOrder": -1,
-            "startWorldIndex": 0,
-            "RequiredDlcsIDs": [ "EXPANSION1_ID" ],
-            "ForbiddenDlcIDs": null,
-            "WorldPlacementIDs": [ "expansion1::worlds/TinyStart" ],
-            "clusterCategory": 3,
-            "fixedCoordinate": -1
-        },
-        {
             "Id": "expansion1::clusters/VanillaArboriaCluster",
             "Name": "Arboria Cluster",
             "Prefix": "V-FRST-C",
@@ -310,6 +298,18 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricClassicAsteroid", "expansion1::worlds/MediumSwampy", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
+            "fixedCoordinate": -1
+        },
+        {
+            "Id": "dlc4::clusters/PrehistoricShatteredClassicCluster",
+            "Name": "RelicAAAAAAAGHH Cluster",
+            "Prefix": "V-PRES-C",
+            "menuOrder": 9,
+            "startWorldIndex": 0,
+            "RequiredDlcsIDs": [ "EXPANSION1_ID", "DLC4_ID" ],
+            "ForbiddenDlcIDs": null,
+            "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricShatteredClassicAsteroid", "expansion1::worlds/MediumSwampy", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
+            "clusterCategory": 3,
             "fixedCoordinate": -1
         },
         {
@@ -869,24 +869,7 @@
                 }
             ],
             "worldTraitScale": 0.2
-        },
-        {
-            "Id": "expansion1::worlds/TinyStart",
-            "Name": "Tiny Start FOR DEVS",
-            "Image": null,
-            "DisableWorldTraits": true,
-            "TraitRules": [
-                {
-                    "min": 2,
-                    "max": 4,
-                    "requiredTags": null,
-                    "specificTraits": null,
-                    "forbiddenTags": null,
-                    "forbiddenTraits": null
-                }
-            ],
-            "worldTraitScale": 0.12
-        },
+        },        
         {
             "Id": "expansion1::worlds/VanillaArboria",
             "Name": "Arboria Asteroid",
@@ -1274,6 +1257,31 @@
                     "specificTraits": null,
                     "forbiddenTags": [ "Surface", "Oil", "NonStartWorld" ],
                     "forbiddenTraits": [ "traits/MisalignedStart", "expansion1::traits/CrashedSatellites" ]
+                }
+            ],
+            "worldTraitScale": 0.9
+        },
+        {
+            "Id": "dlc4::worlds/PrehistoricShatteredClassicAsteroid",
+            "Name": "RelicAAAAAAAGHH",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 2,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "Surface", "Oil", "NonStartWorld" ],
+                    "forbiddenTraits": [ "traits/MisalignedStart", "expansion1::traits/CrashedSatellites", "traits/GeoActive", "traits/GeoDormant", "expansion1::traits/Volcanoes" ]
+                },
+                {
+                    "min": 0,
+                    "max": 0,
+                    "requiredTags": null,
+                    "specificTraits": [ "traits/GeoActive", "expansion1::traits/Volcanoes" ],
+                    "forbiddenTags": null,
+                    "forbiddenTraits": null
                 }
             ],
             "worldTraitScale": 0.9
