@@ -553,7 +553,7 @@ namespace TraitFinderApp.Client.Model
             List<WorldTrait> allTraits = new List<WorldTrait>(worldTraits.Values);
             List<WorldTrait> result = new List<WorldTrait>();
             TagSet tagSet = new TagSet();
-            var rule = world.TraitRule();
+            var rule = world.GetConsolidatedTraitRule();
 
             if (rule.specificTraits != null)
             {

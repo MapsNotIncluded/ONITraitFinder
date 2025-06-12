@@ -52,17 +52,17 @@ namespace TraitFinderApp.Client.Model.Search
             }      
         
         }
-        public int GetMaxCount() => targetAsteroid.TraitRule().max;
+        public int GetMaxCount() => targetAsteroid.GetConsolidatedTraitRule().max;
 
         public bool CanToggleProhibitedTrait(WorldTrait trait) => trait != null && !HasGuaranteedTrait(trait);
         public bool HasGuaranteedTrait(WorldTrait trait) => Guarantee.Contains(trait);
         public bool HasProhibitedTrait(WorldTrait trait) => Prohibit.Contains(trait);
         public bool CannotHaveTraits() => targetAsteroid.DisableWorldTraits;
-        public bool HasFixedTraits() => targetAsteroid.TraitRule().specificTraits != null && targetAsteroid.TraitRule().specificTraits.Count > 0;
+        public bool HasFixedTraits() => targetAsteroid.GetConsolidatedTraitRule().specificTraits != null && targetAsteroid.GetConsolidatedTraitRule().specificTraits.Count > 0;
 
         public void ResetAll()
         {
-            if (targetAsteroid?.TraitRule()?.specificTraits?.Count > 0)
+            if (targetAsteroid?.GetConsolidatedTraitRule()?.specificTraits?.Count > 0)
                 return;
 
             Guarantee = new HashSet<WorldTrait>();
