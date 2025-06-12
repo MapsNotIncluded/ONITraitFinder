@@ -162,7 +162,7 @@ else
 												<MudStack AlignItems="AlignItems.Stretch" Spacing="1" Justify="Justify.FlexStart">
 
 													<MudStack Row Wrap=Wrap.NoWrap Style="align-self:center" AlignItems="AlignItems.Center" StretchItems="StretchItems.Start" Spacing="1" Justify="Justify.Center">
-														<MudText Align="Align.Center" Typo="Typo.h6" Style="width:240px; text-overflow:ellipsis; white-space: nowrap; overflow:hidden">@L[@world.Name]</MudText>
+														<MudText Align="Align.Center" Typo="Typo.h6" Style="max-width:240px; text-overflow:ellipsis; white-space: nowrap; overflow:hidden">@L[@world.Name]</MudText>
 														@foreach (var annotation in AsteroidAnnotation.GetAnnotationsFor(world, Query.SelectedCluster))
 														{
 															<MudTooltip Text=@L[@annotation.GetTooltip()] Arrow Placement="Placement.Right" Style="justify-self:center">
