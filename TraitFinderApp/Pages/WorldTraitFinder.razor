@@ -181,18 +181,18 @@ else
 													}
 													else
 													{
-														string maxCountText = string.Format(@L["Guaranteed traits ({0} max)"], queryAsteroid.GetMaxCount());
+														string maxCountText = string.Format(@L["Guaranteed traits ({0} max)"], queryAsteroid.GetMaxCountIncGuaranteed());
 
 														<!--Hack for visualizing traits by icon only-->
 														<MudStack Row Style="height:0px; margin-top:-4px; overflow:visible" Class="pl-4 pr-4">
-															<MudVirtualize Items="@queryAsteroid.Guarantee.ToList()" Context="trait">
+															<MudVirtualize Items="@queryAsteroid.GetCurrentGuaranteesIncFixed()" Context="trait">
 																<MudImage Style="position: relative; top: 12px" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
 															</MudVirtualize>
 														</MudStack>
 
 														<!--actual select for guaranteed traits-->
 
-														<MudSelect Disabled="@(queryAsteroid.HasFixedTraits()||Query.SelectedCluster.HasFixedCoordinate())"
+														<MudSelect Disabled="@(Query.SelectedCluster.HasFixedCoordinate())"
 																   FullWidth="true"
 																   Variant="Variant.Outlined"
 																   T=WorldTrait
@@ -203,8 +203,8 @@ else
 																   AnchorOrigin="Origin.BottomCenter"
 																   TransformOrigin="Origin.TopCenter"
 																   Label=@(maxCountText)
-																   ToStringFunc="@((_)=> (queryAsteroid.Guarantee.Count()>0) ? "‎ ":string.Empty)"
-																   MultiSelectionTextFunc="@((_)=> (queryAsteroid.Guarantee.Count()>0) ? "‎ ":string.Empty)"
+																   ToStringFunc="@((_)=> (queryAsteroid.GetCurrentGuaranteesIncFixed().Count()>0) ? "‎ ":string.Empty)"
+																   MultiSelectionTextFunc="@((_)=> (queryAsteroid.GetCurrentGuaranteesIncFixed().Count()>0) ? "‎ ":string.Empty)"
 																   @bind-SelectedValues="queryAsteroid.Guarantee">
 
 															<MudVirtualize Items="@queryAsteroid.GetAllWorldCompatibleTraits()" Context="trait">
@@ -240,7 +240,7 @@ else
 
 														<!--actual select for prohibited traits-->
 														<MudSelect FullWidth="true"
-																   Disabled="@(queryAsteroid.HasFixedTraits()||Query.SelectedCluster.HasFixedCoordinate())"
+																   Disabled="@(Query.SelectedCluster.HasFixedCoordinate())"
 																   Variant="Variant.Outlined"
 																   T=WorldTrait
 																   MultiSelection

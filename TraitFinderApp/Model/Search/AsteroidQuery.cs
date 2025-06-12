@@ -7,117 +7,148 @@ using System.Linq;
 
 namespace TraitFinderApp.Client.Model.Search
 {
-    public class AsteroidQuery
-    {
-        int worldIndex;
-        Asteroid targetAsteroid;
-        SearchQuery parent;
+	public class AsteroidQuery
+	{
+		int worldIndex;
+		Asteroid targetAsteroid;
+		SearchQuery parent;
 
-        public IEnumerable<WorldTrait> Guarantee { get =>_guarantee; set {
-                _guarantee = value;
-                //Console.WriteLine("Guarantee changed");
-                ReevaluateAvailableTraits();
-            } }
+		public IEnumerable<WorldTrait> Guarantee
+		{
+			get => _guarantee; set
+			{
+				_guarantee = value;
+				//Console.WriteLine("Guarantee changed");
+				ReevaluateAvailableTraits();
+			}
+		}
 
-        private IEnumerable<WorldTrait> _guarantee = new HashSet<WorldTrait>();
+		private IEnumerable<WorldTrait> _guarantee = new HashSet<WorldTrait>();
 
-        public IEnumerable<WorldTrait> Prohibit { 
-            get => _prohibit; 
-            set {
-                _prohibit = value;
-                //Console.WriteLine("Prohibited changed");
-                ReevaluateAvailableTraits();
-            }
-        }
-        private IEnumerable<WorldTrait> _prohibit = new HashSet<WorldTrait>();
+		public IEnumerable<WorldTrait> Prohibit
+		{
+			get => _prohibit;
+			set
+			{
+				_prohibit = value;
+				//Console.WriteLine("Prohibited changed");
+				ReevaluateAvailableTraits();
+			}
+		}
+		private IEnumerable<WorldTrait> _prohibit = new HashSet<WorldTrait>();
 
-        public AsteroidQuery(SearchQuery _parent,Asteroid target, int index)
-        {
-            parent = _parent;
-            targetAsteroid = target;
-            Guarantee = new HashSet<WorldTrait>();
-            Prohibit = new HashSet<WorldTrait>();
-            worldIndex = index;
-        }
+		public AsteroidQuery(SearchQuery _parent, Asteroid target, int index)
+		{
+			parent = _parent;
+			targetAsteroid = target;
+			Guarantee = new HashSet<WorldTrait>();
+			Prohibit = new HashSet<WorldTrait>();
+			worldIndex = index;
+		}
 
-        public bool CanToggleGuaranteedTrait(WorldTrait trait)
-        {
-            if (HasGuaranteedTrait(trait))
-                return true;
-            else
-            {
-               return !HasProhibitedTrait(trait)
-               && Guarantee.Count() < GetMaxCount()
-               && AvailableTraits.Contains(trait);
-            }      
-        
-        }
-        public int GetMaxCount() => targetAsteroid.GetConsolidatedTraitRule().max;
+		public bool CanToggleGuaranteedTrait(WorldTrait trait)
+		{
+			if (HasFixedTrait(trait))
+				return false;
 
-        public bool CanToggleProhibitedTrait(WorldTrait trait) => trait != null && !HasGuaranteedTrait(trait);
-        public bool HasGuaranteedTrait(WorldTrait trait) => Guarantee.Contains(trait);
-        public bool HasProhibitedTrait(WorldTrait trait) => Prohibit.Contains(trait);
-        public bool CannotHaveTraits() => targetAsteroid.DisableWorldTraits;
-        public bool HasFixedTraits() => targetAsteroid.GetConsolidatedTraitRule().specificTraits != null && targetAsteroid.GetConsolidatedTraitRule().specificTraits.Count > 0;
+			if (HasGuaranteedTrait(trait))
+				return true;
+			else
+			{
+				return !HasProhibitedTrait(trait)
+				&& Guarantee.Count() < GetMaxCount()
+				&& AvailableTraits.Contains(trait);
+			}
 
-        public void ResetAll()
-        {
-            if (targetAsteroid?.GetConsolidatedTraitRule()?.specificTraits?.Count > 0)
-                return;
+		}
 
-            Guarantee = new HashSet<WorldTrait>();
-            Prohibit = new HashSet<WorldTrait>();
-        }
+		public List<WorldTrait> GetCurrentGuaranteesIncFixed()
+		{
+			var currentGuarantees = new List<WorldTrait>();
+			if (HasFixedTraits())
+			{
+				foreach (var trait in targetAsteroid.GetConsolidatedTraitRule().specificTraits)
+				{
+					if (WorldTrait.KeyValues.TryGetValue(trait, out var value))
+						currentGuarantees.Add(value);
+				}
+			}
+			foreach( var guaranteed in Guarantee)
+				if(!currentGuarantees.Contains(guaranteed))
+					currentGuarantees.Add(guaranteed);
 
-        public List<WorldTrait> GetAllWorldCompatibleTraits() => DataImport.GetActive().GetCompatibleTraits(targetAsteroid);
-        private HashSet<WorldTrait> _availableTraits = new();
-        public HashSet<WorldTrait> AvailableTraits => _availableTraits;
+			return currentGuarantees;
+		}
+
+		public int GetMaxCountIncGuaranteed() => GetMaxCount() + (targetAsteroid.GetConsolidatedTraitRule().specificTraits?.Count ?? 0);
+		public int GetMaxCount() => targetAsteroid.GetConsolidatedTraitRule().max;
+
+		public bool CanToggleProhibitedTrait(WorldTrait trait) => trait != null && !HasGuaranteedTrait(trait);
+		public bool HasGuaranteedTrait(WorldTrait trait) => Guarantee.Contains(trait);
+		public bool HasProhibitedTrait(WorldTrait trait) => Prohibit.Contains(trait);
+		public bool CannotHaveTraits() => targetAsteroid.DisableWorldTraits;
+		public bool HasFixedTraits() => targetAsteroid.GetConsolidatedTraitRule().specificTraits != null && targetAsteroid.GetConsolidatedTraitRule().specificTraits.Count > 0;
+		public bool HasFixedTrait(WorldTrait trait) => HasFixedTraits() && targetAsteroid.GetConsolidatedTraitRule().specificTraits.Contains(trait.Id);
 
 
-        public void ReevaluateAvailableTraits()
-        {
-            _availableTraits = GetAllCurrentlyAvailableTraits();
-            parent.ClearQueryResults();
-        }
+		public void ResetAll()
+		{
+			if (targetAsteroid?.GetConsolidatedTraitRule()?.specificTraits?.Count > 0)
+				return;
 
-        public bool HasFilters()=>Guarantee.Any() || Prohibit.Any();
+			Guarantee = new HashSet<WorldTrait>();
+			Prohibit = new HashSet<WorldTrait>();
+		}
 
-        public HashSet<WorldTrait> GetAllCurrentlyAvailableTraits()
-        {
-            var allTraits = new List<WorldTrait>(GetAllWorldCompatibleTraits());
+		public List<WorldTrait> GetAllWorldCompatibleTraits() => DataImport.GetActive().GetCompatibleTraits(targetAsteroid);
+		private HashSet<WorldTrait> _availableTraits = new();
+		public HashSet<WorldTrait> AvailableTraits => _availableTraits;
 
-            var allSelected = Guarantee;
 
-            if (targetAsteroid.DisableWorldTraits)
-                return new();
+		public void ReevaluateAvailableTraits()
+		{
+			_availableTraits = GetAllCurrentlyAvailableTraits();
+			parent.ClearQueryResults();
+		}
 
-            List<string> ExclusiveWithTags = new List<string>();
+		public bool HasFilters() => Guarantee.Any() || Prohibit.Any();
 
-            foreach (var trait in allSelected)
-            {
-                ExclusiveWithTags.AddRange(trait.exclusiveWithTags);
-            }
-            if (targetAsteroid.TraitRules != null)
-            {
-                foreach (var rule in targetAsteroid.TraitRules)
-                {
-                    TagSet requiredTags = (rule.requiredTags != null) ? new TagSet(rule.requiredTags) : null;
-                    TagSet forbiddenTags = ((rule.forbiddenTags != null) ? new TagSet(rule.forbiddenTags) : null);
+		public HashSet<WorldTrait> GetAllCurrentlyAvailableTraits()
+		{
+			var allTraits = new List<WorldTrait>(GetAllWorldCompatibleTraits());
 
-                    allTraits.RemoveAll((WorldTrait trait) =>
-                        (requiredTags != null && !trait.traitTagsSet.ContainsAll(requiredTags))
-                        || (forbiddenTags != null && trait.traitTagsSet.ContainsOne(forbiddenTags))
-                        || (rule.forbiddenTraits != null && rule.forbiddenTraits.Contains(trait.Id)));
-                }
-            }
-            allTraits.RemoveAll((WorldTrait trait) =>
-                 !trait.IsValid(targetAsteroid, logErrors: true)
-                || trait.exclusiveWithTags.Any(x => ExclusiveWithTags.Any(y => y == x))
-                || allSelected.Contains(trait)
-                || trait.exclusiveWith.Any(x => allSelected.Any(y => y.Id == x))
-                );
+			var allSelected = Guarantee;
 
-            return allTraits.ToHashSet();
-        }
-    }
+			if (targetAsteroid.DisableWorldTraits)
+				return new();
+
+			List<string> ExclusiveWithTags = new List<string>();
+
+			foreach (var trait in allSelected)
+			{
+				ExclusiveWithTags.AddRange(trait.exclusiveWithTags);
+			}
+			if (targetAsteroid.TraitRules != null)
+			{
+				foreach (var rule in targetAsteroid.TraitRules)
+				{
+					TagSet requiredTags = (rule.requiredTags != null) ? new TagSet(rule.requiredTags) : null;
+					TagSet forbiddenTags = ((rule.forbiddenTags != null) ? new TagSet(rule.forbiddenTags) : null);
+
+					allTraits.RemoveAll((WorldTrait trait) =>
+						(requiredTags != null && !trait.traitTagsSet.ContainsAll(requiredTags))
+						|| (forbiddenTags != null && trait.traitTagsSet.ContainsOne(forbiddenTags))
+						|| (rule.forbiddenTraits != null && rule.forbiddenTraits.Contains(trait.Id)));
+				}
+			}
+			allTraits.RemoveAll((WorldTrait trait) =>
+				 !trait.IsValid(targetAsteroid, logErrors: true)
+				|| trait.exclusiveWithTags.Any(x => ExclusiveWithTags.Any(y => y == x))
+				|| allSelected.Contains(trait)
+				|| trait.exclusiveWith.Any(x => allSelected.Any(y => y.Id == x))
+				);
+
+			return allTraits.ToHashSet();
+		}
+	}
 }
