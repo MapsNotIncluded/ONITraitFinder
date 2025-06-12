@@ -294,8 +294,8 @@
 		},
 		"DLC4PrehistoricSpaceDestination": {
 			"Id": "DLC4PrehistoricSpaceDestination",
-			"Name": "Relica",
-			"Description": "A prehistoric world with peat and nickel ore deposits.",
+			"Name": "Prehistoric Ore Field",
+			"Description": "A destination with extractable resources from another era.",
 			"Image": "prehistoric_base",
 			"Ressources_Elements": {
 				"NickelOre": 100.0,
@@ -313,9 +313,39 @@
 		"DLC4PrehistoricDemoliorSpaceDestination": {
 			"Id": "DLC4PrehistoricDemoliorSpaceDestination",
 			"Name": "Demolior Debris",
-			"Description": "The remains of Demolior, containing a renewable source of iridium.",
-			"Image": "prehistoric_demolior_debris",
-			"Ressources_Elements": { "Iridium": 100.0 },
+			"Description": "The remains of an obliterated asteroid containing a renewable source of iridium.",
+			"Image": "prehistoric_demolior_debris1",
+			"Ressources_Elements": {
+				"Iridium": 100.0,
+				"MaficRock": 100.0,
+				"Gold": 100.0,
+				"Granite": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"DLC4PrehistoricDemoliorSpaceDestination2": {
+			"Id": "DLC4PrehistoricDemoliorSpaceDestination2",
+			"Name": "Liquid Demolior Debris",
+			"Description": "The liquid remains of an obliterated asteroid containing a renewable source of Isosap.",
+			"Image": "prehistoric_demolior_debris2",
+			"Ressources_Elements": {
+				"Isoresin": 100.0,
+				"Petroleum": 100.0,
+				"LiquidSulfur": 100.0
+			},
+			"Ressources_Entities": null
+		},
+		"DLC4PrehistoricDemoliorSpaceDestination3": {
+			"Id": "DLC4PrehistoricDemoliorSpaceDestination3",
+			"Name": "Molten Demolior Debris",
+			"Description": "The hot metallic remains of an obliterated asteroid containing a renewable source of iridium.",
+			"Image": "prehistoric_demolior_debris3",
+			"Ressources_Elements": {
+				"MoltenIridium": 100.0,
+				"LiquidOxygen": 100.0,
+				"LiquidHydrogen": 100.0,
+				"Magma": 100.0
+			},
 			"Ressources_Entities": null
 		}
 	},
@@ -438,7 +468,7 @@
 		},
 		"PacuEgg": {
 			"Id": "PacuEgg",
-			"Name": "Fry Egg"
+			"Name": "Pacu Egg"
 		},
 		"Magma": {
 			"Id": "Magma",
@@ -607,6 +637,26 @@
 		"VineMotherSeed": {
 			"Id": "VineMotherSeed",
 			"Name": "Ovagro Node Seed"
+		},
+		"Granite": {
+			"Id": "Granite",
+			"Name": "Granite"
+		},
+		"Isoresin": {
+			"Id": "Isoresin",
+			"Name": "Isosap"
+		},
+		"LiquidSulfur": {
+			"Id": "LiquidSulfur",
+			"Name": "Liquid Sulfur"
+		},
+		"MoltenIridium": {
+			"Id": "MoltenIridium",
+			"Name": "Molten Iridium"
+		},
+		"LiquidOxygen": {
+			"Id": "LiquidOxygen",
+			"Name": "Liquid Oxygen"
 		}
 	}
 }
