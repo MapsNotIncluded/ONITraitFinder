@@ -18,9 +18,10 @@ namespace TraitFinderApp.Client.Model
         public string DisplayName() => Name;
         
         public string Image() => WorldPlacements[startWorldIndex].Asteroid.Image;
+        public Asteroid StarterAsteroid() => WorldPlacements[startWorldIndex].Asteroid;
 
 
-        public List<Dlc> RequiredDlcs;
+		public List<Dlc> RequiredDlcs;
         public List<Dlc> ForbiddenDlcs;
 
 

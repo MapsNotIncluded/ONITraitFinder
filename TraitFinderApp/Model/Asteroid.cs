@@ -7,9 +7,10 @@
 		public string Image;
 		public bool DisableWorldTraits = false;
 		public List<WorldTraitRule> TraitRules;
-		//all asteroids have only one trait rule (atm)
-
 		public float worldTraitScale = 1.0f;
+
+		///nothing built in, just a measure for me to keep info on stuff like the teleporter, ceres heatpump
+		public List<string> SpecialPOIs = new();
 
 		public WorldTraitRule GetConsolidatedTraitRule()
 		{

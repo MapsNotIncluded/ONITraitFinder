@@ -5,6 +5,7 @@
 @using TraitFinderApp.Client.Model
 @using TraitFinderApp.Client.Model.Search
 @using Newtonsoft.Json
+@using TraitFinderApp.Model
 @inject ISnackbar Snackbar
 @inject IScrollManager ScrollManager
 @inject IDialogService DialogService
@@ -154,27 +155,25 @@ else
 									var world = placements[i].Asteroid;
 									var queryAsteroid = Query.AsteroidParams[world];
 									<MudItem>
-										<MudPaper MinHeight="110px" MinWidth="420px" Elevation="5" Outlined Class="pa-2">
+										<MudPaper MinHeight="110px" MinWidth="420px" Elevation="5" Outlined Class="pa-2" >
 											<MudStack Spacing="1" AlignItems="AlignItems.Start" Row Style="width:410px;" StretchItems="StretchItems.End">
 												<MudImage ObjectFit="ObjectFit.Contain" Width="120" Height="120" Src="@world.Image" Alt="@L[@world.Name]" />
 
 												<MudStack AlignItems="AlignItems.Stretch" Spacing="1" Justify="Justify.FlexStart">
-													@if (isStarter)
-													{
-														<MudTooltip Text=@L["Starter Asteroid"] Arrow Placement="Placement.Right" Style="justify-self:center">
-															<ChildContent>
-																<MudStack Row Style="align-self:center" AlignItems="AlignItems.Center" StretchItems="StretchItems.Start" Spacing="1" Justify="Justify.Center">
-																	<MudText Align="Align.Center" Typo="Typo.h6" Style="text-overflow:ellipsis; white-space: nowrap;">@L[@world.Name]</MudText>
-																	<MudImage ObjectPosition="ObjectPosition.Center" Src="icons/printingpod.ico" Width="30" Height="30" ObjectFit="ObjectFit.Contain"></MudImage>
-																</MudStack>
-															</ChildContent>
 
-														</MudTooltip>
-													}
-													else
-													{
-														<MudText Align="Align.Center" Typo="Typo.h6" Style="text-overflow:ellipsis; white-space: nowrap;">@L[@world.Name]</MudText>
-													}
+													<MudStack Row Wrap=Wrap.NoWrap Style="align-self:center" AlignItems="AlignItems.Center" StretchItems="StretchItems.Start" Spacing="1" Justify="Justify.Center">
+														<MudText Align="Align.Center" Typo="Typo.h6" Style="width:240px; text-overflow:ellipsis; white-space: nowrap; overflow:hidden">@L[@world.Name]</MudText>
+														@foreach (var annotation in AsteroidAnnotation.GetAnnotationsFor(world, Query.SelectedCluster))
+														{
+															<MudTooltip Text=@L[@annotation.GetTooltip()] Arrow Placement="Placement.Right" Style="justify-self:center">
+																<ChildContent>
+																	<MudStack Row Style="align-self:center" AlignItems="AlignItems.Center" StretchItems="StretchItems.Start" Spacing="1" Justify="Justify.Center">
+																		<MudImage ObjectPosition="ObjectPosition.Center" Src="@annotation.GetIcon()" Width="30" Height="30" ObjectFit="ObjectFit.Contain"></MudImage>
+																	</MudStack>
+																</ChildContent>
+															</MudTooltip>
+														}
+													</MudStack>
 													@if (queryAsteroid.CannotHaveTraits())
 													{
 														<MudText Align="Align.Center" Typo="Typo.body1">@L["This asteroid cannot generate any traits."]</MudText>
@@ -379,7 +378,7 @@ else
 										{
 											foreach (var result in Query?.QueryResults)
 											{
-												
+
 												<QueryResultVisualizer SearchQuery="Query" QueryResult="@result"></QueryResultVisualizer>
 											}
 										}
