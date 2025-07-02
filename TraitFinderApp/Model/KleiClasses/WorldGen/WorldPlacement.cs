@@ -39,5 +39,14 @@
 				Console.WriteLine($"WorldPlacement: Could not find asteroid for world {world}");
 			}
 		}
+		public bool IsMixingPlacement()
+		{
+			if (worldMixing.requiredTags.Count == 0)
+			{
+				return worldMixing.forbiddenTags.Count != 0;
+			}
+
+			return true;
+		}
 	}
 }

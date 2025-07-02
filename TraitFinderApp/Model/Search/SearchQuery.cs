@@ -2,15 +2,24 @@
 using OniStarmapGenerator.Model;
 using OniStarmapGenerator.Model.Search;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using TraitFinderApp.Model.Mixing;
 using TraitFinderApp.Model.Search;
 
 namespace TraitFinderApp.Client.Model.Search
 {
-	public class SearchQuery
+	public class SearchQuery: INotifyPropertyChanged
 	{
+		public event PropertyChangedEventHandler PropertyChanged;
+		void OnPropertyChanged([CallerMemberName] string propertyName = null)
+		{
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		}
+		public void OnAsteroidChanged() => OnPropertyChanged(nameof(AsteroidParams));
+
 		public List<Dlc> ActiveDlcs = new List<Dlc>();
 		public ClusterCategory? ActiveMode;
 		public ClusterLayout? SelectedCluster;
@@ -138,6 +147,7 @@ namespace TraitFinderApp.Client.Model.Search
 		{
 			QueryResults = new List<QueryResult>(QueryTarget);
 			ResetQuerySeed();
+			OnPropertyChanged(nameof(QueryResults));
 		}
 
 		public void ResetFilters()
@@ -156,10 +166,13 @@ namespace TraitFinderApp.Client.Model.Search
 				}
 			}
 		}
-		public void ResetQuerySeed()
+		public async void ResetQuerySeed()
 		{
 			if (SelectedCluster != null && SelectedCluster.HasFixedCoordinate())
+			{
+				await SearchFixedSeed(SelectedCluster.fixedCoordinate);
 				return;
+			}
 			CurrentQuerySeed = 1;
 		}
 
@@ -218,9 +231,9 @@ namespace TraitFinderApp.Client.Model.Search
 				{
 					SetDlcEnabled(changedMixing.DlcFrom, false); 
 					GameSettingsInstance.SetMixingStateWhere(mixing => (mixing != changedMixing && mixing.DlcFrom == changedMixing.DlcFrom), false);
-
 				}
 			}
+			ClearQueryResults();
 		}
 
 

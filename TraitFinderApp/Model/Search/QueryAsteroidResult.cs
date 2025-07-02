@@ -8,6 +8,7 @@ namespace TraitFinderApp.Model.Search
         public SearchQuery Origin;
         public Asteroid Asteroid;
         public List<WorldTrait> Traits;
+        public bool IsMixing;
 
         public List<WorldTrait> GetTraitsForUI()
         {
@@ -29,11 +30,13 @@ namespace TraitFinderApp.Model.Search
 
 
         public QueryAsteroidResult() { }
-        public QueryAsteroidResult(SearchQuery _origin, Asteroid _asteroid, List<WorldTrait> _traits)
+        public QueryAsteroidResult(SearchQuery _origin, Asteroid _asteroid, List<WorldTrait> _traits, bool isMixing = false)
         {
             Origin = _origin;
             Asteroid = _asteroid;
             Traits = _traits;
-        }
+			IsMixing = isMixing;
+
+		}
     }
 }

@@ -1,0 +1,39 @@
+﻿@using TraitFinderApp.Client.Model
+@using TraitFinderApp.Client.Model.Search
+@using TraitFinderApp.Model.Mixing
+@inject IStringLocalizer<App> L
+
+<MudItem>
+	<MudPaper Class="pa-3" Elevation="6" Style="position:relative">
+		@{
+			Dlc dlcFrom = mixing.DlcFrom;
+			string fillable = string.Format(@L["This remix setting requires the {0} DLC to be played."], @L[dlcFrom.Name]);
+		}
+		<MudImage Style="position:absolute;top:0px;right:0px;" Width="60" Height="60" Src="@dlcFrom.BannerImage" Alt="@L[@dlcFrom.Name]" />		
+		<MudText Class="highlight-on-disabled:disabled" Align="Align.Center" Typo="Typo.body1">@mixing.Name</MudText>
+		<MudStack Row AlignItems="AlignItems.Center" Spacing="2">
+			<MudTooltip Style="white-space: pre-line" Text="@mixing.Description">
+				<MudStack AlignItems="AlignItems.Center">
+					<MudImage Height="120" Style="margin-right: -5px; margin-top: 5px" Src=@mixing.GetIcon() Alt="@L[mixing.Name]">
+					</MudImage>
+				</MudStack>
+			</MudTooltip>
+			<MudTooltip Style="white-space: pre-line" Text="@mixing.CurrentLevel.Description">
+				<MudToggleGroup T="SettingLevel" Vertical Value="@mixing.CurrentLevel" Disabled="@(!Query.CanToggleMixing(mixing))" ValueChanged="@(level => Query.ReevaluateMixingsOnChanged(mixing,level))">
+					<MudToggleItem Text="@mixing.OffLevel.Name" Value="@(mixing.OffLevel)" />
+					<MudToggleItem Text="@mixing.ThirdLevel.Name" Value="@(mixing.ThirdLevel)" />
+					<MudToggleItem Text="@mixing.OnLevel.Name" Value="@(mixing.OnLevel)" />
+				</MudToggleGroup>
+			</MudTooltip>
+		</MudStack>
+	</MudPaper>
+</MudItem>
+
+@code {
+	[Parameter]
+	[EditorRequired]
+	public MixingSettingConfig mixing { get; set; }
+	[Parameter]
+	[EditorRequired]
+	public SearchQuery Query { get; set; }
+}

@@ -15,7 +15,7 @@ namespace TraitFinderApp.Model.Mixing
 		public static List<MixingSettingConfig> AllMixingSettings = new(0);
 
 		public static List<MixingSettingConfig> DlcMixingSettings = new List<MixingSettingConfig>(4);
-		public static List<WorldMixingSettingConfig> WorldMixingSettings = new List<WorldMixingSettingConfig>(4);
+		public static List<MixingSettingConfig> WorldMixingSettings = new List<MixingSettingConfig>(4);
 		public static List<MixingSettingConfig> SubworldMixingSettings = new List<MixingSettingConfig>(16);
 
 		public static Dictionary<Dlc, MixingSettingConfig> DlcMixingSettingsDict = new Dictionary<Dlc, MixingSettingConfig>(4);
@@ -43,7 +43,7 @@ namespace TraitFinderApp.Model.Mixing
 						DlcMixingSettings.Add(mixing);
 						break;
 					case (GameSettingType.WorldMixing):
-						WorldMixingSettings.Add((WorldMixingSettingConfig)mixing);
+						WorldMixingSettings.Add(mixing);
 						break;
 					case (GameSettingType.SubworldMixing):
 						SubworldMixingSettings.Add(mixing);
@@ -52,6 +52,7 @@ namespace TraitFinderApp.Model.Mixing
 			}
 		}
 
+
 		public static bool ParseStorySettingsCode(string settingsCode)
 		{
 			return true;
@@ -59,6 +60,15 @@ namespace TraitFinderApp.Model.Mixing
 		public static bool ParseGameSettingsCode(string settingsCode)
 		{
 			return true;
+		}
+
+		public static string GetStorySettingsCode()
+		{
+			return "0";
+		}
+		public static string GetGameSettingsCode()
+		{
+			return "0";
 		}
 
 		/// <summary>

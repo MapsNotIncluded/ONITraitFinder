@@ -4,11 +4,31 @@ using TraitFinderApp.Client.Model.KleiClasses;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace TraitFinderApp.Client.Model.Search
 {
-	public class AsteroidQuery
+	public class AsteroidQuery : INotifyPropertyChanged
 	{
+		public event PropertyChangedEventHandler PropertyChanged;
+		void OnPropertyChanged([CallerMemberName] string propertyName = null)
+		{
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+			parent.OnAsteroidChanged();
+		}
+		bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+		{
+			if (Equals(storage, value))
+			{
+				return false;
+			}
+
+			storage = value;
+			OnPropertyChanged(propertyName);
+			return true;
+		}
+
 		int worldIndex;
 		Asteroid targetAsteroid;
 		SearchQuery parent;
@@ -20,6 +40,7 @@ namespace TraitFinderApp.Client.Model.Search
 				_guarantee = value;
 				//Console.WriteLine("Guarantee changed");
 				ReevaluateAvailableTraits();
+				OnPropertyChanged(nameof(Guarantee));
 			}
 		}
 
@@ -33,6 +54,7 @@ namespace TraitFinderApp.Client.Model.Search
 				_prohibit = value;
 				//Console.WriteLine("Prohibited changed");
 				ReevaluateAvailableTraits();
+				OnPropertyChanged(nameof(Prohibit));
 			}
 		}
 		private IEnumerable<WorldTrait> _prohibit = new HashSet<WorldTrait>();

@@ -8,31 +8,31 @@ namespace TraitFinderApp.Model.KleiClasses
 {
 	public static class WorldGenMixing
 	{
-		static Dictionary<WorldPlacement, WorldMixingSettingConfig> MixingResults = new();
-		static bool IsMixingPlacement(this WorldPlacement item)
-		{
-			return MixingResults.ContainsKey(item);
-		}
+		static Dictionary<WorldPlacement, MixingSettingConfig> MixingResults = new();
+		
 		public static IOrderedEnumerable<T> StableSort<T>(this IEnumerable<T> enumerable)
 		{
 			return enumerable.OrderBy((T t) => t);
 		}
-		public static Dictionary<WorldPlacement, WorldMixingSettingConfig> DoWorldMixing(ClusterLayout layout, int seed, bool isRunningWorldgenDebug, bool muteErrors)
+		public static Dictionary<WorldPlacement, MixingSettingConfig> DoWorldMixing(ClusterLayout layout, int seed, bool isRunningWorldgenDebug, bool muteErrors)
 		{
 			return DoWorldMixingInternal(new(layout), seed, isRunningWorldgenDebug, muteErrors);
 		}
-		public static Dictionary<WorldPlacement, WorldMixingSettingConfig> DoWorldMixingInternal(MutatedClusterLayout mutatedClusterLayout, int seed, bool isRunningWorldgenDebug, bool muteErrors)
+		public static Dictionary<WorldPlacement, MixingSettingConfig> DoWorldMixingInternal(MutatedClusterLayout mutatedClusterLayout, int seed, bool isRunningWorldgenDebug, bool muteErrors)
 		{
 			MixingResults.Clear();
 
 			List<WorldMixingOption> MixingOptionCandidates = new List<WorldMixingOption>();
 
-			foreach (WorldMixingSettingConfig worldMixingSettings in GameSettingsInstance.WorldMixingSettings)
+			foreach (MixingSettingConfig worldMixingSettings in GameSettingsInstance.WorldMixingSettings)
 			{
+				if (!worldMixingSettings.IsActive())
+					continue;
+
 				if (!mutatedClusterLayout.layout.HasAnyTags(worldMixingSettings.ForbiddenClusterTags))
 				{
 					int minCount = worldMixingSettings.IsGuaranteed() ? 1 : 0;
-
+					Console.WriteLine("Adding world mixing to pool: " + worldMixingSettings.Name);
 					MixingOptionCandidates.Add(new WorldMixingOption
 					{
 						//worldgenPath = worldMixingSettings.world,
@@ -65,7 +65,7 @@ namespace TraitFinderApp.Model.KleiClasses
 				WorldMixingOption worldMixingOption = FindWorldMixingOption(item, MixingOptionCandidates);
 				if (worldMixingOption != null)
 				{
-					Console.WriteLine("Mixing: Applied world substitution " + item.world + " -> " + worldMixingOption.worldgenPath);
+					Console.WriteLine("Mixing: Applied world substitution " + item.world + " -> " + worldMixingOption.cachedWorld.Name);
 					//item.worldMixing.previousWorld = item.world;
 					//item.worldMixing.mixingWasApplied = true;
 					//item.world = worldMixingOption.worldgenPath;
@@ -80,9 +80,10 @@ namespace TraitFinderApp.Model.KleiClasses
 
 			if (!ValidateWorldMixingOptions(MixingOptionCandidates, isRunningWorldgenDebug, muteErrors))
 			{
+				Console.WriteLine("Mixing was invalid");
 				return null;
 			}
-
+			Console.WriteLine("Mixing was successful: mixed "+ MixingResults.Count);
 			return MixingResults;
 		}
 		public static WorldMixingOption FindWorldMixingOption(WorldPlacement worldPlacement, List<WorldMixingOption> options)

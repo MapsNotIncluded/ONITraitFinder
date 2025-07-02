@@ -2,11 +2,13 @@
 @page "/"
 @using System.Text.RegularExpressions
 @using OniStarmapGenerator.Model
-@using TraitFinderApp.Client.Model
-@using TraitFinderApp.Client.Model.Search
 @using Newtonsoft.Json
+@using TraitFinderApp.Layout.ClusterEntries
+@using TraitFinderApp.Layout.SettingContainers
 @using TraitFinderApp.Model
 @using TraitFinderApp.Model.Mixing
+@using TraitFinderApp.Client.Model
+@using TraitFinderApp.Client.Model.Search
 @inject ISnackbar Snackbar
 @inject IScrollManager ScrollManager
 @inject IDialogService DialogService
@@ -15,20 +17,20 @@
 
 <style>
 	.mud-tooltip-root {
-		align-self: center !important;
-		justify-self: center !important;
+	align-self: center !important;
+	justify-self: center !important;
 	}
 
 	.mud-input-control {
-		margin-top: 0 !important;
-		margin-bottom: 0 !important;
-		padding-right: 0 !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	padding-right: 0 !important;
 	}
 
 	.highlight-on-disabled:disabled {
-		color: rgb(255, 187, 40) !important;
-		background-color: rgb(135, 68, 102) !important;
-		font-weight: bold;
+	color: rgb(255, 187, 40) !important;
+	background-color: rgb(135, 68, 102) !important;
+	font-weight: bold;
 	}
 </style>
 
@@ -60,17 +62,6 @@ else
 					}
 				</MudGrid>
 			</MudStack>
-			<!--content dlcs (FP)-->
-			@* @foreach (var dlc in Dlc.Values)
-			{
-				@if (!dlc.IsMainVersion)
-				{
-					<MudStack Row="true">
-						<MudImage Height="50" Src=@dlc.Image Alt="@L[@dlc.Name]" />
-						<MudSwitch Value="@Query.IsDlcSelected(dlc)" ValueChanged="@((bool value)=> Query.SetDlcEnabled(dlc,value))" Color="Color.Info" Size="Size.Large" />
-					</MudStack>
-				}
-			} *@
 			<!--Mode-->
 			@if (Query?.MainVersionSelected() ?? false)
 			{
@@ -142,52 +133,20 @@ else
 					<MudPaper Class="pa-3" Elevation="2">
 						<!--Mixings-->
 						<MudStack Spacing="4" AlignItems="AlignItems.Center">
-							<MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h4">@L["Select your Dlc Remixes"]</MudText>
+							<MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h4">@L["Select your active DLC Content:"]</MudText>
 							<MudGrid Spacing="3" Justify="Justify.Center">
 								@foreach (var mixing in GameSettingsInstance.DlcMixingSettings)
 								{
-									<MudItem>
-										<MudPaper Class="pa-3" Elevation="6">
-											<MudStack Row>
-												<MudTooltip Text="@mixing.Description">
-													<MudImage Height="50" Src=@mixing.GetIcon() Alt="@L[mixing.Name]" />
-												</MudTooltip>
-												<MudTooltip Text="@mixing.CurrentLevel.Description">
-													<MudToggleGroup T="SettingLevel" Vertical=false Value="@mixing.CurrentLevel" Disabled="@(!Query.CanToggleMixing(mixing))" ValueChanged="@(level => Query.ReevaluateMixingsOnChanged(mixing,level))">
-														<MudToggleItem Text="@mixing.OffLevel.Name" Value="@(mixing.OffLevel)" />
-														<MudToggleItem Text="@mixing.OnLevel.Name" Value="@(mixing.OnLevel)" />
-													</MudToggleGroup>
-												</MudTooltip>
-											</MudStack>
-										</MudPaper>
-									</MudItem>
+									<DlcRemixSettingContainer Mixing="@mixing" Query="@Query" />
 								}
 							</MudGrid>
 							@if (Query?.SpacedOutSelected() ?? false)
 							{
-								<MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h5">@L["Asteroid Fragment Remix:"]</MudText>
+								<MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h5">@L["Asteroid Remix:"]</MudText>
 								<MudGrid Spacing="6" Justify="Justify.Center">
 									@foreach (var mixing in GameSettingsInstance.WorldMixingSettings)
 									{
-										<MudItem>
-											<MudPaper Class="pa-3" Elevation="6">
-												<MudText Class="highlight-on-disabled:disabled" Align="Align.Center" Typo="Typo.body1">@mixing.Name</MudText>
-												<MudStack Row AlignItems="AlignItems.Center" Spacing="2">
-													<MudTooltip Text="@mixing.Description">
-														<MudStack AlignItems="AlignItems.Center">
-															<MudImage Height="120" Src=@mixing.GetIcon() Alt="@L[mixing.Name]" />
-														</MudStack>
-													</MudTooltip>
-													<MudTooltip Text="@mixing.CurrentLevel.Description">
-														<MudToggleGroup T="SettingLevel" Vertical Value="@mixing.CurrentLevel" Disabled="@(!Query.CanToggleMixing(mixing))" ValueChanged="@(level => Query.ReevaluateMixingsOnChanged(mixing,level))">
-															<MudToggleItem Text="@mixing.OffLevel.Name" Value="@(mixing.OffLevel)" />
-															<MudToggleItem Text="@mixing.ThirdLevel.Name" Value="@(mixing.ThirdLevel)" />
-															<MudToggleItem Text="@mixing.OnLevel.Name" Value="@(mixing.OnLevel)" />
-														</MudToggleGroup>
-													</MudTooltip>
-												</MudStack>
-											</MudPaper>
-										</MudItem>
+										<WorldGenRemixSettingContainer Mixing="@mixing" Query="@Query" />
 									}
 								</MudGrid>
 							}
@@ -195,27 +154,7 @@ else
 							<MudGrid Spacing="6" Justify="Justify.Center">
 								@foreach (var mixing in GameSettingsInstance.SubworldMixingSettings)
 								{
-									<MudItem>
-										<MudPaper Class="pa-3" Elevation="6" Style="position:relative">
-											<MudImage Style="position:absolute;top:0px;right:0px;" Width="60" Height="60" Src="@mixing.DlcFrom.BannerImage" Alt="@L[@mixing.DlcFrom.Name]" />
-											<MudText Class="highlight-on-disabled:disabled" Align="Align.Center" Typo="Typo.body1">@mixing.Name</MudText>
-											<MudStack Row AlignItems="AlignItems.Center" Spacing="2">
-												<MudTooltip Text="@mixing.Description">
-													<MudStack AlignItems="AlignItems.Center">
-														<MudImage Height="120" Style="margin-right: -5px; margin-top: 5px" Src=@mixing.GetIcon() Alt="@L[mixing.Name]" >
-														</MudImage>
-													</MudStack>
-												</MudTooltip>
-												<MudTooltip Text="@mixing.CurrentLevel.Description">
-													<MudToggleGroup T="SettingLevel" Vertical Value="@mixing.CurrentLevel" Disabled="@(!Query.CanToggleMixing(mixing))" ValueChanged="@(level => Query.ReevaluateMixingsOnChanged(mixing,level))">
-														<MudToggleItem Text="@mixing.OffLevel.Name" Value="@(mixing.OffLevel)" />
-														<MudToggleItem Text="@mixing.ThirdLevel.Name" Value="@(mixing.ThirdLevel)" />
-														<MudToggleItem Text="@mixing.OnLevel.Name" Value="@(mixing.OnLevel)" />
-													</MudToggleGroup>
-												</MudTooltip>
-											</MudStack>
-										</MudPaper>
-									</MudItem>
+									<WorldGenRemixSettingContainer Mixing="@mixing" Query="@Query" />
 								}
 							</MudGrid>
 						</MudStack>
@@ -241,188 +180,19 @@ else
 							<MudGrid Spacing="2" Justify="Justify.Center">
 								@for (int i = 0; i < Query?.SelectedCluster?.worldPlacements.Count; ++i)
 								{
-									int maxCount = Query.SelectedCluster.worldPlacements.Count;
-									var placements = Query.SelectedCluster.worldPlacements;
-									bool isStarter = i == Query.SelectedCluster.startWorldIndex && maxCount > 1; //no extra starter marking in base game
-									var world = placements[i].Asteroid;
-									var queryAsteroid = Query.AsteroidParams[world];
-									<MudItem>
-										<MudPaper MinHeight="110px" MinWidth="420px" Elevation="5" Outlined Class="pa-2">
-											<MudStack Spacing="1" AlignItems="AlignItems.Start" Row Style="width:410px;" StretchItems="StretchItems.End">
-												<MudImage ObjectFit="ObjectFit.Contain" Width="120" Height="120" Src="@world.Image" Alt="@L[@world.Name]" />
-
-												<MudStack AlignItems="AlignItems.Stretch" Spacing="1" Justify="Justify.FlexStart">
-
-													<MudStack Row Wrap=Wrap.NoWrap Style="align-self:center" AlignItems="AlignItems.Center" StretchItems="StretchItems.Start" Spacing="1" Justify="Justify.Center">
-														<MudText Align="Align.Center" Typo="Typo.h6" Style="max-width:240px; text-overflow:ellipsis; white-space: nowrap; overflow:hidden">@L[@world.Name]</MudText>
-														@foreach (var annotation in AsteroidAnnotation.GetAnnotationsFor(world, Query.SelectedCluster))
-														{
-															<MudTooltip Text=@L[@annotation.GetTooltip()] Arrow Placement="Placement.Right" Style="justify-self:center">
-																<ChildContent>
-																	<MudStack Row Style="align-self:center" AlignItems="AlignItems.Center" StretchItems="StretchItems.Start" Spacing="1" Justify="Justify.Center">
-																		<MudImage ObjectPosition="ObjectPosition.Center" Src="@annotation.GetIcon()" Width="30" Height="30" ObjectFit="ObjectFit.Contain"></MudImage>
-																	</MudStack>
-																</ChildContent>
-															</MudTooltip>
-														}
-													</MudStack>
-													@if (queryAsteroid.CannotHaveTraits())
-													{
-														<MudText Align="Align.Center" Typo="Typo.body1">@L["This asteroid cannot generate any traits."]</MudText>
-													}
-													else
-													{
-														string maxCountText = string.Format(@L["Guaranteed traits ({0} max)"], queryAsteroid.GetMaxCountIncGuaranteed());
-
-														<!--Hack for visualizing traits by icon only-->
-														<MudStack Row Style="height:0px; margin-top:-4px; overflow:visible" Class="pl-4 pr-4">
-															<MudVirtualize Items="@queryAsteroid.GetCurrentGuaranteesIncFixed()" Context="trait">
-																<MudImage Style="position: relative; top: 12px" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
-															</MudVirtualize>
-														</MudStack>
-
-														<!--actual select for guaranteed traits-->
-
-														<MudSelect Disabled="@(Query.SelectedCluster.HasFixedCoordinate())"
-																   FullWidth="true"
-																   Variant="Variant.Outlined"
-																   T=WorldTrait
-																   MultiSelection
-																   Clearable
-																   Dense
-																   Margin="Margin.Dense"
-																   AnchorOrigin="Origin.BottomCenter"
-																   TransformOrigin="Origin.TopCenter"
-																   Label=@(maxCountText)
-																   ToStringFunc="@((_)=> (queryAsteroid.GetCurrentGuaranteesIncFixed().Count()>0) ? "‎ ":string.Empty)"
-																   MultiSelectionTextFunc="@((_)=> (queryAsteroid.GetCurrentGuaranteesIncFixed().Count()>0) ? "‎ ":string.Empty)"
-																   @bind-SelectedValues="queryAsteroid.Guarantee">
-
-															<MudVirtualize Items="@queryAsteroid.GetAllWorldCompatibleTraits()" Context="trait">
-																@{
-																	bool cannotToggle = !queryAsteroid.CanToggleGuaranteedTrait(trait);
-																	//semi transparent if disabled;
-																	string hexcode = "#" + trait.ColorHex + (cannotToggle ? "4d" : string.Empty);
-																}
-
-																<MudSelectItem Disabled="@cannotToggle" Value="@(trait)">
-																	<MudStack Row AlignItems="AlignItems.Center" Spacing="1">
-																		<MudImage ObjectPosition="ObjectPosition.Left" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
-																		<MudText Style="@($"color:{hexcode};")">@L[@trait.Name]</MudText>
-																	</MudStack>
-																</MudSelectItem>
-															</MudVirtualize>
-
-														</MudSelect>
-
-														<!--Hack for visualizing traits by icon only-->
-														<MudStack Row Style="height:0px;margin-top:-4px;overflow-y:visible;max-width=286px" Justify="Justify.FlexStart" Class="pl-4 pr-4" Spacing="0">
-															<MudVirtualize Items="@queryAsteroid.Prohibit.ToList()" Context="trait">
-																@{
-																	int marginAdjustment = -(24 - (210 / queryAsteroid.Prohibit.Count() - 1));
-																	if (marginAdjustment > 1)
-																		marginAdjustment = 4;
-																	string marginAdjustmentString = $"position:relative;top:12px;margin-right:{marginAdjustment}px;"; ;
-																}
-																<MudImage Style="@marginAdjustmentString" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
-															</MudVirtualize>
-														</MudStack>
-
-
-														<!--actual select for prohibited traits-->
-														<MudSelect FullWidth="true"
-																   Disabled="@(Query.SelectedCluster.HasFixedCoordinate())"
-																   Variant="Variant.Outlined"
-																   T=WorldTrait
-																   MultiSelection
-																   Dense
-																   Margin="Margin.Dense"
-																   AnchorOrigin="Origin.BottomCenter"
-																   TransformOrigin="Origin.TopCenter"
-																   Label=@L["Forbidden traits"]
-																   Clearable
-																   ToStringFunc="@((_)=> (queryAsteroid.Prohibit.Count()>0) ? "‎ ":string.Empty)"
-																   MultiSelectionTextFunc="@((_)=> (queryAsteroid.Prohibit.Count()>0) ? "‎ ":string.Empty)"
-																   @bind-SelectedValues="queryAsteroid.Prohibit">
-
-															<MudVirtualize Items="@queryAsteroid.GetAllWorldCompatibleTraits()" Context="trait">
-																<MudSelectItem Disabled="@(!queryAsteroid.CanToggleProhibitedTrait(trait))" Value="@(trait)">
-																	<MudStack Row AlignItems="AlignItems.Center" Spacing="1">
-																		<MudImage ObjectPosition="ObjectPosition.Left" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
-																		<MudText Style="@($"color:#{trait.ColorHex};")">@L[@trait.Name]</MudText>
-																	</MudStack>
-																</MudSelectItem>
-															</MudVirtualize>
-														</MudSelect>
-													}
-												</MudStack>
-											</MudStack>
-										</MudPaper>
-									</MudItem>
-
+									var world = Query.SelectedCluster.worldPlacements[i].Asteroid;
+									<AsteroidConfigurator Query="Query" Asteroid ="world"/>
 								}
 								@if (Query.HasClusterSelected() && Query.ActiveDlcs.Contains(Dlc.BASEGAME))
 								{
-									<MudItem>
-										<MudPaper MinHeight="110px" MinWidth="420px" Elevation="5" Outlined Class="pa-2">
-											<MudStack Spacing="1" AlignItems="AlignItems.Start" Row Style="width:410px;" StretchItems="StretchItems.End">
-												<MudImage ObjectFit="ObjectFit.Contain" Width="120" Height="120" Src="./images/Starmap/Starmap_Icon.png" Alt="Starmap Destinations" />
-
-												<MudStack AlignItems="AlignItems.Stretch" Spacing="1" Justify="Justify.FlexStart">
-
-													<MudText Align="Align.Center" Typo="Typo.h6" Style="text-overflow:ellipsis; white-space: nowrap;">@L["Starmap Destinations"]</MudText>
-
-
-
-													<!--Hack for visualizing starmap destinations by icon only-->
-													<MudStack Row Style="height:0px; margin-top:-4px; overflow:visible" Class="pl-4 pr-4">
-														<MudVirtualize Items="@Query.RequiredStarmapLocations.ToList()" Context="trait">
-															<MudImage Style="position: relative; top: 12px" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
-														</MudVirtualize>
-													</MudStack>
-
-													<!--actual select for guaranteed starmap destinations-->
-
-													<MudSelect FullWidth="true"
-															   Disabled="@(Query.SelectedCluster.HasFixedCoordinate())"
-															   Variant="Variant.Outlined"
-															   T=VanillaStarmapLocation
-															   MultiSelection
-															   Clearable
-															   Dense
-															   Margin="Margin.Dense"
-															   AnchorOrigin="Origin.BottomCenter"
-															   TransformOrigin="Origin.TopCenter"
-															   Label="@(@L[$"Guaranteed Starmap Locations"])"
-															   Text="@(Query.HasStarmapFilters() ? "‎ ":string.Empty)"
-															   ToStringFunc="@((_)=> Query.HasStarmapFilters() ? "‎ ":string.Empty)"
-															   MultiSelectionTextFunc="@((_)=> Query.HasStarmapFilters() ? "‎ ":string.Empty)"
-															   @bind-SelectedValues="Query.RequiredStarmapLocations">
-
-														<MudVirtualize Items="@DataImport.GetVanillaStarmapLocations(Query.ActiveDlcs,Query.SelectedCluster.RequiredDlcs)" Context="location">
-															<MudSelectItem Value="@(location)">
-																<MudStack Row AlignItems="AlignItems.Start" Spacing="1">
-																	<MudImage ObjectPosition="ObjectPosition.Left" Src="@location.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
-																	<MudText Align="Align.Left">@L[@location.Name]</MudText>
-																</MudStack>
-															</MudSelectItem>
-														</MudVirtualize>
-
-													</MudSelect>
-
-												</MudStack>
-											</MudStack>
-										</MudPaper>
-									</MudItem>
-
+									<BaseGameStartmapConfigurator Query="@Query"/>
 								}
 							</MudGrid>
 							<MudSpacer></MudSpacer>
 							@{
-								bool fixedCorrdinateFound = Query != null && Query.SelectedCluster != null && Query.SelectedCluster.HasFixedCoordinate();
 								string prefix = Query != null && Query.SelectedCluster != null ? Query.SelectedCluster.Prefix : string.Empty;
 								bool canDeleteQueryResults = Query != null && !Query.HasResults();
-								string searchString = (Query?.CurrentQuerySeed > 1) || (Query?.SelectedCluster?.HasFixedCoordinate() ?? false) ? L["Search for more seeds"] : L["Search for seeds"];
+								string searchString = (Query?.CurrentQuerySeed > 1) || (!Query?.SelectedCluster?.HasFixedCoordinate() ?? true) ? L["Search for more seeds"] : L["Search for seeds"];
 								string coordTitleString = $"{prefix}-";
 							}
 							<MudGrid Justify="Justify.Center" AlignItems="AlignItems.Center" Spacing="2">
@@ -450,7 +220,7 @@ else
 									<MudFab Disabled="@canDeleteQueryResults" StartIcon="@Icons.Material.Filled.Delete" OnClick="(_)=> Query?.ClearQueryResults()" Label=@L["Clear Results"] Color="Color.Secondary"></MudFab>
 								</MudItem>
 								<MudItem>
-									<MudFab Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Search" Disabled="@fixedCorrdinateFound" OnClick="(_)=> StartSearching()" Color="Color.Primary" Label="@searchString"></MudFab>
+									<MudFab Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Search" Disabled="@isFixedCoordinate" OnClick="(_)=> StartSearching()" Color="Color.Primary" Label="@searchString"></MudFab>
 								</MudItem>
 							</MudGrid>
 						</MudStack>
@@ -494,7 +264,6 @@ else
 					</MudPaper>
 				</MudContainer>
 				<div id="end-page-id"></div>
-
 			}
 		</MudStack>
 	</MudContainer>
@@ -544,6 +313,7 @@ else
 
 		DataInitialized = true;
 		Query = new();
+		Query.PropertyChanged += (sender, args) => StateHasChanged();
 
 		if (OptionalSeed != null && OptionalSeed.Length > 0)
 		{
@@ -633,6 +403,11 @@ else
 	{
 		await Task.Delay(5);
 		await ScrollManager.ScrollIntoViewAsync(".query-results", ScrollBehavior.Smooth);
+	}
+	public void RefreshUI()
+	{
+		Console.WriteLine("Refreshing UI"); 
+		InvokeAsync(() => StateHasChanged());
 	}
 
 	public async Task SelectCluster(ClusterLayout cluster)

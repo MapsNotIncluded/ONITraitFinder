@@ -14,9 +14,10 @@
 
 <MudItem>
 	<MudPaper Outlined Elevation="10" Class="pa-1" Width="300px">
+		<MudStack Row Spacing="1" AlignItems="AlignItems.Center" Justify="Justify.Center"><MudText Style="padding:4px" Typo="Typo.h6">@QueryResult.GetCoordinate()</MudText></MudStack>
+				
 		<MudStack Spacing="2">
 			<MudStack Row Spacing="1" AlignItems="AlignItems.Center" Justify="Justify.Center">
-				<MudText Style="padding:4px" Typo="Typo.h6">@QueryResult.GetCoordinate()</MudText>
 				<MudTooltip Arrow Text="@L["Copy the coordinate to the clipboard"]">
 					<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.ContentCopy" IconColor="Color.Tertiary" OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())"></MudFab>
 				</MudTooltip>
@@ -25,9 +26,9 @@
 				{
 					if (IsFailedSeed)
 					{
-                        <MudTooltip Arrow Text="@L["Seed failed generating!"]">  
-                           <MudIcon Icon="@Icons.Material.Filled.Error" Color="Color.Error" Style="font-size: 57px; margin-top:3px; margin-bottom:-3px"></MudIcon>
-                        </MudTooltip>
+						<MudTooltip Arrow Text="@L["Seed failed generating!"]">  
+							<MudIcon Icon="@Icons.Material.Filled.Error" Color="Color.Error" Style="font-size: 57px; margin-top:3px; margin-bottom:-3px"></MudIcon>
+						</MudTooltip>
 					}
 					else
 					{
@@ -72,6 +73,15 @@
 								</MudChip>
 							</MudTooltip>
 						</MudVirtualize>
+						@if (asteroidQueryResult.IsMixing)
+						{
+							<MudTooltip Style="white-space: pre-line" Text="@L["Currently, the ingame colony destination screen has a bug,\n that causes the traits shown there for asteroid remixes to be wrong.\n\nThe traits shown here are those that will actually be generated,\neven if the colony destination screen says otherwise."]" Arrow="true" Placement="Placement.Top">
+								
+								<MudChip T="string" Variant="Variant.Outlined" Color="Color.Warning">
+									<MudImage ObjectFit="ObjectFit.Contain" Width="20" Height="20" Src="icons/warning.png" />
+								</MudChip>
+							</MudTooltip>
+						}
 					</MudStack>
 				}
 			</MudVirtualize>

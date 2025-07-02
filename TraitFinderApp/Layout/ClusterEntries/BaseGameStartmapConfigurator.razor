@@ -1,0 +1,56 @@
+﻿@using OniStarmapGenerator.Model
+@using TraitFinderApp.Model.Mixing
+@using TraitFinderApp.Client.Model
+@using TraitFinderApp.Client.Model.Search
+@inject IStringLocalizer<App> L
+<MudItem>
+	<MudPaper MinHeight="110px" MinWidth="420px" Elevation="5" Outlined Class="pa-2">
+		<MudStack Spacing="1" AlignItems="AlignItems.Start" Row Style="width:410px;" StretchItems="StretchItems.End">
+			<MudImage ObjectFit="ObjectFit.Contain" Width="120" Height="120" Src="./images/Starmap/Starmap_Icon.png" Alt="Starmap Destinations" />
+
+			<MudStack AlignItems="AlignItems.Stretch" Spacing="1" Justify="Justify.FlexStart">
+
+				<MudText Align="Align.Center" Typo="Typo.h6" Style="text-overflow:ellipsis; white-space: nowrap;">@L["Starmap Destinations"]</MudText>
+				<!--Hack for visualizing starmap destinations by icon only-->
+				<MudStack Row Style="height:0px; margin-top:-4px; overflow:visible" Class="pl-4 pr-4">
+					<MudVirtualize Items="@Query.RequiredStarmapLocations.ToList()" Context="trait">
+						<MudImage Style="position: relative; top: 12px" ObjectPosition="ObjectPosition.Center" Src="@trait.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
+					</MudVirtualize>
+				</MudStack>
+
+				<!--actual select for guaranteed starmap destinations-->
+
+				<MudSelect FullWidth="true"
+						   Disabled="@(Query.SelectedCluster.HasFixedCoordinate())"
+						   Variant="Variant.Outlined"
+						   T=VanillaStarmapLocation
+						   MultiSelection
+						   Clearable
+						   Dense
+						   Margin="Margin.Dense"
+						   AnchorOrigin="Origin.BottomCenter"
+						   TransformOrigin="Origin.TopCenter"
+						   Label="@(@L[$"Guaranteed Starmap Locations"])"
+						   Text="@(Query.HasStarmapFilters() ? "‎ ":string.Empty)"
+						   ToStringFunc="@((_)=> Query.HasStarmapFilters() ? "‎ ":string.Empty)"
+						   MultiSelectionTextFunc="@((_)=> Query.HasStarmapFilters() ? "‎ ":string.Empty)"
+						   @bind-SelectedValues="Query.RequiredStarmapLocations">
+
+					<MudVirtualize Items="@DataImport.GetVanillaStarmapLocations(Query.ActiveDlcs,Query.SelectedCluster.RequiredDlcs)" Context="location">
+						<MudSelectItem Value="@(location)">
+							<MudStack Row AlignItems="AlignItems.Start" Spacing="1">
+								<MudImage ObjectPosition="ObjectPosition.Left" Src="@location.Image" Width="24" Height="24" ObjectFit="ObjectFit.Contain"></MudImage>
+								<MudText Align="Align.Left">@L[@location.Name]</MudText>
+							</MudStack>
+						</MudSelectItem>
+					</MudVirtualize>
+				</MudSelect>
+			</MudStack>
+		</MudStack>
+	</MudPaper>
+</MudItem>
+@code {
+	[Parameter]
+	[EditorRequired]
+	public SearchQuery Query { get; set; }
+}

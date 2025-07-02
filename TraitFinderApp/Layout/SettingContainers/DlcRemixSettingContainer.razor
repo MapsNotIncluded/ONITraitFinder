@@ -1,0 +1,28 @@
+﻿@using TraitFinderApp.Client.Model.Search
+@using TraitFinderApp.Model.Mixing
+@inject IStringLocalizer<App> L
+
+<MudItem>
+	<MudPaper Class="pa-3" Elevation="6">
+		<MudStack Row>
+			<MudTooltip Text="@mixing.Description">
+				<MudImage Height="50" Src=@mixing.GetIcon() Alt="@L[mixing.Name]" />
+			</MudTooltip>
+			<MudTooltip Text="@mixing.CurrentLevel.Description" Style="white-space: pre-line">
+				<MudToggleGroup T="SettingLevel" Vertical=false Value="@mixing.CurrentLevel" Disabled="@(!Query.CanToggleMixing(mixing))" ValueChanged="@(level => Query.ReevaluateMixingsOnChanged(mixing,level))">
+					<MudToggleItem Text="@mixing.OffLevel.Name" Value="@(mixing.OffLevel)" />
+					<MudToggleItem Text="@mixing.OnLevel.Name" Value="@(mixing.OnLevel)" />
+				</MudToggleGroup>
+			</MudTooltip>
+		</MudStack>
+	</MudPaper>
+</MudItem>
+
+@code {
+    [Parameter]
+    [EditorRequired]
+	public MixingSettingConfig mixing { get; set; }
+	[Parameter]
+	[EditorRequired]
+	public SearchQuery Query { get; set; }
+}

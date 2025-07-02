@@ -1,5 +1,7 @@
 ﻿
+using Newtonsoft.Json;
 using TraitFinderApp.Client.Model;
+using static MudBlazor.CategoryTypes;
 
 namespace TraitFinderApp.Model.Mixing
 {
