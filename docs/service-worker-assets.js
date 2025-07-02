@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "JnpS3yGY",
+  "version": "J0tQGpiN",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -218,7 +218,7 @@ self.assetsManifest = {
       "url": "_framework/System.ObjectModel.wasm"
     },
     {
-      "hash": "sha256-/nECROF8f1tUSM0EyP3gbgyiIzoZBHp/SZZVo52JSsM=",
+      "hash": "sha256-TMZph9hmIx2/dQq1AkSqWYV88HBCDHPGqFJW4kMBDnw=",
       "url": "_framework/System.Private.CoreLib.wasm"
     },
     {
@@ -266,7 +266,7 @@ self.assetsManifest = {
       "url": "_framework/System.Runtime.Serialization.Primitives.wasm"
     },
     {
-      "hash": "sha256-hu381yQ8BpxKM83G+Fu1BwMBwOyXnvs4cyNaAcw8SCM=",
+      "hash": "sha256-H2YKwG8W7CuHdAYv5WmpanQNQKqCRHYGwqrOUN50Wp4=",
       "url": "_framework/System.Runtime.wasm"
     },
     {
@@ -318,11 +318,11 @@ self.assetsManifest = {
       "url": "_framework/System.wasm"
     },
     {
-      "hash": "sha256-w/ia5ULU5YePJXzWQoEyt0oYKt1IT4bMX/I12r8Kwh8=",
+      "hash": "sha256-GJYHqV0ayDAxhASTZZeJWDV9VcbPVePrcKCSUwoSKUQ=",
       "url": "_framework/TraitFinderApp.wasm"
     },
     {
-      "hash": "sha256-aDX4x7yBuNq/K7zxGSNVVznhcV/M2CpiQlIwrYWzCgQ=",
+      "hash": "sha256-99lC3pHowmtFgsVUpaFYNM9ewFeFvAKZw2CMwwAXX+4=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -330,7 +330,7 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-TwSspZAu60SHvWAAMmKvuxxqtiPc4ZxdSzS5YS0iJx8=",
+      "hash": "sha256-ZF8ZVmEBSiS/ou33ZKjoPbJpjKora7+pSS3xA/yy26A=",
       "url": "_framework/de/TraitFinderApp.resources.wasm"
     },
     {
@@ -342,7 +342,7 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.js"
     },
     {
-      "hash": "sha256-hPLxD4N5Y9zGC/OvIv3MctjvqpzgC6pdZErJ9iVHL68=",
+      "hash": "sha256-WbA5rpMjJ/Jl5DY3ra7N2hkwG9WECiYMQWSyd2qMlV0=",
       "url": "_framework/dotnet.native.wasm"
     },
     {
@@ -366,11 +366,11 @@ self.assetsManifest = {
       "url": "_framework/netstandard.wasm"
     },
     {
-      "hash": "sha256-LWBdrW5+jBHf0mcv1a14th8+hKtkQnPYgfcee5Gp1c8=",
+      "hash": "sha256-Xp7615xRBjcC5XCnB8M7I+kb29QIOv1wtw0ZjuklepY=",
       "url": "_framework/zh-TW/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-eEfbaYITAwVGBmG4OvYVPk167b0MvRJZgEWpL41+mDg=",
+      "hash": "sha256-0/O2QRju/VMc1Elm685veWUg10jyHq+2BQ9RCER7jns=",
       "url": "_framework/zh/TraitFinderApp.resources.wasm"
     },
     {
