@@ -45,8 +45,12 @@ namespace TraitFinderApp.Client.Model
         public bool AllowedWithCurrentQuery(SearchQuery query) => query.ActiveMode == ClusterCategory;
         public void InitBindings(Data data)
         {
+            foreach(var placement in worldPlacements)
+			{
+				placement.InitBindings(data);
+			}
 
-            RequiredDlcs = new();
+			RequiredDlcs = new();
             if (RequiredDlcs != null)
                 foreach (var dlc in RequiredDlcsIDs)
                 {

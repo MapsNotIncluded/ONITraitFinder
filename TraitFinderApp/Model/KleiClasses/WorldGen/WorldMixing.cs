@@ -6,8 +6,9 @@
 
         public List<string> forbiddenTags { get; set; }
 
+		public List<string> additionalSeasons { get; set; }
 
-        public WorldMixing()
+		public WorldMixing()
         {
             requiredTags = new List<string>();
             forbiddenTags = new List<string>();
