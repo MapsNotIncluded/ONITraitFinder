@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "N4gHcAWS",
+  "version": "JnpS3yGY",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -34,7 +34,7 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.AspNetCore.Components.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-ynwVOw2Cm4ztnhjot/RCTneeeoKKlt6uRZW0O2eZPg4=",
+      "hash": "sha256-ifTfpltiKgAL6OLmGrBbU7HHVyanqYu9SIHmndk1b8Q=",
       "url": "_framework/Microsoft.AspNetCore.Components.wasm"
     },
     {
@@ -90,7 +90,7 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.Extensions.Localization.wasm"
     },
     {
-      "hash": "sha256-tW3JwdYUV8g+OV8Pz2KsRdicfcWtrzV/QclWoMx8DtM=",
+      "hash": "sha256-ip4oEien05zlG4HkDcyfVHfCRRvJKFIKCVl6vyiN6sU=",
       "url": "_framework/Microsoft.Extensions.Logging.Abstractions.wasm"
     },
     {
@@ -118,7 +118,7 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.Net.Http.Headers.wasm"
     },
     {
-      "hash": "sha256-dJ+DDsVQYyg7BIu48rXZlu5Oj6asK9uMANE51qrNziU=",
+      "hash": "sha256-uZv05nR/xxDP+87HrRwljA4s9/95CVpQ6cdPrHGOr2Y=",
       "url": "_framework/MudBlazor.wasm"
     },
     {
@@ -194,7 +194,7 @@ self.assetsManifest = {
       "url": "_framework/System.Linq.Expressions.wasm"
     },
     {
-      "hash": "sha256-diH2smfV+dSPbQrOmzSqmmKkgRYBmoxVTAcR1fgD1Q0=",
+      "hash": "sha256-DqtkTZZ2jmcZrf9Wzv/D8ugAyecUwI8XTxL3F6v4n8M=",
       "url": "_framework/System.Linq.wasm"
     },
     {
@@ -266,7 +266,7 @@ self.assetsManifest = {
       "url": "_framework/System.Runtime.Serialization.Primitives.wasm"
     },
     {
-      "hash": "sha256-DY84RwLQpZTFVoW9kjQfPWRXNGD3zT8iNjypZcFbK2A=",
+      "hash": "sha256-hu381yQ8BpxKM83G+Fu1BwMBwOyXnvs4cyNaAcw8SCM=",
       "url": "_framework/System.Runtime.wasm"
     },
     {
@@ -318,11 +318,11 @@ self.assetsManifest = {
       "url": "_framework/System.wasm"
     },
     {
-      "hash": "sha256-xnJIV+T3OAUz0AN/FaNp4zrDvwJw5UCXuSkoRMCHejE=",
+      "hash": "sha256-w/ia5ULU5YePJXzWQoEyt0oYKt1IT4bMX/I12r8Kwh8=",
       "url": "_framework/TraitFinderApp.wasm"
     },
     {
-      "hash": "sha256-KqBP2v6S9IgSQh37WisvDjOJzvuU9Q0AAWusnNVFPBo=",
+      "hash": "sha256-aDX4x7yBuNq/K7zxGSNVVznhcV/M2CpiQlIwrYWzCgQ=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -330,7 +330,7 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-sSA4o39cF8Llf0GjAOWbOuu0JUyZYeWJq2I1Hq7x7/M=",
+      "hash": "sha256-TwSspZAu60SHvWAAMmKvuxxqtiPc4ZxdSzS5YS0iJx8=",
       "url": "_framework/de/TraitFinderApp.resources.wasm"
     },
     {
@@ -342,7 +342,7 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.js"
     },
     {
-      "hash": "sha256-yTdWw17osZYgve/9WxglOcFYcAQfxfHZjvqJqpcF4Ag=",
+      "hash": "sha256-hPLxD4N5Y9zGC/OvIv3MctjvqpzgC6pdZErJ9iVHL68=",
       "url": "_framework/dotnet.native.wasm"
     },
     {
@@ -366,11 +366,11 @@ self.assetsManifest = {
       "url": "_framework/netstandard.wasm"
     },
     {
-      "hash": "sha256-oiVKi1lxfkb1ZaHPx/+IBXA03WdSdVg2blviNmyq5xU=",
+      "hash": "sha256-LWBdrW5+jBHf0mcv1a14th8+hKtkQnPYgfcee5Gp1c8=",
       "url": "_framework/zh-TW/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-xOBjqKe4xctIQ58QrXLgnoARqoFJa5/PrroNPaIuQp0=",
+      "hash": "sha256-eEfbaYITAwVGBmG4OvYVPk167b0MvRJZgEWpL41+mDg=",
       "url": "_framework/zh/TraitFinderApp.resources.wasm"
     },
     {
@@ -378,15 +378,15 @@ self.assetsManifest = {
       "url": "data/BasegameStarmapDestinations.json"
     },
     {
-      "hash": "sha256-lASHVmztra8eJo3lXg/WoOZvJ6cN4qhaXyM5AETUYgM=",
+      "hash": "sha256-EZQYcDvpdUuU9QWDrTskHSCB+mRoLzEK0gYDe8oFgp0=",
       "url": "data/gamedata_base.json"
     },
     {
-      "hash": "sha256-lH/rto/2qLDvR3TVTtRuncVvEX9UCy9twdzM7zZOBnk=",
+      "hash": "sha256-ielui+5xlaAoXRcOWUqV+v5+D9pDu9rIJ0a0RIBhiHc=",
       "url": "data/gamedata_so.json"
     },
     {
-      "hash": "sha256-Q8F4XGlt2HIavRDvcjAwSIZUZshSbaTsotpGXGgNst8=",
+      "hash": "sha256-aV8QS8G9jHW0mOeVFXrUENA/1kkJnKs/hn1C48D3bb8=",
       "url": "data/mixing_data.json"
     },
     {
@@ -408,6 +408,22 @@ self.assetsManifest = {
     {
       "hash": "sha256-NX9lJtaPdlazC0e361JghYaafUk9jIT1bF5ZKu8wsVw=",
       "url": "icons/printingpod.ico"
+    },
+    {
+      "hash": "sha256-HXYknNYRqVcgK2ZRTdvryMAj3j0f+lrF9+fSPUrRvww=",
+      "url": "icons/research_dlc_banner.png"
+    },
+    {
+      "hash": "sha256-DoHBbXYviseLAU0JLzjRvzwg22LReCrLI+tP/KO/xm8=",
+      "url": "icons/research_dlc_banner.png.meta"
+    },
+    {
+      "hash": "sha256-BSL5aSowQMnttzb45iI9SZhEfZXmEOu8naio09Ul02w=",
+      "url": "icons/warning.png"
+    },
+    {
+      "hash": "sha256-oEfjBP2M3ph2Jk+muiwRbLPGQ+acYGOIXsSDO5SIgfQ=",
+      "url": "icons/warning.png.meta"
     },
     {
       "hash": "sha256-vkRP6xG7eSV58lmNNL9GJsKLlL/4lTx0c/I9gg0BVnE=",
@@ -818,6 +834,30 @@ self.assetsManifest = {
       "url": "images/asteroids/WaterMoonlet.png"
     },
     {
+      "hash": "sha256-7j7GTCwaaVZQui5im5fEN98p5HlauqWMYVtEsyA+TbM=",
+      "url": "images/biomes/biomeIconCarrotquarry.png"
+    },
+    {
+      "hash": "sha256-m+MwIVKfoe6Jy/+WK6W5HHaDc84BR4QYyaiVSXiwLNg=",
+      "url": "images/biomes/biomeIconGarden.png"
+    },
+    {
+      "hash": "sha256-tDpYAZwdfoRZ0Gw3Y5DU4bEQzQvgMQ2i5H28RS0Z9qg=",
+      "url": "images/biomes/biomeIconIcecaves.png"
+    },
+    {
+      "hash": "sha256-UhMnZfQvQeGSPRggyHFB7hXubhUgM/WyW2WuujLp5c8=",
+      "url": "images/biomes/biomeIconRaptor.png"
+    },
+    {
+      "hash": "sha256-za4luAhUcnHvwJk4sQ+4bKsQ2FA5ut0ppfyunWeq1Tk=",
+      "url": "images/biomes/biomeIconSugarwoods.png"
+    },
+    {
+      "hash": "sha256-Iqr5u5kWanPZSPlJTqKs5p7bDKynWjrUkRDPrvEp6TQ=",
+      "url": "images/biomes/biomeIconWetlands.png"
+    },
+    {
       "hash": "sha256-q95X6VhU46jQ1LnMn8MdZKHReGW+Mdww2EN+ynJPH+o=",
       "url": "images/gamemodes/gamemode_basegame_standard.png"
     },
@@ -838,8 +878,24 @@ self.assetsManifest = {
       "url": "images/gamemodes/gamemode_spacedout_thelab.png"
     },
     {
+      "hash": "sha256-mq5lZH4OC9W8en44IF4jGSWz5hIY8WI81NuLAUlp+jc=",
+      "url": "images/logos/Bionic_Booster_Banner.png"
+    },
+    {
       "hash": "sha256-Yts26DrYdHPR0w3imCFqZXNjVPVmim+pCm7SBiIg6UE=",
       "url": "images/logos/Prehistoric_Planet_Banner.png"
+    },
+    {
+      "hash": "sha256-hP3pTyWBRejGTabH1NTwnts9IOubGme5Jnfm7sftLbQ=",
+      "url": "images/logos/dlc2_banner.png"
+    },
+    {
+      "hash": "sha256-INtAfnVxhvhnxtceFpC4MwQwRbH5OXguz07xVJzm01A=",
+      "url": "images/logos/dlc3_banner.png"
+    },
+    {
+      "hash": "sha256-w638shAlNZLdNAEginAI3Ad9Smi8AJDAGcqXAfAiZaw=",
+      "url": "images/logos/dlc4_banner.png"
     },
     {
       "hash": "sha256-06dinl0oCmCvNitckhYtTlfyxmEJkO60w/5IyoRoa/o=",

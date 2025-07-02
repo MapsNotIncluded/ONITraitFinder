@@ -6,11 +6,39 @@
             "Prefix": "BAD-A",
             "menuOrder": 70,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "worlds/Badlands" ],
+            "worldPlacements": [
+                {
+                    "world": "worlds/Badlands",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": []
         },
         {
             "Id": "clusters/ForestDefault",
@@ -18,11 +46,39 @@
             "Prefix": "FRST-A",
             "menuOrder": 50,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "worlds/ForestDefault" ],
+            "worldPlacements": [
+                {
+                    "world": "worlds/ForestDefault",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": []
         },
         {
             "Id": "clusters/ForestHot",
@@ -30,11 +86,39 @@
             "Prefix": "HTFST-A",
             "menuOrder": 80,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "worlds/ForestHot" ],
+            "worldPlacements": [
+                {
+                    "world": "worlds/ForestHot",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": []
         },
         {
             "Id": "clusters/ForestLush",
@@ -42,11 +126,39 @@
             "Prefix": "LUSH-A",
             "menuOrder": 40,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "worlds/ForestLush" ],
+            "worldPlacements": [
+                {
+                    "world": "worlds/ForestLush",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": []
         },
         {
             "Id": "clusters/KleiFest2023",
@@ -54,11 +166,39 @@
             "Prefix": "KF23-A",
             "menuOrder": 0,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "worlds/StrangeAsteroidKleiFest2023" ],
+            "worldPlacements": [
+                {
+                    "world": "worlds/StrangeAsteroidKleiFest2023",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 3,
-            "fixedCoordinate": 7
+            "disableStoryTraits": false,
+            "fixedCoordinate": 7,
+            "clusterTags": []
         },
         {
             "Id": "clusters/Oasis",
@@ -66,11 +206,39 @@
             "Prefix": "OASIS-A",
             "menuOrder": 90,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "worlds/Oasis" ],
+            "worldPlacements": [
+                {
+                    "world": "worlds/Oasis",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": []
         },
         {
             "Id": "clusters/Oceania",
@@ -78,11 +246,39 @@
             "Prefix": "OCAN-A",
             "menuOrder": 10,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "worlds/Oceania" ],
+            "worldPlacements": [
+                {
+                    "world": "worlds/Oceania",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": []
         },
         {
             "Id": "clusters/SandstoneDefault",
@@ -90,11 +286,39 @@
             "Prefix": "SNDST-A",
             "menuOrder": 0,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "" ],
             "ForbiddenDlcIDs": null,
-            "WorldPlacementIDs": [ "worlds/SandstoneDefault" ],
+            "worldPlacements": [
+                {
+                    "world": "worlds/SandstoneDefault",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": []
         },
         {
             "Id": "clusters/SandstoneFrozen",
@@ -102,11 +326,39 @@
             "Prefix": "S-FRZ",
             "menuOrder": 20,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "worlds/SandstoneFrozen" ],
+            "worldPlacements": [
+                {
+                    "world": "worlds/SandstoneFrozen",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": []
         },
         {
             "Id": "clusters/Volcanic",
@@ -114,11 +366,39 @@
             "Prefix": "VOLCA",
             "menuOrder": 60,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "worlds/Volcanic" ],
+            "worldPlacements": [
+                {
+                    "world": "worlds/Volcanic",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": []
         },
         {
             "Id": "dlc2::clusters/CeresBaseGameCluster",
@@ -126,11 +406,39 @@
             "Prefix": "CER-A",
             "menuOrder": 9,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "DLC2_ID" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "dlc2::worlds/CeresBaseGameAsteroid" ],
+            "worldPlacements": [
+                {
+                    "world": "dlc2::worlds/CeresBaseGameAsteroid",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": [ "CeresCluster", "GeothermalImperative" ]
         },
         {
             "Id": "dlc2::clusters/CeresBaseGameShatteredCluster",
@@ -138,11 +446,39 @@
             "Prefix": "CERS-A",
             "menuOrder": 10,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "DLC2_ID" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "dlc2::worlds/CeresBaseGameShatteredAsteroid" ],
+            "worldPlacements": [
+                {
+                    "world": "dlc2::worlds/CeresBaseGameShatteredAsteroid",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 3,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": [ "CeresCluster", "GeothermalImperative" ]
         },
         {
             "Id": "dlc4::clusters/PrehistoricBaseGameCluster",
@@ -150,11 +486,39 @@
             "Prefix": "PRE-A",
             "menuOrder": 8,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "DLC4_ID" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricBaseGameAsteroid" ],
+            "worldPlacements": [
+                {
+                    "world": "dlc4::worlds/PrehistoricBaseGameAsteroid",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": [ "PrehistoricCluster", "DemoliorImperative" ]
         },
         {
             "Id": "dlc4::clusters/PrehistoricShatteredBaseGameCluster",
@@ -162,11 +526,39 @@
             "Prefix": "PRES-A",
             "menuOrder": 9,
             "startWorldIndex": 0,
+            "numRings": 12,
             "RequiredDlcsIDs": [ "DLC4_ID" ],
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
-            "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricShatteredBaseGameAsteroid" ],
+            "worldPlacements": [
+                {
+                    "world": "dlc4::worlds/PrehistoricShatteredBaseGameAsteroid",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
             "clusterCategory": 3,
-            "fixedCoordinate": -1
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": [ "PrehistoricCluster", "DemoliorSurivedAchievement", "DemoliorImminentImpact" ]
         }
     ],
     "asteroids": [
@@ -186,6 +578,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
+            "worldTags": [],
             "SpecialPOIs": []
         },
         {
@@ -204,6 +597,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
+            "worldTags": [],
             "SpecialPOIs": []
         },
         {
@@ -222,6 +616,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
+            "worldTags": [],
             "SpecialPOIs": []
         },
         {
@@ -240,6 +635,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
+            "worldTags": [],
             "SpecialPOIs": []
         },
         {
@@ -258,6 +654,7 @@
                 }
             ],
             "worldTraitScale": 0.9,
+            "worldTags": [],
             "SpecialPOIs": []
         },
         {
@@ -276,6 +673,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
+            "worldTags": [],
             "SpecialPOIs": []
         },
         {
@@ -294,6 +692,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
+            "worldTags": [],
             "SpecialPOIs": []
         },
         {
@@ -312,6 +711,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
+            "worldTags": [],
             "SpecialPOIs": []
         },
         {
@@ -330,6 +730,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
+            "worldTags": [],
             "SpecialPOIs": []
         },
         {
@@ -348,6 +749,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
+            "worldTags": [],
             "SpecialPOIs": []
         },
         {
@@ -366,6 +768,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
+            "worldTags": [ "Ceres" ],
             "SpecialPOIs": [ "GeothermalController" ]
         },
         {
@@ -384,7 +787,8 @@
                 }
             ],
             "worldTraitScale": 1.0,
-            "SpecialPOIs": [ "GeothermalController"]
+            "worldTags": [ "Ceres" ],
+            "SpecialPOIs": [ "GeothermalController" ]
         },
         {
             "Id": "dlc2::worlds/MixingCeresAsteroid",
@@ -402,6 +806,7 @@
                 }
             ],
             "worldTraitScale": 0.08,
+            "worldTags": [ "Mixing", "CeresWorld", "CeresStart", "Cold", "SmallWorld", "SubsurfaceSubworldReserved", "NoDamagingMeteorShowers" ],
             "SpecialPOIs": []
         },
         {
@@ -420,6 +825,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
+            "worldTags": [ "Prehistoric" ],
             "SpecialPOIs": [ "LargeImpactor" ]
         },
         {
@@ -446,6 +852,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
+            "worldTags": [ "Prehistoric" ],
             "SpecialPOIs": [ "LargeImpactor" ]
         },
         {
@@ -464,6 +871,7 @@
                 }
             ],
             "worldTraitScale": 0.08,
+            "worldTags": [ "Mixing", "PrehistoricWorld", "PrehistoricStart", "SmallWorld" ],
             "SpecialPOIs": []
         }
     ],

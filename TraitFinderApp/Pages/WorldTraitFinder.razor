@@ -70,7 +70,8 @@ else
 				bool anyModeSelected = Query.AnyModeSelected();
 
 				<MudSpacer></MudSpacer>
-				<MudText Typo="Typo.h4">@L["Select your game mode:"]</MudText>
+				@* <MudText Typo="Typo.h4">@L["Select your game mode:"]</MudText> *@
+				<MudText Typo="Typo.h4">@L["Select your asteroid style:"]</MudText>
 				<MudGrid Spacing="2" Justify="Justify.Center">
 
 					@foreach (var mode in ClusterCategory.Values)

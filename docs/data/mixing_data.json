@@ -4,248 +4,344 @@
 		"Name": "The Frosty Planet Pack",
 		"Description": "The Frosty Planet Pack features frozen biomes and elements useful in thermal regulation",
 		"coordinate_range": 5,
-		"requiredDlcs": [ "DLC2_ID" ],
+		"DlcIdFrom": "DLC2_ID",
+		"Icon": null,
 		"Levels": [
 			{
 				"Id": "Disabled",
 				"Name": "Disabled",
-				"Description": "Content from this DLC is currently disabled"
+				"Description": "Content from this DLC is currently disabled",
+				"coordinate_value": 0
 			},
 			{
 				"Id": "Enabled",
 				"Name": "Enabled",
-				"Description": "Content from this DLC is currently enabled\n\nThis includes Care Packages, buildings, and space POIs"
+				"Description": "Content from this DLC is currently enabled\n\nThis includes Care Packages, buildings, and space POIs",
+				"coordinate_value": 1
 			}
-		]
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": null,
+		"WorldMixing": null,
+		"SubworldMixing": null,
+		"SettingType": 0
 	},
 	{
 		"Id": "IceCavesMixing",
 		"Name": "Ice Cave Biome",
 		"Description": "The Ice Cave Biome's extremely low temperatures make thermal regulation the top priority.",
 		"coordinate_range": 5,
-		"requiredDlcs": [ "DLC2_ID" ],
+		"DlcIdFrom": "DLC2_ID",
+		"Icon": "biomeIconIcecaves",
 		"Levels": [
 			{
 				"Id": "Disabled",
 				"Name": "Disabled",
-				"Description": "This biome will not be mixed in"
+				"Description": "This biome will not be mixed in",
+				"coordinate_value": 0
 			},
 			{
 				"Id": "TryMixing",
 				"Name": "Likely",
-				"Description": "This biome is very likely to be mixed in"
+				"Description": "This biome is very likely to be mixed in",
+				"coordinate_value": 1
 			},
 			{
 				"Id": "GuranteeMixing",
 				"Name": "Guaranteed",
-				"Description": "This biome will be mixed in, even if it causes a worldgen failure"
+				"Description": "This biome will be mixed in, even if it causes a worldgen failure",
+				"coordinate_value": 2
 			}
-		]
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "CeresCluster" ],
+		"WorldMixing": null,
+		"SubworldMixing": "dlc2::subworlds/icecaves/IceCavesMix",
+		"SettingType": 1
 	},
 	{
 		"Id": "CarrotQuarryMixing",
 		"Name": "Cool Pool Biome",
 		"Description": "The Cool Pool Biome's chilly landscape features plentiful Ethanol lakes, making it an excellent destination for a colony eager to gather fuel resources.",
 		"coordinate_range": 5,
-		"requiredDlcs": [ "DLC2_ID" ],
+		"DlcIdFrom": "DLC2_ID",
+		"Icon": "biomeIconCarrotquarry",
 		"Levels": [
 			{
 				"Id": "Disabled",
 				"Name": "Disabled",
-				"Description": "This biome will not be mixed in"
+				"Description": "This biome will not be mixed in",
+				"coordinate_value": 0
 			},
 			{
 				"Id": "TryMixing",
 				"Name": "Likely",
-				"Description": "This biome is very likely to be mixed in"
+				"Description": "This biome is very likely to be mixed in",
+				"coordinate_value": 1
 			},
 			{
 				"Id": "GuranteeMixing",
 				"Name": "Guaranteed",
-				"Description": "This biome will be mixed in, even if it causes a worldgen failure"
+				"Description": "This biome will be mixed in, even if it causes a worldgen failure",
+				"coordinate_value": 2
 			}
-		]
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "CeresCluster" ],
+		"WorldMixing": null,
+		"SubworldMixing": "dlc2::subworlds/carrotquarry/CarrotQuarryMix",
+		"SettingType": 1
 	},
 	{
 		"Id": "SugarWoodsMixing",
 		"Name": "Nectar Biome",
 		"Description": "The snow-laden Nectar Biome is home to the massive Bonbon Tree. This complex plant produces Nectar, which can be refined into Sucrose and Steam.",
 		"coordinate_range": 5,
-		"requiredDlcs": [ "DLC2_ID" ],
+		"DlcIdFrom": "DLC2_ID",
+		"Icon": "biomeIconSugarwoods",
 		"Levels": [
 			{
 				"Id": "Disabled",
 				"Name": "Disabled",
-				"Description": "This biome will not be mixed in"
+				"Description": "This biome will not be mixed in",
+				"coordinate_value": 0
 			},
 			{
 				"Id": "TryMixing",
 				"Name": "Likely",
-				"Description": "This biome is very likely to be mixed in"
+				"Description": "This biome is very likely to be mixed in",
+				"coordinate_value": 1
 			},
 			{
 				"Id": "GuranteeMixing",
 				"Name": "Guaranteed",
-				"Description": "This biome will be mixed in, even if it causes a worldgen failure"
+				"Description": "This biome will be mixed in, even if it causes a worldgen failure",
+				"coordinate_value": 2
 			}
-		]
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "CeresCluster" ],
+		"WorldMixing": null,
+		"SubworldMixing": "dlc2::subworlds/sugarwoods/SugarWoodsMix",
+		"SettingType": 1
 	},
 	{
 		"Id": "CeresAsteroidMixing",
 		"Name": "Ceres Fragment",
-		"Description": "A fragment of a frosty starting world with sub-zero temperatures throughout.\n\n<smallcaps>Duplicants who work in sub-zero temperatures will need to wear or build warming equipment. Abundant natural fuel sources could lead to a well-powered colony.</smallcaps>",
+		"Description": "A fragment of a frosty starting world with sub-zero temperatures throughout.\n\nDuplicants who work in sub-zero temperatures will need to wear or build warming equipment. Abundant natural fuel sources could lead to a well-powered colony.",
 		"coordinate_range": 5,
-		"requiredDlcs": [ "DLC2_ID" ],
+		"DlcIdFrom": "DLC2_ID",
+		"Icon": "asteroid_classic_mini_ceres_so_0:ui:False",
 		"Levels": [
 			{
 				"Id": "Disabled",
 				"Name": "Disabled",
-				"Description": "This asteroid will not be mixed in"
+				"Description": "This asteroid will not be mixed in",
+				"coordinate_value": 0
 			},
 			{
 				"Id": "TryMixing",
 				"Name": "Likely",
-				"Description": "This asteroid is very likely to be mixed in"
+				"Description": "This asteroid is very likely to be mixed in",
+				"coordinate_value": 1
 			},
 			{
 				"Id": "GuranteeMixing",
 				"Name": "Guaranteed",
-				"Description": "This asteroid will be mixed in, even if it causes worldgen failure"
+				"Description": "This asteroid will be mixed in, even if it causes worldgen failure",
+				"coordinate_value": 2
 			}
-		]
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "CeresCluster" ],
+		"WorldMixing": "dlc2::worlds/MixingCeresAsteroid",
+		"SubworldMixing": null,
+		"SettingType": 2
 	},
 	{
 		"Id": "DLC3_ID",
 		"Name": "The Bionic Booster Pack",
 		"Description": "The Bionic Booster Pack features portable power storage, bionic Duplicants, and remote building operation",
 		"coordinate_range": 5,
-		"requiredDlcs": [ "DLC3_ID" ],
+		"DlcIdFrom": "DLC3_ID",
+		"Icon": null,
 		"Levels": [
 			{
 				"Id": "Disabled",
 				"Name": "Disabled",
-				"Description": "Content from this DLC is currently disabled"
+				"Description": "Content from this DLC is currently disabled",
+				"coordinate_value": 0
 			},
 			{
 				"Id": "Enabled",
 				"Name": "Enabled",
-				"Description": "Content from this DLC is currently enabled\n\nThis includes Care Packages, buildings, and space POIs"
+				"Description": "Content from this DLC is currently enabled\n\nThis includes Care Packages, buildings, and space POIs",
+				"coordinate_value": 1
 			}
-		]
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": null,
+		"WorldMixing": null,
+		"SubworldMixing": null,
+		"SettingType": 0
 	},
 	{
 		"Id": "DLC4_ID",
 		"Name": "The Prehistoric Planet Pack",
 		"Description": "The Prehistoric Planet Pack features carnivorous flora and fauna, biofuel, and a focus on surface defense",
 		"coordinate_range": 5,
-		"requiredDlcs": [ "DLC4_ID" ],
+		"DlcIdFrom": "DLC4_ID",
+		"Icon": null,
 		"Levels": [
 			{
 				"Id": "Disabled",
 				"Name": "Disabled",
-				"Description": "Content from this DLC is currently disabled"
+				"Description": "Content from this DLC is currently disabled",
+				"coordinate_value": 0
 			},
 			{
 				"Id": "Enabled",
 				"Name": "Enabled",
-				"Description": "Content from this DLC is currently enabled\n\nThis includes Care Packages, buildings, and space POIs"
+				"Description": "Content from this DLC is currently enabled\n\nThis includes Care Packages, buildings, and space POIs",
+				"coordinate_value": 1
 			}
-		]
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": null,
+		"WorldMixing": null,
+		"SubworldMixing": null,
+		"SettingType": 0
 	},
 	{
 		"Id": "GardenMixing",
 		"Name": "Garden Biome",
 		"Description": "The Garden biome is a temperate environment with beneficial critters and plants well-suited for Farming.",
 		"coordinate_range": 5,
-		"requiredDlcs": [ "DLC4_ID" ],
+		"DlcIdFrom": "DLC4_ID",
+		"Icon": "biomeIconGarden",
 		"Levels": [
 			{
 				"Id": "Disabled",
 				"Name": "Disabled",
-				"Description": "This biome will not be mixed in"
+				"Description": "This biome will not be mixed in",
+				"coordinate_value": 0
 			},
 			{
 				"Id": "TryMixing",
 				"Name": "Likely",
-				"Description": "This biome is very likely to be mixed in"
+				"Description": "This biome is very likely to be mixed in",
+				"coordinate_value": 1
 			},
 			{
 				"Id": "GuranteeMixing",
 				"Name": "Guaranteed",
-				"Description": "This biome will be mixed in, even if it causes a worldgen failure"
+				"Description": "This biome will be mixed in, even if it causes a worldgen failure",
+				"coordinate_value": 2
 			}
-		]
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "PrehistoricCluster" ],
+		"WorldMixing": null,
+		"SubworldMixing": "dlc4::subworlds/garden/GardenMix",
+		"SettingType": 1
 	},
 	{
 		"Id": "RaptorMixing",
 		"Name": "Feather Biome",
 		"Description": "The chilly Feather biome is home to huge, flightless Rhexes that can be shorn for Textile Production.",
 		"coordinate_range": 5,
-		"requiredDlcs": [ "DLC4_ID" ],
+		"DlcIdFrom": "DLC4_ID",
+		"Icon": "biomeIconRaptor",
 		"Levels": [
 			{
 				"Id": "Disabled",
 				"Name": "Disabled",
-				"Description": "This biome will not be mixed in"
+				"Description": "This biome will not be mixed in",
+				"coordinate_value": 0
 			},
 			{
 				"Id": "TryMixing",
 				"Name": "Likely",
-				"Description": "This biome is very likely to be mixed in"
+				"Description": "This biome is very likely to be mixed in",
+				"coordinate_value": 1
 			},
 			{
 				"Id": "GuranteeMixing",
 				"Name": "Guaranteed",
-				"Description": "This biome will be mixed in, even if it causes a worldgen failure"
+				"Description": "This biome will be mixed in, even if it causes a worldgen failure",
+				"coordinate_value": 2
 			}
-		]
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "PrehistoricCluster" ],
+		"WorldMixing": null,
+		"SubworldMixing": "dlc4::subworlds/raptor/RaptorMix",
+		"SettingType": 1
 	},
 	{
 		"Id": "WetlandsMixing",
 		"Name": "Wetlands Biome",
 		"Description": "This hot, sticky biome features plentiful pools of Polluted Water, as well as raw ingredients useful in establishing industrial systems.",
 		"coordinate_range": 5,
-		"requiredDlcs": [ "DLC4_ID" ],
+		"DlcIdFrom": "DLC4_ID",
+		"Icon": "biomeIconWetlands",
 		"Levels": [
 			{
 				"Id": "Disabled",
 				"Name": "Disabled",
-				"Description": "This biome will not be mixed in"
+				"Description": "This biome will not be mixed in",
+				"coordinate_value": 0
 			},
 			{
 				"Id": "TryMixing",
 				"Name": "Likely",
-				"Description": "This biome is very likely to be mixed in"
+				"Description": "This biome is very likely to be mixed in",
+				"coordinate_value": 1
 			},
 			{
 				"Id": "GuranteeMixing",
 				"Name": "Guaranteed",
-				"Description": "This biome will be mixed in, even if it causes a worldgen failure"
+				"Description": "This biome will be mixed in, even if it causes a worldgen failure",
+				"coordinate_value": 2
 			}
-		]
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "PrehistoricCluster" ],
+		"WorldMixing": null,
+		"SubworldMixing": "dlc4::subworlds/wetlands/WetlandsMix",
+		"SettingType": 1
 	},
 	{
 		"Id": "PrehistoricAsteroidMixing",
 		"Name": "Relica Fragment",
-		"Description": "A fragment of a prehistoric starting world.\n\n<smallcaps>Its biodiversity makes reliable food production more attainable for new colonies. Construction materials and fuels are also ample. </smallcaps>",
+		"Description": "A fragment of a prehistoric starting world.\n\nIts biodiversity makes reliable food production more attainable for new colonies. Construction materials and fuels are also ample. ",
 		"coordinate_range": 5,
-		"requiredDlcs": [ "DLC4_ID" ],
+		"DlcIdFrom": "DLC4_ID",
+		"Icon": "asteroid_prehistoric_0:ui:False",
 		"Levels": [
 			{
 				"Id": "Disabled",
 				"Name": "Disabled",
-				"Description": "This asteroid will not be mixed in"
+				"Description": "This asteroid will not be mixed in",
+				"coordinate_value": 0
 			},
 			{
 				"Id": "TryMixing",
 				"Name": "Likely",
-				"Description": "This asteroid is very likely to be mixed in"
+				"Description": "This asteroid is very likely to be mixed in",
+				"coordinate_value": 1
 			},
 			{
 				"Id": "GuranteeMixing",
 				"Name": "Guaranteed",
-				"Description": "This asteroid will be mixed in, even if it causes worldgen failure"
+				"Description": "This asteroid will be mixed in, even if it causes worldgen failure",
+				"coordinate_value": 2
 			}
-		]
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "PrehistoricCluster" ],
+		"WorldMixing": "dlc4::worlds/MixingPrehistoricAsteroid",
+		"SubworldMixing": null,
+		"SettingType": 2
 	}
 ]
