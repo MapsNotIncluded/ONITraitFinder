@@ -103,7 +103,6 @@ namespace TraitFinderApp.Model.Mixing
 			Console.WriteLine("Mixing code parsed successful");
 			return true;
 		}
-
 		public static string GetMixingSettingsCode()
 		{
 			BigInteger input = (BigInteger)0;

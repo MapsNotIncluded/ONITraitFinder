@@ -116,6 +116,24 @@ namespace TraitFinderApp.Client.Model
 	{
 		public static HashSet<string> FailedSeeds;
 		public const string FAILED_SEEDS_URL = "https://ingest.mapsnotincluded.org/list-worldgen-failures";
+
+		public static void FetchOfflineData(string dataPath)
+		{
+			var basegamejson = System.IO.File.ReadAllText(Path.Combine(dataPath, "gamedata_base.json"));
+			BaseGame = JsonConvert.DeserializeObject<Data>(basegamejson);
+			BaseGame.MapGameData();
+			var sojson = System.IO.File.ReadAllText(Path.Combine(dataPath, "gamedata_so.json"));
+			SpacedOut = JsonConvert.DeserializeObject<Data>(sojson);
+			SpacedOut.MapGameData();
+			var starmapjson = System.IO.File.ReadAllText(Path.Combine(dataPath, "BasegameStarmapDestinations.json"));
+			StarmapImport = JsonConvert.DeserializeObject<StarmapData>(starmapjson);
+			StarmapImport.MapGameData();
+			var mixingjson = System.IO.File.ReadAllText(Path.Combine(dataPath, "mixing_data.json"));
+			GameSettingsInstance.AllMixingSettings = JsonConvert.DeserializeObject<List<MixingSettingConfig>>(mixingjson);
+			GameSettingsInstance.InitMixingSettings();
+
+		}
+
 		public static async Task FetchFailedSeeds(HttpClient Http)
 		{
 			var failedSeedFetch = await Http.GetAsync(FAILED_SEEDS_URL);
