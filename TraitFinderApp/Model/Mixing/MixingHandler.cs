@@ -43,9 +43,6 @@ namespace TraitFinderApp.Model.Mixing
 
 			}
 		}
-
-
-
 		public static string GetMixingSettingsCode()
 		{
 			BigInteger input = (BigInteger)0;

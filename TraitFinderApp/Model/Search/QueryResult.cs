@@ -1,6 +1,7 @@
 ﻿using OniStarmapGenerator.Model.Search;
 using System.Xml.Linq;
 using TraitFinderApp.Client.Model;
+using TraitFinderApp.Model.Mixing;
 
 namespace TraitFinderApp.Model.Search
 {
@@ -22,6 +23,6 @@ namespace TraitFinderApp.Model.Search
         }
         public override int GetHashCode() => seed.GetHashCode();
 
-        public string GetCoordinate() => cluster.Prefix+"-"+seed+"-0-0-0";
+        public string GetCoordinate() => cluster.Prefix+"-"+seed+"-0-0-"+MixingHandler.GetMixingSettingsCode();
     }
 }

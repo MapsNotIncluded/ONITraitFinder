@@ -439,7 +439,8 @@ else
 										{
 											<MudNumericField Variant="Variant.Outlined" @bind-Value=Query.CurrentQuerySeed Min="1"></MudNumericField>
 										}
-										<MudText Inline Typo="Typo.h6" Align="Align.Center">-0-0-0</MudText>
+										<MudText Inline Typo="Typo.h6" Align="Align.Center">-0-0-</MudText>
+										<MudText Inline Typo="Typo.h6" Align="Align.Center">@MixingHandler.GetMixingSettingsCode()</MudText>
 									</MudStack>
 								</MudItem>
 								<MudFlexBreak />
@@ -468,7 +469,6 @@ else
 										{
 											foreach (var result in Query?.QueryResults)
 											{
-
 												<QueryResultVisualizer SearchQuery="Query" QueryResult="@result"></QueryResultVisualizer>
 											}
 										}
