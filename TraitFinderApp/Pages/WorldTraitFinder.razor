@@ -6,6 +6,7 @@
 @using TraitFinderApp.Client.Model.Search
 @using Newtonsoft.Json
 @using TraitFinderApp.Model
+@using TraitFinderApp.Model.Mixing
 @inject ISnackbar Snackbar
 @inject IScrollManager ScrollManager
 @inject IDialogService DialogService
@@ -60,7 +61,7 @@ else
 				</MudGrid>
 			</MudStack>
 			<!--content dlcs (FP)-->
-			@foreach (var dlc in Dlc.Values)
+			@* @foreach (var dlc in Dlc.Values)
 			{
 				@if (!dlc.IsMainVersion)
 				{
@@ -69,7 +70,7 @@ else
 						<MudSwitch Value="@Query.IsDlcSelected(dlc)" ValueChanged="@((bool value)=> Query.SetDlcEnabled(dlc,value))" Color="Color.Info" Size="Size.Large" />
 					</MudStack>
 				}
-			}
+			} *@
 			<!--Mode-->
 			@if (Query?.MainVersionSelected() ?? false)
 			{
@@ -118,6 +119,14 @@ else
 									var ClusterName = new MarkupString(isSelected ? $"<b>{@L[cluster.DisplayName()]}</ b >" : @L[cluster.DisplayName()]);
 									<MudItem>
 										<MudButton Variant="Variant.Filled" Disabled=@(Query.IsClusterSelected(cluster)) OnClick="()=> SelectCluster(cluster)" Class="highlight-on-disabled">
+											@if (cluster.HasContentDlcRequirement())
+											{
+												var dlcFrom = cluster.GetContentDlcRequirement();
+												string fillable = string.Format(@L["This asteroid requires the {0} DLC to be played."], @L[dlcFrom.Name]);
+												<MudTooltip Arrow Text="@fillable">
+													<MudImage Style="position:absolute;top:0px;right:0px; z-index:99;" Width="60" Height="60" Src="@dlcFrom.BannerImage" Alt="@L[@dlcFrom.Name]" />
+												</MudTooltip>
+											}
 											<MudStack Spacing="1" AlignItems="AlignItems.Center">
 												<MudImage ObjectFit="ObjectFit.Contain" Width="110" Height="110" Src="@cluster.Image()" Alt="@L[@cluster.Name]" />
 												<MudText Class="highlight-on-disabled:disabled" Align="Align.Center" Style="width: 106px; overflow-wrap:break-word;max-width:108px;height:40px; text-align: center; vertical-align:central" Typo="Typo.body2">@ClusterName</MudText>
@@ -128,6 +137,87 @@ else
 							}
 						</MudGrid>
 					</MudStack>
+				</MudContainer>
+				<MudContainer MaxWidth="MaxWidth.ExtraLarge" hidden="@(Query == null || !Query.HasClusterSelected())" Class="mixing_selection">
+					<MudPaper Class="pa-3" Elevation="2">
+						<!--Mixings-->
+						<MudStack Spacing="4" AlignItems="AlignItems.Center">
+							<MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h4">@L["Select your Dlc Remixes"]</MudText>
+							<MudGrid Spacing="3" Justify="Justify.Center">
+								@foreach (var mixing in MixingHandler.DlcMixingSettings)
+								{
+									<MudItem>
+										<MudPaper Class="pa-3" Elevation="6">
+											<MudStack Row>
+												<MudTooltip Text="@mixing.Description">
+													<MudImage Height="50" Src=@mixing.GetIcon() Alt="@L[mixing.Name]" />
+												</MudTooltip>
+												<MudTooltip Text="@mixing.CurrentLevel.Description">
+													<MudToggleGroup T="SettingLevel" Vertical=false Value="@mixing.CurrentLevel" Disabled="@(!Query.CanToggleMixing(mixing))" ValueChanged="@(level => Query.ReevaluateMixingsOnChanged(mixing,level))">
+														<MudToggleItem Text="@mixing.OffLevel.Name" Value="@(mixing.OffLevel)" />
+														<MudToggleItem Text="@mixing.OnLevel.Name" Value="@(mixing.OnLevel)" />
+													</MudToggleGroup>
+												</MudTooltip>
+											</MudStack>
+										</MudPaper>
+									</MudItem>
+								}
+							</MudGrid>
+							@if (Query?.SpacedOutSelected() ?? false)
+							{
+								<MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h5">@L["Asteroid Fragment Remix:"]</MudText>
+								<MudGrid Spacing="6" Justify="Justify.Center">
+									@foreach (var mixing in MixingHandler.WorldMixingSettings)
+									{
+										<MudItem>
+											<MudPaper Class="pa-3" Elevation="6">
+												<MudText Class="highlight-on-disabled:disabled" Align="Align.Center" Typo="Typo.body1">@mixing.Name</MudText>
+												<MudStack Row AlignItems="AlignItems.Center" Spacing="2">
+													<MudTooltip Text="@mixing.Description">
+														<MudStack AlignItems="AlignItems.Center">
+															<MudImage Height="120" Src=@mixing.GetIcon() Alt="@L[mixing.Name]" />
+														</MudStack>
+													</MudTooltip>
+													<MudTooltip Text="@mixing.CurrentLevel.Description">
+														<MudToggleGroup T="SettingLevel" Vertical Value="@mixing.CurrentLevel" Disabled="@(!Query.CanToggleMixing(mixing))" ValueChanged="@(level => Query.ReevaluateMixingsOnChanged(mixing,level))">
+															<MudToggleItem Text="@mixing.OffLevel.Name" Value="@(mixing.OffLevel)" />
+															<MudToggleItem Text="@mixing.ThirdLevel.Name" Value="@(mixing.ThirdLevel)" />
+															<MudToggleItem Text="@mixing.OnLevel.Name" Value="@(mixing.OnLevel)" />
+														</MudToggleGroup>
+													</MudTooltip>
+												</MudStack>
+											</MudPaper>
+										</MudItem>
+									}
+								</MudGrid>
+							}
+							<MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h5">@L["Biome Remix:"]</MudText>
+							<MudGrid Spacing="6" Justify="Justify.Center">
+								@foreach (var mixing in MixingHandler.SubworldMixingSettings)
+								{
+									<MudItem>
+										<MudPaper Class="pa-3" Elevation="6">
+												<MudText Class="highlight-on-disabled:disabled" Align="Align.Center" Typo="Typo.body1">@mixing.Name</MudText>
+											<MudStack Row AlignItems="AlignItems.Center" Spacing="2">
+												<MudTooltip Text="@mixing.Description">
+													<MudStack AlignItems="AlignItems.Center">
+														<MudImage Height="120" Style="margin-right: -5px; margin-top: 5px" Src=@mixing.GetIcon() Alt="@L[mixing.Name]" />
+													</MudStack>
+												</MudTooltip>
+												<MudTooltip Text="@mixing.CurrentLevel.Description">
+													<MudToggleGroup T="SettingLevel" Vertical Value="@mixing.CurrentLevel" Disabled="@(!Query.CanToggleMixing(mixing))" ValueChanged="@(level => Query.ReevaluateMixingsOnChanged(mixing,level))">
+														<MudToggleItem Text="@mixing.OffLevel.Name" Value="@(mixing.OffLevel)" />
+														<MudToggleItem Text="@mixing.ThirdLevel.Name" Value="@(mixing.ThirdLevel)" />
+														<MudToggleItem Text="@mixing.OnLevel.Name" Value="@(mixing.OnLevel)" />
+													</MudToggleGroup>
+												</MudTooltip>
+											</MudStack>
+										</MudPaper>
+									</MudItem>
+								}
+							</MudGrid>
+						</MudStack>
+					</MudPaper>
 				</MudContainer>
 
 				<MudContainer MaxWidth="MaxWidth.ExtraLarge" hidden="@(Query == null || !Query.HasClusterSelected())" Class="clusteritemselection">
@@ -155,7 +245,7 @@ else
 									var world = placements[i].Asteroid;
 									var queryAsteroid = Query.AsteroidParams[world];
 									<MudItem>
-										<MudPaper MinHeight="110px" MinWidth="420px" Elevation="5" Outlined Class="pa-2" >
+										<MudPaper MinHeight="110px" MinWidth="420px" Elevation="5" Outlined Class="pa-2">
 											<MudStack Spacing="1" AlignItems="AlignItems.Start" Row Style="width:410px;" StretchItems="StretchItems.End">
 												<MudImage ObjectFit="ObjectFit.Contain" Width="120" Height="120" Src="@world.Image" Alt="@L[@world.Name]" />
 
@@ -447,6 +537,7 @@ else
 		await DataImport.FetchBaseGameData(Http);
 		await DataImport.FetchSpacedOutData(Http);
 		await DataImport.FetchStarmapDestinationData(Http);
+		await DataImport.FetchMixingData(Http);
 		await DataImport.FetchFailedSeeds(Http);
 
 		DataInitialized = true;

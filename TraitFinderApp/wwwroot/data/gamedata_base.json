@@ -10,7 +10,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "worlds/Badlands" ],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "clusters/ForestDefault",
@@ -22,7 +23,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "worlds/ForestDefault" ],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "clusters/ForestHot",
@@ -34,7 +36,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "worlds/ForestHot" ],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "clusters/ForestLush",
@@ -46,7 +49,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "worlds/ForestLush" ],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "clusters/KleiFest2023",
@@ -58,7 +62,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "worlds/StrangeAsteroidKleiFest2023" ],
             "clusterCategory": 3,
-            "fixedCoordinate": 7
+            "fixedCoordinate": 7,
+            "ClusterTags": []
         },
         {
             "Id": "clusters/Oasis",
@@ -70,7 +75,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "worlds/Oasis" ],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "clusters/Oceania",
@@ -82,7 +88,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "worlds/Oceania" ],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "clusters/SandstoneDefault",
@@ -94,7 +101,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "worlds/SandstoneDefault" ],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "clusters/SandstoneFrozen",
@@ -106,7 +114,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "worlds/SandstoneFrozen" ],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "clusters/Volcanic",
@@ -118,7 +127,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "worlds/Volcanic" ],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "dlc2::clusters/CeresBaseGameCluster",
@@ -130,7 +140,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "dlc2::worlds/CeresBaseGameAsteroid" ],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": [ "CeresCluster", "GeothermalImperative" ]
         },
         {
             "Id": "dlc2::clusters/CeresBaseGameShatteredCluster",
@@ -142,7 +153,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "dlc2::worlds/CeresBaseGameShatteredAsteroid" ],
             "clusterCategory": 3,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": [ "CeresCluster", "GeothermalImperative" ]
         },
         {
             "Id": "dlc4::clusters/PrehistoricBaseGameCluster",
@@ -154,7 +166,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricBaseGameAsteroid" ],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": [ "PrehistoricCluster", "DemoliorImperative" ]
         },
         {
             "Id": "dlc4::clusters/PrehistoricShatteredBaseGameCluster",
@@ -166,7 +179,8 @@
             "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
             "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricShatteredBaseGameAsteroid" ],
             "clusterCategory": 3,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": [ "PrehistoricCluster", "DemoliorSurivedAchievement", "DemoliorImminentImpact" ]
         }
     ],
     "asteroids": [
@@ -384,7 +398,7 @@
                 }
             ],
             "worldTraitScale": 1.0,
-            "SpecialPOIs": [ "GeothermalController"]
+            "SpecialPOIs": [ "GeothermalController" ]
         },
         {
             "Id": "dlc2::worlds/MixingCeresAsteroid",

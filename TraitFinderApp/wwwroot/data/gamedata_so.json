@@ -10,7 +10,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "worlds/SandstoneDefault" ],
             "clusterCategory": 0,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/ForestStartCluster",
@@ -22,7 +23,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/ForestMoonlet", "expansion1::worlds/SwampyLandingSite", "expansion1::worlds/OilRichWarpTarget", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
             "clusterCategory": 2,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/KleiFest2023Cluster",
@@ -34,7 +36,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/StrangeAsteroidKleiFest2023Cluster", "expansion1::worlds/MediumRadioactiveVanillaWarpPlanet", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 3,
-            "fixedCoordinate": 7
+            "fixedCoordinate": 7,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/MiniClusterBadlandsStart",
@@ -46,7 +49,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/MiniBadlandsStart", "expansion1::worlds/MiniRadioactiveOceanWarp", "expansion1::worlds/MiniMetallicSwampy", "expansion1::worlds/MiniForestFrozen", "expansion1::worlds/MiniFlipped", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
             "clusterCategory": 2,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/MiniClusterFlippedStart",
@@ -58,7 +62,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/MiniBadlandsWarp", "expansion1::worlds/MiniFlippedStart", "expansion1::worlds/MiniMetallicSwampy", "expansion1::worlds/MiniForestFrozen", "expansion1::worlds/MiniRadioactiveOcean", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
             "clusterCategory": 2,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/MiniClusterForestFrozenStart",
@@ -70,7 +75,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/MiniBadlandsWarp", "expansion1::worlds/MiniForestFrozenStart", "expansion1::worlds/MiniMetallicSwampy", "expansion1::worlds/MiniFlipped", "expansion1::worlds/MiniRadioactiveOcean", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
             "clusterCategory": 2,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/MiniClusterMetallicSwampyStart",
@@ -82,7 +88,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/MiniBadlands", "expansion1::worlds/MiniMetallicSwampyStart", "expansion1::worlds/MiniForestFrozenWarp", "expansion1::worlds/MiniFlipped", "expansion1::worlds/MiniRadioactiveOcean", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
             "clusterCategory": 2,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/MiniClusterRadioactiveOceanStart",
@@ -94,7 +101,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/MiniBadlands", "expansion1::worlds/MiniRadioactiveOceanStart", "expansion1::worlds/MiniFlippedWarp", "expansion1::worlds/MiniMetallicSwampy", "expansion1::worlds/MiniForestFrozen", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
             "clusterCategory": 2,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/SandstoneStartCluster",
@@ -106,7 +114,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/TerraMoonlet", "expansion1::worlds/IdealLandingSite", "expansion1::worlds/WarpOilySwamp", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
             "clusterCategory": 2,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/SwampStartCluster",
@@ -118,7 +127,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/SwampMoonlet", "expansion1::worlds/MetalHeavyLandingSite", "expansion1::worlds/OilRichWarpTarget", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
             "clusterCategory": 2,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/VanillaArboriaCluster",
@@ -130,7 +140,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/VanillaArboria", "expansion1::worlds/MediumSandyRadioactiveVanillaWarpPlanet", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/VanillaAridioCluster",
@@ -142,7 +153,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/VanillaAridio", "expansion1::worlds/MediumSandySwamp", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/VanillaBadlandsCluster",
@@ -154,7 +166,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/VanillaBadlands", "expansion1::worlds/MediumRadioactiveVanillaWarpPlanet", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/VanillaForestCluster",
@@ -166,7 +179,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/VanillaForestDefault", "expansion1::worlds/MediumSandyRadioactiveVanillaWarpPlanet", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/VanillaOasisCluster",
@@ -178,7 +192,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/VanillaOasis", "expansion1::worlds/MediumRadioactiveVanillaWarpPlanet", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/VanillaOceaniaCluster",
@@ -190,7 +205,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/VanillaOceania", "expansion1::worlds/MediumForestyWasteland", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/VanillaSandstoneCluster",
@@ -202,7 +218,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/VanillaSandstoneDefault", "expansion1::worlds/MediumRadioactiveVanillaWarpPlanet", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/VanillaSandstoneFrozenCluster",
@@ -214,7 +231,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/VanillaSandstoneFrozen", "expansion1::worlds/MediumSwampy", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/VanillaSwampCluster",
@@ -226,7 +244,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/VanillaSwampDefault", "expansion1::worlds/MediumForestyRadioactiveVanillaWarpPlanet", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "expansion1::clusters/VanillaVolcanicCluster",
@@ -238,7 +257,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "expansion1::worlds/VanillaVolcanic", "expansion1::worlds/MediumRadioactiveVanillaWarpPlanet", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": []
         },
         {
             "Id": "dlc2::clusters/CeresClassicCluster",
@@ -250,7 +270,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "dlc2::worlds/CeresClassicAsteroid", "expansion1::worlds/MediumSwampy", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": [ "CeresCluster", "GeothermalImperative" ]
         },
         {
             "Id": "dlc2::clusters/CeresClassicShatteredCluster",
@@ -262,7 +283,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "dlc2::worlds/CeresClassicShatteredAsteroid", "expansion1::worlds/MediumSwampy", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 3,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": [ "CeresCluster", "GeothermalImperative" ]
         },
         {
             "Id": "dlc2::clusters/CeresSpacedOutCluster",
@@ -274,7 +296,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "dlc2::worlds/CeresSpacedOutAsteroid", "expansion1::worlds/SwampyLandingSite", "expansion1::worlds/OilRichWarpTarget", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
             "clusterCategory": 2,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": [ "CeresCluster", "GeothermalImperative" ]
         },
         {
             "Id": "dlc2::clusters/CeresSpacedOutShatteredCluster",
@@ -286,7 +309,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "dlc2::worlds/MiniShatteredStartAsteroid", "dlc2::worlds/MiniShatteredWarpAsteroid", "dlc2::worlds/MiniShatteredGeoAsteroid", "expansion1::worlds/SwampyLandingSite", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
             "clusterCategory": 2,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": [ "CeresCluster", "GeothermalImperative" ]
         },
         {
             "Id": "dlc4::clusters/PrehistoricClassicCluster",
@@ -298,7 +322,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricClassicAsteroid", "expansion1::worlds/MediumSwampy", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 1,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": [ "PrehistoricCluster", "DemoliorImperative" ]
         },
         {
             "Id": "dlc4::clusters/PrehistoricShatteredClassicCluster",
@@ -310,7 +335,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricShatteredClassicAsteroid", "expansion1::worlds/MediumSwampy", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/MiniRegolithMoonlet" ],
             "clusterCategory": 3,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": [ "PrehistoricCluster", "DemoliorSurivedAchievement", "DemoliorImminentImpact" ]
         },
         {
             "Id": "dlc4::clusters/PrehistoricSpacedOutCluster",
@@ -322,7 +348,8 @@
             "ForbiddenDlcIDs": null,
             "WorldPlacementIDs": [ "dlc4::worlds/PrehistoricSpacedOutAsteroid", "expansion1::worlds/IdealLandingSite", "expansion1::worlds/WarpOilySandySwamp", "expansion1::worlds/TundraMoonlet", "expansion1::worlds/MarshyMoonlet", "expansion1::worlds/MooMoonlet", "expansion1::worlds/WaterMoonlet", "expansion1::worlds/NiobiumMoonlet", "expansion1::worlds/RegolithMoonlet" ],
             "clusterCategory": 2,
-            "fixedCoordinate": -1
+            "fixedCoordinate": -1,
+            "ClusterTags": [ "PrehistoricCluster", "DemoliorImperative" ]
         }
     ],
     "asteroids": [

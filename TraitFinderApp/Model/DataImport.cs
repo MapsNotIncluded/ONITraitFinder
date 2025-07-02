@@ -12,6 +12,7 @@ using TraitFinderApp.Model.KleiClasses;
 using OniStarmapGenerator.Model;
 using static MudBlazor.Icons.Custom;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using TraitFinderApp.Model.Mixing;
 
 namespace TraitFinderApp.Client.Model
 {
@@ -174,8 +175,25 @@ namespace TraitFinderApp.Client.Model
 			basegame_starmap.MapGameData();
 		}
 
+		public static async Task FetchMixingData(HttpClient Http)
+		{
+			var data_file = await Http.GetAsync("./data/mixing_data.json");
+			if (data_file == null)
+				return;
+			var mixing_data_json = await data_file.Content.ReadAsStringAsync();
+			if (mixing_data_json == null)
+				return;
+
+			var mixing_settings = JsonConvert.DeserializeObject<List<MixingSettingConfig>>(mixing_data_json);
+			if (mixing_settings == null)
+				return;
+			MixingSettings = mixing_settings;
+            MixingHandler.InitMixingSettings();
+		}
+
 		public static StarmapData StarmapImport;
-        public static List<VanillaStarmapLocation> GetVanillaStarmapLocations(List<Dlc> ActiveDlcs, List<Dlc> requiredDlcs)
+		public static List<MixingSettingConfig> MixingSettings;
+		public static List<VanillaStarmapLocation> GetVanillaStarmapLocations(List<Dlc> ActiveDlcs, List<Dlc> requiredDlcs)
         {
             if (!ActiveDlcs.Contains(Dlc.FROSTYPLANET) || requiredDlcs.Contains(Dlc.FROSTYPLANET)) //no ceres destination for ceres itself 
                 return StarmapImport.LocationsWithoutFP.Values.ToList();

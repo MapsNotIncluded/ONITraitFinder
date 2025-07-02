@@ -14,8 +14,10 @@ namespace TraitFinderApp.Client.Model
         public List<string> WorldPlacementIDs;//transferBinding
         public int clusterCategory;
         public int fixedCoordinate;
+        public string[] ClusterTags;
 
-        public string DisplayName() => Name;
+
+		public string DisplayName() => Name;
         
         public string Image() => WorldPlacements[startWorldIndex].Asteroid.Image;
         public Asteroid StarterAsteroid() => WorldPlacements[startWorldIndex].Asteroid;
@@ -28,13 +30,15 @@ namespace TraitFinderApp.Client.Model
         public ClusterCategory ClusterCategory;
         public List<WorldPlacement> WorldPlacements;
 
+        public bool HasContentDlcRequirement() => RequiredDlcs != null && RequiredDlcs.Any(dlc => !dlc.IsMainVersion);
+        public Dlc? GetContentDlcRequirement() => HasContentDlcRequirement() ? RequiredDlcs.First(dlc => !dlc.IsMainVersion) : null;
 
-        public bool HasFixedCoordinate() => fixedCoordinate > 0;
+		public bool HasFixedCoordinate() => fixedCoordinate > 0;
 
 
         public bool DlcRequirementsFulfilled(List<Dlc> requirements) => !RequiredDlcs.Except(requirements).Any() && !ForbiddenDlcs.Intersect(requirements).Any();
 
-        public bool AllowedWithCurrentQuery(SearchQuery query) => query.ActiveMode == ClusterCategory && DlcRequirementsFulfilled(query.ActiveDlcs);
+        public bool AllowedWithCurrentQuery(SearchQuery query) => query.ActiveMode == ClusterCategory;
         public void InitBindings(Data data)
         {
             WorldPlacements = new(12);
