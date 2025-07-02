@@ -144,7 +144,7 @@ else
 						<MudStack Spacing="4" AlignItems="AlignItems.Center">
 							<MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h4">@L["Select your Dlc Remixes"]</MudText>
 							<MudGrid Spacing="3" Justify="Justify.Center">
-								@foreach (var mixing in MixingHandler.DlcMixingSettings)
+								@foreach (var mixing in GameSettingsInstance.DlcMixingSettings)
 								{
 									<MudItem>
 										<MudPaper Class="pa-3" Elevation="6">
@@ -167,7 +167,7 @@ else
 							{
 								<MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h5">@L["Asteroid Fragment Remix:"]</MudText>
 								<MudGrid Spacing="6" Justify="Justify.Center">
-									@foreach (var mixing in MixingHandler.WorldMixingSettings)
+									@foreach (var mixing in GameSettingsInstance.WorldMixingSettings)
 									{
 										<MudItem>
 											<MudPaper Class="pa-3" Elevation="6">
@@ -193,15 +193,17 @@ else
 							}
 							<MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h5">@L["Biome Remix:"]</MudText>
 							<MudGrid Spacing="6" Justify="Justify.Center">
-								@foreach (var mixing in MixingHandler.SubworldMixingSettings)
+								@foreach (var mixing in GameSettingsInstance.SubworldMixingSettings)
 								{
 									<MudItem>
-										<MudPaper Class="pa-3" Elevation="6">
-												<MudText Class="highlight-on-disabled:disabled" Align="Align.Center" Typo="Typo.body1">@mixing.Name</MudText>
+										<MudPaper Class="pa-3" Elevation="6" Style="position:relative">
+											<MudImage Style="position:absolute;top:0px;right:0px;" Width="60" Height="60" Src="@mixing.DlcFrom.BannerImage" Alt="@L[@mixing.DlcFrom.Name]" />
+											<MudText Class="highlight-on-disabled:disabled" Align="Align.Center" Typo="Typo.body1">@mixing.Name</MudText>
 											<MudStack Row AlignItems="AlignItems.Center" Spacing="2">
 												<MudTooltip Text="@mixing.Description">
 													<MudStack AlignItems="AlignItems.Center">
-														<MudImage Height="120" Style="margin-right: -5px; margin-top: 5px" Src=@mixing.GetIcon() Alt="@L[mixing.Name]" />
+														<MudImage Height="120" Style="margin-right: -5px; margin-top: 5px" Src=@mixing.GetIcon() Alt="@L[mixing.Name]" >
+														</MudImage>
 													</MudStack>
 												</MudTooltip>
 												<MudTooltip Text="@mixing.CurrentLevel.Description">
@@ -237,10 +239,10 @@ else
 							</MudStack>
 							<MudSpacer></MudSpacer>
 							<MudGrid Spacing="2" Justify="Justify.Center">
-								@for (int i = 0; i < Query?.SelectedCluster?.WorldPlacements.Count; ++i)
+								@for (int i = 0; i < Query?.SelectedCluster?.worldPlacements.Count; ++i)
 								{
-									int maxCount = Query.SelectedCluster.WorldPlacements.Count;
-									var placements = Query.SelectedCluster.WorldPlacements;
+									int maxCount = Query.SelectedCluster.worldPlacements.Count;
+									var placements = Query.SelectedCluster.worldPlacements;
 									bool isStarter = i == Query.SelectedCluster.startWorldIndex && maxCount > 1; //no extra starter marking in base game
 									var world = placements[i].Asteroid;
 									var queryAsteroid = Query.AsteroidParams[world];
@@ -440,7 +442,7 @@ else
 											<MudNumericField Variant="Variant.Outlined" @bind-Value=Query.CurrentQuerySeed Min="1"></MudNumericField>
 										}
 										<MudText Inline Typo="Typo.h6" Align="Align.Center">-0-0-</MudText>
-										<MudText Inline Typo="Typo.h6" Align="Align.Center">@MixingHandler.GetMixingSettingsCode()</MudText>
+										<MudText Inline Typo="Typo.h6" Align="Align.Center">@GameSettingsInstance.GetMixingSettingsCode()</MudText>
 									</MudStack>
 								</MudItem>
 								<MudFlexBreak />
@@ -546,7 +548,7 @@ else
 		if (OptionalSeed != null && OptionalSeed.Length > 0)
 		{
 			Console.WriteLine("Parsing optional seed...");
-			var settingCoordinate = ParseSettingCoordinate(OptionalSeed);
+			var settingCoordinate = ParseCoordinate(OptionalSeed);
 			if (settingCoordinate.Length < 4 || settingCoordinate.Length > 6 || !int.TryParse(settingCoordinate[2], out int _))
 				return;
 
@@ -570,6 +572,12 @@ else
 			}
 			else
 				return;
+			if (settingCoordinate.Length >= 3)
+				GameSettingsInstance.ParseGameSettingsCode(settingCoordinate[3]);
+			if (settingCoordinate.Length >= 4)
+				GameSettingsInstance.ParseStorySettingsCode(settingCoordinate[4]);
+			if (settingCoordinate.Length >= 6)
+				GameSettingsInstance.ParseMixingSettingsCode(settingCoordinate[5]);
 
 			var cluster = dataCollection.clusters.First(clusterLayout => clusterLayout.Prefix == prefix);
 
@@ -587,7 +595,7 @@ else
 
 		}
 	}
-	public static string[] ParseSettingCoordinate(string coord)
+	public static string[] ParseCoordinate(string coord)
 	{
 		Match match = new Regex("(.*)-(\\d*)-(.*)-(.*)-(.*)").Match(coord);
 		for (int index = 1; index <= 2; ++index)

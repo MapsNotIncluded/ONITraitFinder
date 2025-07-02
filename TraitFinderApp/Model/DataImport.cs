@@ -187,12 +187,11 @@ namespace TraitFinderApp.Client.Model
 			var mixing_settings = JsonConvert.DeserializeObject<List<MixingSettingConfig>>(mixing_data_json);
 			if (mixing_settings == null)
 				return;
-			MixingSettings = mixing_settings;
-            MixingHandler.InitMixingSettings();
+			GameSettingsInstance.AllMixingSettings = mixing_settings;
+            GameSettingsInstance.InitMixingSettings();
 		}
 
 		public static StarmapData StarmapImport;
-		public static List<MixingSettingConfig> MixingSettings;
 		public static List<VanillaStarmapLocation> GetVanillaStarmapLocations(List<Dlc> ActiveDlcs, List<Dlc> requiredDlcs)
         {
             if (!ActiveDlcs.Contains(Dlc.FROSTYPLANET) || requiredDlcs.Contains(Dlc.FROSTYPLANET)) //no ceres destination for ceres itself 
@@ -211,7 +210,7 @@ namespace TraitFinderApp.Client.Model
             bool isBaseGame = searchQuery.ActiveDlcs.Contains(Dlc.BASEGAME);
 
 
-            var asteroids = new Tuple<Asteroid, int>[cluster.WorldPlacements.Count];
+            var asteroids = new Tuple<Asteroid, int>[cluster.worldPlacements.Count];
             var dlcs = new List<Dlc>(searchQuery.ActiveDlcs);
 			dlcs.RemoveAll(e => cluster.RequiredDlcs.Contains(e));
 
@@ -219,12 +218,12 @@ namespace TraitFinderApp.Client.Model
 
             List<QueryResult> results = new List<QueryResult>(targetCount);
 
-            for (int i = 0; i < cluster.WorldPlacements.Count; i++)
+            for (int i = 0; i < cluster.worldPlacements.Count; i++)
             {
                 //0 seed always generates all asteroids with no traits
                 int offsetIndex = (startSeed > 0) ? i : 0;
 
-                asteroids[i] = (new(cluster.WorldPlacements[i].Asteroid, offsetIndex));
+                asteroids[i] = (new(cluster.worldPlacements[i].Asteroid, offsetIndex));
             }
             int queryableRange = startSeed + seedRange;
 

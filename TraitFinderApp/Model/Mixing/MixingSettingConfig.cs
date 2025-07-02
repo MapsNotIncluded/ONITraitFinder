@@ -14,10 +14,10 @@ namespace TraitFinderApp.Model.Mixing
 		public string Icon;
 		public List<SettingLevel> Levels;
 		public string[] MixingTags;
-		public string[] ForbiddenClusterTags;
+		public List<string> ForbiddenClusterTags;
 		public string WorldMixing;
 		public string SubworldMixing;
-		public MixingType SettingType = MixingType.None;
+		public GameSettingType SettingType = GameSettingType.None;
 
 		public SettingLevel CurrentLevel;
 		public SettingLevel OnLevel, OffLevel, ThirdLevel; //mixings have either 2 or 3 settings levels
@@ -27,7 +27,19 @@ namespace TraitFinderApp.Model.Mixing
 		{
 			return CurrentLevel;
 		}
-		public bool IsDlcMixing() => SettingType == MixingType.DLC;	
+		public void SetLevel(long level)
+		{
+			foreach(var settingLevel in Levels)
+			{
+				if(settingLevel.coordinate_value == level)
+				{
+					CurrentLevel = settingLevel;
+					return;
+				}
+			}
+			Console.WriteLine("Could not set level "+level+ " on mixing setting "+Name+": no setting level exists with that coordinate value.");
+		}
+		public bool IsDlcMixing() => SettingType == GameSettingType.DLCMixing;	
 
 		internal void InitBindings()
 		{
@@ -39,28 +51,42 @@ namespace TraitFinderApp.Model.Mixing
 			CurrentLevel = OffLevel;
 		}
 		public bool IsActive() => CurrentLevel != OffLevel;
+		public bool IsGuaranteed() => CurrentLevel == OnLevel;
 		public bool IsCurrentLevel(SettingLevel level) => CurrentLevel == level;
 
 		public void ForceEnabledState(bool enabled) => CurrentLevel = (enabled ? OnLevel : OffLevel);
 
 		public string GetIcon()
 		{
-			if (SettingType == MixingType.DLC)
+			if (SettingType == GameSettingType.DLCMixing)
 				return DlcFrom.Image;
 
-			if (SettingType == MixingType.World)
+			if (SettingType == GameSettingType.WorldMixing)
 			{
 				if (DataImport.SpacedOut?.asteroidsDict?.TryGetValue(WorldMixing, out var asteroid) ?? false)
 				{
 					return asteroid.Image;
 				}
 			}
-			if (SettingType == MixingType.Subworld)
+			if (SettingType == GameSettingType.SubworldMixing)
 			{
 				return "./images/biomes/" + Icon + ".png";
 			}
 
 			return string.Empty;
+		}
+
+		internal Asteroid? GetMixingAsteroid()
+		{
+			if(SettingType == GameSettingType.WorldMixing)
+			{
+				if (DataImport.SpacedOut?.asteroidsDict?.TryGetValue(WorldMixing, out var asteroid) ?? false)
+				{
+					return asteroid;
+				}
+				Console.WriteLine("Could not find asteroid for world mixing: " + WorldMixing);
+			}
+			return null;
 		}
 	}
 }

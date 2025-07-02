@@ -8,6 +8,7 @@
 		public bool DisableWorldTraits = false;
 		public List<WorldTraitRule> TraitRules;
 		public float worldTraitScale = 1.0f;
+		public List<string> worldTags;
 
 		///nothing built in, just a measure for me to keep info on stuff like the teleporter, ceres heatpump
 		public List<string> SpecialPOIs = new();
@@ -42,13 +43,6 @@
 			return rule;
 
 		}
-		public Asteroid(string _id, string _name, string _image, List<WorldTraitRule> _rules)
-		{
-			Id = _id;
-			Name = _name;
-			Image = _image;
-			TraitRules = _rules;
-		}
 		public Asteroid() { }
 
 		public void InitBindings(Data data)
@@ -56,13 +50,6 @@
 			Image = $"./images/asteroids/{Path.GetFileName(Id)}.png";
 		}
 
-		public Asteroid(string _id, string _name)
-		{
-			Id = _id;
-			Name = _name;
-			Image = $"./images/{Id}.png";
-			TraitRules = null;
-		}
 		public Asteroid NoTraits()
 		{
 			DisableWorldTraits = true;

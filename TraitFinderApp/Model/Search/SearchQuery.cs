@@ -40,7 +40,7 @@ namespace TraitFinderApp.Client.Model.Search
 		public SearchQuery()
 		{
 			ActiveDlcs = Dlc.Values.Where(dlc => !dlc.IsMainVersion).ToList();
-			MixingHandler.DlcMixingSettings.ForEach(mix => mix.ForceEnabledState(true));
+			GameSettingsInstance.DlcMixingSettings.ForEach(mix => mix.ForceEnabledState(true));
 			ResetFilters();
 			ResetQuerySeed();
 		}
@@ -110,13 +110,13 @@ namespace TraitFinderApp.Client.Model.Search
 			if (SelectedCluster == null)
 				return;
 
-			AsteroidParams = new(SelectedCluster.WorldPlacements.Count);
+			AsteroidParams = new(SelectedCluster.worldPlacements.Count);
 			bool hasFixedCoordinate = SelectedCluster.HasFixedCoordinate();
 			int fixedCoordinate = SelectedCluster.fixedCoordinate;
 
-			for (int i = 0; i < SelectedCluster.WorldPlacements.Count; i++)
+			for (int i = 0; i < SelectedCluster.worldPlacements.Count; i++)
 			{
-				var asteroid = SelectedCluster.WorldPlacements[i].Asteroid;
+				var asteroid = SelectedCluster.worldPlacements[i].Asteroid;
 
 				AsteroidParams.Add(asteroid, new AsteroidQuery(this, asteroid, i));
 
@@ -168,9 +168,9 @@ namespace TraitFinderApp.Client.Model.Search
 			if (SelectedCluster == null)
 				return;
 
-			for (int i = 0; i < SelectedCluster.WorldPlacements.Count; i++)
+			for (int i = 0; i < SelectedCluster.worldPlacements.Count; i++)
 			{
-				var asteroid = SelectedCluster.WorldPlacements[i].Asteroid;
+				var asteroid = SelectedCluster.worldPlacements[i].Asteroid;
 
 				var traits = DataImport.GetRandomTraits(seed + i, asteroid);
 				AsteroidParams[asteroid].Guarantee = traits;
@@ -196,12 +196,12 @@ namespace TraitFinderApp.Client.Model.Search
 
 			foreach (var dlc in SelectedCluster.RequiredDlcs)
 			{
-				if (MixingHandler.DlcMixingSettingsDict.TryGetValue(dlc, out var mixing) && !IsMixingEnabled(mixing))
+				if (GameSettingsInstance.DlcMixingSettingsDict.TryGetValue(dlc, out var mixing) && !IsMixingEnabled(mixing))
 				{
 					SetMixingEnabled(mixing, true);
 				}
 			}
-			MixingHandler.SetMixingStateWhere(mixing => !IsMixingAllowedByCluster(mixing), false);
+			GameSettingsInstance.SetMixingStateWhere(mixing => !IsMixingAllowedByCluster(mixing), false);
 		}
 		public void ReevaluateMixingsOnChanged(MixingSettingConfig changedMixing, SettingLevel level)
 		{
@@ -217,7 +217,7 @@ namespace TraitFinderApp.Client.Model.Search
 				else
 				{
 					SetDlcEnabled(changedMixing.DlcFrom, false); 
-					MixingHandler.SetMixingStateWhere(mixing => (mixing != changedMixing && mixing.DlcFrom == changedMixing.DlcFrom), false);
+					GameSettingsInstance.SetMixingStateWhere(mixing => (mixing != changedMixing && mixing.DlcFrom == changedMixing.DlcFrom), false);
 
 				}
 			}
@@ -249,13 +249,13 @@ namespace TraitFinderApp.Client.Model.Search
 				{
 					SetDlcEnabled(mixingToToggle.DlcFrom, false);
 
-					MixingHandler.SetMixingStateWhere(mixing => (mixing.DlcFrom == mixingToToggle.DlcFrom), false);					
+					GameSettingsInstance.SetMixingStateWhere(mixing => (mixing.DlcFrom == mixingToToggle.DlcFrom), false);					
 				}
 			}
 		}
 		public bool CanToggleMixing(MixingSettingConfig mixing)
 		{
-			if (mixing.SettingType == MixingType.DLC)
+			if (mixing.SettingType == GameSettingType.DLCMixing)
 				return !IsDlcRequiredByCluster(mixing.DlcFrom);
 
 			return ActiveDlcs.Contains(mixing.DlcFrom) && IsMixingAllowedByCluster(mixing);
@@ -272,16 +272,16 @@ namespace TraitFinderApp.Client.Model.Search
 
 		public bool IsMixingAllowedByCluster(MixingSettingConfig mixing)
 		{
-			if (mixing.SettingType == MixingType.World && !SpacedOutSelected())
+			if (mixing.SettingType == GameSettingType.WorldMixing && !SpacedOutSelected())
 				return false;
-			if (mixing.SettingType == MixingType.World && (SelectedCluster?.RequiredDlcs.Contains(mixing.DlcFrom)??false))
+			if (mixing.SettingType == GameSettingType.WorldMixing && (SelectedCluster?.RequiredDlcs.Contains(mixing.DlcFrom)??false))
 				return false;
 
 			var forbiddenTags = mixing.ForbiddenClusterTags?.ToHashSet() ?? new HashSet<string>();
 
-			if (mixing.SettingType == MixingType.Subworld && SelectedCluster != null && SelectedCluster.ClusterTags != null)
+			if (mixing.SettingType == GameSettingType.SubworldMixing && SelectedCluster != null && SelectedCluster.clusterTags != null)
 			{
-				foreach (var clusterTags in SelectedCluster.ClusterTags)
+				foreach (var clusterTags in SelectedCluster.clusterTags)
 				{
 					if (forbiddenTags.Contains(clusterTags))
 						return false;

@@ -23,6 +23,6 @@ namespace TraitFinderApp.Model.Search
         }
         public override int GetHashCode() => seed.GetHashCode();
 
-        public string GetCoordinate() => cluster.Prefix+"-"+seed+"-0-0-"+MixingHandler.GetMixingSettingsCode();
+        public string GetCoordinate() => cluster.Prefix+"-"+seed+"-0-0-"+GameSettingsInstance.GetMixingSettingsCode();
     }
 }

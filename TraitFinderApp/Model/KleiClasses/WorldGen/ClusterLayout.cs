@@ -1,4 +1,5 @@
 ﻿using TraitFinderApp.Client.Model.Search;
+using TraitFinderApp.Model.KleiClasses;
 
 namespace TraitFinderApp.Client.Model
 {
@@ -9,18 +10,22 @@ namespace TraitFinderApp.Client.Model
         public string Prefix;
         public int menuOrder;
         public int startWorldIndex;
-        public List<string> RequiredDlcsIDs;
+        public int numRings;
+		public List<string> RequiredDlcsIDs;
         public List<string> ForbiddenDlcIDs;
-        public List<string> WorldPlacementIDs;//transferBinding
-        public int clusterCategory;
-        public int fixedCoordinate;
-        public string[] ClusterTags;
+        public List<WorldPlacement> worldPlacements;
+        public List<SpaceMapPOIPlacement> poiPlacements;
+		public int clusterCategory;
+		public bool disableStoryTraits;
+		public int fixedCoordinate;
+        public string[] clusterTags;
+
 
 
 		public string DisplayName() => Name;
         
-        public string Image() => WorldPlacements[startWorldIndex].Asteroid.Image;
-        public Asteroid StarterAsteroid() => WorldPlacements[startWorldIndex].Asteroid;
+        public string Image() => worldPlacements[startWorldIndex].Asteroid.Image;
+        public Asteroid StarterAsteroid() => worldPlacements[startWorldIndex].Asteroid;
 
 
 		public List<Dlc> RequiredDlcs;
@@ -28,7 +33,6 @@ namespace TraitFinderApp.Client.Model
 
 
         public ClusterCategory ClusterCategory;
-        public List<WorldPlacement> WorldPlacements;
 
         public bool HasContentDlcRequirement() => RequiredDlcs != null && RequiredDlcs.Any(dlc => !dlc.IsMainVersion);
         public Dlc? GetContentDlcRequirement() => HasContentDlcRequirement() ? RequiredDlcs.First(dlc => !dlc.IsMainVersion) : null;
@@ -41,11 +45,6 @@ namespace TraitFinderApp.Client.Model
         public bool AllowedWithCurrentQuery(SearchQuery query) => query.ActiveMode == ClusterCategory;
         public void InitBindings(Data data)
         {
-            WorldPlacements = new(12);
-            foreach (var placementId in WorldPlacementIDs)
-            {
-                WorldPlacements.Add(new WorldPlacement(data.asteroidsDict[placementId]));
-            }
 
             RequiredDlcs = new();
             if (RequiredDlcs != null)
@@ -76,8 +75,20 @@ namespace TraitFinderApp.Client.Model
 
             }
 
-        }
-        public static List<ClusterLayout> Values => DataImport.GetActive().clusters.OrderBy(i=>i.menuOrder).ToList();
+		}
+		public bool HasAnyTags(List<string> tags)
+		{
+			foreach (string tag in tags)
+			{
+				if (clusterTags.Contains(tag))
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
+		public static List<ClusterLayout> Values => DataImport.GetActive().clusters.OrderBy(i=>i.menuOrder).ToList();
         public static Dictionary<string, ClusterLayout> KeyValues => DataImport.GetActive().clustersDict;       
     }
 }
