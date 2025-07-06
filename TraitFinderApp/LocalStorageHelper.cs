@@ -7,7 +7,12 @@ namespace TraitFinderApp
         public const string HideTraitlessKey = "MNI_Traitfinder_HideTraitless";
         public const string PersistantTraitOrderingKey = "MNI_Traitfinder_OrderTraitsPersistant";
         public const string HideLocationlessDistancesKey = "MNI_Traitfinder_HideLocationlessStarmapBands";
-        public static bool DarkThemeActive = true;
+
+		public const string SavedMixingsKey = "MNI_Traitfinder_SavedMixings";
+		public const string SavedSettingsKey = "MNI_Traitfinder_SavedSettings";
+		public const string SavedStoryTraitsKey = "MNI_Traitfinder_SavedStoryTraits";
+
+		public static bool DarkThemeActive = true;
         public static bool UsePersistentTraitOrdering = false;
         public static bool HideTraitlessAsteroids = false;
         public static bool HideLocationlessDistances = false;

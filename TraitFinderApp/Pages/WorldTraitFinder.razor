@@ -14,6 +14,7 @@
 @inject IDialogService DialogService
 @inject IStringLocalizer<App> L
 @inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 
 <style>
 	.mud-tooltip-root {
@@ -302,6 +303,24 @@ else
 	{
 		base.OnInitialized();
 	}
+	async Task SaveSettings()
+	{
+		await localStorage.SetItemAsync(LocalStorageHelper.SavedMixingsKey, GameSettingsInstance.GetMixingSettingsCode());
+	}
+	async Task LoadSettings()
+	{
+		var mixingVal = await localStorage.GetItemAsync<string>(LocalStorageHelper.SavedMixingsKey);
+		if (mixingVal != null && mixingVal.Length > 0)
+		{
+			Console.WriteLine("Loading saved mixing settings");
+			GameSettingsInstance.ParseMixingSettingsCode(mixingVal);
+		}
+		else
+		{
+			Console.WriteLine("No saved mixing settings found, using default");
+		}
+	}
+
 	protected override async Task OnInitializedAsync()
 	{
 		DataImport.SetActiveVersion(Dlc.BASEGAME);
@@ -314,7 +333,15 @@ else
 
 		DataInitialized = true;
 		Query = new();
-		Query.PropertyChanged += (sender, args) => StateHasChanged();
+		Query.PropertyChanged += async (sender, args) =>
+		{
+			StateHasChanged();
+			await SaveSettings();
+		};
+
+
+		await LoadSettings();
+
 
 		if (OptionalSeed != null && OptionalSeed.Length > 0)
 		{
