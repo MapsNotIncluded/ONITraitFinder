@@ -18,20 +18,20 @@
 
 <style>
 	.mud-tooltip-root {
-	align-self: center !important;
-	justify-self: center !important;
+		align-self: center !important;
+		justify-self: center !important;
 	}
 
 	.mud-input-control {
-	margin-top: 0 !important;
-	margin-bottom: 0 !important;
-	padding-right: 0 !important;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		padding-right: 0 !important;
 	}
 
 	.highlight-on-disabled:disabled {
-	color: rgb(255, 187, 40) !important;
-	background-color: rgb(135, 68, 102) !important;
-	font-weight: bold;
+		color: rgb(255, 187, 40) !important;
+		background-color: rgb(135, 68, 102) !important;
+		font-weight: bold;
 	}
 </style>
 
@@ -55,7 +55,7 @@ else
 						@if (dlc.IsMainVersion)
 						{
 							<MudItem>
-								<MudButton Variant="Variant.Filled" Disabled=@Query.IsDlcSelected(dlc) OnClick="()=> Query.ToggleDlc(dlc)" Class="highlight-on-disabled">
+								<MudButton Variant="Variant.Filled" Disabled=@Query.IsDlcSelected(dlc) OnClick="() => Query.ToggleDlc(dlc)" Class="highlight-on-disabled">
 									<MudImage ObjectFit="ObjectFit.Contain" Height="140" Src=@dlc.Image Alt="@L[@dlc.Name]" />
 								</MudButton>
 							</MudItem>
@@ -82,7 +82,7 @@ else
 							bool isSelected = Query.IsModeSelected(mode);
 							var ModeName = new MarkupString(isSelected ? $"<b>{@L[@mode.Name]}</b>" : @L[@mode.Name]);
 							<MudItem>
-								<MudButton Variant="Variant.Filled" Disabled=@isSelected OnClick="()=> Query.SelectMode(mode)" Class="highlight-on-disabled">
+								<MudButton Variant="Variant.Filled" Disabled=@isSelected OnClick="() => Query.SelectMode(mode)" Class="highlight-on-disabled">
 									<MudStack Spacing="1">
 										<MudImage ObjectFit="ObjectFit.Contain" Width="100" Height="100" Src=@mode.Image Alt="@L[@mode.Name]" />
 										<MudText Typo="Typo.body1">@ModeName</MudText>
@@ -111,7 +111,7 @@ else
 									bool isSelected = Query.IsClusterSelected(cluster);
 									var ClusterName = new MarkupString(isSelected ? $"<b>{@L[cluster.DisplayName()]}</ b >" : @L[cluster.DisplayName()]);
 									<MudItem>
-										<MudButton Variant="Variant.Filled" Disabled=@(Query.IsClusterSelected(cluster)) OnClick="()=> SelectCluster(cluster)" Class="highlight-on-disabled">
+										<MudButton Variant="Variant.Filled" Disabled=@(Query.IsClusterSelected(cluster)) OnClick="() => SelectCluster(cluster)" Class="highlight-on-disabled">
 											@if (cluster.HasContentDlcRequirement())
 											{
 												var dlcFrom = cluster.GetContentDlcRequirement();
@@ -175,7 +175,7 @@ else
 								</MudTooltip>
 								<MudText Class="trait-selector-header" Align="Align.Center" Typo="Typo.h4">@localizedTraitFilterHeader</MudText>
 								<MudTooltip Text=@L["Reset all trait filters"]>
-									<MudFab Size="Size.Medium" StartIcon="@Icons.Material.Filled.DeleteForever" Disabled="@blockedFromReset" Class="start-query-button" OnClick="(_)=> Query?.ResetFilters()" Color="Color.Secondary"> </MudFab>
+									<MudFab Size="Size.Medium" StartIcon="@Icons.Material.Filled.DeleteForever" Disabled="@blockedFromReset" Class="start-query-button" OnClick="(_) => Query?.ResetFilters()" Color="Color.Secondary"> </MudFab>
 								</MudTooltip>
 							</MudStack>
 							<MudSpacer></MudSpacer>
@@ -183,11 +183,11 @@ else
 								@for (int i = 0; i < Query?.SelectedCluster?.worldPlacements.Count; ++i)
 								{
 									var world = Query.SelectedCluster.worldPlacements[i].Asteroid;
-									<AsteroidConfigurator Query="Query" Asteroid ="world"/>
+									<AsteroidConfigurator Query="Query" Asteroid="world" />
 								}
 								@if (Query.HasClusterSelected() && Query.ActiveDlcs.Contains(Dlc.BASEGAME))
 								{
-									<BaseGameStartmapConfigurator Query="@Query"/>
+									<BaseGameStartmapConfigurator Query="@Query" />
 								}
 							</MudGrid>
 							<MudSpacer></MudSpacer>
@@ -219,10 +219,10 @@ else
 								</MudItem>
 								<MudFlexBreak />
 								<MudItem>
-									<MudFab Disabled="@canDeleteQueryResults" StartIcon="@Icons.Material.Filled.Delete" OnClick="(_)=> Query?.ClearQueryResults()" Label=@L["Clear Results"] Color="Color.Secondary"></MudFab>
+									<MudFab Disabled="@canDeleteQueryResults" StartIcon="@Icons.Material.Filled.Delete" OnClick="(_) => Query?.ClearQueryResults()" Label=@L["Clear Results"] Color="Color.Secondary"></MudFab>
 								</MudItem>
 								<MudItem>
-									<MudFab Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Search" Disabled="@isFixedCoordinate" OnClick="(_)=> StartSearching()" Color="Color.Primary" Label="@searchString"></MudFab>
+									<MudFab Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Search" Disabled="@isFixedCoordinate" OnClick="(_) => StartSearching()" Color="Color.Primary" Label="@searchString"></MudFab>
 								</MudItem>
 							</MudGrid>
 						</MudStack>
@@ -243,7 +243,7 @@ else
 										{
 											foreach (var result in Query?.QueryResults)
 											{
-												<QueryResultVisualizer SearchQuery="Query" QueryResult="@result"></QueryResultVisualizer>
+												<QueryResultVisualizer SearchQuery="Query" StartExpanded=@ShowStarmapInitialized QueryResult="@result"></QueryResultVisualizer>
 											}
 										}
 										else
@@ -290,6 +290,13 @@ else
 
 
 @code {
+
+
+	[SupplyParameterFromQuery(Name = "seed")]
+	public string seedQueryParam { get; set; }
+	[SupplyParameterFromQuery(Name = "starmap")]
+	public bool ShowStarmapInitialized{ get; set; }
+
 	[Parameter]
 	public string OptionalSeed { get; set; }
 	private bool DataInitialized = false;
@@ -342,7 +349,8 @@ else
 
 
 		await LoadSettings();
-
+		if (seedQueryParam != null && seedQueryParam.Any())
+			OptionalSeed = seedQueryParam;
 
 		if (OptionalSeed != null && OptionalSeed.Length > 0)
 		{
@@ -445,7 +453,7 @@ else
 	}
 	public void RefreshUI()
 	{
-		Console.WriteLine("Refreshing UI"); 
+		Console.WriteLine("Refreshing UI");
 		InvokeAsync(() => StateHasChanged());
 	}
 
@@ -459,11 +467,11 @@ else
 	private Task OpenTraitInfoDialogAsync()
 	{
 		var options = new DialogOptions
-			{
-				MaxWidth = MaxWidth.Medium,
-				FullWidth = true,
-				CloseOnEscapeKey = true
-			};
+		{
+			MaxWidth = MaxWidth.Medium,
+			FullWidth = true,
+			CloseOnEscapeKey = true
+		};
 
 		return DialogService.ShowAsync<TraitInfoDialogue>(L["Trait Info"], options);
 	}

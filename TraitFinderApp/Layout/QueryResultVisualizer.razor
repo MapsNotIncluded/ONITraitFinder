@@ -135,6 +135,9 @@
 
 @code {
 
+	[Parameter]
+	public bool StartExpanded { get; set; }
+
 	[CascadingParameter]
 	protected MudTheme Theme { get; set; }
 
@@ -184,10 +187,18 @@
 	{
 		MNI_Embedded = LocalStorageHelper.IsEmbeddedIn(out _);
 #if DEBUG
-		MNI_Embedded = true;
-		//IsFailedSeed = true;
+	MNI_Embedded = true;
+	//IsFailedSeed = true;
 #endif
 		await RefreshSeedInDBState();
+
+		if (StartExpanded)
+		{
+			if (QueryResult?.cluster?.ForbiddenDlcs?.Contains(Client.Model.Dlc.SPACEDOUT) ?? false)
+				ToggleStarmap_BaseGame();
+			else
+				await ShowStarmap_SpacedOut();
+		}
 	}
 	async Task RefreshSeedInDBState()
 	{
@@ -215,7 +226,7 @@
 			Console.WriteLine($"Unexpected error: {ex.Message}");
 			SeedExistsInMapExplorer = false;
 			IsFailedSeed = false;
-			if(_timer != null)_timer.Enabled = false;
+			if (_timer != null) _timer.Enabled = false;
 		}
 
 		if (SeedExistsInMapExplorer && _timer != null)

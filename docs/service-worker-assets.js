@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "/C+CLNUx",
+  "version": "T8IlNox4",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -34,7 +34,7 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.AspNetCore.Components.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-ifTfpltiKgAL6OLmGrBbU7HHVyanqYu9SIHmndk1b8Q=",
+      "hash": "sha256-Mx74EKU19NjG69GuCKoEmG7Q2oyGspXFVNuyj7b8HSM=",
       "url": "_framework/Microsoft.AspNetCore.Components.wasm"
     },
     {
@@ -322,11 +322,11 @@ self.assetsManifest = {
       "url": "_framework/System.wasm"
     },
     {
-      "hash": "sha256-nRbX7dbpzhjNA8Xh071dEiVZiasMFh9cOWpFCShQEQ8=",
+      "hash": "sha256-dp5asj7LsRSNaiKF074XHMGHoa9rNkSrydlXDyiXYys=",
       "url": "_framework/TraitFinderApp.wasm"
     },
     {
-      "hash": "sha256-E+bQep3046HfWB6kdODBQZkBc6JWyIzr8KkWQGXb3go=",
+      "hash": "sha256-/3UVbyHoFD9dcAaj28ZIggIbPyL2PWs7Spd+sDPjt1I=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -334,7 +334,7 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-0azpJdeqwitVCcrqSeTrQiExpVZfNKmWHxNu8nkYrFQ=",
+      "hash": "sha256-WVzoQScoLuB9El+ZnJxR4XuTi/DQbmPrAwHKjcwMMI0=",
       "url": "_framework/de/TraitFinderApp.resources.wasm"
     },
     {
@@ -346,7 +346,7 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.js"
     },
     {
-      "hash": "sha256-ndMwlXTlBrNsfv8ophaRATbjCOD2GX0D1A1n3Uy5LzA=",
+      "hash": "sha256-9UuV9YzmpFyj3MeU/MD+8O+b5tVwtzPHcaj+Xww0ORI=",
       "url": "_framework/dotnet.native.wasm"
     },
     {
@@ -370,11 +370,11 @@ self.assetsManifest = {
       "url": "_framework/netstandard.wasm"
     },
     {
-      "hash": "sha256-ihdGbYGxbTvjYFQxamFKAwE/Vkm1z+MK5SqnKnU009U=",
+      "hash": "sha256-xjN5D96XCOVnKVcimxi0a6XmF7/c5i3O8sOgQ+HgtIY=",
       "url": "_framework/zh-TW/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-5jnI2/bYci1Rv0FMU6kUopa8ADtgIxo9r4YFwmKBePw=",
+      "hash": "sha256-GOdCqn6uA7JRmtB/km6wBohXtVcD0qHYICa53tc1Qxk=",
       "url": "_framework/zh/TraitFinderApp.resources.wasm"
     },
     {
