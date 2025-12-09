@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "GOr1bsaV",
+  "version": "/C+CLNUx",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -322,11 +322,11 @@ self.assetsManifest = {
       "url": "_framework/System.wasm"
     },
     {
-      "hash": "sha256-SriDXxgNDINa+4b9WqRvW2h5v1Isurp2idx2Gqafwyg=",
+      "hash": "sha256-nRbX7dbpzhjNA8Xh071dEiVZiasMFh9cOWpFCShQEQ8=",
       "url": "_framework/TraitFinderApp.wasm"
     },
     {
-      "hash": "sha256-bIbStBINLhxcc8Kfcg8pcLOd/Ftdttkgi0cauW88UpM=",
+      "hash": "sha256-E+bQep3046HfWB6kdODBQZkBc6JWyIzr8KkWQGXb3go=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -334,7 +334,7 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-5eu+CRTGK9r+Oc+THpwYli/CcHratQvNVxDOkGHzhfI=",
+      "hash": "sha256-0azpJdeqwitVCcrqSeTrQiExpVZfNKmWHxNu8nkYrFQ=",
       "url": "_framework/de/TraitFinderApp.resources.wasm"
     },
     {
@@ -346,7 +346,7 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.js"
     },
     {
-      "hash": "sha256-h8HQSNW6MDXMxMxbtgQFkMoMmvkQXphpMlbn9741FCA=",
+      "hash": "sha256-ndMwlXTlBrNsfv8ophaRATbjCOD2GX0D1A1n3Uy5LzA=",
       "url": "_framework/dotnet.native.wasm"
     },
     {
@@ -370,11 +370,11 @@ self.assetsManifest = {
       "url": "_framework/netstandard.wasm"
     },
     {
-      "hash": "sha256-yKiybUTomvUsRhrhwrTlAD2Dfio1mbQzs/iIBRHZ7TU=",
+      "hash": "sha256-ihdGbYGxbTvjYFQxamFKAwE/Vkm1z+MK5SqnKnU009U=",
       "url": "_framework/zh-TW/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-0Or9mJ2DVpFhL9rCXWPnR48gQmJ50h2wsMt5D11L6x4=",
+      "hash": "sha256-5jnI2/bYci1Rv0FMU6kUopa8ADtgIxo9r4YFwmKBePw=",
       "url": "_framework/zh/TraitFinderApp.resources.wasm"
     },
     {
@@ -400,14 +400,6 @@ self.assetsManifest = {
     {
       "hash": "sha256-d3PhqSxp4zEI56UBJ44g9o99BfQxJto3hwvFcd5tS8A=",
       "url": "favicon.png"
-    },
-    {
-      "hash": "sha256-H1S8qir82cL7ru+pWhiOSlg0BnvHPR44F0zIoIdG5b4=",
-      "url": "icons/astroidselectscreen_01.png"
-    },
-    {
-      "hash": "sha256-DCO6RZ2S1yH61+LMt7/Vh1g+hUqAbTjUGWPTkwwqFhI=",
-      "url": "icons/astroidselectscreen_01.png.meta"
     },
     {
       "hash": "sha256-J3pD9hU4VLqeBRRir+C+haVVSD3xFpWVQ2tMNJ5BLHo=",

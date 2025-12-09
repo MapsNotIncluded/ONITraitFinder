@@ -17,35 +17,35 @@
 <MudItem>
 	<MudPaper Outlined Elevation="10" Class="pa-1" Width="300px">
 		<MudStack Row Spacing="1" AlignItems="AlignItems.Center" Justify="Justify.Center"><MudText Style="padding:4px" Typo="Typo.h6">@QueryResult.GetCoordinate()</MudText></MudStack>
-				
+
 		<MudStack Spacing="2">
 			<MudStack Row Spacing="1" AlignItems="AlignItems.Center" Justify="Justify.Center">
 				<MudTooltip Arrow Text="@L["Copy the coordinate to the clipboard"]">
-					<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.ContentCopy" IconColor="Color.Tertiary" OnClick="(_)=> CopyToClipboard(QueryResult.GetCoordinate())"></MudFab>
+					<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.ContentCopy" IconColor="Color.Tertiary" OnClick="(_) => CopyToClipboard(QueryResult.GetCoordinate())"></MudFab>
 				</MudTooltip>
 
 				@if (MNI_Embedded)
 				{
 					if (IsFailedSeed)
 					{
-						<MudTooltip Arrow Text="@L["Seed failed generating!"]">  
+						<MudTooltip Arrow Text="@L["Seed failed generating!"]">
 							<MudIcon Icon="@Icons.Material.Filled.Error" Color="Color.Error" Style="font-size: 57px; margin-top:3px; margin-bottom:-3px"></MudIcon>
 						</MudTooltip>
 					}
 					else
 					{
-						<MudTooltip Arrow Text="@L[LocalStorageHelper.TryGetMNIToken(out _)?"Request the coordinate to be added to the Map Explorer":"Login with Steam first to request coordinates"]">
+						<MudTooltip Arrow Text="@L[LocalStorageHelper.TryGetMNIToken(out _) ? "Request the coordinate to be added to the Map Explorer" : "Login with Steam first to request coordinates"]">
 							@if (SeedIsRequested)
 							{
-								<MudProgressCircular Size="Size.Medium" Color="Color.Warning" Indeterminate="true" hidden=@(SeedExistsInMapExplorer||!MNI_Embedded) />
+								<MudProgressCircular Size="Size.Medium" Color="Color.Warning" Indeterminate="true" hidden=@(SeedExistsInMapExplorer || !MNI_Embedded) />
 							}
 							else
 							{
-								<MudFab Disabled=@(!LocalStorageHelper.TryGetMNIToken(out _)) Size=Size.Medium EndIcon="@Icons.Material.Filled.PlaylistAdd" IconColor="Color.Warning" hidden=@(SeedExistsInMapExplorer||!MNI_Embedded) OnClick="(_)=>RequestOrOpenInNewTab()"></MudFab>
+								<MudFab Disabled=@(!LocalStorageHelper.TryGetMNIToken(out _)) Size=Size.Medium EndIcon="@Icons.Material.Filled.PlaylistAdd" IconColor="Color.Warning" hidden=@(SeedExistsInMapExplorer || !MNI_Embedded) OnClick="(_) => RequestOrOpenInNewTab()"></MudFab>
 							}
 						</MudTooltip>
 						<MudTooltip Arrow Text="@L["View in the Map Explorer"]">
-							<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.OpenInNew" Color="Color.Success" hidden=@(!SeedExistsInMapExplorer||!MNI_Embedded) OnClick="(_)=> OpenExplorerInNewTab()"></MudFab>
+							<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.OpenInNew" Color="Color.Success" hidden=@(!SeedExistsInMapExplorer || !MNI_Embedded) OnClick="(_) => OpenExplorerInNewTab()"></MudFab>
 						</MudTooltip>
 					}
 				}
@@ -78,7 +78,7 @@
 						@if (asteroidQueryResult.IsMixing)
 						{
 							<MudTooltip Style="white-space: pre-line" Text="@L["Currently, the ingame colony destination screen has a bug,\n that causes the traits shown there for asteroid remixes to be wrong.\n\nThe traits shown here are those that will actually be generated,\neven if the colony destination screen says otherwise."]" Arrow="true" Placement="Placement.Top">
-								
+
 								<MudChip T="string" Variant="Variant.Outlined" Color="Color.Warning">
 									<MudImage ObjectFit="ObjectFit.Contain" Width="20" Height="20" Src="icons/warning.png" />
 								</MudChip>
@@ -164,7 +164,7 @@
 	{
 		var options = new DialogOptions
 		{
-			MaxWidth = MaxWidth.Large,			
+			MaxWidth = MaxWidth.Large,
 			//FullWidth = true,
 			CloseOnEscapeKey = true,
 			NoHeader = true
@@ -193,7 +193,8 @@
 	{
 		string coordinate = QueryResult.GetCoordinate();
 		string request = string.Format(ExternalRoutes.API_URL_CHECK_MAP_EXISTS, coordinate);
-		try{
+		try
+		{
 			HttpResponseMessage? mapExistsRequest = await Http.GetAsync(request);
 			SeedExistsInMapExplorer = mapExistsRequest?.IsSuccessStatusCode ?? false;
 
@@ -207,22 +208,22 @@
 			Console.WriteLine($"Error checking if seed exists in Map Explorer: {ex.Message}");
 			SeedExistsInMapExplorer = false;
 			IsFailedSeed = false;
-			_timer.Enabled = false;
+			if (_timer != null) _timer.Enabled = false;
 		}
 		catch (Exception ex)
 		{
 			Console.WriteLine($"Unexpected error: {ex.Message}");
 			SeedExistsInMapExplorer = false;
 			IsFailedSeed = false;
-			_timer.Enabled = false;
+			if(_timer != null)_timer.Enabled = false;
 		}
 
-		if (SeedExistsInMapExplorer)
+		if (SeedExistsInMapExplorer && _timer != null)
 			_timer.Enabled = false;
 		StateHasChanged();
 	}
 
-	private System.Timers.Timer _timer = null;
+	private System.Timers.Timer? _timer = null;
 	protected override void OnInitialized()
 	{
 		_timer = new();
@@ -255,11 +256,12 @@
 		}
 
 		var request = new HttpRequestMessage(HttpMethod.Post, ExternalRoutes.API_POST_REQUEST_COORDINATE)
-			{
-				Content = new StringContent(QueryResult.GetCoordinate())
-			};
+		{
+			Content = new StringContent(QueryResult.GetCoordinate())
+		};
 		request.Headers.Add("token", token);
-		try{
+		try
+		{
 			var response = await Http.SendAsync(request);
 
 			if (response.IsSuccessStatusCode)
@@ -283,16 +285,16 @@
 				Snackbar.Add(L["Seed request for Map Explorer failed!"], Severity.Error);
 				Console.WriteLine($"Request failed: {response.StatusCode}");
 			}
-		}	
+		}
 		catch (Exception ex)
 		{
 			Console.WriteLine($"Unexpected error: {ex.Message}");
 			SeedExistsInMapExplorer = false;
 			IsFailedSeed = false;
-			_timer.Enabled = false;
+			if (_timer != null) _timer.Enabled = false;
 			Snackbar.Add(L["Request not possible right now!"], Severity.Error);
 		}
-		_timer.Enabled = true;
+		if (_timer != null) _timer.Enabled = true;
 	}
 
 	async Task OpenExplorerInNewTab()
