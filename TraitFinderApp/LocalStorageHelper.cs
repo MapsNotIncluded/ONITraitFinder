@@ -7,6 +7,7 @@ namespace TraitFinderApp
         public const string HideTraitlessKey = "MNI_Traitfinder_HideTraitless";
         public const string PersistantTraitOrderingKey = "MNI_Traitfinder_OrderTraitsPersistant";
         public const string HideLocationlessDistancesKey = "MNI_Traitfinder_HideLocationlessStarmapBands";
+        public const string MaxSeedNumberPerSearchKey = "MNI_Traitfinder_MaxSeedNumberPerSearch";
 
 		public const string SavedMixingsKey = "MNI_Traitfinder_SavedMixings";
 		public const string SavedSettingsKey = "MNI_Traitfinder_SavedSettings";
@@ -16,8 +17,9 @@ namespace TraitFinderApp
         public static bool UsePersistentTraitOrdering = false;
         public static bool HideTraitlessAsteroids = false;
         public static bool HideLocationlessDistances = false;
+        public static int MaxSeedNumberPerSearch = 5000;
 
-        public static string EmbbeddedIn = null;
+		public static string EmbbeddedIn = null;
         public static string MNI_Token = null;
 
         public static bool TryGetMNIToken(out string token)

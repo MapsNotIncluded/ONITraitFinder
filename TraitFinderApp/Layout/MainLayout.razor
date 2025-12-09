@@ -9,227 +9,247 @@
 <MudDialogProvider />
 <MudSnackbarProvider />
 <MudLayout>
-    <MudFab Style="position:fixed;top:25px;left:25px; z-index:99;"
-    StartIcon="@((_drawerOpen?@Icons.Material.Filled.Close:@Icons.Material.Filled.Settings))"
-    Color="Color.Primary"
-    OnClick="(_)=>ToggleDrawer()">
-    </MudFab>
-    <MudPaper MinHeight="100px" Elevation="10" MinWidth="100px" hidden="@(!_drawerOpen)" Style=" position:fixed;top:100px;left:25px; z-index:99;">
-        <MudStack Style="padding:5px">
-            <MudSwitch T="bool" @bind-Value="@PersistantTraitOrdering" Color="@Color.Success" UncheckedColor="@Color.Error" Label=@L["Results inherit trait select order"]></MudSwitch>
-            <MudSwitch T="bool" @bind-Value="@HideTraitlessAsteroids" Color="@Color.Success" UncheckedColor="@Color.Error" Label=@L["Hide asteroids that cannot have traits in results"]></MudSwitch>
-            <MudSwitch T="bool" @bind-Value="@HideLocationlessDistanceBands" Color="@Color.Success" UncheckedColor="@Color.Error" Label=@L["Hide starmap distances that dont have destinations in results"]></MudSwitch>
-            <MudSwitch T="bool" ThumbIcon="@DarkLightModeButtonIcon" ThumbIconColor="@Color.Primary" @bind-Value="@LocalStorageHelper.DarkThemeActive" Label=@L["Theme"]></MudSwitch>
-        </MudStack>
-    </MudPaper>
+	<MudFab Style="position:fixed;top:25px;left:25px; z-index:99;"
+			StartIcon="@((_drawerOpen?@Icons.Material.Filled.Close:@Icons.Material.Filled.Settings))"
+			Color="Color.Primary"
+			OnClick="(_)=>ToggleDrawer()">
+	</MudFab>
+	<MudPaper MinHeight="100px" Elevation="10" MinWidth="100px" hidden="@(!_drawerOpen)" Style=" position:fixed;top:100px;left:25px; z-index:99;">
+		<MudStack Style="padding:5px">
+			<MudSwitch T="bool" @bind-Value="@PersistantTraitOrdering" Color="@Color.Success" UncheckedColor="@Color.Error" Label=@L["Results inherit trait select order"]></MudSwitch>
+			<MudSwitch T="bool" @bind-Value="@HideTraitlessAsteroids" Color="@Color.Success" UncheckedColor="@Color.Error" Label=@L["Hide asteroids that cannot have traits in results"]></MudSwitch>
+			<MudSwitch T="bool" @bind-Value="@HideLocationlessDistanceBands" Color="@Color.Success" UncheckedColor="@Color.Error" Label=@L["Hide starmap distances that dont have destinations in results"]></MudSwitch>
+			<MudNumericField Label=@L["Max number of seeds checked per search"] Variant="Variant.Outlined" @bind-Value=NumberOfSeedsPerQuery Min="500"></MudNumericField>
+			<MudSwitch T="bool" ThumbIcon="@DarkLightModeButtonIcon" ThumbIconColor="@Color.Primary" @bind-Value="@LocalStorageHelper.DarkThemeActive" Label=@L["Theme"]></MudSwitch>
+		</MudStack>
+	</MudPaper>
 
-    <MudMainContent Class="pa-8">
-        @Body
-    </MudMainContent>
+	<MudMainContent Class="pa-8">
+		@Body
+	</MudMainContent>
 </MudLayout>
 
 
 <div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
-    <a class="dismiss">🗙</a>
+	An unhandled error has occurred.
+	<a href="" class="reload">Reload</a>
+	<a class="dismiss">🗙</a>
 </div>
 
 @code {
-    private bool _drawerOpen = false;
-
-
-    private MudTheme? _theme = null;
-    private MudThemeProvider _mudThemeProvider;
-
-
-
-
-    public bool HideLocationlessDistanceBands
-    {
-        get => _hideLocationlessDistanceBands;
-        set
-        {
-            _hideLocationlessDistanceBands = value;
-            SetLocationlessDistanceHidingPersistent(value);
-        }
-    }
-    private bool _hideLocationlessDistanceBands = false;
-    public void SetLocationlessDistanceHidingPersistent(bool enabled)
-    {
-        localStorage.SetItemAsync(LocalStorageHelper.HideLocationlessDistancesKey, enabled);
-        LocalStorageHelper.HideLocationlessDistances = enabled;
-    }
-    public bool PersistantTraitOrdering
-    {
-        get => _persistantTraitOrdering;
-        set
-        {
-            _persistantTraitOrdering = value;
-            SetTraitOrderingPersistent(value);
-        }
-    }
-    private bool _persistantTraitOrdering = false;
+	private bool _drawerOpen = false;
+
+
+	private MudTheme? _theme = null;
+	private MudThemeProvider _mudThemeProvider;
+
+
+	public int NumberOfSeedsPerQuery
+	{
+		get => _numberOfSeedsPerQuery;
+		set
+		{
+			_numberOfSeedsPerQuery = value;
+			SetNumberOfSeedsPerQueryPersistent(value);
+		}
+	}
+	private int _numberOfSeedsPerQuery = 5000;
+
+	public void SetNumberOfSeedsPerQueryPersistent(int maxCount)
+	{
+		localStorage.SetItemAsync(LocalStorageHelper.MaxSeedNumberPerSearchKey, maxCount);
+		LocalStorageHelper.MaxSeedNumberPerSearch = maxCount;
+	}
+
+	public bool HideLocationlessDistanceBands
+	{
+		get => _hideLocationlessDistanceBands;
+		set
+		{
+			_hideLocationlessDistanceBands = value;
+			SetLocationlessDistanceHidingPersistent(value);
+		}
+	}
+	private bool _hideLocationlessDistanceBands = false;
+	public void SetLocationlessDistanceHidingPersistent(bool enabled)
+	{
+		localStorage.SetItemAsync(LocalStorageHelper.HideLocationlessDistancesKey, enabled);
+		LocalStorageHelper.HideLocationlessDistances = enabled;
+	}
+	public bool PersistantTraitOrdering
+	{
+		get => _persistantTraitOrdering;
+		set
+		{
+			_persistantTraitOrdering = value;
+			SetTraitOrderingPersistent(value);
+		}
+	}
+	private bool _persistantTraitOrdering = false;
 
-    public void SetTraitOrderingPersistent(bool enabled)
-    {
-        localStorage.SetItemAsync(LocalStorageHelper.PersistantTraitOrderingKey, enabled);
-        LocalStorageHelper.UsePersistentTraitOrdering = enabled;
-    }
-    public bool HideTraitlessAsteroids
-    {
-        get => _hideTraitlessAsteroids;
-        set
-        {
-            _hideTraitlessAsteroids = value;
-            SetHideTraitless(value);
-        }
-    }
-    private bool _hideTraitlessAsteroids = false;
+	public void SetTraitOrderingPersistent(bool enabled)
+	{
+		localStorage.SetItemAsync(LocalStorageHelper.PersistantTraitOrderingKey, enabled);
+		LocalStorageHelper.UsePersistentTraitOrdering = enabled;
+	}
+	public bool HideTraitlessAsteroids
+	{
+		get => _hideTraitlessAsteroids;
+		set
+		{
+			_hideTraitlessAsteroids = value;
+			SetHideTraitless(value);
+		}
+	}
+	private bool _hideTraitlessAsteroids = false;
 
-    public void SetHideTraitless(bool enabled)
-    {
-        localStorage.SetItemAsync(LocalStorageHelper.HideTraitlessKey, enabled);
-        LocalStorageHelper.HideTraitlessAsteroids = enabled;
+	public void SetHideTraitless(bool enabled)
+	{
+		localStorage.SetItemAsync(LocalStorageHelper.HideTraitlessKey, enabled);
+		LocalStorageHelper.HideTraitlessAsteroids = enabled;
 
-    }
+	}
 
-    protected override async Task OnInitializedAsync()
-    {
-        PersistantTraitOrdering = await localStorage.GetItemAsync<bool>(LocalStorageHelper.PersistantTraitOrderingKey);
-        HideTraitlessAsteroids = await localStorage.GetItemAsync<bool>(LocalStorageHelper.HideTraitlessKey);
-        HideLocationlessDistanceBands = await localStorage.GetItemAsync<bool>(LocalStorageHelper.HideLocationlessDistancesKey);
-        LocalStorageHelper.DarkThemeActive = await _mudThemeProvider.GetSystemPreference();
+	protected override async Task OnInitializedAsync()
+	{
+		PersistantTraitOrdering = await localStorage.GetItemAsync<bool>(LocalStorageHelper.PersistantTraitOrderingKey);
+		HideTraitlessAsteroids = await localStorage.GetItemAsync<bool>(LocalStorageHelper.HideTraitlessKey);
+		HideLocationlessDistanceBands = await localStorage.GetItemAsync<bool>(LocalStorageHelper.HideLocationlessDistancesKey);
+		int count = await localStorage.GetItemAsync<int>(LocalStorageHelper.MaxSeedNumberPerSearchKey);
+		if (count <= 0)
+			count = 5000;
+		NumberOfSeedsPerQuery = count;
+		LocalStorageHelper.DarkThemeActive = await _mudThemeProvider.GetSystemPreference();
 
-        await base.OnInitializedAsync();
-    }
+		await base.OnInitializedAsync();
+	}
 
-    protected override void OnInitialized()
+	protected override void OnInitialized()
 
-    {
+	{
 
-        base.OnInitialized();
+		base.OnInitialized();
 
 
-        _theme = new()
+		_theme = new()
 
-            {
-                PaletteLight = _lightPalette,
-                PaletteDark = _darkPalette,
-                LayoutProperties = new LayoutProperties()
+		{
+			PaletteLight = _lightPalette,
+			PaletteDark = _darkPalette,
+			LayoutProperties = new LayoutProperties()
 
-            };
-        var uri = new Uri(NavigationManager.Uri);
+		};
+		var uri = new Uri(NavigationManager.Uri);
 
-        // Parse the query string
-        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
-        // Extract the "token" parameter
-        LocalStorageHelper.MNI_Token = query["token"];
-        LocalStorageHelper.EmbbeddedIn = query["embedded"];
+		// Parse the query string
+		var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+		// Extract the "token" parameter
+		LocalStorageHelper.MNI_Token = query["token"];
+		LocalStorageHelper.EmbbeddedIn = query["embedded"];
 
-        Console.WriteLine($"JWT Token: {LocalStorageHelper.MNI_Token}, embedd: {LocalStorageHelper.EmbbeddedIn}");
+		Console.WriteLine($"JWT Token: {LocalStorageHelper.MNI_Token}, embedd: {LocalStorageHelper.EmbbeddedIn}");
 
-    }
+	}
 
-    private void DarkModeToggle()
-    {
-        LocalStorageHelper.DarkThemeActive = !LocalStorageHelper.DarkThemeActive;
-    }
-    private void ToggleDrawer()
-    {
-        _drawerOpen = !_drawerOpen;
-    }
+	private void DarkModeToggle()
+	{
+		LocalStorageHelper.DarkThemeActive = !LocalStorageHelper.DarkThemeActive;
+	}
+	private void ToggleDrawer()
+	{
+		_drawerOpen = !_drawerOpen;
+	}
 
 
 
-    private readonly PaletteLight _lightPalette = new()
+	private readonly PaletteLight _lightPalette = new()
 
-        {
+	{
 
-            Black = "#110e2d",
+		Black = "#110e2d",
 
-            AppbarText = "#424242",
+		AppbarText = "#424242",
 
-            AppbarBackground = "rgba(255,255,255,0.8)",
+		AppbarBackground = "rgba(255,255,255,0.8)",
 
-            DrawerBackground = "#ffffff",
+		DrawerBackground = "#ffffff",
 
-            GrayLight = "#e8e8e8",
+		GrayLight = "#e8e8e8",
 
-            GrayLighter = "#f9f9f9",
+		GrayLighter = "#f9f9f9",
 
-        };
+	};
 
 
 
-    private readonly PaletteDark _darkPalette = new()
+	private readonly PaletteDark _darkPalette = new()
 
-        {
+	{
 
-            Primary = "#7e6fff",
+		Primary = "#7e6fff",
 
-            Surface = "#1e1e2d",
+		Surface = "#1e1e2d",
 
-            Background = "#1a1a27",
+		Background = "#1a1a27",
 
-            BackgroundGray = "#151521",
+		BackgroundGray = "#151521",
 
-            AppbarText = "#92929f",
+		AppbarText = "#92929f",
 
-            AppbarBackground = "rgba(26,26,39,0.8)",
+		AppbarBackground = "rgba(26,26,39,0.8)",
 
-            DrawerBackground = "#1a1a27",
+		DrawerBackground = "#1a1a27",
 
-            ActionDefault = "#74718e",
+		ActionDefault = "#74718e",
 
-            ActionDisabled = "#9999994d",
-            //ActionDisabled = "rgb(255, 187, 40)",
+		ActionDisabled = "#9999994d",
+		//ActionDisabled = "rgb(255, 187, 40)",
 
-            ActionDisabledBackground = "#605f6d4d",
-            //ActionDisabledBackground = "rgb(135, 68, 102)",
+		ActionDisabledBackground = "#605f6d4d",
+		//ActionDisabledBackground = "rgb(135, 68, 102)",
 
-            TextPrimary = "#b2b0bf",
+		TextPrimary = "#b2b0bf",
 
-            TextSecondary = "#92929f",
+		TextSecondary = "#92929f",
 
-            TextDisabled = "#ffffff33",
+		TextDisabled = "#ffffff33",
 
-            DrawerIcon = "#92929f",
+		DrawerIcon = "#92929f",
 
-            DrawerText = "#92929f",
+		DrawerText = "#92929f",
 
-            GrayLight = "#2a2833",
+		GrayLight = "#2a2833",
 
-            GrayLighter = "#1e1e2d",
+		GrayLighter = "#1e1e2d",
 
-            Info = "#4a86ff",
+		Info = "#4a86ff",
 
-            Success = "#3dcb6c",
+		Success = "#3dcb6c",
 
-            Warning = "#ffb545",
+		Warning = "#ffb545",
 
-            Error = "#ff3f5f",
+		Error = "#ff3f5f",
 
-            LinesDefault = "#33323e",
+		LinesDefault = "#33323e",
 
-            TableLines = "#33323e",
+		TableLines = "#33323e",
 
-            Divider = "#292838",
+		Divider = "#292838",
 
-            OverlayLight = "#1e1e2d80",
+		OverlayLight = "#1e1e2d80",
 
-        };
+	};
 
 
-    public string DarkLightModeButtonIcon => LocalStorageHelper.DarkThemeActive
-    switch
-    {
+	public string DarkLightModeButtonIcon => LocalStorageHelper.DarkThemeActive
+	switch
+	{
 
-        true => Icons.Material.Rounded.DarkMode,
+		true => Icons.Material.Rounded.DarkMode,
 
-        false => Icons.Material.Outlined.LightMode ,
+		false => Icons.Material.Outlined.LightMode,
 
-    };
+	};
 }
 
 

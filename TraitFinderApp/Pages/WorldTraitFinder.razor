@@ -422,17 +422,16 @@ else
 	bool overlay_visible;
 	public async void StartSearching()
 	{
-		if (Query != null && Query.InvalidAsteroidMixingSelection())
+		if (Query == null)
+			return;
+
+		if (Query.InvalidAsteroidMixingSelection())
 		{
 			Snackbar.Add(@L["You cannot have multiple different remix asteroids replace the same target asteroid!"], Severity.Error);
 			return;
 		}
-
-		if (Query != null)
-			await Query.StartSearching();
-
-		//await Task.Delay(500);
-		//overlay_visible = false;
+		
+		await Query.StartSearching();
 		await ScrollToResults();
 	}
 	public async Task GoToTraitSelection()
