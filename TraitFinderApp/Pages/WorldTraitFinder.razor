@@ -312,11 +312,11 @@ else
 	}
 	async Task SaveSettings()
 	{
-		await localStorage.SetItemAsync(LocalStorageHelper.SavedMixingsKey, GameSettingsInstance.GetMixingSettingsCode());
+		await localStorage.SetItemAsyncWithConsent(LocalStorageHelper.SavedMixingsKey, GameSettingsInstance.GetMixingSettingsCode());
 	}
 	async Task LoadSettings()
 	{
-		var mixingVal = await localStorage.GetItemAsync<string>(LocalStorageHelper.SavedMixingsKey);
+		var mixingVal = await localStorage.GetItemAsyncWithConsent<string>(LocalStorageHelper.SavedMixingsKey);
 		if (mixingVal != null && mixingVal.Length > 0)
 		{
 			Console.WriteLine("Loading saved mixing settings");

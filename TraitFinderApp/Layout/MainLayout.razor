@@ -57,7 +57,7 @@
 
 	public void SetNumberOfSeedsPerQueryPersistent(int maxCount)
 	{
-		localStorage.SetItemAsync(LocalStorageHelper.MaxSeedNumberPerSearchKey, maxCount);
+		localStorage.SetItemAsyncWithConsent(LocalStorageHelper.MaxSeedNumberPerSearchKey, maxCount);
 		LocalStorageHelper.MaxSeedNumberPerSearch = maxCount;
 	}
 
@@ -73,7 +73,7 @@
 	private bool _hideLocationlessDistanceBands = false;
 	public void SetLocationlessDistanceHidingPersistent(bool enabled)
 	{
-		localStorage.SetItemAsync(LocalStorageHelper.HideLocationlessDistancesKey, enabled);
+		localStorage.SetItemAsyncWithConsent(LocalStorageHelper.HideLocationlessDistancesKey, enabled);
 		LocalStorageHelper.HideLocationlessDistances = enabled;
 	}
 	public bool PersistantTraitOrdering
@@ -89,7 +89,7 @@
 
 	public void SetTraitOrderingPersistent(bool enabled)
 	{
-		localStorage.SetItemAsync(LocalStorageHelper.PersistantTraitOrderingKey, enabled);
+		localStorage.SetItemAsyncWithConsent(LocalStorageHelper.PersistantTraitOrderingKey, enabled);
 		LocalStorageHelper.UsePersistentTraitOrdering = enabled;
 	}
 	public bool HideTraitlessAsteroids
@@ -105,17 +105,19 @@
 
 	public void SetHideTraitless(bool enabled)
 	{
-		localStorage.SetItemAsync(LocalStorageHelper.HideTraitlessKey, enabled);
+		localStorage.SetItemAsyncWithConsent(LocalStorageHelper.HideTraitlessKey, enabled);
 		LocalStorageHelper.HideTraitlessAsteroids = enabled;
 
 	}
 
 	protected override async Task OnInitializedAsync()
 	{
-		PersistantTraitOrdering = await localStorage.GetItemAsync<bool>(LocalStorageHelper.PersistantTraitOrderingKey);
-		HideTraitlessAsteroids = await localStorage.GetItemAsync<bool>(LocalStorageHelper.HideTraitlessKey);
-		HideLocationlessDistanceBands = await localStorage.GetItemAsync<bool>(LocalStorageHelper.HideLocationlessDistancesKey);
-		int count = await localStorage.GetItemAsync<int>(LocalStorageHelper.MaxSeedNumberPerSearchKey);
+		await localStorage.FetchConsent();
+
+		PersistantTraitOrdering = await localStorage.GetItemAsyncWithConsent<bool>(LocalStorageHelper.PersistantTraitOrderingKey);
+		HideTraitlessAsteroids = await localStorage.GetItemAsyncWithConsent<bool>(LocalStorageHelper.HideTraitlessKey);
+		HideLocationlessDistanceBands = await localStorage.GetItemAsyncWithConsent<bool>(LocalStorageHelper.HideLocationlessDistancesKey);
+		int count = await localStorage.GetItemAsyncWithConsent<int>(LocalStorageHelper.MaxSeedNumberPerSearchKey);
 		if (count <= 0)
 			count = 5000;
 		NumberOfSeedsPerQuery = count;
