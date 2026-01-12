@@ -165,7 +165,7 @@ namespace TraitFinderApp.Client.Model
 	public class DataImport
 	{
 		public static HashSet<string> FailedSeeds = [];
-		public const string FAILED_SEEDS_URL = "https://oni-search.stefanoltmann.de/failed-worldgens";
+		public const string FAILED_SEEDS_URL = "https://mni.stefan-oltmann.de/failed-worldgens";
 
 		public static void FetchOfflineData(string dataPath)
 		{

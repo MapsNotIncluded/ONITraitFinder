@@ -2,9 +2,9 @@
 {
 	public class ExternalRoutes
 	{
-		public static string API_URL_CHECK_MAP_EXISTS = "https://ingest.mapsnotincluded.org/exists/{0}";
+		public static string API_URL_CHECK_MAP_EXISTS = "https://mni.stefan-oltmann.de/exists/{0}";
 		public static string MNI_VIEW_IN_EXPLORER = "https://mapsnotincluded.org/map-explorer/{0}";
-		public static string API_POST_REQUEST_COORDINATE = "https://ingest.mapsnotincluded.org/request-coordinate";
+		public static string API_POST_REQUEST_COORDINATE = "https://mni.stefan-oltmann.de/request-coordinate";
 
 
 	}
