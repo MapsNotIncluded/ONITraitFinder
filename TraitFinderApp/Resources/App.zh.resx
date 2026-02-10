@@ -748,27 +748,27 @@
     <value>大型石块使挖穿这颗星球更困难了</value>
   </data>
   <data name="Copy the coordinate to the clipboard" xml:space="preserve">
-    <value />
+    <value>复制</value>
   </data>
   <data name="View in the Map Explorer" xml:space="preserve">
-    <value />
+    <value>在地图种子浏览器中查看</value>
   </data>
   <data name="Request the coordinate to be added to the Map Explorer" xml:space="preserve">
-    <value />
+    <value>请求将种子添加到地图种子浏览器</value>
   </data>
   <data name="Seed request for Map Explorer sent!" xml:space="preserve">
-    <value />
+    <value>已发送种子请求!</value>
   </data>
   <data name="Map was already requested, please be patient!" xml:space="preserve">
-    <value />
+    <value>种子请求已提交,请耐心等待!</value>
   </data>
   <data name="Seed request for Map Explorer failed!" xml:space="preserve">
-    <value />
+    <value>请求失败!</value>
   </data>
   <data name="Seed failed generating!" xml:space="preserve">
-    <value />
+    <value>种子生成失败!</value>
   </data>
   <data name="Login with Steam first to request coordinates" xml:space="preserve">
-    <value />
+    <value>请先登入Steam再请求种子.</value>
   </data>
 </root>
