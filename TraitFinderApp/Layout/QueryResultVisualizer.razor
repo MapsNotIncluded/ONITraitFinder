@@ -49,6 +49,9 @@
 						</MudTooltip>
 					}
 				}
+				<MudTooltip Arrow Text="@L["View seed on onimaxxing.com"]">
+					<MudFab Size=Size.Medium EndIcon="@Icons.Material.Filled.RemoveRedEye" IconColor="Color.Tertiary" OnClick="(_) => OniMaxxSeed()"></MudFab>
+				</MudTooltip>
 			</MudStack>
 			<MudVirtualize Items="@QueryResult.asteroidsWithTraits" Context="asteroidQueryResult">
 				@if (!LocalStorageHelper.HideTraitlessAsteroids || !asteroidQueryResult.Asteroid.DisableWorldTraits)
@@ -245,7 +248,11 @@
 		};
 		_timer.Enabled = false;
 	}
-
+	async Task OniMaxxSeed()
+	{
+		string url = string.Format(ExternalRoutes.ONI_MAXXING_VIEW, QueryResult.GetCoordinate());
+		await JSRuntime.InvokeVoidAsync("open", url, "_blank");
+	}
 	async Task RequestOrOpenInNewTab()
 	{
 		await RefreshSeedInDBState();

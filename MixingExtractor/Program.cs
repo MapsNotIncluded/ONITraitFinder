@@ -3,11 +3,25 @@ using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using System.Text;
 using TraitFinderApp.Client.Model;
+using TraitFinderApp.Client.Model.KleiClasses;
 using TraitFinderApp.Model.Mixing;
 using static System.Net.WebRequestMethods;
 
-Console.WriteLine("Hello, World!");
+//Console.WriteLine("Hello, World!");
+//Console.WriteLine("hatch group id" + ": " + 0x4D63030.ToString());
 
+//Console.WriteLine("hatch"+": "+Tag.SDBMLower("hatch"));
+//Console.WriteLine("hatches"+": "+Tag.SDBMLower("hatches"));
+//Console.WriteLine("hatchesgroup"+": "+Tag.SDBMLower("hatchesgroup"));
+//Console.WriteLine("hatchgroup"+": "+Tag.SDBMLower("hatchgroup"));
+//Console.WriteLine("hatch_group" + ": "+Tag.SDBMLower("hatch_group"));
+//Console.WriteLine("group_hatch" + ": "+Tag.SDBMLower("group_hatch"));
+//Console.WriteLine("hatchgrouptag" + ": "+Tag.SDBMLower("hatchgrouptag"));
+//Console.WriteLine("hatchspecies" + ": "+Tag.SDBMLower("hatchspecies"));
+//Console.WriteLine("hatch_species" + ": "+Tag.SDBMLower("hatch_species"));
+//Console.WriteLine("Assets/anim/hatch/" + ": "+Tag.SDBMLower("Assets/anim/hatch/"));
+
+//0x4D63030 <- hatch group
 var Http = new HttpClient();
 
 Console.WriteLine("Current Path: " + System.Environment.ProcessPath);
@@ -17,14 +31,14 @@ Console.WriteLine("DataPath: " + DataPath);
 DataImport.FetchOfflineData(DataPath);
 
 
-GameSettingsInstance.ParseMixingSettingsCode("8Q1U5");
+GameSettingsInstance.ParseMixingSettingsCode("YE3");
 foreach (var mixing in GameSettingsInstance.AllMixingSettings)
 {
 	Console.WriteLine("Mixing: " + mixing.Name + " - " + mixing.GetLevel().Name);
 }
 Console.WriteLine();
 Console.WriteLine();
-GameSettingsInstance.ParseMixingSettingsCode("L72U5");
+GameSettingsInstance.ParseMixingSettingsCode("AXM97");
 foreach (var mixing in GameSettingsInstance.AllMixingSettings)
 {
 	Console.WriteLine("Mixing: " + mixing.Name + " - " + mixing.GetLevel().Name);
