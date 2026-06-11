@@ -6,7 +6,8 @@
 		public string Name;
 		public string Description;
 		public string Image => "./images/Starmap/starmap_destinations_cluster/" + Path.GetFileName(Id) + ".png";
-		public Dictionary<SimHashes, float>? Mineables;
+		//public Dictionary<SimHashes, float>? Mineables;
+		public Dictionary<string, float>? Mineables;
 		public bool HasArtifacts;
 
 		public float RechargeMin, RechargeMax;

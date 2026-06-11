@@ -69,6 +69,7 @@ namespace TraitFinderApp.Client.Model
 			_compatibleTraits = new();
 			foreach (var asteroid in asteroids)
 			{
+				Console.WriteLine("Mapping trait compatibilities of " + asteroid.Name);
 				var allTraits = new List<WorldTrait>(worldTraits);
 				if (asteroid.DisableWorldTraits)
 				{
@@ -94,6 +95,7 @@ namespace TraitFinderApp.Client.Model
 				allTraits.RemoveAll((WorldTrait trait) => !trait.IsValid(asteroid, logErrors: true));
 				_compatibleTraits[asteroid] = allTraits;
 			}
+			Console.WriteLine("All trait compatibilities mapped");
 		}
 
 		public List<WorldTrait> GetCompatibleTraits(Asteroid asteroid)

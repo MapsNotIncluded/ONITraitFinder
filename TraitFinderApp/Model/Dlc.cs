@@ -12,7 +12,13 @@ namespace TraitFinderApp.Client.Model
 {
 	public class Dlc
 	{
-		public static string BASEGAME_ID = "", SPACEDOUT_ID = "EXPANSION1_ID", FROSTYPLANET_ID = "DLC2_ID", BIONICBOOSTER_ID = "DLC3_ID", PREHISTORICPLANET_ID = "DLC4_ID";
+		public static readonly string 
+			BASEGAME_ID = "", 
+			SPACEDOUT_ID = "EXPANSION1_ID", 
+			FROSTYPLANET_ID = "DLC2_ID", 
+			BIONICBOOSTER_ID = "DLC3_ID", 
+			PREHISTORICPLANET_ID = "DLC4_ID", 
+			AQUATICPLANET_ID = "DLC5_ID";
 
 
 		public string ID;
@@ -73,8 +79,16 @@ namespace TraitFinderApp.Client.Model
 			Name = "Prehistoric Planet Pack",
 			Image = "./images/logos/Prehistoric_Planet_Banner.png",
 			BannerImage = "./images/logos/dlc4_banner.png",
-			//extraSpaceDestinationsBasegame = [new("DLC4PrehistoricSpaceDestination", 3, 10)],
 			Color = UnityColor.Get(16f / 51f, 0.6745098f, 27f / 85f)//(80,172,81) //green
+		}; 
+		public static readonly Dlc AQUATICPLANET = new Dlc()
+		{
+			ID = AQUATICPLANET_ID,
+			IsMainVersion = false,
+			Name = "Aquatic Planet Pack",
+			Image = "./images/logos/Aquatic_Planet_Banner.png",
+			BannerImage = "./images/logos/dlc5_banner.png",
+			Color = UnityColor.Get(5f / 51f, 54f / 85f, 0.5803922f)
 		};
 		public static IEnumerable<Dlc> Values
 		{
@@ -85,6 +99,7 @@ namespace TraitFinderApp.Client.Model
 				yield return FROSTYPLANET;
 				yield return BIONICBOOSTER;
 				yield return PREHISTORICPLANET;
+				yield return AQUATICPLANET;
 			}
 		}
 		public static Dictionary<string, Dlc> KeyValues = new()
@@ -94,6 +109,7 @@ namespace TraitFinderApp.Client.Model
 			{FROSTYPLANET_ID,FROSTYPLANET},
 			{BIONICBOOSTER_ID,BIONICBOOSTER},
 			{PREHISTORICPLANET_ID,PREHISTORICPLANET},
+			{AQUATICPLANET_ID,AQUATICPLANET},
 		};
 
 		internal static void AddMixingDestinations(List<SpaceDestinationMix> mixingDesignations, List<Dlc> mixingDlcs)

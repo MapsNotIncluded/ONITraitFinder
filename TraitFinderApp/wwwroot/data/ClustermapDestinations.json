@@ -386,7 +386,7 @@
 	"HarvestableSpacePOI_DLC4PrehistoricMixingField": {
 		"Id": "HarvestableSpacePOI_DLC4PrehistoricMixingField",
 		"Name": "Conductive Ore Field",
-		"Description": "An asteroid field containing Nickel Ore, Peat, Amber and Shale.\n\nSpace mining requires a rocket equipped with a Drillcone and a cargo module.",
+		"Description": "An asteroid field containing Nickel Ore, Peat, Amber, and Shale.\n\nSpace mining requires a rocket equipped with a Drillcone and a cargo module.",
 		"Mineables": {
 			"NickelOre": 4.5,
 			"Peat": 2.5,
@@ -403,7 +403,7 @@
 	"HarvestableSpacePOI_DLC4PrehistoricOreField": {
 		"Id": "HarvestableSpacePOI_DLC4PrehistoricOreField",
 		"Name": "Amber Field",
-		"Description": "The harvestable remains of a planet containing Nickel Ore, Peat, Amber and Shale.\n\nSpace mining requires a rocket equipped with a Drillcone and a cargo module.",
+		"Description": "The harvestable remains of a planet containing Nickel Ore, Peat, Amber, and Shale.\n\nSpace mining requires a rocket equipped with a Drillcone and a cargo module.",
 		"Mineables": {
 			"NickelOre": 1.5,
 			"Peat": 2.5,
@@ -463,10 +463,44 @@
 		"CapacityMin": 110000.0,
 		"CapacityMax": 137500.0
 	},
+	"HarvestableSpacePOI_DLC5AquaticMixingField": {
+		"Id": "HarvestableSpacePOI_DLC5AquaticMixingField",
+		"Name": "Zinc Ore Field",
+		"Description": "The harvestable remains of a planet containing Zinc Ore, Silt Stone, Coquina, Corallium, and Basalt.\n\nSpace mining requires a rocket equipped with a Drillcone and a cargo module.",
+		"Mineables": {
+			"ZincOre": 4.5,
+			"SiltStone": 2.5,
+			"Corallium": 2.5,
+			"Basalt": 1.5,
+			"Coquina": 1.5
+		},
+		"HasArtifacts": true,
+		"RechargeMin": 30000.0,
+		"RechargeMax": 60000.0,
+		"CapacityMin": 15000.0,
+		"CapacityMax": 25000.0
+	},
+	"HarvestableSpacePOI_DLC5AquaticOreField": {
+		"Id": "HarvestableSpacePOI_DLC5AquaticOreField",
+		"Name": "Zinc Ore Field",
+		"Description": "The harvestable remains of a planet containing Zinc Ore, Siltstone, Coquina, Corallium, and Basalt.\n\nSpace mining requires a rocket equipped with a Drillcone and a cargo module.",
+		"Mineables": {
+			"ZincOre": 4.5,
+			"SiltStone": 2.5,
+			"Corallium": 2.5,
+			"Basalt": 1.5,
+			"Coquina": 1.5
+		},
+		"HasArtifacts": true,
+		"RechargeMin": 30000.0,
+		"RechargeMax": 60000.0,
+		"CapacityMin": 15000.0,
+		"CapacityMax": 25000.0
+	},
 	"ArtifactSpacePOI_GravitasSpaceStation1": {
 		"Id": "ArtifactSpacePOI_GravitasSpaceStation1",
 		"Name": "Destroyed Satellite",
-		"Description": "The remnants of a bygone era, lost in time.",
+		"Description": "The remnants of a bygone era, lost in time.\n\nGathering space junk requires a rocket equipped with an Artifact Transport Module.",
 		"Mineables": null,
 		"HasArtifacts": true,
 		"RechargeMin": 0.0,
@@ -477,7 +511,7 @@
 	"ArtifactSpacePOI_GravitasSpaceStation2": {
 		"Id": "ArtifactSpacePOI_GravitasSpaceStation2",
 		"Name": "Demolished Rocket",
-		"Description": "A defunct rocket from a corporation that vanished long ago.",
+		"Description": "A defunct rocket from a corporation that vanished long ago.\n\nGathering space junk requires a rocket equipped with an Artifact Transport Module.",
 		"Mineables": null,
 		"HasArtifacts": true,
 		"RechargeMin": 0.0,
@@ -488,7 +522,7 @@
 	"ArtifactSpacePOI_GravitasSpaceStation3": {
 		"Id": "ArtifactSpacePOI_GravitasSpaceStation3",
 		"Name": "Ruined Rocket",
-		"Description": "The ruins of a rocket that stopped functioning ages ago.",
+		"Description": "The ruins of a rocket that stopped functioning ages ago.\n\nGathering space junk requires a rocket equipped with an Artifact Transport Module.",
 		"Mineables": null,
 		"HasArtifacts": true,
 		"RechargeMin": 0.0,
@@ -499,7 +533,7 @@
 	"ArtifactSpacePOI_GravitasSpaceStation4": {
 		"Id": "ArtifactSpacePOI_GravitasSpaceStation4",
 		"Name": "Retired Planetary Excursion Module",
-		"Description": "A rocket part from a society that has been wiped out.",
+		"Description": "A rocket part from a society that has been wiped out.\n\nGathering space junk requires a rocket equipped with an Artifact Transport Module.",
 		"Mineables": null,
 		"HasArtifacts": true,
 		"RechargeMin": 0.0,
@@ -510,7 +544,7 @@
 	"ArtifactSpacePOI_GravitasSpaceStation5": {
 		"Id": "ArtifactSpacePOI_GravitasSpaceStation5",
 		"Name": "Destroyed Satellite",
-		"Description": "A destroyed Gravitas satellite.",
+		"Description": "A destroyed Gravitas satellite.\n\nGathering space junk requires a rocket equipped with an Artifact Transport Module.",
 		"Mineables": null,
 		"HasArtifacts": true,
 		"RechargeMin": 0.0,
@@ -521,7 +555,7 @@
 	"ArtifactSpacePOI_GravitasSpaceStation6": {
 		"Id": "ArtifactSpacePOI_GravitasSpaceStation6",
 		"Name": "Annihilated Satellite",
-		"Description": "The remains of a satellite made some time in the past.",
+		"Description": "The remains of a satellite made some time in the past.\n\nGathering space junk requires a rocket equipped with an Artifact Transport Module.",
 		"Mineables": null,
 		"HasArtifacts": true,
 		"RechargeMin": 0.0,
@@ -532,7 +566,7 @@
 	"ArtifactSpacePOI_GravitasSpaceStation7": {
 		"Id": "ArtifactSpacePOI_GravitasSpaceStation7",
 		"Name": "Wrecked Space Shuttle",
-		"Description": "A defunct space shuttle that floats through space unattended.",
+		"Description": "A defunct space shuttle that floats through space unattended.\n\nGathering space junk requires a rocket equipped with an Artifact Transport Module.",
 		"Mineables": null,
 		"HasArtifacts": true,
 		"RechargeMin": 0.0,
@@ -543,7 +577,7 @@
 	"ArtifactSpacePOI_GravitasSpaceStation8": {
 		"Id": "ArtifactSpacePOI_GravitasSpaceStation8",
 		"Name": "Obsolete Space Station Module",
-		"Description": "The module from a space station that ceased to exist ages ago.",
+		"Description": "The module from a space station that ceased to exist ages ago.\n\nGathering space junk requires a rocket equipped with an Artifact Transport Module.",
 		"Mineables": null,
 		"HasArtifacts": true,
 		"RechargeMin": 0.0,
@@ -554,7 +588,7 @@
 	"ArtifactSpacePOI_RussellsTeapot": {
 		"Id": "ArtifactSpacePOI_RussellsTeapot",
 		"Name": "Russell's Teapot",
-		"Description": "Has never been disproven to not exist.",
+		"Description": "Has never been disproven to not exist.\n\nGathering space junk requires a rocket equipped with an Artifact Transport Module.",
 		"Mineables": null,
 		"HasArtifacts": true,
 		"RechargeMin": 0.0,
