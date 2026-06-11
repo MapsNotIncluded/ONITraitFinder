@@ -326,7 +326,7 @@
 		"DLC4PrehistoricDemoliorSpaceDestination2": {
 			"Id": "DLC4PrehistoricDemoliorSpaceDestination2",
 			"Name": "Liquid Demolior Debris",
-			"Description": "The liquid remains of an obliterated asteroid containing a renewable source of Isosap.",
+			"Description": "The liquid remains of an obliterated asteroid containing a renewable source of isosap.",
 			"Image": "prehistoric_demolior_debris2",
 			"Ressources_Elements": {
 				"Isoresin": 100.0,
@@ -347,6 +347,23 @@
 				"Magma": 100.0
 			},
 			"Ressources_Entities": null
+		},
+		"DLC5AquaticSpaceDestination": {
+			"Id": "DLC5AquaticSpaceDestination",
+			"Name": "Extinct Ocean",
+			"Description": "The remains of an aquatic world primarily composed of harvestable corallium, coquina, and zinc ore.",
+			"Image": "aquatic_base",
+			"Ressources_Elements": {
+				"ZincOre": 100.0,
+				"Corallium": 100.0,
+				"SiltStone": 100.0,
+				"Basalt": 100.0,
+				"Coquina": 100.0
+			},
+			"Ressources_Entities": {
+				"WoodDeer": 3,
+				"UrchinPlantSeed": 4
+			}
 		}
 	},
 	"Elements": {
@@ -657,6 +674,30 @@
 		"LiquidOxygen": {
 			"Id": "LiquidOxygen",
 			"Name": "Liquid Oxygen"
+		},
+		"ZincOre": {
+			"Id": "ZincOre",
+			"Name": "Zinc Ore"
+		},
+		"Corallium": {
+			"Id": "Corallium",
+			"Name": "Corallium"
+		},
+		"SiltStone": {
+			"Id": "SiltStone",
+			"Name": "Siltstone"
+		},
+		"Basalt": {
+			"Id": "Basalt",
+			"Name": "Basalt"
+		},
+		"Coquina": {
+			"Id": "Coquina",
+			"Name": "Coquina"
+		},
+		"UrchinPlantSeed": {
+			"Id": "UrchinPlantSeed",
+			"Name": "Pinpoket Seed"
 		}
 	}
 }

@@ -401,5 +401,227 @@
 		"spacePois": null,
 		"spaceDesinations": null,
 		"SettingType": 2
+	},
+	{
+		"Id": "DLC5_ID",
+		"Name": "The Aquatic Planet Pack",
+		"Description": "The Aquatic Planet Pack features underwater flora and fauna, diving deep for resources, and a splashy new survivor",
+		"coordinate_range": 5,
+		"DlcIdFrom": "DLC5_ID",
+		"Icon": null,
+		"Levels": [
+			{
+				"Id": "Disabled",
+				"Name": "Disabled",
+				"Description": "Content from this DLC is currently disabled",
+				"coordinate_value": 0
+			},
+			{
+				"Id": "Enabled",
+				"Name": "Enabled",
+				"Description": "Content from this DLC is currently enabled\n\nThis includes Care Packages, buildings, and space POIs",
+				"coordinate_value": 1
+			}
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": null,
+		"WorldMixing": null,
+		"SubworldMixing": null,
+		"spacePois": [
+			{
+				"pois": [ "HarvestableSpacePOI_DLC5AquaticMixingField" ],
+				"numToSpawn": 1,
+				"allowedRings": {
+					"min": 5,
+					"max": 11
+				},
+				"avoidClumping": false,
+				"canSpawnDuplicates": false,
+				"guarantee": true
+			}
+		],
+		"spaceDesinations": [
+			{
+				"minTier": 3,
+				"maxTier": 10,
+				"type": "DLC5AquaticSpaceDestination"
+			}
+		],
+		"SettingType": 0
+	},
+	{
+		"Id": "BeachMixing",
+		"Name": "Beach Biome",
+		"Description": "Layers of Coquina, Salt, Sandstone, and Siltstone imply that this area may once have been an ocean floor. Now, its warm climate and abundant life-sustaining resources make it a welcoming place for new colonies.\n\n",
+		"coordinate_range": 5,
+		"DlcIdFrom": "DLC5_ID",
+		"Icon": "biomeIconBeach",
+		"Levels": [
+			{
+				"Id": "Disabled",
+				"Name": "Disabled",
+				"Description": "This biome will not be mixed into any world",
+				"coordinate_value": 0
+			},
+			{
+				"Id": "TryMixing",
+				"Name": "Likely",
+				"Description": "This biome is very likely to be mixed into a world",
+				"coordinate_value": 1
+			},
+			{
+				"Id": "GuranteeMixing",
+				"Name": "Guaranteed",
+				"Description": "This biome will be mixed into a world, even if it causes a worldgen failure",
+				"coordinate_value": 2
+			}
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "AquaticCluster" ],
+		"WorldMixing": null,
+		"SubworldMixing": "dlc5::subworlds/beach/BeachMixing",
+		"spacePois": null,
+		"spaceDesinations": null,
+		"SettingType": 1
+	},
+	{
+		"Id": "ReefMixing",
+		"Name": "Reef Biome",
+		"Description": "This tropical biome is filled with vast Salt Water stores and fascinating wildlife. Dry land is almost non-existent, so Swimming will be an important skill for my Duplicants to acquire.\n\n",
+		"coordinate_range": 5,
+		"DlcIdFrom": "DLC5_ID",
+		"Icon": "biomeIconReef",
+		"Levels": [
+			{
+				"Id": "Disabled",
+				"Name": "Disabled",
+				"Description": "This biome will not be mixed into any world",
+				"coordinate_value": 0
+			},
+			{
+				"Id": "TryMixing",
+				"Name": "Likely",
+				"Description": "This biome is very likely to be mixed into a world",
+				"coordinate_value": 1
+			},
+			{
+				"Id": "GuranteeMixing",
+				"Name": "Guaranteed",
+				"Description": "This biome will be mixed into a world, even if it causes a worldgen failure",
+				"coordinate_value": 2
+			}
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "AquaticCluster" ],
+		"WorldMixing": null,
+		"SubworldMixing": "dlc5::subworlds/reef/ReefMixing",
+		"spacePois": null,
+		"spaceDesinations": null,
+		"SettingType": 1
+	},
+	{
+		"Id": "KelpForestMixing",
+		"Name": "Kelp Forest Biome",
+		"Description": "The temperate Kelp Forest biome contains plentiful natural resources, with enough breathable gas to sustain my Duplicants as they build the infrastructure for longer-term solutions.\n\n",
+		"coordinate_range": 5,
+		"DlcIdFrom": "DLC5_ID",
+		"Icon": "biomeIconKelpForest",
+		"Levels": [
+			{
+				"Id": "Disabled",
+				"Name": "Disabled",
+				"Description": "This biome will not be mixed into any world",
+				"coordinate_value": 0
+			},
+			{
+				"Id": "TryMixing",
+				"Name": "Likely",
+				"Description": "This biome is very likely to be mixed into a world",
+				"coordinate_value": 1
+			},
+			{
+				"Id": "GuranteeMixing",
+				"Name": "Guaranteed",
+				"Description": "This biome will be mixed into a world, even if it causes a worldgen failure",
+				"coordinate_value": 2
+			}
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "AquaticCluster" ],
+		"WorldMixing": null,
+		"SubworldMixing": "dlc5::subworlds/kelpforest/KelpForestMixing",
+		"spacePois": null,
+		"spaceDesinations": null,
+		"SettingType": 1
+	},
+	{
+		"Id": "AbyssMixing",
+		"Name": "Abyss Biome",
+		"Description": "This aquatic environment is marked by gloomy shafts flooded with Polluted Brine and renewable natural resources ideal for colony industrialization. Training my Duplicants to Swim should be a priority.\n\n",
+		"coordinate_range": 5,
+		"DlcIdFrom": "DLC5_ID",
+		"Icon": "biomeIconAbyss",
+		"Levels": [
+			{
+				"Id": "Disabled",
+				"Name": "Disabled",
+				"Description": "This biome will not be mixed into any world",
+				"coordinate_value": 0
+			},
+			{
+				"Id": "TryMixing",
+				"Name": "Likely",
+				"Description": "This biome is very likely to be mixed into a world",
+				"coordinate_value": 1
+			},
+			{
+				"Id": "GuranteeMixing",
+				"Name": "Guaranteed",
+				"Description": "This biome will be mixed into a world, even if it causes a worldgen failure",
+				"coordinate_value": 2
+			}
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "AquaticCluster" ],
+		"WorldMixing": null,
+		"SubworldMixing": "dlc5::subworlds/abyss/AbyssMixing",
+		"spacePois": null,
+		"spaceDesinations": null,
+		"SettingType": 1
+	},
+	{
+		"Id": "AquaticAsteroidMixing",
+		"Name": "Marinea Fragment",
+		"Description": "A fragment of an aquatic starting world. It has abundant food resources.\n\nMarinea's biodiversity makes reliable food production more attainable for new colonies, provided they can navigate its many liquid pools. Construction materials are a bit limited.",
+		"coordinate_range": 5,
+		"DlcIdFrom": "DLC5_ID",
+		"Icon": "aquatic_asteroid_mixing_0",
+		"Levels": [
+			{
+				"Id": "Disabled",
+				"Name": "Disabled",
+				"Description": "This asteroid will not be mixed in",
+				"coordinate_value": 0
+			},
+			{
+				"Id": "TryMixing",
+				"Name": "Likely",
+				"Description": "This asteroid is very likely to be mixed in",
+				"coordinate_value": 1
+			},
+			{
+				"Id": "GuranteeMixing",
+				"Name": "Guaranteed",
+				"Description": "This asteroid will be mixed in, even if it causes worldgen failure",
+				"coordinate_value": 2
+			}
+		],
+		"MixingTags": null,
+		"ForbiddenClusterTags": [ "AquaticCluster" ],
+		"WorldMixing": "dlc5::worlds/MixingAquaticAsteroid",
+		"SubworldMixing": null,
+		"spacePois": null,
+		"spaceDesinations": null,
+		"SettingType": 2
 	}
 ]

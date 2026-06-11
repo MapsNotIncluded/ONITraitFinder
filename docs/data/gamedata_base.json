@@ -559,6 +559,46 @@
             "disableStoryTraits": false,
             "fixedCoordinate": -1,
             "clusterTags": [ "PrehistoricCluster", "DemoliorSurivedAchievement", "DemoliorImminentImpact" ]
+        },
+        {
+            "Id": "dlc5::clusters/AquaticBaseGameCluster",
+            "Name": "Marinea",
+            "Prefix": "AQU-A",
+            "menuOrder": 7,
+            "startWorldIndex": 0,
+            "numRings": 12,
+            "RequiredDlcsIDs": [ "DLC5_ID" ],
+            "ForbiddenDlcIDs": [ "EXPANSION1_ID" ],
+            "worldPlacements": [
+                {
+                    "world": "dlc5::worlds/AquaticBaseGameAsteroid",
+                    "worldMixing": {
+                        "requiredTags": [],
+                        "forbiddenTags": [],
+                        "additionalWorldTemplateRules": [],
+                        "additionalUnknownCellFilters": [],
+                        "additionalSubworldFiles": [],
+                        "additionalSeasons": []
+                    },
+                    "allowedRings": {
+                        "min": 0,
+                        "max": 0
+                    },
+                    "buffer": 2,
+                    "locationType": 0,
+                    "x": 0,
+                    "y": 0,
+                    "width": 0,
+                    "height": 0,
+                    "startWorld": false,
+                    "hiddenY": 0
+                }
+            ],
+            "poiPlacements": [],
+            "clusterCategory": 0,
+            "disableStoryTraits": false,
+            "fixedCoordinate": -1,
+            "clusterTags": [ "AquaticCluster", "MinnowRecruitedAchievement" ]
         }
     ],
     "asteroids": [
@@ -872,6 +912,44 @@
             ],
             "worldTraitScale": 0.08,
             "worldTags": [ "Mixing", "PrehistoricWorld", "PrehistoricStart", "SmallWorld" ],
+            "SpecialPOIs": []
+        },
+        {
+            "Id": "dlc5::worlds/AquaticBaseGameAsteroid",
+            "Name": "Marinea",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 2,
+                    "max": 4,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "Surface", "NonStartWorld", "Oil" ],
+                    "forbiddenTraits": [ "traits/MisalignedStart" ]
+                }
+            ],
+            "worldTraitScale": 1.0,
+            "worldTags": [ "Aquatic" ],
+            "SpecialPOIs": []
+        },
+        {
+            "Id": "dlc5::worlds/MixingAquaticAsteroid",
+            "Name": "Marinea Fragment",
+            "Image": null,
+            "DisableWorldTraits": false,
+            "TraitRules": [
+                {
+                    "min": 0,
+                    "max": 2,
+                    "requiredTags": null,
+                    "specificTraits": null,
+                    "forbiddenTags": [ "StartWorldOnly", "Geodes", "Oil", "GenericGeysers", "StartChange", "LargeWorld", "Surface" ],
+                    "forbiddenTraits": [ "traits/MagmaVents", "expansion1::traits/Volcanoes", "expansion1::traits/MetalCaves", "expansion1::traits/CrashedSatellites" ]
+                }
+            ],
+            "worldTraitScale": 0.08,
+            "worldTags": [ "Mixing", "SmallWorld", "AquaticWorld", "AquaticStart" ],
             "SpecialPOIs": []
         }
     ],

@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "c5DFs033",
+  "version": "NBrVemok",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -322,11 +322,11 @@ self.assetsManifest = {
       "url": "_framework/System.wasm"
     },
     {
-      "hash": "sha256-WyDJIAhh2paojellck1R4PeEPuuSAapVzgxCE8C+Fhw=",
+      "hash": "sha256-cmkgmv0htXgMZmSCaSWIkIRjMlI/I1/s3N8uR4gsihY=",
       "url": "_framework/TraitFinderApp.wasm"
     },
     {
-      "hash": "sha256-PcnT2dHypw86SAKFDhLS236egeEM6C50MNJ1Roc2d84=",
+      "hash": "sha256-oOEdmLs9jaUseiFY7ZR/hvBXaCq7+Np7Fn8hPDfnsDM=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -334,7 +334,7 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-twE13gENzZvTRGATTbqzax30p8jGPVx/F7yWv5t1REQ=",
+      "hash": "sha256-p/HycWamIYjy+n5uHVbaZhHNHnCbs/x0mJRLwua+Tx4=",
       "url": "_framework/de/TraitFinderApp.resources.wasm"
     },
     {
@@ -346,7 +346,7 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.js"
     },
     {
-      "hash": "sha256-OBDPi7tto0yF/k3jdWdBkHSy3XnCPhe+1nIdyqcvp+I=",
+      "hash": "sha256-+msNB+OEqh1duVbxC0DgynEC4BWC44yeNjMSUAOY5Gk=",
       "url": "_framework/dotnet.native.wasm"
     },
     {
@@ -370,31 +370,31 @@ self.assetsManifest = {
       "url": "_framework/netstandard.wasm"
     },
     {
-      "hash": "sha256-TuRyj8MzBMSM07y9gI/YyYwCdV1DzS1jC7ET6f/puCs=",
+      "hash": "sha256-9ZEqh1H/nCPcff2WhTh9nExe1r5WBuJYqddRgioSUw0=",
       "url": "_framework/zh-TW/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-oqqXYXY5Acn6+xmEI3m3XoUdaCrsi0Rv2pUPCSQ36Os=",
+      "hash": "sha256-koejejJL+YLDVg0ftnJBAEYFiuWVDRyEFwQ8K3KAEP8=",
       "url": "_framework/zh/TraitFinderApp.resources.wasm"
     },
     {
-      "hash": "sha256-83vHTbLWZL02T4wSoq+RvI8jyPjaMGJ/OkOWywDJAyM=",
+      "hash": "sha256-ZBSNqF0ZF7DL8ChPe41+wJMvo4+jcjSPHzAgDBm08pY=",
       "url": "data/BasegameStarmapDestinations.json"
     },
     {
-      "hash": "sha256-lW7cGlVJVCixM1CGv4JOdhjxjh1oBhksqnP9pHM0f/w=",
+      "hash": "sha256-Ta+LHV+kRFN6G65z2OGmINE/7ygqM+FgYdnxaZ8Yyn4=",
       "url": "data/ClustermapDestinations.json"
     },
     {
-      "hash": "sha256-EZQYcDvpdUuU9QWDrTskHSCB+mRoLzEK0gYDe8oFgp0=",
+      "hash": "sha256-9wHO03FQSxZ/69jYeh2nd6Y69piqnYC9I/wnAkGFE/Q=",
       "url": "data/gamedata_base.json"
     },
     {
-      "hash": "sha256-PYbbeP1SjtT1iFTdDFof/W+IHkYkjoKHdFpJ7wQ2oWw=",
+      "hash": "sha256-yXwKoHJQwobxnbWXuCWDxMs5msh3tpwDDcLRLhhKhpQ=",
       "url": "data/gamedata_so.json"
     },
     {
-      "hash": "sha256-oaADxIvfFcOo96xQkWYoNfMDMLWB0XFonI5KZcKhzEw=",
+      "hash": "sha256-Ln0v2ahQNP0U2MlcBcrtpHS4j/3Q6bS5GLB8WJg8B3U=",
       "url": "data/mixing_data.json"
     },
     {
@@ -468,6 +468,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-Ky0OIsOxHdzuxmqgW692INXD/xNwZP6zk1APn/dOlPA=",
       "url": "images/Starmap/starmap_destinations_basegame/DLC4PrehistoricSpaceDestination.png"
+    },
+    {
+      "hash": "sha256-7jnISox3fJ/8j5UED+VZTxlI/Pe5r7LZ2DDHO+R9tak=",
+      "url": "images/Starmap/starmap_destinations_basegame/DLC5AquaticSpaceDestination.png"
     },
     {
       "hash": "sha256-Reb6edN38pK5VD1EakyJl2Vd0jkzs9Cvew7ZDB0dWc0=",
@@ -626,6 +630,14 @@ self.assetsManifest = {
       "url": "images/Starmap/starmap_destinations_cluster/HarvestableSpacePOI_DLC4PrehistoricOreField.png"
     },
     {
+      "hash": "sha256-h38ogUAP+MY5IW5apf8SYuqClN2SeJ368DYCosN5Bxo=",
+      "url": "images/Starmap/starmap_destinations_cluster/HarvestableSpacePOI_DLC5AquaticMixingField.png"
+    },
+    {
+      "hash": "sha256-5dhGzw14ZR412kzLrj4ChBpmooHws5N+K0OTSXtHvYQ=",
+      "url": "images/Starmap/starmap_destinations_cluster/HarvestableSpacePOI_DLC5AquaticOreField.png"
+    },
+    {
       "hash": "sha256-2tAjhT30IjFZwDWIWmrjOP3lpF5wz3oUQu2/ozSKJ3E=",
       "url": "images/Starmap/starmap_destinations_cluster/HarvestableSpacePOI_ForestyOreField.png"
     },
@@ -710,8 +722,24 @@ self.assetsManifest = {
       "url": "images/Starmap/starmap_destinations_cluster/HarvestableSpacePOI_SwampyOreField.png"
     },
     {
+      "hash": "sha256-dD37ikpHtkTbuZU8SwOP64U94fh4N8nuPSqQPkvUJ/k=",
+      "url": "images/Starmap/starmap_destinations_cluster/Marinea Asteroid.png"
+    },
+    {
       "hash": "sha256-k0+7BvR7ZP5efalP8NLOOLHapcN+XtzcyXaoD8HVmMw=",
       "url": "images/Starmap/starmap_destinations_cluster/TemporalTear.png"
+    },
+    {
+      "hash": "sha256-bufLEBhfikJs3HyeSyhDTyQ9q4SVtFR8yIKgWl4EE80=",
+      "url": "images/asteroids/AquaticBaseGameAsteroid.png"
+    },
+    {
+      "hash": "sha256-dD37ikpHtkTbuZU8SwOP64U94fh4N8nuPSqQPkvUJ/k=",
+      "url": "images/asteroids/AquaticClassicAsteroid.png"
+    },
+    {
+      "hash": "sha256-3GPoPAaSJbqJW4FWxgTGB7BvV5RctDz0T6niS/6XtqI=",
+      "url": "images/asteroids/AquaticSpacedOutAsteroid.png"
     },
     {
       "hash": "sha256-YrwgK6dstOjBKCOXcxrjO8VblsW9JK1l9BSiosyNbZE=",
@@ -862,6 +890,10 @@ self.assetsManifest = {
       "url": "images/asteroids/MiniShatteredWarpAsteroid.png"
     },
     {
+      "hash": "sha256-ScQsjXQh/3ov8pVr/zMdJOUe0PFw0CRgIRVFKOGrKc0=",
+      "url": "images/asteroids/MixingAquaticAsteroid.png"
+    },
+    {
       "hash": "sha256-bSuc+c+C3+08NwY/uRkCt14GE1RI6N0f9U3i7pZzirI=",
       "url": "images/asteroids/MixingCeresAsteroid.png"
     },
@@ -1006,6 +1038,10 @@ self.assetsManifest = {
       "url": "images/asteroids/WaterMoonlet.png"
     },
     {
+      "hash": "sha256-3eGD27TxNy29uj4wphtaPB1lNsR+/HHyLhqBlSwj5KQ=",
+      "url": "images/biomes/biomeIconBeach.png"
+    },
+    {
       "hash": "sha256-7j7GTCwaaVZQui5im5fEN98p5HlauqWMYVtEsyA+TbM=",
       "url": "images/biomes/biomeIconCarrotquarry.png"
     },
@@ -1018,8 +1054,16 @@ self.assetsManifest = {
       "url": "images/biomes/biomeIconIcecaves.png"
     },
     {
+      "hash": "sha256-C71Yz7LdFqOK2dEkLnKPCFb+DBoEVdEK8c4wiVt5nD0=",
+      "url": "images/biomes/biomeIconKelpForest.png"
+    },
+    {
       "hash": "sha256-UhMnZfQvQeGSPRggyHFB7hXubhUgM/WyW2WuujLp5c8=",
       "url": "images/biomes/biomeIconRaptor.png"
+    },
+    {
+      "hash": "sha256-8dgoEByivovt2LF+aOIrIA2ngYrF58PlsJbWpu0xN8M=",
+      "url": "images/biomes/biomeIconReef.png"
     },
     {
       "hash": "sha256-za4luAhUcnHvwJk4sQ+4bKsQ2FA5ut0ppfyunWeq1Tk=",
@@ -1050,6 +1094,10 @@ self.assetsManifest = {
       "url": "images/gamemodes/gamemode_spacedout_thelab.png"
     },
     {
+      "hash": "sha256-j6COLcm2eGV9l21X+7EIATk2KSc+Vw95vj3hFBd7avA=",
+      "url": "images/logos/Aquatic_Planet_Banner.png"
+    },
+    {
       "hash": "sha256-mq5lZH4OC9W8en44IF4jGSWz5hIY8WI81NuLAUlp+jc=",
       "url": "images/logos/Bionic_Booster_Banner.png"
     },
@@ -1068,6 +1116,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-w638shAlNZLdNAEginAI3Ad9Smi8AJDAGcqXAfAiZaw=",
       "url": "images/logos/dlc4_banner.png"
+    },
+    {
+      "hash": "sha256-emWWH3jwr5XK2PEKSiaEJYLiAnQRmIldSoF5jnP7DxQ=",
+      "url": "images/logos/dlc5_banner.png"
     },
     {
       "hash": "sha256-06dinl0oCmCvNitckhYtTlfyxmEJkO60w/5IyoRoa/o=",
